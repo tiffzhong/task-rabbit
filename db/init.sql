@@ -14,13 +14,11 @@ create table tasker_profile(
     about text 
 )
 
-
 create table client_profile(
     client_profile_id serial primary key,
     client_id int references users(user_id), 
     location text
 )
-
 
 create table reviews(
     review_id serial primary key,
