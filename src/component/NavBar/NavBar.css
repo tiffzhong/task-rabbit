@@ -111,7 +111,7 @@
   height: 300px;
   border-radius: 10px;
  }
- / *Navbar*/
+ /* / *Navbar*/ */
  nav {
   background: white;
   border-bottom: solid grey 1px;
@@ -195,11 +195,11 @@
   .showDropdown {
     display: flex;
     flex-direction: column;
-    z-index: 999; (edited) 
+    z-index: 999;  
  position: absolute;
     transform: translate(0, 0px);
     transition: all 3s, ease-out 2s, ease-in 4s;
     width: 100vw;
     text-align: center;
   }
- }
+}
