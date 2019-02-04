@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
 import routes from "./routes";
-import Footer from "./component/Footer/Footer";
-import NavBar from "./component/NavBar/NavBar";
-
-
+import NavBar from "../src/component/NavBar/NavBar";
+import Footer from "../src/component/Footer/Footer";
+import './component/LandingPage/LandingPage.css';
 
 
 
@@ -13,10 +12,6 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-
-
-
-
         {routes}
         <Footer />
       </div>

@@ -34,3 +34,14 @@ create table tasker_skills(
     skill_price int,
     skill_image text 
 )
+
+-- To stay logged in. No need to sign in w Auth0 every time
+CREATE TABLE "session" (
+  "sid" varchar NOT NULL COLLATE "default",
+    "sess" json NOT NULL,
+    "expire" timestamp(6) NOT NULL
+)
+WITH (OIDS=FALSE);
+ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;
+
+select * from "session";

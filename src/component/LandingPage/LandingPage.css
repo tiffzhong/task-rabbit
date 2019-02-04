@@ -22,3 +22,28 @@ header {
   font-weight: bold;
   width: 100%;
 }
+.LandingPage-component {
+    background: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.TaskCards-component {
+    height: 200px;
+    width: 50vw;
+    /* background: pink; */
+}
+
+.TaskCards-component button {
+    background: black;
+    border-radius: 50%;
+    /* height: 20px;
+    width: 20px; */
+}
+
+.card {
+    /* background: yellow;
+    height: 50px; */
+}
