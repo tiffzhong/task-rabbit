@@ -29,12 +29,14 @@ class NavBar extends Component {
           <Link to="login"><div>Login</div></Link>
           <Link to="/create-tasker-profile"><div>Become a Tasker</div></Link>
         </div>
-        <div>
-          <div><button onClick={this.toggler}><i class="fas fa-bars"></i></button></div>
+        <div className='menuButton-container'>
+          <div className="menuButton"><button onClick={this.toggler}><i class="fas fa-bars"></i></button></div>
           <div className={this.state.toggle ? "shopDropdown" : "hideDropdown"}>
             <ul>
-              <li> <Link to="/">Home</Link></li>
-              <li> <Link to="/how-it">Home</Link></li>
+              <Link to="/"><li>Home</li></Link>
+              <Link to="/how-it-works"><li>How it works</li></Link>
+              <Link to="/login"><li>Login</li></Link>
+              <Link to="/create-tasker-profile"> <li>Become a Tasker</li></Link>
             </ul>
 
           </div>
