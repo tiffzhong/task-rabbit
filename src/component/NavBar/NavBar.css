@@ -160,17 +160,74 @@ nav{
     margin-top: 20px;
 
 }
+
+.hideDropdown{
+    display: none;
+  }
+  .menuButton{
+    display: none;
+  }
 @media only screen and (max-width: 415px){
-    nav{width: 100%}
+    nav{
+        width: 100%;
+        align-items:center;
+        /* background: gray; */
+        
+    }
+    nav div ul{
+        background-color: rgb(207, 199, 199);
+        width: 100vw;
+        margin-top: 70px;
+        height: 100px;
+    }
+   
+    nav a{
+        text-decoration: none;
+    }
+    nav div li a{
+
+        text-decoration: none;
+    }
+    .menuButton-container {
+     
+        display: flex;
+        height: 100%;
+        width: 100%;
+        
+    }
     .sidelinks div{
         display: none
     }
+    .logo div{ 
+        width: 10px;
+        margin-left: 200px;
 
-    .logo div{ display: flex;
-        justify-content: flex-start;
-        width: 95px;
+    }
+}
+
+@media only screen and (max-width:700px){
+    .menuButton-container {
+        display: flex;
+        position: absolute;
+        width: 100%;
        
     }
-    
+    .menuButton {
+        display: flex;
+        position: absolute;
+        margin-top: 30px;
+        height: 30px;
+        left: 0;
+    }
+    .showDropdown{ 
+        display:flex;
+        flex-direction: column;
+        z-index: 999;
+        position: absolute;
+        transform: translate(0, 0px);
+        transition: all 3s, ease-out 2s, ease-in 4s;
+        width: 100vw;
+        text-align: center;
+    }
 
 }
