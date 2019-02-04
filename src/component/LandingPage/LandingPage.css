@@ -1,0 +1,21 @@
+header {
+  background-image: url("./tools.jpg");
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.header-main-text h1 {
+  color: black;
+  text-align: center;
+  width: 100%;
+}
+.header-link span {
+  /* send help */
+  display: flex;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  width: 100%;
+}
