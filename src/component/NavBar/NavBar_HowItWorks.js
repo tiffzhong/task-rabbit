@@ -1,6 +1,7 @@
 import React from 'react';
 import "./NavBar.css"
 import NavBar from "./NavBar";
+import LandingPage_Reviews from "../LandingPage/LandingPage_Reviews";
 
 
 const NavBar_HowItWorks = () => {
@@ -43,9 +44,9 @@ const NavBar_HowItWorks = () => {
                             <img src="/Images/Checklist.jpg" alt="list" />
                         </div>
                     </div>
-
                 </div>
             </div>
+            <LandingPage_Reviews />
         </div>
     );
 }
