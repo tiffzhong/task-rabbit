@@ -33,10 +33,11 @@ class NavBar extends Component {
           <div><button onClick={this.toggler}><i class="fas fa-bars"></i></button></div>
           <div className={this.state.toggle ? "shopDropdown" : "hideDropdown"}>
             <ul>
-              <li> <Link to="/">Home</Link></li>
-              <li> <Link to="/how-it">Home</Link></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/how-it-works">How it Works</Link></li>
+              <li><Link to="/login">Login</Link></li>
+              <li><Link to="/create-tasker-profile">Become a Tasker</Link></li>
             </ul>
-
           </div>
         </div>
       </nav>);
