@@ -24,7 +24,7 @@ p{
     text-align: justify;
     text-justify: inter-word;
     font-family: cursive;
-    
+   
 }
 .wholeitems{
     background-color: rgb(232, 235, 239);
@@ -32,6 +32,7 @@ p{
     margin: 0% auto;
     border-radius: 10px; 
     padding-bottom: 75px;
+    
 }
 
 .wholeitems > h1{
@@ -71,7 +72,6 @@ p{
     height: 300px;
     border-radius: 10px;
     /* border: black solid 2px; */
-
 }
 .seconditem{
     display: flex;
