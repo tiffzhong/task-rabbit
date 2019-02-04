@@ -32,7 +32,6 @@ const LandingPage_Reviews = () => {
             </div>
 
             <div className="reviews">
-
                 <div> <div><img src="Images/josh.jpg" /></div> <div><p>TaskTiger makes moving into your new apartment a 1 hr job instead of 1 day job! Moving was seamless!
                     <div>Josh B</div>
                     <div>Mesa, AZ</div>
