@@ -1,0 +1,14 @@
+footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  background-color: lightgray;
+  font-size: 18px;
+}
+footer a {
+  text-decoration: none;
+  color: black;
+}
+footer a:hover {
+  color: green;
+}

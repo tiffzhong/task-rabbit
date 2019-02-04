@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
-import NavBar_HowItWorks from "./component/NavBar/NavBar_HowItWorks";
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import routes from "./routes";
+import NavBar from "../src/component/NavBar/NavBar";
+import Footer from "../src/component/Footer/Footer";
 
 
 class App extends Component {
@@ -9,6 +11,10 @@ class App extends Component {
       <div className="App">
 
         <NavBar_HowItWorks />
+
+        <NavBar />
+        {routes}
+        <Footer />
       </div>
     );
   }
