@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import NavBar from "../NavBar/NavBar";
 
 class BecomeATasker extends Component {
   constructor(props) {
