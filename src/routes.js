@@ -9,7 +9,6 @@ export default (
   <Switch>
     <Route exact path="/" component={LandingPage} />
     <Route path="/how-it-works" component={NavBar_HowItWorks} />
-    <Route path="/login" component={Login} />
     <Route path="/create-tasker-profile" component={BecomeATasker} />
   </Switch>
 );

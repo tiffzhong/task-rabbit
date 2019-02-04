@@ -18,11 +18,16 @@ class BecomeATasker extends Component {
       [event.target.name]: event.target.value
     });
   };
+
+  onSubmit(event) {
+    event.preventDefault();
+  }
+
   render() {
     return (
       <>
         <h1>Create Tasker Profile</h1>
-        <form>
+        <form onSubmit={event => this.onSubmit(event)}>
           <input
             placeholder="Name"
             name="name"

@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const massive = require("massive");
-const axios = require("axios");
 const dotenv = require("dotenv");
 const connect = require("connect-pg-simple");
 dotenv.config();
@@ -33,11 +32,15 @@ app.use(
 );
 
 //Controllers
-const authController = require("./controllers/authController");
-const clientController = require("./controllers/clientController");
-const taskerController = require("./controllers/taskerController");
+const authController = require("./controllers/authContoller");
+// const clientController = require("./controllers/clientController");
+// const taskerController = require("./controllers/taskerController");
 
 //Endpoints
+//Auth
+app.get("/auth/callback", authController.login);
+app.get("/auth/user-data", authController.getUser);
+app.post("/auth/logout", authController.logout);
 
 const PORT = 4000;
 app.listen(PORT, () => {

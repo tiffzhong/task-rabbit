@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import "./App.css";
 import routes from "./routes";
-import Footer from "./component/Footer/Footer";
-import NavBar from "./component/NavBar/NavBar";
+import NavBar from "../src/component/NavBar/NavBar";
+import Footer from "../src/component/Footer/Footer";
+import "./component/LandingPage/LandingPage.css";
 
-
-
-
+import "./component/LandingPage/LandingPage.css";
+import LandingPage from "./component/LandingPage/LandingPage";
 
 class App extends Component {
   render() {

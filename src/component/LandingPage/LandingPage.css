@@ -100,3 +100,30 @@ header {
 
 
 
+/* Reviews*/
+.reviewsContainer{
+    /* background-color: grey; */
+    margin: 0 auto;
+
+}
+.reviews{
+    display: inline-block;
+    margin: 50px;
+}
+.reviews > div{
+
+    margin: 10px;
+   
+
+}
+
+.reviews > div p {
+    /* background-color: green; */
+    width: 350px;
+    font-size: 12px;
+    
+}
+img{
+    border-radius: 50%;
+    width: 125px;
+}
