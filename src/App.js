@@ -5,6 +5,8 @@ import NavBar from "../src/component/NavBar/NavBar";
 import Footer from "../src/component/Footer/Footer";
 import NavBar_HowItWorks from './component/NavBar/NavBar_HowItWorks';
 
+import './component/LandingPage/LandingPage.css';
+import LandingPage from './component/LandingPage/LandingPage';
 
 
 class App extends Component {
@@ -16,6 +18,7 @@ class App extends Component {
 
         <NavBar />
         {routes}
+        <LandingPage />
         <Footer />
       </div>
     );
