@@ -1,108 +1,25 @@
-div {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-weight: inherit;
-    font-style: inherit;
-    font-size: 100%;
-    font-family: inherit;
-    vertical-align: baseline;
+.LandingPage-component {
+    background: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
 }
 
 .TaskCards-component {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-weight: inherit;
-    font-style: inherit;
-    font-size: 100%;
-    font-family: inherit;
-    vertical-align: baseline;
-}
-
-.taskCards-container {
-    padding: 3em 0;
-    background: #f9fafb !important;
-    display: block;
-}
-
-.container-wide {
-    padding-left: 4%;
-    padding-right: 4%;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.row-thin {
-   position: relative;
-   margin: 0;
-   padding: 0;
-   border: 0;
-   font-weight: inherit;
-   font-style: inherit;
-   font-size: 100%;
-   font-family: inherit;
-   vertical-align: baseline; 
-}
-
-.static-title .secondary-heading{
-    font-size: 2.5rem;
-}
-
-.carousel-container {
-    background: yellow;
-    /* height: 200px; */
-    /* width: 75vw; */
-    /* overflow: hidden; */
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    -webkit-box-align: stretch;
-    flex-flow: row nowrap;
-}
-
-.carousel-navigate-prev {
-    display: flex;
-    cursor: not-allowed;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    
-}
-
-.chevron-left {
-    background: green;
-    speak: none;
-
-}
-
-.ss-lnr-chevron-left::before {
-
-}
-
-.carousel-task-container {
-    
-    overflow: hidden;
-}
-
-.task {
-    background: pink;
-    margin: 10px;
-    /* width: 400px; */
     height: 200px;
-    width: 100px;
-    display: flex;
-    flex: 1 1 auto;
-    align-items: stretch;
-    overflow: hidden;
+    width: 50vw;
+    /* background: pink; */
 }
 
-.carousel-navigate-next {
-
+.TaskCards-component button {
+    background: black;
+    border-radius: 50%;
+    /* height: 20px;
+    width: 20px; */
 }
 
-.chevron-right {
-
+.card {
+    /* background: yellow;
+    height: 50px; */
 }
