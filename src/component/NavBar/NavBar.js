@@ -46,47 +46,36 @@ class NavBar extends Component {
       toggle: !this.state.toggle
     });
   };
+
   render() {
     return (
       <nav>
         <div className="logo">
           <Link to="/">
-            {" "}
-            <div>Logo</div>
+            <img src="" width={60} mode="fit" alt="logo" />
           </Link>
         </div>
+
         <div className="sidelinks">
-          <Link to="/how-it-works">
-            <div>How it works</div>
-          </Link>
-          <li onClick={() => this.login()}>Login</li>
-          <Link to="/create-tasker-profile">
-            <div>Become a Tasker</div>
-          </Link>
-          <li
-            onClick={() => {
-              this.logout();
-              this.redirectToLandingPage();
-            }}
-          >
-            Logout
-          </li>
-        </div>
-        <div>
-          <div>
-            <button onClick={this.toggler}>
-              <i class="fas fa-bars" />
-            </button>
+          <div className="menuButton">
+            <button onClick={this.toggler}>☰</button>
           </div>
-          <div className={this.state.toggle ? "shopDropdown" : "hideDropdown"}>
-            <ul>
-              <li>
-                {" "}
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                {" "}
-                <Link to="/how-it">Home</Link>
+          <div className="menuButton-container">
+            <ul className={this.state.toggle ? "showDropdown" : "hideDropdown"}>
+              <Link to="/how-it-works">
+                <div>How it works</div>
+              </Link>
+              <li onClick={() => this.login()}>Login</li>
+              <Link to="/create-tasker-profile">
+                <div>Become a Tasker</div>
+              </Link>
+              <li
+                onClick={() => {
+                  this.logout();
+                  this.redirectToLandingPage();
+                }}
+              >
+                Logout
               </li>
             </ul>
           </div>
