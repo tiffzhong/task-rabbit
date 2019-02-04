@@ -40,41 +40,52 @@ class NavBar extends Component {
   redirectToLandingPage() {
     window.location.pathname = "/";
   }
+
   toggle = () => {
-    this.setState(prevState => {
-      return {
-        toggle: !prevState.toggle
-      };
+    this.setState({
+      toggle: !this.state.toggle
     });
   };
 
   render() {
     return (
       <nav>
-        <div className="logged-in-header">
-          <Link to="/dashboard">
-            <img src="" width={60} mode="fit" alt="logo" />
+        <div className="logo">
+          <Link to="/">
+            {" "}
+            <div>Logo</div>
           </Link>
-
-          <div className="links">
-            <div>
-              <button onClick={this.toggle}>☰</button>
-            </div>
-            <ul className={this.state.toggle ? "show" : "hide"}>
-              <Link to="/how-it-works">
-                <li>How it works</li>
-              </Link>
-              <li onClick={() => this.login()}>Login</li>
-              <Link to="/create-tasker-profile">
-                <li>Become a Tasker</li>
-              </Link>
-              <li
-                onClick={() => {
-                  this.logout();
-                  this.redirectToLandingPage();
-                }}
-              >
-                Logout
+        </div>
+        <div className="sidelinks">
+          <Link to="/how-it-works">
+            <div>How it works</div>
+          </Link>
+          <Link to="login">
+            <div>Login</div>
+          </Link>
+          <Link to="/create-tasker-profile">
+            <div>Become a Tasker</div>
+          </Link>
+        </div>
+        <div className="menuButton-container">
+          <div className="menuButton">
+            <button onClick={this.toggler}>
+              <i class="fas fa-bars" />
+            </button>
+          </div>
+          <div className={this.state.toggle ? "showDropdown" : "hideDropdown"}>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/how-it-works">How it Works</Link>
+              </li>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+              <li>
+                <Link to="/create-tasker-profile">Become a Tasker</Link>
               </li>
             </ul>
           </div>
