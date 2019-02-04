@@ -40,34 +40,33 @@ class NavBar extends Component {
   redirectToLandingPage() {
     window.location.pathname = "/";
   }
-
-  toggler = () => {
-    this.setState({
-      toggle: !this.state.toggle
+  toggle = () => {
+    this.setState(prevState => {
+      return {
+        toggle: !prevState.toggle
+      };
     });
   };
 
   render() {
     return (
       <nav>
-        <div className="logo">
-          <Link to="/">
+        <div className="logged-in-header">
+          <Link to="/dashboard">
             <img src="" width={60} mode="fit" alt="logo" />
           </Link>
-        </div>
 
-        <div className="sidelinks">
-          <div className="menuButton">
-            <button onClick={this.toggler}>☰</button>
-          </div>
-          <div className="menuButton-container">
-            <ul className={this.state.toggle ? "showDropdown" : "hideDropdown"}>
+          <div className="links">
+            <div>
+              <button onClick={this.toggle}>☰</button>
+            </div>
+            <ul className={this.state.toggle ? "show" : "hide"}>
               <Link to="/how-it-works">
-                <div>How it works</div>
+                <li>How it works</li>
               </Link>
               <li onClick={() => this.login()}>Login</li>
               <Link to="/create-tasker-profile">
-                <div>Become a Tasker</div>
+                <li>Become a Tasker</li>
               </Link>
               <li
                 onClick={() => {
