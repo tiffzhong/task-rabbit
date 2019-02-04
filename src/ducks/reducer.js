@@ -1,20 +1,22 @@
 const initialState = {
-  test: null
+  user: null
 };
 
-const test = "TEST";
+const SET_USER = "SET_USER";
+
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case test:
-      return { ...state, test: action.payload };
+    case SET_USER:
+      return { ...state, user: action.payload };
     default:
       return { ...state };
   }
 }
 
-export function testing(test) {
+//dispatching actions
+export function setUser(user) {
   return {
-    type: test,
-    payload: test
+    type: SET_USER,
+    payload: user
   };
 }
