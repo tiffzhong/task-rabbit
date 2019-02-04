@@ -7,7 +7,7 @@
 p {
   font-weight: bold;
   font-size: 25px;
-  font-family: cursive;
+
 }
 .words {
   font-size: 20px;
@@ -16,7 +16,7 @@ p {
   /* text-indent: 10px; */
   text-align: justify;
   text-justify: inter-word;
-  font-family: cursive;
+ 
 }
 .wholeitems {
   background-color: rgb(232, 235, 239);

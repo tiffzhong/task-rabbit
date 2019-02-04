@@ -52,7 +52,7 @@ class NavBar extends Component {
     return (
       <nav>
         <div className="logged-in-header">
-          <Link to="/dashboard">
+          <Link to="/">
             <img src="" width={60} mode="fit" alt="logo" />
           </Link>
 

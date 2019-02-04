@@ -104,11 +104,14 @@ header {
 .reviewsContainer{
     /* background-color: grey; */
     margin: 0 auto;
+  
+  
 
 }
 .reviews{
     display: inline-block;
-    margin: 50px;
+    /* margin: 50px; */
+
 }
 .reviews > div{
 
