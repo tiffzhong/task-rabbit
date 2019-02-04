@@ -5,11 +5,14 @@ header {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+
+
 }
 .header-main-text h1 {
   color: black;
   text-align: center;
   width: 100%;
+  margin-top: 70px;
 }
 .header-link span {
   /* send help */

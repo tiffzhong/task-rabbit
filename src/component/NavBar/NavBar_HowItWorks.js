@@ -1,11 +1,11 @@
 import React from 'react';
 import "./NavBar.css"
+import NavBar from "./NavBar";
 
 
 const NavBar_HowItWorks = () => {
     return (
         <div>
-            <nav>Location of the NavBar</nav>
             <div className="fullpage">
                 <div className="wholeitems">
                     <h1>How It Works</h1>
