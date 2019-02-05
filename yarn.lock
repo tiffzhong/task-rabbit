@@ -8352,6 +8352,11 @@ recursive-readdir@2.2.2:
   dependencies:
     minimatch "3.0.4"
 
+redux-promise-middleware@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/redux-promise-middleware/-/redux-promise-middleware-6.0.0.tgz#8ecc4a26a6a9e5f66d2e1482566d224a6036d74d"
+  integrity sha512-DbWwCg5jqvdzQTdq/f+Z+gZPhbE1EKCEAUElWFoEqdqylhIu7mhyF+Ur5grsi6ejlbQiR1oAHuCMQrCl7jC6dA==
+
 redux@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"

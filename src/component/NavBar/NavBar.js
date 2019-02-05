@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./NavBar.css";
 import axios from "axios";
 import { connect } from "react-redux";
-import { setUser } from "../../ducks/reducer";
+import { setUser } from "../../ducks/taskerReducer";
 
 class NavBar extends Component {
   constructor(props) {
