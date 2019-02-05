@@ -33,14 +33,17 @@ app.use(
 
 //Controllers
 const authController = require("./controllers/authContoller");
+const taskerController = require("./controllers/taskerController");
 // const clientController = require("./controllers/clientController");
-// const taskerController = require("./controllers/taskerController");
 
 //Endpoints
 //Auth
 app.get("/auth/callback", authController.login);
 app.get("/auth/user-data", authController.getUser);
 app.post("/auth/logout", authController.logout);
+
+//Tasker
+app.post("/api/tasker", taskerController.createProfile);
 
 const PORT = 4000;
 app.listen(PORT, () => {

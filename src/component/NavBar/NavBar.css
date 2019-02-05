@@ -1,31 +1,30 @@
 .fullpage {
   width: 90%;
   margin: 0% auto;
- }
- p {
+}
+p {
   font-weight: bold;
   font-size: 25px;
- }
- .words {
+}
+.words {
   font-size: 20px;
   letter-spacing: 1px;
   /* word-spacing: 1px; */
-  /* text-indent: 10px; */
   text-align: justify;
   text-justify: inter-word;
- }
- .wholeitems {
+}
+.wholeitems {
   background-color: rgb(232, 235, 239);
   width: 90%;
   margin: 0% auto;
   border-radius: 10px;
   padding-bottom: 75px;
- }
- .wholeitems > h1 {
+}
+.wholeitems > h1 {
   padding: 40px;
   font-size: 40px;
- }
- .firstitem {
+}
+.firstitem {
   display: flex;
   justify-content: flex-start;
   height: 300px;
@@ -33,9 +32,9 @@
   margin: 0 auto;
   margin-bottom: 30px;
   /* border: black solid 2px;
-    background-color: blueviolet;  */
- }
- .firstparagraph {
+   background-color: blueviolet;  */
+}
+.firstparagraph {
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -46,26 +45,26 @@
   margin-left: 50px;
   /* background-color: yellow; */
   /* border: black solid 2px;   */
- }
- .firstimage img {
+}
+.firstimage img {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   height: 300px;
   border-radius: 10px;
   /* border: black solid 2px; */
- }
- .seconditem {
+}
+.seconditem {
   display: flex;
   justify-content: flex-start;
   height: 300px;
   width: 90%;
   margin: 0 auto;
   /* background-color: blueviolet;
-    border: black solid 2px; */
+   border: black solid 2px; */
   margin-top: 75px;
- }
- .secondparagraph {
+}
+.secondparagraph {
   /* background-color: yellow; */
   display: flex;
   flex-direction: column;
@@ -74,16 +73,16 @@
   text-align: center;
   margin-left: 200px;
   margin-right: 50px;
- }
- .secondimage img {
+}
+.secondimage img {
   /* background-color: yellow; */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   height: 300px;
   border-radius: 10px;
- }
- .thirdparagraph {
+}
+.thirdparagraph {
   /* background-color: yellow; */
   display: flex;
   flex-direction: column;
@@ -92,8 +91,8 @@
   text-align: center;
   margin-right: 100px;
   margin-left: 50px;
- }
- .thirditem {
+}
+.thirditem {
   display: flex;
   justify-content: flex-start;
   height: 300px;
@@ -101,18 +100,18 @@
   margin: 0 auto;
   margin-top: 75px;
   /* border: black solid 2px;
-    background-color: blueviolet;  */
- }
- .thirdimage img {
+   background-color: blueviolet;  */
+}
+.thirdimage img {
   /* background-color: orange; */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   height: 300px;
   border-radius: 10px;
- }
- /* / *Navbar*/ */
- nav {
+}
+/*Navbar*/
+nav {
   background: white;
   border-bottom: solid grey 1px;
   box-shadow: 5px grey;
@@ -123,16 +122,16 @@
   position: fixed;
   z-index: 300;
   top: 0;
- }
- .sidelinks div {
+}
+.sidelinks div {
   display: inline-block;
   justify-content: flex-end;
   flex-direction: row;
   width: 150px;
   margin-left: 20px;
   margin-top: 20px;
- }
- .logo div {
+}
+.logo div {
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
@@ -140,14 +139,15 @@
   margin-right: 200px;
   text-decoration: none;
   margin-top: 20px;
- }
- .hideDropdown {
+}
+.hideDropdown {
   display: none;
- }
- .menuButton {
+}
+.menuButton {
   display: none;
- }
- @media only screen and (max-width: 415px) {
+}
+
+@media only screen and (max-width: 415px) {
   nav {
     width: 100%;
     align-items: center;
@@ -159,7 +159,6 @@
     margin-top: 70px;
     height: 100px;
   }
- 
   nav a {
     text-decoration: none;
   }
@@ -178,8 +177,8 @@
     width: 10px;
     margin-left: 200px;
   }
- }
- @media only screen and (max-width: 700px) {
+}
+@media only screen and (max-width: 700px) {
   .menuButton-container {
     display: flex;
     position: absolute;
@@ -195,8 +194,8 @@
   .showDropdown {
     display: flex;
     flex-direction: column;
-    z-index: 999;  
- position: absolute;
+    z-index: 999;
+    position: absolute;
     transform: translate(0, 0px);
     transition: all 3s, ease-out 2s, ease-in 4s;
     width: 100vw;

@@ -1,3 +1,7 @@
+<!-- CSS Styling/Colors: -->
+<!-- Green: #51af33 -->
+<!-- lightgrey: #e8ebef -->
+
 #TaskRabbit Semi-Clone
 
 ## Front-end

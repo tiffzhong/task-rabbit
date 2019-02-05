@@ -1,0 +1,72 @@
+.become-tasker-page {
+  padding-top: 50px;
+  z-index: 0;
+  background-image: url("./taskerbecome.jpg");
+  height: 100vh;
+  width: 100%;
+  font-size: 45px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0px;
+}
+
+.become-tasker-container {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #e8ebef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.become-tasker-container h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  width: 100%;
+  font-weight: 400;
+}
+
+.become-tasker-container p {
+  font-weight: 100;
+  font-size: 18px;
+}
+
+.become-tasker-container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.become-tasker-container form input {
+  padding: 0.625em 1em;
+  color: black;
+  font-size: 15px;
+  margin: 10px 5px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid rgb(181, 181, 181);
+}
+.become-tasker-container form textarea {
+  padding: 0.625em 1em;
+  font-size: 15px;
+  margin: 10px 5px;
+  height: 90px;
+  border-radius: 5px;
+  border: 1px solid rgb(181, 181, 181);
+}
+.become-tasker-container button {
+  background-color: #51af33;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.become-tasker-container a {
+  text-decoration: none;
+}

@@ -60,9 +60,7 @@ class NavBar extends Component {
           <Link to="/how-it-works">
             <div>How it works</div>
           </Link>
-          <Link to="login">
-            <div>Login</div>
-          </Link>
+          <li onClick={() => this.login()}>Register/Login</li>
           <Link to="/create-tasker-profile">
             <div>Become a Tasker</div>
           </Link>
@@ -81,9 +79,9 @@ class NavBar extends Component {
               <li>
                 <Link to="/how-it-works">How it Works</Link>
               </li>
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
+
+              <li onClick={() => this.login()}>Register/Login</li>
+
               <li>
                 <Link to="/create-tasker-profile">Become a Tasker</Link>
               </li>
