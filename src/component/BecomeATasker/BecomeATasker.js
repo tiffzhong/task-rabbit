@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import { setUser } from "../../ducks/reducer";
+import { setUser } from "../../ducks/taskerReducer";
 import "./BecomeATasker.css";
 import { Link } from "react-router-dom";
 class BecomeATasker extends Component {

@@ -32,7 +32,7 @@ create table reviews(
 
 create table tasker_skills(
     skills_id serial primary key,
-    tasker_skill_id int references tasker_profile(tasker_profile_id),
+    tasker_skill_id int,
     skill_name text,
     skill_price int,
     skill_image text 

@@ -1,13 +1,18 @@
-const initialState = {
-  user: null
+import axios from "axios";
+
+const INITIAL_STATE = {
+  user: null,
+  taskerProfile: []
 };
 
 const SET_USER = "SET_USER";
 
-export default function reducer(state = initialState, action) {
+export default function taskerReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case SET_USER:
       return { ...state, user: action.payload };
+    // case `${}_FULFILLED`:
+
     default:
       return { ...state };
   }
@@ -20,3 +25,7 @@ export function setUser(user) {
     payload: user
   };
 }
+
+// export function createProfile(
+//   tasker_id, name, email, phone, location, about
+// )
