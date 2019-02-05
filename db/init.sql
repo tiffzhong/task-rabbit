@@ -10,6 +10,9 @@ create table users(
 create table tasker_profile(
    tasker_profile_id serial primary key,
     tasker_id int references users(user_id), 
+    name varchar(80), 
+    email text,
+    phone text,
     location text,
     about text 
 )

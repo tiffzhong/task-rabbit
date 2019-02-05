@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer>
-      <div className='footer-links'>
+      <div className="footer-links">
         <p>
           Follow Us!{" "}
           <a href="https://www.facebook.com/TaskRabbit">
@@ -19,7 +19,7 @@ const Footer = () => {
           </a>
         </p>
         <Link to="/">
-          <p>Task Rabbit Logo</p>
+          <p>Logo</p>
         </Link>
         <p>
           <Link to="/how-it-works">How It Works</Link> |{" "}
