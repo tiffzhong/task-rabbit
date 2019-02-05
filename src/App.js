@@ -3,6 +3,7 @@ import routes from "./routes";
 import NavBar from "../src/component/NavBar/NavBar";
 import Footer from "../src/component/Footer/Footer";
 import "./component/LandingPage/LandingPage.css";
+import './reset.css';
 
 import "./component/LandingPage/LandingPage.css";
 import LandingPage from "./component/LandingPage/LandingPage";

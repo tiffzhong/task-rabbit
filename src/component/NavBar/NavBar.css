@@ -1,4 +1,3 @@
-/* How it Works*/
 .fullpage {
   width: 90%;
   margin: 0% auto;
@@ -6,16 +5,13 @@
 p {
   font-weight: bold;
   font-size: 25px;
-  font-family: cursive;
 }
 .words {
   font-size: 20px;
   letter-spacing: 1px;
   /* word-spacing: 1px; */
-  /* text-indent: 10px; */
   text-align: justify;
   text-justify: inter-word;
-  font-family: cursive;
 }
 .wholeitems {
   background-color: rgb(232, 235, 239);
@@ -26,7 +22,6 @@ p {
 }
 .wholeitems > h1 {
   padding: 40px;
-  font-family: cursive;
   font-size: 40px;
 }
 .firstitem {
@@ -115,7 +110,8 @@ p {
   height: 300px;
   border-radius: 10px;
 }
-/ *Navbar*/ nav {
+/*Navbar*/
+nav {
   background: white;
   border-bottom: solid grey 1px;
   box-shadow: 5px grey;
@@ -150,6 +146,7 @@ p {
 .menuButton {
   display: none;
 }
+
 @media only screen and (max-width: 415px) {
   nav {
     width: 100%;
@@ -162,7 +159,6 @@ p {
     margin-top: 70px;
     height: 100px;
   }
-
   nav a {
     text-decoration: none;
   }
@@ -199,7 +195,7 @@ p {
     display: flex;
     flex-direction: column;
     z-index: 999;
-    (edited)position: absolute;
+    position: absolute;
     transform: translate(0, 0px);
     transition: all 3s, ease-out 2s, ease-in 4s;
     width: 100vw;

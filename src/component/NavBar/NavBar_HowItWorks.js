@@ -3,6 +3,7 @@ import "./NavBar.css"
 import NavBar from "./NavBar";
 
 
+
 const NavBar_HowItWorks = () => {
     return (
         <div>
@@ -43,9 +44,9 @@ const NavBar_HowItWorks = () => {
                             <img src="/Images/Checklist.jpg" alt="list" />
                         </div>
                     </div>
-
                 </div>
             </div>
+
         </div>
     );
 }
