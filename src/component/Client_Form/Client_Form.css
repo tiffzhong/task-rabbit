@@ -1,0 +1,19 @@
+.form {
+    margin-top: 100px;
+    height: 800px;
+    /* background: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.outer-container {
+    background: whitesmoke;
+    margin-top: 50px;
+    height: 600px;
+    width: 1100px;
+    margin-bottom: 50px;
+    border: solid 2px lightgray;
+}

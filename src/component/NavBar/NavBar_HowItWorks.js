@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavBar.css";
-import NavBar from "./NavBar";
+
 
 const NavBar_HowItWorks = () => {
   return (
