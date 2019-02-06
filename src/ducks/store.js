@@ -8,6 +8,6 @@ const reducer = combineReducers({
   client: clientReducer
 });
 
-const store = createStore(reducer, applyMiddleware(reduxPromiseMiddleware()));
+const store = createStore(reducer, applyMiddleware(reduxPromiseMiddleware));
 
 export default store;

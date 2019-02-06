@@ -6,17 +6,17 @@ const INITIAL_STATE = {
 
 const UPDATE_TASK_TYPE = "UPDATE_TASK_TYPE";
 
-export function clientReducer(state = INITIAL_STATE, action) {
+export default function clientReducer(state = INITIAL_STATE, action) {
   console.log("REDUCER HIT: Action =>", action);
   switch (action.type) {
     case UPDATE_TASK_TYPE:
-      return Object.assign({}, state, { taskType: action.payload });
+      return { ...state, taskType: action.payload };
 
     default:
-      return state;
+      return { ...state };
   }
 }
 
-export function updateTaskType(taskType) {
-  axios.post();
-}
+// export function updateTaskType(taskType) {
+//   axios.post();
+// }

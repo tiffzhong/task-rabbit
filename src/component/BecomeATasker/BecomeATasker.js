@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import { setUser } from "../../ducks/taskerReducer";
+import { setUser, createProfile } from "../../ducks/taskerReducer";
 import "./BecomeATasker.css";
 import { Link } from "react-router-dom";
+
 class BecomeATasker extends Component {
   constructor(props) {
     super(props);
@@ -30,17 +31,6 @@ class BecomeATasker extends Component {
       });
   }
 
-  submitInfo = (tasker_id, name, email, phone, location, about) => {
-    axios.post("/api/tasker", {
-      tasker_id,
-      name,
-      email,
-      phone,
-      location,
-      about
-    });
-  };
-
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
@@ -54,6 +44,7 @@ class BecomeATasker extends Component {
   render() {
     console.log(this.props, "tasker props");
     const { tasker_id, name, email, phone, location, about } = this.state;
+    const { createProfile } = this.props;
     return (
       <div className="become-tasker-page">
         <div className="become-tasker-container">
@@ -94,7 +85,7 @@ class BecomeATasker extends Component {
             <Link to="/expertise">
               <button
                 onClick={() =>
-                  this.submitInfo(name, email, phone, location, about)
+                  createProfile(tasker_id, name, email, phone, location, about)
                 }
               >
                 Start Registration
@@ -107,10 +98,10 @@ class BecomeATasker extends Component {
   }
 }
 function mapStateToProps(state) {
-  let { user } = state;
+  let { taskerProfile, user } = state.tasker;
   return { user };
 }
 export default connect(
   mapStateToProps,
-  { setUser }
+  { setUser, createProfile }
 )(BecomeATasker);

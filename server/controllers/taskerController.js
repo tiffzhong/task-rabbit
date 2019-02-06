@@ -1,14 +1,15 @@
 module.exports = {
   createProfile: (req, res) => {
     const database = req.app.get("db");
-    let { tasker_id, name, email, phone, location, about } = req.body;
+    let { name, email, phone, location, about } = req.body;
+    console.log(req.body, "body");
     database
-      .tasker_create([tasker_id, name, email, phone, location, about])
+      .tasker_create([name, email, phone, location, about])
       .then(() => res.status(200).send())
       .catch(err => {
         console.log("error in createProfile", err);
       });
-  }
+  },
   // editProfile: (req, res) => {
   //   const database = req.app.get("db");
   //   let { name, email, phone, location, about } = req.body;
@@ -23,4 +24,16 @@ module.exports = {
 
   //     .catch(error => console.log("Error in editProfile", error));
   // }
+
+  addExpertise: (req, res) => {
+    const database = req.app.get("db");
+    let { tasker_id, skill, pricing } = req.body;
+    console.log(req.body, "body");
+    database
+      .expertise_add([tasker_id, skill, pricing])
+      .then(() => res.status(200).send())
+      .catch(err => {
+        console.log("error in createProfile", err);
+      });
+  }
 };
