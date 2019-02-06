@@ -1,13 +1,32 @@
 footer {
-  display: flex;
+  height: 70px;
   width: 100%;
-  justify-content: space-around;
   background-color: lightgray;
   font-size: 18px;
+}
+
+footer div {
+  padding-top: 25px;
+  margin: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-links {
+  /* background: red; */
+  /* margin-top: 15px;
+  margin: 20px; */
+  display: flex;
+  align-items: center;
+}
+footer p {
+  color: black;
+  font-weight: 100;
 }
 footer a {
   text-decoration: none;
   color: black;
+  font-weight: 100;
 }
 footer a:hover {
   color: green;

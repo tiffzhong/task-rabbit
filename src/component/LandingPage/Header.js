@@ -10,36 +10,36 @@ const Header = () => {
       </div>
       <div className="header-links">
         <span>
-          <Link to="/">
-            <p>Mounting & Installation</p>
+          <Link to="/mounting_form">
+            <button>Mounting & Installation</button>
           </Link>
-          <Link to="/">
-            <p>Delivery Service</p>
+          <Link to="/delivery_form">
+            <button>Delivery Service</button>
           </Link>
-          <Link to="/">
-            <p>Yardwork/Landscaping</p>
-          </Link>
-        </span>
-        <span>
-          <Link to="/">
-            <p>Home Improvement</p>
-          </Link>
-          <Link to="/">
-            <p>Moving & Packing</p>
-          </Link>
-          <Link to="/">
-            <p>Pet Service</p>
+          <Link to="/yardwork_form">
+            <button>Yardwork/Landscaping</button>
           </Link>
         </span>
         <span>
-          <Link to="/">
-            <p>Furniture Assembly</p>
+          <Link to="/home_form">
+            <button>Home Improvement</button>
           </Link>
-          <Link to="/">
-            <p>Cleaning Service</p>
+          <Link to="/moving_form">
+            <button>Moving & Packing</button>
           </Link>
-          <Link to="/">
-            <p>Cooking Service</p>
+          <Link to="/pet_form">
+            <button>Pet Service</button>
+          </Link>
+        </span>
+        <span>
+          <Link to="/furniture_form">
+            <button>Furniture Assembly</button>
+          </Link>
+          <Link to="/cleaning_form">
+            <button>Cleaning Service</button>
+          </Link>
+          <Link to="/cooking_form">
+            <button>Cooking Service</button>
           </Link>
         </span>
       </div>

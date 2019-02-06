@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./NavBar.css";
 import axios from "axios";
 import { connect } from "react-redux";
-import { setUser } from "../../ducks/reducer";
+import { setUser } from "../../ducks/taskerReducer";
 
 class NavBar extends Component {
   constructor(props) {
@@ -41,52 +41,47 @@ class NavBar extends Component {
     window.location.pathname = "/";
   }
 
-  toggle = () => {
+  toggler = () => {
+    console.log('toggle', this.state.toggle)
     this.setState({
       toggle: !this.state.toggle
     });
   };
 
   render() {
+    // window.addEventListener('mouseup', function(event) {
+    //   var menu = document.getElementById('menuBox');
+    //   console.log('menuBox =====> ',menu)
+    //   if(event.target != menu && event.target.parentNode != menu) {
+    //     menu.style.display = 'none';
+    //   }
+    // })
+    const { user } = this.props;
     return (
       <nav>
-        <div className="logo">
-          <Link to="/">
-            {" "}
-            <div>Logo</div>
-          </Link>
-        </div>
-        <div className="sidelinks">
-          <Link to="/how-it-works">
-            <div>How it works</div>
-          </Link>
-          <Link to="login">
-            <div onClick={this.login}>Login</div>
-          </Link>
-          <Link to="/create-tasker-profile">
-            <div>Become a Tasker</div>
-          </Link>
-        </div>
-        <div className="menuButton-container">
-          <div className="menuButton">
-            <button onClick={this.toggler}>
-              <i class="fas fa-bars" />
-            </button>
+        <div className='navBar'>
+          <div className="logo">
+            <Link to="/">
+              <img src='https://www.logosurfer.com/wp-content/uploads/2018/03/taskrabbit-logo_1.png' />
+            </Link>
           </div>
-          <div className={this.state.toggle ? "showDropdown" : "hideDropdown"}>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/how-it-works">How it Works</Link>
-              </li>
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
-              <li>
-                <Link to="/create-tasker-profile">Become a Tasker</Link>
-              </li>
+
+          <div className="sidelinks">
+            <Link to="/how-it-works">How it works</Link>
+            <Link to="/create-tasker-profile">Become a Tasker</Link>
+            <button className={user ? 'hide' : 'login'} onClick={this.login}>Log in</button>
+            <button className={user ? 'login' : 'hide'} onClick={this.logout}>Log out</button>
+            {/* {user ? user.name : 'Please Log in!'} */}
+          </div>
+
+          <div className="menuButton-container">
+            {/* <button onClick={this.toggler} class='fas fa-bars'></button> */}
+            <button className='menuButton' onClick={this.toggler} >☰</button>
+            <ul id='menuBox' className={this.state.toggle ? "showDropdown" : "hideDropdown"}>
+              <Link to="/">Home</Link>
+              <Link to="/how-it-works">How it Works</Link>
+              <a onClick={() => this.login()}>Register/Login</a>
+              <Link to="/create-tasker-profile">Become a Tasker</Link>
             </ul>
           </div>
         </div>
@@ -96,7 +91,9 @@ class NavBar extends Component {
 }
 function mapStateToProps(state) {
   let { user } = state;
-  return { user };
+  return {
+    user
+  };
 }
 
 export default connect(
