@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { createExpertise } from "../../ducks/taskerReducer";
 import "./TaskerExpertise.css";
+
 class TaskerExpertise extends Component {
   constructor(props) {
     super(props);
@@ -36,6 +37,7 @@ class TaskerExpertise extends Component {
       [name]: value
     });
   };
+
   render() {
     console.log("state", this.state);
     const {
@@ -62,6 +64,7 @@ class TaskerExpertise extends Component {
     return (
       <div className="tasker-expertise-window">
         <h2>What is your hourly rate?</h2>
+
         <label>
           <input
             type="checkbox"
