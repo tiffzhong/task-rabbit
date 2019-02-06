@@ -1,16 +1,18 @@
+
+/* How it Works*/
 .fullpage {
   width: 90%;
   margin: 0% auto;
  }
- p {
+.title{
   font-weight: bold;
-  font-size: 25px;
- }
- .words {
   font-size: 20px;
+  padding: 10px;
+}
+ .words {
+  font-size: 18px;
   letter-spacing: 1px;
-  /* word-spacing: 1px; */
-  /* text-indent: 10px; */
+
   text-align: justify;
   text-justify: inter-word;
  }
@@ -111,7 +113,7 @@
   height: 300px;
   border-radius: 10px;
  }
- /* / *Navbar*/ */
+ /* Navbar*/ 
  nav {
   background: white;
   border-bottom: solid grey 1px;

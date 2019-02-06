@@ -26,9 +26,9 @@ class NavBar extends Component {
     );
     window.location = `https://${
       process.env.REACT_APP_AUTH0_DOMAIN
-    }/authorize/?client_id=${
+      }/authorize/?client_id=${
       process.env.REACT_APP_AUTH0_CLIENT_ID
-    }&scope=openid%20profile%20email&redirect_uri=${redirectUri}&response_type=code`;
+      }&scope=openid%20profile%20email&redirect_uri=${redirectUri}&response_type=code`;
   }
 
   logout = () => {
@@ -61,7 +61,7 @@ class NavBar extends Component {
             <div>How it works</div>
           </Link>
           <Link to="login">
-            <div>Login</div>
+            <div onClick={this.login}>Login</div>
           </Link>
           <Link to="/create-tasker-profile">
             <div>Become a Tasker</div>
