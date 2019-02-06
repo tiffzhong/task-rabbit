@@ -20,29 +20,25 @@
 .form input {
     height: 50px;
     width: 400px;
-    margin: 10px;
     text-align: center;
     font-size: 10px;
 }
 
 .form h2 {
     color: black;
-    /* margin: 10px; */
     margin: 0% auto;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    
  
 }
 
-.title{
-    display: inline-block;
-    padding: 10px;
-    width: 280px;
-    text-align: center;    
-}
 
 .calendar{
     font-weight: bold;
     font-size: 10px;
     background-color:white;
+    
     
     
 }
@@ -79,10 +75,11 @@
 }
 
 .time-box {
-   
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: yellow;
   
 }
 
