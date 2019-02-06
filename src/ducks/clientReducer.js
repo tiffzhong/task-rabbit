@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const INITIAL_STATE = {
-  taskType: null
+  taskType: ''
 };
 
 const UPDATE_TASK_TYPE = "UPDATE_TASK_TYPE";

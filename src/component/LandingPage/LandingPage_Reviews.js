@@ -9,7 +9,7 @@ const LandingPage_Reviews = () => {
         <div className="reviews">
           <div>
             <div>
-              <img src="Images/sean.jpg" />
+              <img src="Images/sean.jpg" alt='' />
             </div>
             <div>
               <p>
@@ -26,7 +26,7 @@ const LandingPage_Reviews = () => {
           <div>
             {" "}
             <div>
-              <img src="Images/hunter.jpg" />
+              <img src="Images/hunter.jpg" alt=''  />
             </div>{" "}
             <div>
               <p>
@@ -43,7 +43,7 @@ const LandingPage_Reviews = () => {
           <div>
             {" "}
             <div>
-              <img src="Images/michael.jpg" />
+              <img src="Images/michael.jpg"  alt='' />
             </div>
             <div>
               <p>
@@ -60,7 +60,7 @@ const LandingPage_Reviews = () => {
           <div>
             {" "}
             <div>
-              <img src="Images/josh.jpg" />
+              <img src="Images/josh.jpg"  alt='' />
             </div>{" "}
             <div>
               <p>

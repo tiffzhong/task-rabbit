@@ -1,6 +1,7 @@
 .fullpage {
   width: 90%;
   margin: 0% auto;
+  margin-top: 100px;
 }
 p {
   font-weight: bold;
@@ -112,93 +113,166 @@ p {
 }
 /*Navbar*/
 nav {
-  background: white;
-  border-bottom: solid grey 1px;
-  box-shadow: 5px grey;
+  height: 120px;
   width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: center;
   position: fixed;
-  z-index: 300;
   top: 0;
+  left: 0;
+  
 }
-.sidelinks div {
-  display: inline-block;
-  justify-content: flex-end;
-  flex-direction: row;
-  width: 150px;
-  margin-left: 20px;
-  margin-top: 20px;
-}
-.logo div {
+
+.navBar {
+  /* max-width: 1000px; */
+  width: 100%;
   display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
-  width: 275px;
-  margin-right: 200px;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  /* background: yellow; */
+
+}
+
+nav div ul {
+  display: flex;
+  background: white;
+  /* height: 200px; */
+}
+
+nav li {
+  margin: 0 10px;
+  color: white;
+}
+
+.sidelinks {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background: black; */
+
+}
+
+.sidelinks a {
+  color: green;
+}
+
+.sidelinks button {
+  background: white;
+  color: green;
+  margin: 5px;
+  width: 60px;
+  height: 30px;
+  border: solid 1px rgb(117, 193, 117);
+}
+.sidelinks button:hover {
+  background: green;
+  color: white;
+}
+
+nav a {
+  color: white;
   text-decoration: none;
-  margin-top: 20px;
+}
+.showDropdown a {
+  color: green;
+}
+.showDropdown li {
+  color: green;
+}
+
+.login {
+  color: white;
+}
+
+.logo img {
+  height: 80px;
+  margin: 0 auto;
+  /* background: black; */
 }
 .hideDropdown {
   display: none;
 }
-.menuButton {
+.menuButton-container {
+  display: none;
+}
+.hide {
   display: none;
 }
 
-@media only screen and (max-width: 415px) {
-  nav {
-    width: 100%;
-    align-items: center;
-    /* background: gray; */
-  }
-  nav div ul {
-    background-color: rgb(207, 199, 199);
-    width: 100vw;
-    margin-top: 70px;
-    height: 100px;
-  }
-  nav a {
-    text-decoration: none;
-  }
-  nav div li a {
-    text-decoration: none;
-  }
-  .menuButton-container {
-    display: flex;
-    height: 100%;
-    width: 100%;
-  }
-  .sidelinks div {
-    display: none;
-  }
-  .logo div {
-    width: 10px;
-    margin-left: 200px;
-  }
-}
 @media only screen and (max-width: 700px) {
-  .menuButton-container {
+  nav ul {
+    position: fixed;
+    top: 90px;
+    left: 0;
+    flex-direction: column;
+    width: 100vw;
+    padding: 20px;
+    transition: .3s;
+    z-index: -1;
+  }
+  nav li {
+    margin: 10px 0;
+  }
+  
+  .logo img {
+    margin-left: 30vw;
+  }
+  
+  /* .menuButton-container {
     display: flex;
     position: absolute;
     width: 100%;
-  }
+  } */
   .menuButton {
     display: flex;
-    position: absolute;
-    margin-top: 30px;
-    height: 30px;
-    left: 0;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 30px;
+  }
+  .menuButton:hover {
+    background: green;
+    color: white;
+  
   }
   .showDropdown {
     display: flex;
     flex-direction: column;
-    z-index: 999;
+    /* z-index: 999; */
     position: absolute;
     transform: translate(0, 0px);
-    transition: all 3s, ease-out 2s, ease-in 4s;
+    /* transition: all 3s, ease-out 2s, ease-in 4s; */
     width: 100vw;
     text-align: center;
+  }
+
+  .menuButton:focus {
+
+  }
+
+  .sidelinks {
+    display: none;
+  }
+
+  .menuButton-container {
+    display: flex;
+  }
+  .menuButton-container a {
+    margin: 5px;
+  }
+  .menuButton-container a:hover {
+    cursor: pointer;
+  }
+
+  #menuBox {
+    /* display: flex;
+    flex-direction: column;
+    position: absolute;
+    transform: translate(0, 0px);
+    width: 100vw;
+    text-align: center;
+    background: red; */
   }
 }
