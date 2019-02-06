@@ -30,6 +30,10 @@
     /* margin: 10px; */
 }
 
+h2 {
+    font-weight: lighter;
+  }
+
 .shadow-box {
     width: 150%;
     height: 4px;
@@ -41,7 +45,7 @@
 }
 
 .outer-container {
-    background: whitesmoke;
+    
     margin-top: 50px;
     /* height: 600px; */
     width: 1100px;
@@ -59,6 +63,7 @@
     align-items: center;
     flex-direction: column;
     position: relative;
+    background: whitesmoke;
 }
 
 .time-box {
@@ -87,6 +92,7 @@
     color: black;
     position: relative;
     /* align-items: center; */
+    background: whitesmoke;
 }
 
 .form-button {

@@ -4,7 +4,7 @@ import './Client_Form.css';
 import { updateDuration } from '../../ducks/clientReducer';
 import { updateLocationStart } from '../../ducks/clientReducer';
 import { updateStartDate } from '../../ducks/clientReducer';
-import { updateStartTime } from '../../ducks/clientReducer';
+import { updateEndDate } from '../../ducks/clientReducer';
 import { updateVehicle } from '../../ducks/clientReducer';
 import { updateTaskDetails } from '../../ducks/clientReducer';
 
@@ -22,7 +22,7 @@ class Mounting_Form extends Component {
     
     handleToggle = (name, value, state) => {
         if(name ==='scheduleToggle'){
-            if (this.props.startDate == '' || this.props.startTime == '') {
+            if (this.props.startDate == '' || this.props.endDate == '') {
                 alert('you must answer all questions before continuing')
             }
         } else if(state === ''){
@@ -90,7 +90,7 @@ class Mounting_Form extends Component {
                                 </div>
                                 <div className='small-question-box'>
                                     <h2>Task Start Time</h2>
-                                    <input placeholder='Enter a time to begin task' onChange={e=>this.props.updateStartTime(e.target.value)}></input>
+                                    <input placeholder='Enter a time to begin task' onChange={e=>this.props.updateEndDate(e.target.value)}></input>
                                 </div>
                             </div>
                             <div className='form-button'>
@@ -123,14 +123,14 @@ class Mounting_Form extends Component {
 }
 
 const mapStateToProps = state => {
-    const { taskType, locationStart, duration, vehicle, startDate, startTime, taskDetails } = state.client;
+    const { taskType, locationStart, duration, vehicle, startDate, endDate, taskDetails } = state.client;
     return {
         taskType,
         locationStart,
         duration,
         vehicle,
         startDate,
-        startTime,
+        endDate,
         taskDetails
     }
 }
@@ -139,7 +139,7 @@ const  mapDispatchToProps = {
     updateDuration: updateDuration,
     updateLocationStart: updateLocationStart,
     updateStartDate: updateStartDate,
-    updateStartTime: updateStartTime,
+    updateEndDate: updateEndDate,
     updateVehicle: updateVehicle,
     updateTaskDetails: updateTaskDetails
 }
