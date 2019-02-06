@@ -3,15 +3,15 @@ import DateTimePicker from 'react-datetime-picker'
 
 
 
-class Calendar extends Component {
+class CalendarEnd extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            date: new Date(),
+            endDate: new Date(),
 
         }
     }
-    onChange = date => this.setState({ date })
+    onChange = endDate => this.setState({ endDate })
 
 
 
@@ -20,7 +20,7 @@ class Calendar extends Component {
         return (<div>
             <DateTimePicker
                 onChange={this.onChange}
-                value={this.state.date}
+                value={this.state.endDate}
                 disableClock={true}
             />
 
@@ -28,4 +28,4 @@ class Calendar extends Component {
     }
 }
 
-export default Calendar;
+export default CalendarEnd;

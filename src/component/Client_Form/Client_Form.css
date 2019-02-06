@@ -28,6 +28,23 @@
 .form h2 {
     color: black;
     /* margin: 10px; */
+    margin: 0% auto;
+ 
+}
+
+.title{
+    display: inline-block;
+    padding: 10px;
+    width: 280px;
+    text-align: center;    
+}
+
+.calendar{
+    font-weight: bold;
+    font-size: 10px;
+    background-color:white;
+    
+    
 }
 
 .shadow-box {
@@ -62,10 +79,11 @@
 }
 
 .time-box {
-    /* background: blue; */
+   
     display: flex;
     justify-content: center;
     align-items: center;
+  
 }
 
 .details {
@@ -114,4 +132,8 @@
 
 .form-button button:focus {
     outline: none;
+}
+
+.small-question-box {
+    margin-right: 20px;
 }

@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Client_Form.css';
+import Calendar from "../Calendar/Calendar";
+import CalendarEnd from "../Calendar/CalenderEnd";
 
 
 class Cooking_Form extends Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
 
         }
     }
-    
+
 
     render() {
 
-        
+
         return (
             <div className='form'>
                 Mounting Form
@@ -39,12 +41,14 @@ class Cooking_Form extends Component {
                         <p>SCHEDULE</p>
                         <div className='time-box'>
                             <div className='small-question-box'>
-                                <h2>Task Start Date</h2>
-                                <input placeholder='Enter the date to begin task'></input>
+                                <h2>Task Start Date & Time</h2>
+                                <div><Calendar /></div>
+
                             </div>
                             <div className='small-question-box'>
-                                <h2>Task Start Time</h2>
-                                <input placeholder='Enter a time to begin task'></input>
+                                <h2>Task End Date & Time</h2>
+                                <div><CalendarEnd /></div>
+
                             </div>
                         </div>
                     </div>
@@ -56,7 +60,7 @@ class Cooking_Form extends Component {
                     <div className='form-button'>
                         <button>Book Task</button>
                     </div>
-                    
+
                 </div>
             </div>
         );

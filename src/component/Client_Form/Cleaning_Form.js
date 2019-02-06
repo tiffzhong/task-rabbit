@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Client_Form.css';
+import Calendar from "../Calendar/Calendar";
+import CalendarEnd from "../Calendar/CalenderEnd"
+
 
 
 class Cleaning_Form extends Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
 
         }
     }
-    
+
 
     render() {
 
-       
+
         return (
             <div className='form'>
+
                 Mounting Form
                 <span className='shadow-box'></span>
                 <div className='outer-container'>
@@ -39,12 +43,13 @@ class Cleaning_Form extends Component {
                         <p>SCHEDULE</p>
                         <div className='time-box'>
                             <div className='small-question-box'>
-                                <h2>Task Start Date</h2>
-                                <input placeholder='Enter the date to begin task'></input>
-                            </div>
-                            <div className='small-question-box'>
-                                <h2>Task Start Time</h2>
-                                <input placeholder='Enter a time to begin task'></input>
+
+                                {/* <input placeholder='Enter the date to begin task' /> */}
+
+                                <h2><div className="title">Task Start Date & Time</div><div className="title"> Task End Date & Time</div> </h2>
+                                <div className="calendar"><Calendar /></div>
+                                {/* <input placeholder='Enter a time to begin task' /> */}
+                                <div><CalendarEnd /></div>
                             </div>
                         </div>
                     </div>
@@ -56,7 +61,7 @@ class Cleaning_Form extends Component {
                     <div className='form-button'>
                         <button>Book Task</button>
                     </div>
-                    
+
                 </div>
             </div>
         );
