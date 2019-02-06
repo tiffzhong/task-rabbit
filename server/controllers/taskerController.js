@@ -27,13 +27,53 @@ module.exports = {
 
   addExpertise: (req, res) => {
     const database = req.app.get("db");
-    let { tasker_id, skill, pricing } = req.body;
+    let {
+      tasker_id,
+      mounting,
+      mountingHourly,
+      delivery,
+      deliveryHourly,
+      yard,
+      yardHourly,
+      home,
+      homeHourly,
+      moving,
+      movingHourly,
+      pet,
+      petHourly,
+      furniture,
+      furnitureHourly,
+      cleaning,
+      cleaningHourly,
+      cooking,
+      cookingHourly
+    } = req.body;
     console.log(req.body, "body");
     database
-      .expertise_add([tasker_id, skill, pricing])
+      .expertise_add([
+        tasker_id,
+        mounting,
+        mountingHourly,
+        delivery,
+        deliveryHourly,
+        yard,
+        yardHourly,
+        home,
+        homeHourly,
+        moving,
+        movingHourly,
+        pet,
+        petHourly,
+        furniture,
+        furnitureHourly,
+        cleaning,
+        cleaningHourly,
+        cooking,
+        cookingHourly
+      ])
       .then(() => res.status(200).send())
       .catch(err => {
-        console.log("error in createProfile", err);
+        console.log("error in addExpertise", err);
       });
   }
 };

@@ -38,11 +38,26 @@ create table tasker_profile(
 
 create table tasker_expertise(
     skills_id serial primary key,
-    tasker_skill_id int references tasker_profile(tasker_profile_id),
-    skill_name text,
-    skill_price int
+    tasker_id int references tasker_profile(tasker_profile_id),
+    mounting boolean,
+    delivery boolean,
+      yard boolean,
+      home boolean,
+      moving boolean,
+      pet boolean,
+      furniture boolean,
+      cleaning boolean,
+      cooking boolean,
+      mountingprice text,
+      deliveryHourly text,
+      yardHourly text,
+      homeHourly text,
+      movingHourly text,
+      petHourly text,
+      furnitureHourly text,
+      cleaningHourly text,
+      cookingHourly text
 )
-
 
 -- To stay logged in. No need to sign in w Auth0 every time
 CREATE TABLE "session" (

@@ -48,12 +48,52 @@ export function createProfile(tasker_id, name, email, phone, location, about) {
   };
 }
 
-export function createExpertise(tasker_id, skill, pricing) {
+export function createExpertise(
+  tasker_id,
+  mounting,
+  mountingHourly,
+  delivery,
+  deliveryHourly,
+  yard,
+  yardHourly,
+  home,
+  homeHourly,
+  moving,
+  movingHourly,
+  pet,
+  petHourly,
+  furniture,
+  furnitureHourly,
+  cleaning,
+  cleaningHourly,
+  cooking,
+  cookingHourly
+) {
   return {
     type: ADD_EXPERTISE,
     payload: axios
-      .post("/api/tasker-expertise", { tasker_id, skill, pricing })
+      .post("/api/tasker-expertise", {
+        tasker_id,
+        mounting,
+        mountingHourly,
+        delivery,
+        deliveryHourly,
+        yard,
+        yardHourly,
+        home,
+        homeHourly,
+        moving,
+        movingHourly,
+        pet,
+        petHourly,
+        furniture,
+        furnitureHourly,
+        cleaning,
+        cleaningHourly,
+        cooking,
+        cookingHourly
+      })
       .then(() => (window.location.pathname = "/tasker-dashboard"))
-      .catch(error => console.log("error in createExpertise", error))
+      .catch(error => console.log("error in createExpertise in redux", error))
   };
 }
