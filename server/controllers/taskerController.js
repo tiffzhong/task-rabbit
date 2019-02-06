@@ -5,7 +5,7 @@ module.exports = {
     console.log(req.body, "body");
     database
       .tasker_create([name, email, phone, location, about])
-      .then(() => res.status(200).send())
+      .then(newTasker => res.status(200).send(newTasker[0]))
       .catch(err => {
         console.log("error in createProfile", err);
       });
@@ -28,7 +28,7 @@ module.exports = {
   addExpertise: (req, res) => {
     const database = req.app.get("db");
     let {
-      tasker_id,
+      tasker_profile_id,
       mounting,
       mountingHourly,
       delivery,
@@ -48,32 +48,47 @@ module.exports = {
       cooking,
       cookingHourly
     } = req.body;
-    console.log(req.body, "body");
+    console.log(
+      req.body,
+      "body of addExpertise",
+      /true/i.test(mounting),
+      typeof /true/i.test(mounting)
+    );
     database
-      .expertise_add([
-        tasker_id,
-        mounting,
+      .tasker_expertise_add([
+        tasker_profile_id,
+        /true/i.test(mounting),
         mountingHourly,
-        delivery,
+        /true/i.test(delivery),
         deliveryHourly,
-        yard,
+        /true/i.test(yard),
         yardHourly,
-        home,
+        /true/i.test(home),
         homeHourly,
-        moving,
+        /true/i.test(moving),
         movingHourly,
-        pet,
+        /true/i.test(pet),
         petHourly,
-        furniture,
+        /true/i.test(furniture),
         furnitureHourly,
-        cleaning,
+        /true/i.test(cleaning),
         cleaningHourly,
-        cooking,
+        /true/i.test(cooking),
         cookingHourly
       ])
-      .then(() => res.status(200).send())
+      .then(newTaskerProfile => res.status(200).send(newTaskerProfile[0]))
       .catch(err => {
         console.log("error in addExpertise", err);
       });
+  },
+
+  getProfile: (req, res) => {
+    const database = req.app.get("db");
+    let { tasker_id } = req.params;
+    database.tasker_profile_get([tasker_id]).then(profile => {
+      res.status(200).send(profile[0]);
+    });
+    // let { name, email, phone, location, about } = req.body;
+    console.log(req.body, "body");
   }
 };

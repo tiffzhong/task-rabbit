@@ -1,7 +1,8 @@
 insert into tasker_profile
-(name,
+( name,
 email,
 phone,
 location,
 about)
-values($1, $2, $3, $4, $5);
+values($1, $2, $3, $4, $5)
+returning *;

@@ -1,0 +1,1 @@
+select * from tasker_profile where tasker_id = $1;
