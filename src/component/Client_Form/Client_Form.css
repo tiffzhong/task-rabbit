@@ -1,12 +1,33 @@
 .form {
     margin-top: 100px;
-    height: 800px;
+    /* height: 800px; */
     /* background: red; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     color: white;
+    
+}
+
+.form p {
+    color: gray;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.form input {
+    height: 50px;
+    width: 400px;
+    margin: 10px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.form h2 {
+    color: black;
+    /* margin: 10px; */
 }
 
 .shadow-box {
@@ -14,26 +35,79 @@
     height: 4px;
     box-shadow: 0px 4px 12px 2px lightgray;
     border: none;
+    position: fixed;
+    top: 120px;
+    background: white;
 }
 
 .outer-container {
     background: whitesmoke;
-    margin-top: 150px;
+    margin-top: 50px;
     /* height: 600px; */
     width: 1100px;
     margin-bottom: 50px;
     
+
 }
 
 .question-box {
     border: solid 2px lightgray;
     margin-top: 10px;
-    height:200px;
+    height:300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
 }
 
-.box-test {
-    width: 200px;
-    margin: 20px;
+.time-box {
+    /* background: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.details {
+    height: 400px;
+}
+
+.details input {
     height: 200px;
-    background: red;
+    width: 800px;
+}
+
+.toggle-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100px;
+    border: solid 2px lightgray;
+    margin-top: 10px;
+    color: black;
+    position: relative;
+    /* align-items: center; */
+}
+
+.form-button {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.form-button button {
+    margin-top: 10px;
+    height: 60px;
+    width: 130px;
+    background: rgb(0, 170, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.form-button button:hover {
+    background: rgb(0, 151, 0);
 }
