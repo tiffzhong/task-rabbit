@@ -111,3 +111,7 @@
 .form-button button:hover {
     background: rgb(0, 151, 0);
 }
+
+.form-button button:focus {
+    outline: none;
+}

@@ -202,6 +202,10 @@ nav a {
   display: none;
 }
 
+button:focus {
+  outline: none;
+}
+
 @media only screen and (max-width: 700px) {
   nav ul {
     position: fixed;

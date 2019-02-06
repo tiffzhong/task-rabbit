@@ -158,6 +158,9 @@ header button:hover {
     color: white;
     
 }
+button:focus {
+    outline: none;
+}
  
 
 
