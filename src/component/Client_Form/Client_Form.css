@@ -9,11 +9,31 @@
     color: white;
 }
 
+.shadow-box {
+    width: 150%;
+    height: 4px;
+    box-shadow: 0px 4px 12px 2px lightgray;
+    border: none;
+}
+
 .outer-container {
     background: whitesmoke;
-    margin-top: 50px;
-    height: 600px;
+    margin-top: 150px;
+    /* height: 600px; */
     width: 1100px;
     margin-bottom: 50px;
+    
+}
+
+.question-box {
     border: solid 2px lightgray;
+    margin-top: 10px;
+    height:200px;
+}
+
+.box-test {
+    width: 200px;
+    margin: 20px;
+    height: 200px;
+    background: red;
 }
