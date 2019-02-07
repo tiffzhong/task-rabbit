@@ -196,6 +196,11 @@ nav li {
   margin-left: 50px;
 }
 
+.nav-links a:hover {
+  color: rgb(103, 170, 2);
+  
+}
+
 /* dropdown links */
 /* .open {
   position: fixed;
