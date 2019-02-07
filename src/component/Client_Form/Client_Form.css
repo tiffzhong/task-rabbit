@@ -20,14 +20,22 @@
 .form input {
     height: 50px;
     width: 400px;
-    margin: 10px;
     text-align: center;
     font-size: 10px;
 }
 
 .form h2 {
     color: black;
-    /* margin: 10px; */
+    margin: 0% auto;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
+
+
+.calendar{
+    font-weight: bold;
+    font-size: 10px;
+    background-color:white;
 }
 
 .shadow-box {
@@ -62,10 +70,12 @@
 }
 
 .time-box {
-    /* background: blue; */
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: yellow;
+  
 }
 
 .details {
@@ -114,4 +124,8 @@
 
 .form-button button:focus {
     outline: none;
+}
+
+.small-question-box {
+    margin-right: 20px;
 }

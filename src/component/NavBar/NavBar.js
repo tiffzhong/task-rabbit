@@ -26,9 +26,9 @@ class NavBar extends Component {
     );
     window.location = `https://${
       process.env.REACT_APP_AUTH0_DOMAIN
-    }/authorize/?client_id=${
+      }/authorize/?client_id=${
       process.env.REACT_APP_AUTH0_CLIENT_ID
-    }&scope=openid%20profile%20email&redirect_uri=${redirectUri}&response_type=code`;
+      }&scope=openid%20profile%20email&redirect_uri=${redirectUri}&response_type=code`;
   }
 
   logout = () => {
@@ -47,7 +47,7 @@ class NavBar extends Component {
       toggle: !this.state.toggle
     });
   };
-  
+
   render() {
     // window.addEventListener('mouseup', function(event) {
     //   var menu = document.getElementById('menuBox');
@@ -74,14 +74,14 @@ class NavBar extends Component {
             {/* {user ? user.name : 'Please Log in!'} */}
           </div>
 
-          <div  className="menuButton-container">
+          <div className="menuButton-container">
             {/* <button onClick={this.toggler} class='fas fa-bars'></button> */}
             <button className='menuButton' onClick={this.toggler} >☰</button>
             <ul id='menuBox' className={this.state.toggle ? "showDropdown" : "hideDropdown"}>
-                <Link to="/">Home</Link>
-                <Link to="/how-it-works">How it Works</Link>
+              <Link to="/">Home</Link>
+              <Link to="/how-it-works">How it Works</Link>
               <a onClick={() => this.login()}>Register/Login</a>
-                <Link to="/create-tasker-profile">Become a Tasker</Link>
+              <Link to="/create-tasker-profile">Become a Tasker</Link>
             </ul>
           </div>
         </div>
@@ -91,8 +91,8 @@ class NavBar extends Component {
 }
 function mapStateToProps(state) {
   let { user } = state;
-  return { 
-    user 
+  return {
+    user
   };
 }
 

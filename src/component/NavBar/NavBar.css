@@ -1,15 +1,22 @@
+
+/* How it Works*/
 .fullpage {
   width: 90%;
   margin: 0% auto;
+ }
+.title{
+  font-weight: bold;
   margin-top: 100px;
 }
-p {
-  font-weight: bold;
-  font-size: 25px;
-}
+
 .words {
   font-size: 20px;
+  padding: 10px;
+}
+ .words {
+  font-size: 18px;
   letter-spacing: 1px;
+
   /* word-spacing: 1px; */
   text-align: justify;
   text-justify: inter-word;
