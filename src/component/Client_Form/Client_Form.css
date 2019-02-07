@@ -74,6 +74,7 @@ h2 {
     position: fixed;
     top: 120px;
     background: white;
+    z-index: 4;
 }
 
 .outer-container {
@@ -122,11 +123,31 @@ h2 {
     background-color:white;
 }
 
+.checkbox-input-container {
+    width: 400px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    border: solid .5px rgb(221, 221, 221);
+}
+.checkbox-input {
+    /* background: white; */
+    display: flex;
+    align-items: center;
+    
+}
+
+.checkbox-input input {
+    height: 20px;
+    width: 40px;
+    margin: 10px;
+}
+
 .details {
     height: 400px;
 }
 
-.details input {
+.details textarea {
     height: 200px;
     width: 50vw;
 }

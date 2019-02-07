@@ -76,7 +76,7 @@ class NavBar extends Component {
                 <a className='services-link' onClick={this.linkToggler}  >
                   Services
                 </a>
-                <ul  id='nav-popover-dropdown' className={this.state.toggleLinks ? "nav-popover-dropdown" : "hideDropdown"}>
+                <ul  id='nav-popover-dropdown' className={this.state.toggleLinks ? "showDropdown" : "hideDropdown"}>
                   <div className='dropdown-links'>
                   <p className='dropdown-title' >Task Services</p>
                   <Link to="/mounting_form" className='nav-popover-link' onClick={this.linkToggler} >Mounting & Installation</Link>

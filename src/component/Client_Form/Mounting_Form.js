@@ -13,6 +13,14 @@ class Mounting_Form extends Component {
             durationToggle: false,
             vehicleToggle: false,
             scheduleToggle: false,
+            // taskType: this.props.taskType,
+            // locationStart: this.props.locationStart,
+            // locationEnd: this.props.locationEnd,
+            // duration: this.props.duration,
+            // vehicle: this.props.vehicle,
+            // startDate: this.props.startDate,
+            // endDate: this.props.endDate,
+            // taskDetails: this.props.taskDetails,
 
         }
     }
@@ -21,6 +29,10 @@ class Mounting_Form extends Component {
         if(name ==='scheduleToggle'){
             if (this.props.startDate == '' || this.props.endDate == '') {
                 alert('you must answer all questions before continuing')
+            } else {
+                this.setState({
+                    [name]: value 
+                })
             }
         } else if (state === '') {
             alert('you must answer all questions before continuing')
@@ -33,22 +45,49 @@ class Mounting_Form extends Component {
         }
     }
 
+    handleCheckbox = (id) => {
+        const uncheck = document.getElementById([id])
+        if(uncheck.checked === false) {
+            this.props.updateVehicle(null);
+        } else if(id === 'vehicleCar'){
+            this.props.updateVehicle("Car");
+            var truck = document.getElementById('vehicleTruck')
+                truck.checked=false;
+            var naVehicle = document.getElementById('vehicleNa')
+                naVehicle.checked = false;
+        } else if (id === "vehicleTruck") {
+            this.props.updateVehicle("Truck");
+            var car = document.getElementById('vehicleCar')
+                car.checked = false;
+            var naVehicle = document.getElementById('vehicleNa')
+                naVehicle.checked = false;
+        } else if (id === 'vehicleNa') {
+            this.props.updateVehicle(null)
+            var truck = document.getElementById('vehicleTruck')
+                truck.checked=false;
+            var car = document.getElementById('vehicleCar')
+                car.checked = false;
+        }
+    }
+
     render() {
 
-
+        console.log('state =====> ', this.state)
+        console.log('props =====> ', this.props)
+        
         return (
             <div className='form'>
 
                 <span className='shadow-box'></span>
                 <div className='outer-container'>
                 <h1>Task: Mounting & Installation</h1>
-                    <div className='question-box'>
+                    <div className='question-box' >
                         <div className='inner-container'>
                             <p>LOCATION</p>
                             <h2>Your Task Start Location</h2>
                             <input placeholder='Enter a street address' onChange={e => this.props.updateLocationStart(e.target.value)} />
                             <div className='form-button'  >
-                                <button onClick={() => this.handleToggle('locationToggle', true, this.props.locationStart)}>Continue</button>
+                                <button className={this.state.locationToggle ? 'hide' : ''} onClick={() => this.handleToggle('locationToggle', true, this.props.locationStart)}>Continue</button>
                             </div>
                         </div>
                     </div>
@@ -73,14 +112,28 @@ class Mounting_Form extends Component {
                             <div className='inner-container'>
                                 <p>VEHICLE</p>
                                 <h2>Vehicle Requirements</h2>
-                                <input placeholder='Is a vehicle needed for this task? If yes, please specify a car or truck' onChange={e => this.props.updateVehicle(e.target.value)}></input>
+                                {/* <input placeholder='Is a vehicle needed for this task? If yes, please specify a car or truck' onChange={e => this.props.updateVehicle(e.target.value)}></input> */}
+                                <div className='checkbox-input-container'>
+                                    <div className='checkbox-input'>
+                                        <input type='checkbox' name='vehicleNa'  id='vehicleNa'  defaultChecked={false} onClick={e => this.handleCheckbox(e.target.id, 'NA')} />
+                                        <label>NA</label>
+                                    </div>
+                                    <div className='checkbox-input'>
+                                        <input type='checkbox' name='vehicleCar'  id='vehicleCar'   onClick={e => this.handleCheckbox(e.target.id, 'Car')}/>
+                                        <label>Car</label>
+                                    </div>
+                                    <div className='checkbox-input'>
+                                        <input type='checkbox' name='vehicleTruck'  id='vehicleTruck'  onClick={e => this.handleCheckbox(e.target.id, 'Truck')} />
+                                        <label>Truck</label>
+                                    </div>
+                                </div>
                                 <div className='form-button'>
                                     <button onClick={() => this.handleToggle('vehicleToggle', true, this.props.vehicle)}>Continue</button>
                                 </div>
                             </div>
                         </div>
                         :
-                        <div className='toggle-box'>
+                        <div className='toggle-box' onClick={()=>this.handleToggle('vehicleToggle', false, this.props.vehicle)}>
                             <p>VEHICLE</p>
                         </div>
                     }
@@ -104,7 +157,7 @@ class Mounting_Form extends Component {
                                 </div>
                             </div>
                             <div className='form-button'>
-                                <button onClick={() => this.handleToggle('vehicleToggle', true, this.props.vehicle)}>Continue</button>
+                                <button onClick={() => this.handleToggle('scheduleToggle', true, this.props.vehicle)}>Continue</button>
                             </div>
                         </div>
                         :
@@ -117,7 +170,7 @@ class Mounting_Form extends Component {
                             <div className='inner-container'>
                                 <p>DETAILS</p>
                                 <h2>Details of Task</h2>
-                                <input placeholder='Enter any additional details for the Tasker' className='details-input' onChange={e => this.props.updateTaskDetails(e.target.value)}></input>
+                                <textarea placeholder='Enter any additional details for the Tasker' className='details-input' onChange={e => this.props.updateTaskDetails(e.target.value)}></textarea>
                                 <div className='form-button'>
                                     <button>Book Task</button>
                                 </div>
