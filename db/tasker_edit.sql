@@ -5,4 +5,4 @@ email = $3,
 phone = $4,
 location = $5,
 about = $6
-where tasker_id = $1
+where tasker_profile_id = $1

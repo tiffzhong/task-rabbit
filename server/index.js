@@ -44,7 +44,8 @@ app.post("/auth/logout", authController.logout);
 
 //Tasker
 app.post("/api/tasker", taskerController.createProfile);
-app.post("/api/tasker-expertise", taskerController.addExpertise);
+// app.put("/api/tasker/:tasker_id", taskerController.editProfile);
+// app.get("/api/tasker/:tasker_id", taskerController.getProfile);
 
 const PORT = 4000;
 app.listen(PORT, () => {

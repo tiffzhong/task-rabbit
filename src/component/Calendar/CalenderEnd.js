@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DateTimePicker from 'react-datetime-picker'
-
-
+import { updateEndDate } from '../../ducks/clientReducer';
+import { connect } from 'react-redux';
 
 class CalendarEnd extends Component {
     constructor(props) {
@@ -11,9 +11,12 @@ class CalendarEnd extends Component {
 
         }
     }
-    onChange = endDate => this.setState({ endDate })
+    // onChange = endDate => this.setState({ endDate })
 
-
+    onChange = (endDate) => {
+        console.log('endDate ====> ', endDate)
+        this.props.updateEndDate({endDate})
+    }
 
 
     render() {
@@ -28,4 +31,15 @@ class CalendarEnd extends Component {
     }
 }
 
-export default CalendarEnd;
+const mapStateToProps = state => {
+    const { endDate } = state.client;
+    return {
+        endDate
+    }
+}
+
+const mapDispatchToProps = {
+    updateEndDate: updateEndDate,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CalendarEnd);
