@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import { setUser, createProfile } from "../../ducks/taskerReducer";
+import { setUser, getProfile, createProfile } from "../../ducks/taskerReducer";
 import "./BecomeATasker.css";
 import { Link } from "react-router-dom";
 
@@ -14,7 +14,8 @@ class BecomeATasker extends Component {
       email: "",
       phone: "",
       location: "",
-      about: ""
+      about: "",
+      tasker_id: null
     };
   }
   componentDidMount() {
@@ -29,7 +30,22 @@ class BecomeATasker extends Component {
           email: this.props.user.email
         });
       });
+    this.setProfile();
   }
+
+  setProfile = tasker_id => {
+    axios.get(`/api/profile/${this.props.match.params.id}`).then(res => {
+      console.log(res.data);
+      this.setState({
+        name: res.data.name,
+        email: res.data.email,
+        phone: res.data.phone,
+        location: res.data.location,
+        about: res.data.about,
+        tasker_id: res.data.tasker_id
+      });
+    });
+  };
 
   handleChange = event => {
     this.setState({
@@ -43,13 +59,13 @@ class BecomeATasker extends Component {
 
   render() {
     console.log(this.props, "tasker props");
-    const { tasker_id, name, email, phone, location, about } = this.state;
-    const { createProfile } = this.props;
+    const { name, email, phone, location, about } = this.state;
+    const { createProfile, history } = this.props;
     return (
       <div className="become-tasker-page">
         <div className="become-tasker-container">
-          <h2>Become a Tasker</h2>
-          <p>Create an account to get started</p>
+          <h2>Tasker Profile</h2>
+          <p>Your Tasker Profile</p>
 
           <form onSubmit={event => this.onSubmit(event)}>
             <input
@@ -82,15 +98,14 @@ class BecomeATasker extends Component {
               value={about}
               onChange={event => this.handleChange(event)}
             />
-            <Link to="/expertise">
-              <button
-                onClick={() =>
-                  createProfile(tasker_id, name, email, phone, location, about)
-                }
-              >
-                Start Registration
-              </button>
-            </Link>
+
+            <button
+              onClick={() =>
+                createProfile(name, email, phone, location, about, history)
+              }
+            >
+              Submit
+            </button>
           </form>
         </div>
       </div>
@@ -98,10 +113,10 @@ class BecomeATasker extends Component {
   }
 }
 function mapStateToProps(state) {
-  let { taskerProfile, user } = state.tasker;
+  let { user } = state.tasker;
   return { user };
 }
 export default connect(
   mapStateToProps,
-  { setUser, createProfile }
+  { setUser, getProfile, createProfile }
 )(BecomeATasker);

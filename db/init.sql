@@ -21,11 +21,10 @@ create table reviews(
 )
 
 -- Tasker Tables
+select * from users
 
 drop table tasker_profile;
 drop table tasker_expertise;
-select * from tasker_profile;
-select * from tasker_expertise;
 
 create table tasker_profile(
    tasker_profile_id serial primary key,
@@ -35,13 +34,32 @@ create table tasker_profile(
     location text,
     about text 
 )
+select * from tasker_profile;
 
 create table tasker_expertise(
     skills_id serial primary key,
-    tasker_skill_id int references tasker_profile(tasker_profile_id),
-    skill_name text,
-    skill_price int
+    tasker_profile_id int references tasker_profile(tasker_profile_id),
+    mounting boolean,
+    mountingHourly text,
+    delivery boolean,
+    deliveryHourly text,
+    yard boolean,
+    yardHourly text,
+    home boolean,
+    homeHourly text,
+    moving boolean,
+    movingHourly text,
+    pet boolean,
+    petHourly text,
+    furniture boolean,
+    furnitureHourly text,
+    cleaning boolean,
+    cleaningHourly text,
+    cooking boolean,
+    cookingHourly text
 )
+
+select * from tasker_expertise;
 
 
 -- To stay logged in. No need to sign in w Auth0 every time

@@ -23,7 +23,7 @@ const Footer = () => {
         </Link>
         <p>
           <Link to="/how-it-works">How It Works</Link> |{" "}
-          <Link to="/create-tasker-profile">Become a Tasker</Link>
+          <Link to="/tasker-profile">Become a Tasker</Link>
         </p>
       </div>
     </footer>

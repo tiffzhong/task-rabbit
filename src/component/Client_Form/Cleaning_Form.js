@@ -4,6 +4,7 @@ import './Client_Form.css';
 import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, updateVehicle, updateTaskDetails } from '../../ducks/clientReducer';
 import Calendar from "../Calendar/Calendar";
 import CalendarEnd from "../Calendar/CalenderEnd";
+import Autocompletesearch from '../Googlemap/Autocompletesearch';
 
 class Cleaning_Form extends Component {
     constructor() {
@@ -41,15 +42,13 @@ class Cleaning_Form extends Component {
 
                 <span className='shadow-box'></span>
                 <div className='outer-container'>
-                <h1>Task: Cleaning Service</h1>
+                    <h1>Task: Cleaning Service</h1>
                     <div className='question-box'>
-                        <div className='inner-container'>
-                            <p>LOCATION</p>
-                            <h2>Your Task Location</h2>
-                            <input placeholder='Enter a street address' onChange={e => this.props.updateLocationStart(e.target.value)} />
-                            <div className='form-button'  >
-                                <button onClick={() => this.handleToggle('locationToggle', true, this.props.locationStart)}>Continue</button>
-                            </div>
+                        <p>LOCATION</p>
+                        <h2>Your Task Start Location</h2>
+                        <Autocompletesearch />
+                        <div className='form-button'  >
+                            <button onClick={() => this.handleToggle('locationToggle', true, this.props.locationStart)}>Continue</button>
                         </div>
                     </div>
                     {this.state.locationToggle ?

@@ -18,6 +18,7 @@
     "react": "^16.7.0",
     "react-datetime-picker": "^2.1.1",
     "react-dom": "^16.7.0",
+    "react-google-autocomplete": "^1.0.18",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.3",
