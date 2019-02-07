@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Client_Form.css';
-import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, updateVehicle, updateTaskDetails } from '../../ducks/clientReducer';
+import { updateDuration, updateLocationStart, updateStartDate, updateEndDate,  updateTaskDetails, updateClientData } from '../../ducks/clientReducer';
 import Calendar from "../Calendar/Calendar";
 import CalendarEnd from "../Calendar/CalenderEnd";
 import Autocompletesearch from '../Googlemap/Autocompletesearch';
+import axios from 'axios';
 
 class Cleaning_Form extends Component {
     constructor() {
@@ -20,8 +21,12 @@ class Cleaning_Form extends Component {
 
     handleToggle = (name, value, state) => {
         if (name === 'scheduleToggle') {
-            if (this.props.startDate == '' || this.props.startTime == '') {
+            if (this.props.startDate == '' || this.props.endDate == '') {
                 alert('you must answer all questions before continuing')
+            } else {
+                this.setState({
+                    [name]: value
+                })
             }
         } else if (state === '') {
             alert('you must answer all questions before continuing')
@@ -32,6 +37,21 @@ class Cleaning_Form extends Component {
                 [name]: value
             })
         }
+    }
+
+    bookTask = () => {
+        const bookedTask = {
+            taskType: 'cleaning',
+            locationStart: this.props.locationStart,
+            locationEnd: this.props.locationEnd,
+            duration: this.props.duration,
+            startDate: this.props.startDate,
+            endDate: this.props.endDate,
+            taskDetails: this.props.taskDetails,
+        }
+        axios.post('/api/client', bookedTask).then(response => {
+            this.props.updateClientData(response.data)
+        })
     }
 
     render() {
@@ -87,7 +107,7 @@ class Cleaning_Form extends Component {
                                 </div>
                             </div>
                             <div className='form-button'>
-                                <button onClick={() => this.handleToggle('vehicleToggle', true, this.props.vehicle)}>Continue</button>
+                                <button onClick={() => this.handleToggle('scheduleToggle', true, this.props.vehicle)}>Continue</button>
                             </div>
                         </div>
                         :
@@ -100,9 +120,9 @@ class Cleaning_Form extends Component {
                             <div className='inner-container'>
                                 <p>DETAILS</p>
                                 <h2>Details of Task</h2>
-                                <input placeholder='Enter any additional details for the Tasker' className='details-input' onChange={e => this.props.updateTaskDetails(e.target.value)}></input>
+                                <textarea placeholder='Enter any additional details for the Tasker' className='details-input' onChange={e => this.props.updateTaskDetails(e.target.value)}></textarea>
                                 <div className='form-button'>
-                                    <button>Book Task</button>
+                                    <button onClick={()=>this.bookTask()} >Book Task</button>
                                 </div>
                             </div>
                         </div>
@@ -118,13 +138,17 @@ class Cleaning_Form extends Component {
 }
 
 const mapStateToProps = state => {
-    const { taskType, locationStart, duration, startDate, startTime, taskDetails } = state.client;
+    const { taskType, locationStart, locationEnd, lat, long, duration, vehicle, startDate, endDate, taskDetails } = state.client;
     return {
         taskType,
         locationStart,
+        locationEnd,
+        lat,
+        long,
         duration,
+        vehicle,
         startDate,
-        startTime,
+        endDate,
         taskDetails
     }
 }
@@ -134,7 +158,8 @@ const mapDispatchToProps = {
     updateDuration: updateDuration,
     updateStartDate: updateStartDate,
     updateEndDate: updateEndDate,
-    updateTaskDetails: updateTaskDetails
+    updateTaskDetails: updateTaskDetails,
+    updateClientData: updateClientData
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cleaning_Form);

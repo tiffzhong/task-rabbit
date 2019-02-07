@@ -5,6 +5,8 @@ const INITIAL_STATE = {
   taskType: '',
   locationStart: '',
   locationEnd: '',
+  lat: '',
+  long: '',
   duration: '',
   vehicle: '',
   startDate: '',
@@ -21,6 +23,7 @@ const UPDATE_VEHICLE = 'UPDATE_VEHICLE';
 const UPDATE_START_DATE = 'UPDATE_START_DATE';
 const UPDATE_END_DATE = 'UPDATE_END_DATE';
 const UPDATE_TASK_DETAILS = 'UPDATE_TASK_DETAILS';
+const UPDATE_CLIENT_DATA = 'UPDATE_CLIENT_DATA'
 
 export default function clientReducer(state = INITIAL_STATE, action) {
   console.log("REDUCER HIT: Action =>", action);
@@ -47,7 +50,10 @@ export default function clientReducer(state = INITIAL_STATE, action) {
       return { ...state, endDate: action.payload };
 
     case UPDATE_TASK_DETAILS:
-      return { ...state, details: action.payload };
+      return { ...state, taskDetails: action.payload };
+
+    case UPDATE_CLIENT_DATA:
+      return { ...state, clientData: action.payload };
 
     default:
       return { ...state };
@@ -107,5 +113,12 @@ export function updateTaskDetails(taskDetails) {
   return {
     type: UPDATE_TASK_DETAILS,
     payload: taskDetails
+  }
+}
+
+export function updateClientData(clientData) {
+  return {
+    type: UPDATE_CLIENT_DATA,
+    payload: clientData
   }
 }
