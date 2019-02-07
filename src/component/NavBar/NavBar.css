@@ -3,7 +3,9 @@
 .fullpage {
   width: 90%;
   margin: 0% auto;
- }
+  margin-top: 100px;
+}
+
 .title{
   font-weight: bold;
   margin-top: 100px;
@@ -118,6 +120,13 @@
   height: 300px;
   border-radius: 10px;
 }
+
+
+
+
+
+
+
 /*Navbar*/
 nav {
   height: 120px;
@@ -128,7 +137,6 @@ nav {
   background: white;
   z-index: 5;
 }
-
 .navBar {
   /* max-width: 1000px; */
   width: 100%;
@@ -143,28 +151,22 @@ nav {
   /* background: yellow; */
 
 }
-
 nav div ul {
   display: flex;
   background: white;
-  /* height: 200px; */
 }
-
 nav li {
   margin: 0 10px;
   color: white;
 }
-
 .sidelinks {
   width: 800px;
   display: flex;
   justify-content: space-between;
-  /* background: black; */
   height: 40px;
   align-items: center;
   position: relative;
   z-index: 4
-
 }
 .sidelinks a {
   color: green;
@@ -181,94 +183,57 @@ nav li {
   background: green;
   color: white;
 }
-
 .nav-links {
   /* background: purple; */
-  width: 100%;
+  width: 600px;
   display: flex;
   height: 20px;
-  /* align-items: center; */
   position: relative;
   z-index: 3;
+  left: 100px;
 }
-
 .nav-links a {
   margin-left: 50px;
 }
-
 .nav-links a:hover {
   color: rgb(103, 170, 2);
-  
 }
 
-/* dropdown links */
-/* .open {
-  position: fixed;
-  top: 90px;
-  left: 0;
-  flex-direction: column;
-  width: 100vw;
-  padding: 20px;
-  transition: 3s;
-  z-index: -1;
-} */
+
 .nav-popover-container {
-  /* background: rgb(134, 133, 133); */
-  position: relative;
-  width: 200px;
-  display: flex;
   flex-direction: column;
-  height: 600px;
-  align-items: center;
-  z-index: 1;
-  /* top: 120px; */
 }
 .services-link {
-  /* height: 200px;
-  background: yellow; */
-  position: relative;
-  z-index: 3;
-  cursor: pointer;
-}
-.nav-popover-dropdown{
   display: flex;
-  flex-direction: column;
-  background: white;
-  width: 250px;
-  height: 400px;
+  justify-content: center;
   align-items: center;
-  /* box-shadow: 6px 13px 20px 2px  black; */
-  position: relative;
-  top: 30px;
-  z-index: 1;
+  width: 200px;
 }
 .dropdown-title {
-  /* background: red; */
-  /* height: 100px; */
   margin-top: 15px;
   position: relative;
   z-index: 1;
 }
-.nav-popover-dropdown p {
-  margin-bottom: 5px;
-  margin-top: 30px;
-}
 .nav-popover-link {
   width: 200px;
-  margin: 10px;
-  /* background: black; */
-  margin-left: 20px;
   position: relative;
-  z-index: 1;
+  z-index: 4;
+  height: 100%;
 }
-
 .dropdown-links {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   height: 370px;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 20px;
 }
+.dropdown-links a {
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
 
 nav a {
   color: white;
@@ -308,12 +273,13 @@ button:focus {
   nav ul {
     position: fixed;
     top: 90px;
-    left: 0;
+    left: 0px;
     flex-direction: column;
     width: 100vw;
     padding: 20px;
     transition: 3s;
     z-index: -1;
+    
   }
   nav li {
     margin: 10px 0;

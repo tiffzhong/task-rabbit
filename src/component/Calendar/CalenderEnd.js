@@ -11,11 +11,16 @@ class CalendarEnd extends Component {
 
         }
     }
-    // onChange = endDate => this.setState({ endDate })
+    onChange = endDate => this.setState({ endDate })
 
     onChange = (endDate) => {
         console.log('endDate ====> ', endDate)
-        this.props.updateEndDate({endDate})
+        console.log('endDate in state ===> ', this.state.endDate)
+        this.setState({ endDate })
+        if(this.state.endDate) {
+            this.props.updateEndDate(endDate)
+        }
+        
     }
 
 
