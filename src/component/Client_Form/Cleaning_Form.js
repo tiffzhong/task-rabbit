@@ -9,6 +9,7 @@ import { updateVehicle } from '../../ducks/clientReducer';
 import { updateTaskDetails } from '../../ducks/clientReducer';
 import Calendar from "../Calendar/Calendar";
 import CalendarEnd from "../Calendar/CalenderEnd";
+import Autocompletesearch from '../Googlemap/Autocompletesearch';
 
 class Cleaning_Form extends Component {
     constructor() {
@@ -49,7 +50,7 @@ class Cleaning_Form extends Component {
                     <div className='question-box'>
                         <p>LOCATION</p>
                         <h2>Your Task Start Location</h2>
-                        <input placeholder='Enter a street address' onChange={e => this.props.updateLocationStart(e.target.value)} />
+                        <Autocompletesearch />
                         <div className='form-button'  >
                             <button onClick={() => this.handleToggle('locationToggle', true, this.props.locationStart)}>Continue</button>
                         </div>
