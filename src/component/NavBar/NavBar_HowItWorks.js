@@ -1,7 +1,8 @@
 import React from "react";
 import "./NavBar.css";
-import Googlemap from "../Googlemap/Googlemap";
-import Autocompletesearch from "../Googlemap/Autocompletesearch";
+// import Googlemap from "../Googlemap/Googlemap";
+// import Autocompletesearch from "../Googlemap/Autocompletesearch";
+import { Link } from "react-router-dom";
 
 const NavBar_HowItWorks = () => {
   return (
@@ -19,14 +20,11 @@ const NavBar_HowItWorks = () => {
                 time you'd like a qualified Tasker to show up. Give us the
                 details and we'll find you the help.
               </div>
-              <Autocompletesearch />
             </div>
             <div className="firstimage">
               <img src="/Images/HowItWorks_Describe.jpg" alt="how" />{" "}
             </div>
-
           </div>
-          <Googlemap />
           <div className="seconditem">
             <div className="secondimage">
               <img src="/Images/Electrician.jpg" alt="electrican" />
@@ -58,6 +56,7 @@ const NavBar_HowItWorks = () => {
           </div>
         </div>
       </div>
+      <Link to="/confirmation">confirmation</Link>
     </div>
   );
 };
