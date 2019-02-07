@@ -68,7 +68,7 @@ class Pet_Form extends Component {
                             <p>DURATION</p>
                         </div>
                     }
-                    {this.state.durationToggle ?
+                    {!this.state.durationToggle ?
                         <div className='question-box'>
                             <div className='inner-container'>
                                 <p>SCHEDULE</p>

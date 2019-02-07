@@ -27,6 +27,10 @@ button:active {
   outline: none;
 }
 
+h2 {
+  font-weight: lighter;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

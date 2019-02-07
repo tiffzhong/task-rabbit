@@ -13,15 +13,19 @@ class Calendar extends Component {
 
         }
     }
-    // onChange = date => {
-    //     console.log('date ====> ', date)
-    //     this.setState({ date })
-    // }
-
-    onChange = (date) => {
+    onChange = date => {
         console.log('date ====> ', date)
-        this.props.updateStartDate({date})
+        this.setState({ date })
+        if(this.state.date) {
+            this.props.updateStartDate(date)
+        }
+        
     }
+
+    // onChange = (date) => {
+    //     console.log('date ====> ', date)
+    //     this.props.updateStartDate({date})
+    // }
 
 
 
