@@ -14,7 +14,7 @@ import Cooking_Form from "./component/Client_Form/Cooking_Form";
 import TaskerDashboard from "./component/TaskerDashboard/TaskerDashboard";
 import TaskerProfile from "./component/TaskerProfile/TaskerProfile";
 import ClientDashboard from "./component/ClientDashboard/ClientDashboard";
-
+import EditTaskerProfile from "./component/TaskerProfile/EditTaskerProfile";
 export default (
   <Switch>
     <Route exact path="/" component={LandingPage} />
@@ -31,5 +31,6 @@ export default (
     <Route path="/tasker-dashboard" component={TaskerDashboard} />
     <Route path="/client-dashboard" component={ClientDashboard} />
     <Route path="/tasker-profile" component={TaskerProfile} />
+    <Route path="/edit-tasker-profile" component={EditTaskerProfile} />
   </Switch>
 );

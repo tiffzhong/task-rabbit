@@ -8,6 +8,7 @@ const INITIAL_STATE = {
 const SET_USER = "SET_USER";
 const CREATE_PROFILE = "CREATE_PROFILE";
 const GET_PROFILE = "GET_PROFILE";
+const EDIT_PROFILE = "EDIT_PROFILE";
 
 export default function taskerReducer(state = INITIAL_STATE, action) {
   console.log("REDUCER HIT(Tasker): Action =>", action);
@@ -17,6 +18,8 @@ export default function taskerReducer(state = INITIAL_STATE, action) {
     case GET_PROFILE:
       return { ...state, taskerProfile: action.payload };
     case `${CREATE_PROFILE}_FULFILLED`:
+      return { ...state };
+    case `${EDIT_PROFILE}_FULFILLED`:
       return { ...state };
     default:
       return { ...state };
@@ -100,57 +103,58 @@ export function createProfile(
   };
 }
 
-// export function createExpertise(
-//   tasker_profile_id,
-//   mounting,
-//   mountingHourly,
-//   delivery,
-//   deliveryHourly,
-//   yard,
-//   yardHourly,
-//   home,
-//   homeHourly,
-//   moving,
-//   movingHourly,
-//   pet,
-//   petHourly,
-//   furniture,
-//   furnitureHourly,
-//   cleaning,
-//   cleaningHourly,
-//   cooking,
-//   cookingHourly,
-//   history
-// ) {
-//   return {
-//     type: ADD_EXPERTISE,
-//     payload: axios
-//       .post("/api/tasker-expertise", {
-//         tasker_profile_id,
-//         mounting,
-//         mountingHourly,
-//         delivery,
-//         deliveryHourly,
-//         yard,
-//         yardHourly,
-//         home,
-//         homeHourly,
-//         moving,
-//         movingHourly,
-//         pet,
-//         petHourly,
-//         furniture,
-//         furnitureHourly,
-//         cleaning,
-//         cleaningHourly,
-//         cooking,
-//         cookingHourly,
-//         history
-//       })
-//       .then(res => {
-//         history.push("/tasker-dashboard");
-//         return res.data;
-//       })
-//       .catch(error => console.log("error in createExpertise in redux", error))
-//   };
-// }
+export function editProfile(
+  name,
+  email,
+  phone,
+  location,
+  about,
+  mounting,
+  mountingHourly,
+  delivery,
+  deliveryHourly,
+  yard,
+  yardHourly,
+  home,
+  homeHourly,
+  moving,
+  movingHourly,
+  pet,
+  petHourly,
+  furniture,
+  furnitureHourly,
+  cleaning,
+  cleaningHourly,
+  cooking,
+  cookingHourly,
+  tasker_id
+) {
+  return {
+    type: EDIT_PROFILE,
+    payload: axios.put(`/api/tasker/${tasker_id}`, {
+      name,
+      email,
+      phone,
+      location,
+      about,
+      mounting,
+      mountingHourly,
+      delivery,
+      deliveryHourly,
+      yard,
+      yardHourly,
+      home,
+      homeHourly,
+      moving,
+      movingHourly,
+      pet,
+      petHourly,
+      furniture,
+      furnitureHourly,
+      cleaning,
+      cleaningHourly,
+      cooking,
+      cookingHourly
+    })
+  };
+}
