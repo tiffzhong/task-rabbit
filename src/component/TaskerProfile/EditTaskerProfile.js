@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { setUser, createProfile } from "../../ducks/taskerReducer";
+import { setUser, editProfile } from "../../ducks/taskerReducer";
 import "./TaskerProfile.css";
 import axios from "axios";
 import { Link } from "react-router-dom";

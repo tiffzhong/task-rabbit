@@ -4,6 +4,7 @@ import { setUser, createProfile } from "../../ducks/taskerReducer";
 import "./TaskerProfile.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import AutocompleteSearch from "../Googlemap/Autocompletesearch";
 class TaskerProfile extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +13,6 @@ class TaskerProfile extends Component {
       name: "",
       email: "",
       phone: "",
-      location: "",
       about: "",
       mounting: false,
       mountingHourly: null,
@@ -120,12 +120,13 @@ class TaskerProfile extends Component {
               value={phone}
               onChange={event => this.handleInput(event)}
             />
-            <input
+            {/* <input
               placeholder="Where are you located?"
               name="location"
               value={location}
               onChange={event => this.handleInput(event)}
-            />
+            /> */}
+            <AutocompleteSearch />
             <textarea
               placeholder="Write some details about yourself"
               name="about"
@@ -280,7 +281,7 @@ class TaskerProfile extends Component {
                     name,
                     email,
                     phone,
-                    location,
+
                     about,
                     mounting,
                     mountingHourly,
@@ -314,8 +315,8 @@ class TaskerProfile extends Component {
   }
 }
 function mapStateToProps(state) {
-  let { user } = state.tasker;
-  return { user };
+  let { user, place } = state.tasker;
+  return { user, place };
 }
 export default connect(
   mapStateToProps,

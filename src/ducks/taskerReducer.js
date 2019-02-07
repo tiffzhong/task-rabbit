@@ -2,14 +2,15 @@ import axios from "axios";
 
 const INITIAL_STATE = {
   user: null,
-  taskerProfile: []
+  taskerProfile: [],
+  place: []
 };
 
 const SET_USER = "SET_USER";
 const CREATE_PROFILE = "CREATE_PROFILE";
 const GET_PROFILE = "GET_PROFILE";
 const EDIT_PROFILE = "EDIT_PROFILE";
-
+const GET_PLACE = "GET_PLACE";
 export default function taskerReducer(state = INITIAL_STATE, action) {
   console.log("REDUCER HIT(Tasker): Action =>", action);
   switch (action.type) {
@@ -17,6 +18,8 @@ export default function taskerReducer(state = INITIAL_STATE, action) {
       return { ...state, user: action.payload };
     case GET_PROFILE:
       return { ...state, taskerProfile: action.payload };
+    case GET_PLACE:
+      return { ...state, place: action.payload };
     case `${CREATE_PROFILE}_FULFILLED`:
       return { ...state };
     case `${EDIT_PROFILE}_FULFILLED`:
@@ -43,7 +46,7 @@ export function createProfile(
   name,
   email,
   phone,
-  location,
+  place,
   about,
   mounting,
   mountingHourly,
@@ -73,7 +76,7 @@ export function createProfile(
         name,
         email,
         phone,
-        location,
+        place,
         about,
         mounting,
         mountingHourly,

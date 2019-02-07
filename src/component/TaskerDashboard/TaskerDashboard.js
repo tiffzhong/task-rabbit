@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { createExpertise } from "../../ducks/taskerReducer";
+// import { createExpertise } from "../../ducks/taskerReducer";
 import "./TaskerDashboard.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -49,5 +49,5 @@ function mapStateToProps(state) {
 }
 export default connect(
   mapStateToProps,
-  { createExpertise }
+  {}
 )(TaskerDashboard);
