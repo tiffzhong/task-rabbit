@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { GoogleApiWrapper } from 'google-maps-react';
 import Autocomplete from "react-google-autocomplete";
+import { connect } from 'react-redux';
+import { updateLocationStart } from '../../ducks/clientReducer';
 
 class AutocompleteSearch extends Component {
     constructor(props) {
@@ -25,6 +27,9 @@ class AutocompleteSearch extends Component {
                             }
 
                         })
+                        if(this.state.place){
+                            this.props.updateLocationStart(place.formatted_address);
+                        }
 
                     }}
                     types={['geocode']}
@@ -34,4 +39,15 @@ class AutocompleteSearch extends Component {
     }
 }
 
-export default GoogleApiWrapper({ apiKey: process.env.REACT_APP_GOOGLE_MAP })(AutocompleteSearch);
+const mapStateToProps = state => {
+    const { locationStart } = state.client;
+    return {
+        locationStart
+    }
+}
+
+const mapDispatchToProps = {
+    updateLocationStart: updateLocationStart
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GoogleApiWrapper({ apiKey: process.env.REACT_APP_GOOGLE_MAP })(AutocompleteSearch));
