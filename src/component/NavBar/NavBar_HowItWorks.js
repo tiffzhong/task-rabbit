@@ -1,13 +1,14 @@
 import React from "react";
 import "./NavBar.css";
+import Googlemap from "../Googlemap/Googlemap";
 
 const NavBar_HowItWorks = () => {
   return (
     <div>
+
       <div className="fullpage">
         <div className="wholeitems">
           <h1>How It Works</h1>
-
           <div className="firstitem">
             <div className="firstparagraph">
               {/* <h3>1</h3> */}
@@ -22,7 +23,7 @@ const NavBar_HowItWorks = () => {
               <img src="/Images/HowItWorks_Describe.jpg" alt="how" />{" "}
             </div>
           </div>
-
+          <Googlemap />
           <div className="seconditem">
             <div className="secondimage">
               <img src="/Images/Electrician.jpg" alt="electrican" />
