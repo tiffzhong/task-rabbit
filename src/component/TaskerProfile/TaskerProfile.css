@@ -1,3 +1,83 @@
 .tasker-profile {
-  padding-top: 800px;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-form-container {
+  background-image: url("./taskerbecome.jpg");
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.profile-form-container form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  border: 1px solid black;
+  background-color: #e8ebef;
+  padding: 20px;
+  border-radius: 5px;
+  height: 70%;
+}
+
+.profile-form-container form input {
+  padding: 0.625em 1em;
+  width: 100%;
+  color: black;
+  font-size: 15px;
+  margin: 10px 5px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid rgb(181, 181, 181);
+}
+.profile-form-container form textarea {
+  padding: 0.625em 1em;
+  width: 100%;
+  font-size: 15px;
+  margin: 10px 5px;
+  height: 90px;
+  border-radius: 5px;
+  border: 1px solid rgb(181, 181, 181);
+}
+
+.profile-form-container button {
+  background-color: #51af33;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.profile-form-container h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  width: 100%;
+  font-weight: 400;
+}
+
+.profile-form-container p {
+  font-weight: 100;
+  font-size: 18px;
+}
+
+.tasker-skill-form {
+  background-image: url("./profile.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+.tasker-skill-form form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
 }

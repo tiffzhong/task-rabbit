@@ -42,6 +42,7 @@ export function getProfile(tasker_id) {
     payload: tasker_id
   };
 }
+// export function getPlace
 export function createProfile(
   name,
   email,

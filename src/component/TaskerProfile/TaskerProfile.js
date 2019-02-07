@@ -72,7 +72,6 @@ class TaskerProfile extends Component {
       name,
       email,
       phone,
-      location,
       about,
       mounting,
       mountingHourly,
@@ -93,15 +92,13 @@ class TaskerProfile extends Component {
       cooking,
       cookingHourly
     } = this.state;
-    const { createProfile, user } = this.props;
+    const { createProfile, user, place } = this.props;
 
     return (
       <div className="tasker-profile">
         <div className="profile-form-container">
-          <h2>Tasker Profile</h2>
-          <p>Your Tasker Profile</p>
-
           <form onSubmit={event => this.onSubmit(event)}>
+            <h2>Your Tasker Profile</h2>
             <input
               name="name"
               value={name}
@@ -126,7 +123,16 @@ class TaskerProfile extends Component {
               value={location}
               onChange={event => this.handleInput(event)}
             /> */}
-            <AutocompleteSearch />
+            {/* <Autocomplete
+              style={{ width: "100%" }}
+              onPlaceSelected={place => {
+                this.setState({
+                  place: place.formatted_address
+                });
+              }}
+              types={["geocode"]}
+            /> */}
+
             <textarea
               placeholder="Write some details about yourself"
               name="about"
@@ -138,8 +144,8 @@ class TaskerProfile extends Component {
         </div>
 
         <div className="tasker-skill-form">
-          <h2>What is your hourly rate?</h2>
           <form onSubmit={event => this.onSubmit(event)}>
+            <h2>What is your hourly rate?</h2>
             <label>
               <input
                 type="checkbox"
@@ -322,3 +328,9 @@ export default connect(
   mapStateToProps,
   { setUser, createProfile }
 )(TaskerProfile);
+// export default connect(
+//   mapStateToProps,
+//   { setUser, createProfile }
+// )(
+//   GoogleApiWrapper({ apiKey: process.env.REACT_APP_GOOGLE_MAP })(TaskerProfile)
+// );

@@ -319,5 +319,5 @@ function mapStateToProps(state) {
 }
 export default connect(
   mapStateToProps,
-  { setUser, editProfile }
+  { setUser }
 )(EditTaskerProfile);

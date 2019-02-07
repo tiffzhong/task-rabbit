@@ -10,6 +10,7 @@ const INITIAL_STATE = {
   startDate: '',
   endDate: '',
   taskDetails: '',
+  clientData: []
 };
 
 const UPDATE_TASK_TYPE = "UPDATE_TASK_TYPE";

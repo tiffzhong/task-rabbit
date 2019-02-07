@@ -42,23 +42,13 @@ class Cleaning_Form extends Component {
 
                 <span className='shadow-box'></span>
                 <div className='outer-container'>
-                <h1>Task: Cleaning Service</h1>
+                    <h1>Task: Cleaning Service</h1>
                     <div className='question-box'>
-<<<<<<< HEAD
                         <p>LOCATION</p>
                         <h2>Your Task Start Location</h2>
                         <Autocompletesearch />
                         <div className='form-button'  >
                             <button onClick={() => this.handleToggle('locationToggle', true, this.props.locationStart)}>Continue</button>
-=======
-                        <div className='inner-container'>
-                            <p>LOCATION</p>
-                            <h2>Your Task Location</h2>
-                            <input placeholder='Enter a street address' onChange={e => this.props.updateLocationStart(e.target.value)} />
-                            <div className='form-button'  >
-                                <button onClick={() => this.handleToggle('locationToggle', true, this.props.locationStart)}>Continue</button>
-                            </div>
->>>>>>> 28f7601648b19f45af72f0ab5ab984cb4c3878a4
                         </div>
                     </div>
                     {this.state.locationToggle ?
