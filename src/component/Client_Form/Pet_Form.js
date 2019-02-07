@@ -41,7 +41,7 @@ class Pet_Form extends Component {
 
                 <span className='shadow-box'></span>
                 <div className='outer-container'>
-                <h1>Task: Pet Service</h1>
+                    <h1>Task: Pet Service</h1>
                     <div className='question-box'>
                         <div className='inner-container'>
                             <p>LOCATION</p>

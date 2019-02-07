@@ -16,10 +16,10 @@ class Calendar extends Component {
     onChange = date => {
         console.log('date ====> ', date)
         this.setState({ date })
-        if(this.state.date) {
+        if (this.state.date) {
             this.props.updateStartDate(date)
         }
-        
+
     }
 
     // onChange = (date) => {
