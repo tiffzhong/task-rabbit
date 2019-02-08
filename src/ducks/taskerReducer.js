@@ -43,6 +43,7 @@ export function getProfile(tasker_id) {
 export function createProfile(
   name,
   email,
+  selfie,
   phone,
   place,
   about,
@@ -73,6 +74,7 @@ export function createProfile(
       .post("/api/tasker", {
         name,
         email,
+        selfie,
         phone,
         place,
         about,
@@ -105,8 +107,9 @@ export function createProfile(
 }
 
 export function editProfile(
-  name,
+  tasker_name,
   email,
+  selfie,
   phone,
   location,
   about,
@@ -133,8 +136,9 @@ export function editProfile(
   return {
     type: EDIT_PROFILE,
     payload: axios.put(`/api/tasker/${tasker_id}`, {
-      name,
+      tasker_name,
       email,
+      selfie,
       phone,
       location,
       about,

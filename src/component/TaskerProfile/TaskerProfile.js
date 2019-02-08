@@ -14,6 +14,7 @@ class TaskerProfile extends Component {
     this.state = {
       name: "",
       email: "",
+      selfie: "",
       phone: "",
       place: "",
       about: "",
@@ -46,7 +47,8 @@ class TaskerProfile extends Component {
       .then(() => {
         this.setState({
           name: this.props.user.name,
-          email: this.props.user.email
+          email: this.props.user.email,
+          selfie: this.props.user.selfie
         });
       });
   }
@@ -74,6 +76,7 @@ class TaskerProfile extends Component {
     const {
       name,
       email,
+      selfie,
       phone,
       place,
       about,
@@ -285,6 +288,7 @@ class TaskerProfile extends Component {
                   createProfile(
                     name,
                     email,
+                    selfie,
                     phone,
                     place,
                     about,

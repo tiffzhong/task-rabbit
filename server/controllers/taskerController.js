@@ -3,8 +3,9 @@ module.exports = {
     const database = req.app.get("db");
     let {
       user,
-      name,
+      tasker_name,
       email,
+      selfie,
       phone,
       place,
       about,
@@ -31,8 +32,9 @@ module.exports = {
     database
       .tasker_profile_create([
         user,
-        name,
+        tasker_name,
         email,
+        selfie,
         phone,
         place,
         about,
@@ -65,8 +67,9 @@ module.exports = {
     console.log(req.body, "body editprofile controler");
     console.log(req.params, "params editprogile contrller");
     let {
-      name,
+      tasker_name,
       email,
+      selfie,
       phone,
       location,
       about,
@@ -93,8 +96,9 @@ module.exports = {
     database
       .tasker_profile_edit([
         user,
-        name,
+        tasker_name,
         email,
+        selfie,
         phone,
         location,
         about,

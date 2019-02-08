@@ -21,14 +21,15 @@ create table reviews(
 )
 
 -- Tasker Tables
-select * from users
-
+select * from users;
+select * from bookedtasks;
 drop table tasker_profile;
 
 create table tasker_profile(
    tasker_profile_id serial primary key,
    tasker_id text,
-    name varchar(80), 
+    tasker_name varchar(80), 
+    selfie text,
     email text,
     phone text,
     location text,
@@ -55,8 +56,6 @@ create table tasker_profile(
 
 
 select * from tasker_profile;
-
-
 
 -- To stay logged in. No need to sign in w Auth0 every time
 CREATE TABLE "session" (
