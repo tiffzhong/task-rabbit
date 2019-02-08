@@ -6,7 +6,7 @@ class Duration extends Component {
     render() {
         return (
             <div>
-                {!this.props.locationToggle ?
+                {this.props.locationToggle ?
                         <div className='question-box'>
                             <div className='inner-container'>
                                 <p>DURATION</p>
@@ -26,7 +26,7 @@ class Duration extends Component {
                                     </div>   
                                 </div>
                                 <div className='form-button'>
-                                    <button onClick={() => this.handleToggle('durationToggle', true, this.props.duration)}>Continue</button>
+                                    <button onClick={() => this.props.handleToggle('durationToggle', true, this.props.duration)}>Continue</button>
                                 </div>
                             </div>
                         </div>

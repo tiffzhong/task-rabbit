@@ -9,7 +9,7 @@ class Schedule extends Component {
     render() {
         return (
             <div>
-                {!this.props.durationToggle ?
+                {this.props.durationToggle ?
                         <div className='question-box'>
                             <div className='inner-container'>
                                 <p>SCHEDULE</p>
@@ -28,7 +28,7 @@ class Schedule extends Component {
                                     </div>
                                 </div>
                             <div className='form-button'>
-                                <button onClick={() => this.handleToggle('scheduleToggle', true, this.props.schedule)}>Continue</button>
+                                <button onClick={() => this.props.handleToggle('scheduleToggle', true, this.props.schedule)}>Continue</button>
                             </div>
                             </div>
                         </div>

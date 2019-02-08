@@ -11,7 +11,7 @@ class LocationDual extends Component {
             <div>
                 {this.props.locationStart && this.props.locationToggle
                 ?
-                <div className='closed-box' onClick={() => this.handleToggle('locationToggle', false, this.props.locationStart)}>
+                <div className='closed-box' onClick={() => this.props.handleToggle('locationToggle', false, this.props.locationStart)}>
                     <div className='closed-box-inner'>
                     <p>LOCATION</p>
                     <div className='closedBox-img-container'>
@@ -36,7 +36,7 @@ class LocationDual extends Component {
                             <h2>Your Task End Location</h2>
                             <AutocompletesearchEnd />
                             <div className={!this.props.locationToggle ? 'form-button' : 'hide'}  >
-                                <button onClick={() => this.handleToggle('locationToggle', true, this.props.locationStart)}>Continue</button>
+                                <button onClick={() => this.props.handleToggle('locationToggle', true, this.props.locationStart)}>Continue</button>
                             </div>
                         </div>
                     </div>

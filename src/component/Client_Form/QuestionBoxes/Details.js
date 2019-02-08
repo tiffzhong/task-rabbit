@@ -6,14 +6,14 @@ class Details extends Component {
     render() {
         return (
             <div>
-                {!this.props.scheduleToggle ?
+                {this.props.scheduleToggle ?
                         <div className='question-box details'>
                             <div className='inner-container' id='details-inner'>
                                 <p>DETAILS</p>
                                 <h2>Details of Task</h2>
                                 <textarea placeholder='Enter any additional details for the Tasker' className='details-input' onChange={e => this.props.updateTaskDetails(e.target.value)}></textarea>
                                 <div className='form-button'>
-                                    <button onClick={()=>this.bookTask()}>Book Task</button>
+                                    <button onClick={()=>this.props.bookTask()}>Book Task</button>
                                 </div>
                             </div>
                         </div>

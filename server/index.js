@@ -49,6 +49,9 @@ app.put("/api/tasker/:tasker_id", taskerController.editProfile);
 
 //Client
 app.post('/api/client', clientController.bookTask);
+app.put("/api/client/:client_id", clientController.editTask);
+
+
 
 const PORT = 4000;
 app.listen(PORT, () => {
