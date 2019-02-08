@@ -16,12 +16,12 @@ class TaskerDashboard extends Component {
   }
 
   componentDidMount() {
-    // this.setProfile();
+    this.setProfile();
   }
 
   setProfile = id => {
-    axios.get(`/api/profile/${this.props.match.params.id}`).then(res => {
-      console.log("helllerooo", res.data);
+    axios.get(`/api/profile/${this.props.match.params.tasker_id}`).then(res => {
+      console.log("helllerooo", this.props.match.params);
       this.setState({
         name: res.data.name,
         picture: res.data.picture,

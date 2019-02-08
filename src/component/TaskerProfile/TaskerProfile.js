@@ -279,7 +279,7 @@ class TaskerProfile extends Component {
                 onChange={this.handleChange}
               />
             </label>
-            <Link to="/tasker-dashboard">
+            <Link to={`/tasker-dashboard/${user.auth0_id}`}>
               <button
                 onClick={() =>
                   createProfile(

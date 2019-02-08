@@ -47,29 +47,29 @@ class EditTaskerProfile extends Component {
         })
         .then(() => {
           this.setState({
-            //     name: this.props.name,
-            // email: "",
-            // phone: "",
-            // place: {},
-            // about: "",
-            // mounting: false,
-            // mountingHourly: null,
-            // delivery: false,
-            // deliveryHourly: null,
-            // yard: false,
-            // yardHourly: null,
-            // home: false,
-            // homeHourly: null,
-            // moving: false,
-            // movingHourly: null,
-            // pet: false,
-            // petHourly: null,
-            // furniture: false,
-            // furnitureHourly: null,
-            // cleaning: false,
-            // cleaningHourly: null,
-            // cooking: false,
-            // cookingHourly:
+            name: this.props.taskerProfile.name,
+            email: this.props.taskerProfile.email,
+            phone: this.props.taskerProfile.phone,
+            place: this.props.taskerProfile.location,
+            about: this.props.taskerProfile.about,
+            mounting: this.props.taskerProfile.mounting,
+            mountingHourly: this.props.taskerProfile.mountingHourly,
+            delivery: this.props.taskerProfile.delivery,
+            deliveryHourly: this.props.taskerProfile.deliveryHourly,
+            yard: this.props.taskerProfile.yard,
+            yardHourly: this.props.taskerProfile.yardHourly,
+            home: this.props.taskerProfile.home,
+            homeHourly: this.props.taskerProfile.homeHourly,
+            moving: this.props.taskerProfile.moving,
+            movingHourly: this.props.taskerProfile.mountingHourly,
+            pet: this.props.taskerProfile.pet,
+            petHourly: this.props.taskerProfile.petHourly,
+            furniture: this.props.taskerProfile.furniture,
+            furnitureHourly: this.props.taskerProfile.furnitureHourly,
+            cleaning: this.props.taskerProfile.cleaning,
+            cleaningHourly: this.props.taskerProfile.cleaningHourly,
+            cooking: this.props.taskerProfile.cooking,
+            cookingHourly: this.props.taskerProfile.cookingHourly
           });
         })
         .catch(error => console.log("error in getProfile"));
@@ -95,6 +95,7 @@ class EditTaskerProfile extends Component {
 
   render() {
     console.log(this.props, "tasker props");
+    console.log(this.props.taskerProfile, "profile");
     console.log(this.state, "stater");
     const {
       name,
@@ -313,10 +314,10 @@ class EditTaskerProfile extends Component {
                 onChange={this.handleChange}
               />
             </label>
-            <Link to="/tasker-dashboard">
+            <Link to={`/tasker-dashboard/${user.auth0_id}`}>
               <button
                 onClick={() =>
-                  createProfile(
+                  editProfile(
                     name,
                     email,
                     phone,
