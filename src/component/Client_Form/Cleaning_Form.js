@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Client_Form.css';
-import { updateDuration, updateLocationStart, updateStartDate, updateEndDate,  updateTaskDetails, updateClientData } from '../../ducks/clientReducer';
+import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, updateVehicle, updateTaskDetails, updateClientData } from '../../ducks/clientReducer';
 import Calendar from "../Calendar/Calendar";
 import CalendarEnd from "../Calendar/CalenderEnd";
 import Autocompletesearch from '../Googlemap/Autocompletesearch';
 import axios from 'axios';
+import pencil from '../Images/edit-pencil.png';
 
 class Cleaning_Form extends Component {
     constructor() {
@@ -13,7 +14,6 @@ class Cleaning_Form extends Component {
         this.state = {
             locationToggle: false,
             durationToggle: false,
-            vehicleToggle: false,
             scheduleToggle: false,
 
         }
@@ -21,7 +21,7 @@ class Cleaning_Form extends Component {
 
     handleToggle = (name, value, state) => {
         if (name === 'scheduleToggle') {
-            if (this.props.startDate == '' || this.props.endDate == '') {
+            if (this.props.startDate === '' || this.props.endDate === '') {
                 alert('you must answer all questions before continuing')
             } else {
                 this.setState({
@@ -40,14 +40,19 @@ class Cleaning_Form extends Component {
     }
 
     bookTask = () => {
+        const { locationStart, locationEnd, long, lat, duration, vehicle, startDate, endDate, taskDetails, user } = this.props;
         const bookedTask = {
-            taskType: 'cleaning',
-            locationStart: this.props.locationStart,
-            locationEnd: this.props.locationEnd,
-            duration: this.props.duration,
-            startDate: this.props.startDate,
-            endDate: this.props.endDate,
-            taskDetails: this.props.taskDetails,
+            taskType: 'cleaning service',
+            locationStart, 
+            locationEnd,
+            lat,
+            long, 
+            duration,
+            vehicle, 
+            startDate, 
+            endDate,
+            taskDetails,
+            user_id: user.auth0_id
         }
         axios.post('/api/client', bookedTask).then(response => {
             this.props.updateClientData(response.data)
@@ -59,41 +64,94 @@ class Cleaning_Form extends Component {
 
         return (
             <div className='form'>
-
                 <span className='shadow-box'></span>
                 <div className='outer-container'>
-                    <h1>Task: Cleaning Service</h1>
-                    <div className='question-box'>
-                        <p>LOCATION</p>
-                        <h2>Your Task Start Location</h2>
-                        <Autocompletesearch />
-                        <div className='form-button'  >
-                            <button onClick={() => this.handleToggle('locationToggle', true, this.props.locationStart)}>Continue</button>
+                <h1>Task: Cleaning Service</h1>
+                {this.props.locationStart && this.state.locationToggle
+                    ? 
+                    <div className='closed-box' onClick={() => this.handleToggle('locationToggle', false, this.props.locationStart)}>
+                            <p>LOCATION</p>
+                            <div className='closedBox-img-container'>
+                                <img src={pencil} />
+                            </div>
+                        <div>
+                            <h2>Your Task Start Location</h2>
+                            <span>{this.props.locationStart}</span>
+                        </div>
+                    </div>  
+                    :  
+                    <div className='question-box' id='question-box'>
+                        <div className='inner-container'>
+                            <p>LOCATION</p>
+                            <h2>Your Task Start Location</h2>
+                            <Autocompletesearch />
+                            <div className='form-button'  >
+                                <button onClick={() => this.handleToggle('locationToggle', true, this.props.locationStart)}>Continue</button>
+                            </div>
                         </div>
                     </div>
-                    {this.state.locationToggle ?
+                }
+                {   this.state.locationToggle ?
+                         this.state.durationToggle && this.props.duration ? 
+                         <div className='closed-box' onClick={() => this.handleToggle('durationToggle', false, this.props.duration)} >
+                            <p>DURATION</p>
+                            <div className='closedBox-img-container'>
+                                <img src={pencil} />
+                            </div>
+                            <div>
+                                <h2>How Long Should it Take?</h2>
+                                <span>{this.props.duration}</span>
+                            </div>
+                        </div> 
+                        :
                         <div className='question-box'>
                             <div className='inner-container'>
                                 <p>DURATION</p>
-                                <h2>Duration of Task</h2>
-                                <input placeholder='An estimated time of how long your task should take to be completed' onChange={e => this.props.updateDuration(e.target.value)}></input>
-                                <div className='form-button'>
-                                    <button onClick={() => this.handleToggle('durationToggle', true, this.props.duration)}>Continue</button>
+                                <h2>How long should it take?</h2>
+                                <div className='duration-container'>
+                                    <div>
+                                        <input type='radio' id='r1' name='radio' onClick={()=>this.props.updateDuration('Est. 1 hr')}/>
+                                        <label  className='duration-radio'>Short - Est. 1 hr</label>
+                                    </div>   
+                                    <div>
+                                        <input type='radio' id='r2' name='radio' onClick={()=>this.props.updateDuration('Est. 2-3 hrs')}/>
+                                        <label  className='duration-radio'>Medium - Est. 2-3 hrs</label>
+                                    </div>   
+                                    <div>
+                                        <input type='radio' id='r3' name='radio' onClick={()=>this.props.updateDuration('Est. 4+ hrs')}/>
+                                        <label  className='duration-radio'>Long - Est. 4+ hrs</label>
+                                    </div>   
                                 </div>
                             </div>
+                                <div className={this.durationToggle ? 'hide' : 'form-button'}>
+                                    <button onClick={() => this.handleToggle('durationToggle', true, this.props.duration)}>Continue</button>
+                                </div>
                         </div>
-                        :
-                        <div className='toggle-box'>
-                            <p>DURATION</p>
-                        </div>
-                    }
+                    :
+                    <div className='toggle-box'>
+                        <p>DURATION</p>
+                    </div>
+                } 
                     {this.state.durationToggle ?
+                        this.state.scheduleToggle && this.props.startDate && this.props.endDate ?
+                        <div className='closed-box' onClick={() => this.handleToggle('scheduleToggle', false, this.props.duration)} >
+                            <p>SCHEDULE</p>
+                            <div className='closedBox-img-container'>
+                                <img src={pencil} />
+                            </div>
+                                <h2>Schedule Your Task</h2>
+                            <div className='closed-schedule-box'>
+                                <span>Start:{JSON.stringify(this.props.startDate)}</span>
+                                <span>End:{JSON.stringify(this.props.endDate)}</span>
+                            </div>
+                        </div> 
+                        :
                         <div className='question-box'>
                             <div className='inner-container'>
                                 <p>SCHEDULE</p>
                                 <div className="time-box">
                                     <div className="calendar-box">
-                                        <h2>Task Start Date & Time</h2>
+                                        <h2>Schedule Your Task</h2>
                                         <div className='small-question-box'>
                                             <div className="calendar"><Calendar /></div>
                                         </div>
@@ -117,12 +175,12 @@ class Cleaning_Form extends Component {
                     }
                     {this.state.scheduleToggle ?
                         <div className='question-box details'>
-                            <div className='inner-container'>
+                            <div id="details-inner" className='inner-container'>
                                 <p>DETAILS</p>
                                 <h2>Details of Task</h2>
                                 <textarea placeholder='Enter any additional details for the Tasker' className='details-input' onChange={e => this.props.updateTaskDetails(e.target.value)}></textarea>
                                 <div className='form-button'>
-                                    <button onClick={()=>this.bookTask()} >Book Task</button>
+                                    <button onClick={()=>this.bookTask()}>Book Task</button>
                                 </div>
                             </div>
                         </div>
@@ -139,6 +197,7 @@ class Cleaning_Form extends Component {
 
 const mapStateToProps = state => {
     const { taskType, locationStart, locationEnd, lat, long, duration, vehicle, startDate, endDate, taskDetails } = state.client;
+    const { user } = state.tasker
     return {
         taskType,
         locationStart,
@@ -149,13 +208,15 @@ const mapStateToProps = state => {
         vehicle,
         startDate,
         endDate,
-        taskDetails
+        taskDetails,
+        user
     }
 }
 
 const mapDispatchToProps = {
     updateLocationStart: updateLocationStart,
     updateDuration: updateDuration,
+    updateVehicle: updateVehicle,
     updateStartDate: updateStartDate,
     updateEndDate: updateEndDate,
     updateTaskDetails: updateTaskDetails,

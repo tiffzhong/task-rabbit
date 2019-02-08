@@ -77,15 +77,15 @@ class NavBar extends Component {
                 <ul  id='nav-popover-dropdown' className={this.state.toggleLinks ? "showDropdown" : "hideDropdown"}>
                   <div className='dropdown-links'>
                   <p className='dropdown-title' >Task Services</p>
-                  <Link to="/mounting_form" className='nav-popover-link' onClick={this.linkToggler} >Mounting & Installation</Link>
-                  <Link to="/delivery_form"  className='nav-popover-link' onClick={this.linkToggler} >Delivery Service</Link>
-                  <Link to="/yardwork_form" className='nav-popover-link' onClick={this.linkToggler} >Yardwork/Landscaping</Link>
-                  <Link to="/home_form" className='nav-popover-link' onClick={this.linkToggler} >Home Improvement</Link>
-                  <Link to="/moving_form" className='nav-popover-link' onClick={this.linkToggler} >Moving & Packing</Link>
-                  <Link to="/pet_form" className='nav-popover-link' onClick={this.linkToggler} >Pet Service</Link>
-                  <Link to="/furniture_form" className='nav-popover-link' onClick={this.linkToggler} >Furniture Assembly</Link>
                   <Link to="/cleaning_form" className='nav-popover-link' onClick={this.linkToggler} >Cleaning Service</Link>
                   <Link to="/cooking_form" className='nav-popover-link' onClick={this.linkToggler} >Cooking Service</Link>
+                  <Link to="/delivery_form"  className='nav-popover-link' onClick={this.linkToggler} >Delivery Service</Link>
+                  <Link to="/furniture_form" className='nav-popover-link' onClick={this.linkToggler} >Furniture Assembly</Link>
+                  <Link to="/home_form" className='nav-popover-link' onClick={this.linkToggler} >Home Improvement</Link>
+                  <Link to="/mounting_form" className='nav-popover-link' onClick={this.linkToggler} >Mounting & Installation</Link>
+                  <Link to="/moving_form" className='nav-popover-link' onClick={this.linkToggler} >Moving & Packing</Link>
+                  <Link to="/pet_form" className='nav-popover-link' onClick={this.linkToggler} >Pet Service</Link>
+                  <Link to="/yardwork_form" className='nav-popover-link' onClick={this.linkToggler} >Yardwork/Landscaping</Link>
                   </div>
                 </ul>
               </div>

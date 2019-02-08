@@ -7,7 +7,7 @@ const INITIAL_STATE = {
   locationEnd: '',
   lat: '',
   long: '',
-  duration: '',
+  duration: 0,
   vehicle: '',
   startDate: '',
   endDate: '',
@@ -18,6 +18,8 @@ const INITIAL_STATE = {
 const UPDATE_TASK_TYPE = "UPDATE_TASK_TYPE";
 const UPDATE_LOCATION_START ='UPDATE_LOCATION_START';
 const UPDATE_LOCATION_END = 'UPDATE_LOCATION_END';
+const UPDATE_LAT = 'UPDATE_LAT';
+const UPDATE_LONG = 'UPDATE_LONG';
 const UPDATE_DURATION = 'UPDATE_DURATION';
 const UPDATE_VEHICLE = 'UPDATE_VEHICLE';
 const UPDATE_START_DATE = 'UPDATE_START_DATE';
@@ -36,6 +38,12 @@ export default function clientReducer(state = INITIAL_STATE, action) {
 
     case UPDATE_LOCATION_END:
       return { ...state, locationEnd: action.payload };
+
+    case UPDATE_LAT:
+      return { ...state, lat: action.payload };
+
+    case UPDATE_LONG:
+      return { ...state, long: action.payload };
 
     case UPDATE_DURATION:
       return { ...state, duration: action.payload };
@@ -78,6 +86,20 @@ export function updateLocationEnd(locationEnd) {
   return {
     type: UPDATE_LOCATION_END,
     payload: locationEnd
+  }
+}
+
+export function updateLat(lat) {
+  return {
+    type: UPDATE_LAT,
+    payload: lat
+  }
+}
+
+export function updateLong(long) {
+  return {
+    type: UPDATE_LONG,
+    payload: long
   }
 }
 
