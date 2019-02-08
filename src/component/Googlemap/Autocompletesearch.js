@@ -16,7 +16,7 @@ class AutocompleteSearch extends Component {
         return (
             <div>
                 <Autocomplete
-                    style={{ width: '250%' }}
+                    style={{ width: '400px' }}
                     onPlaceSelected={(place) => {
                         this.setState({
                             place: place.formatted_address,

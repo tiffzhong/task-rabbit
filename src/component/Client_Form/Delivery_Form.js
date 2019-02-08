@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Client_Form.css';
-import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, updateVehicle, updateTaskDetails } from '../../ducks/clientReducer';
+import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, updateVehicle, updateTaskDetails, updateClientData } from '../../ducks/clientReducer';
 import Calendar from "../Calendar/Calendar";
 import CalendarEnd from "../Calendar/CalenderEnd";
+import axios from 'axios';
 
 class Delivery_Form extends Component {
     constructor() {
@@ -19,7 +20,7 @@ class Delivery_Form extends Component {
 
     handleToggle = (name, value, state) => {
         if (name === 'scheduleToggle') {
-            if (this.props.startDate == '' || this.props.startTime == '') {
+            if (this.props.startDate === '' || this.props.startTime === '') {
                 alert('you must answer all questions before continuing')
             }
         } else if (state === '') {
@@ -31,6 +32,26 @@ class Delivery_Form extends Component {
                 [name]: value
             })
         }
+    }
+
+    bookTask = () => {
+        const { locationStart, locationEnd, long, lat, duration, vehicle, startDate, endDate, taskDetails, user } = this.props;
+        const bookedTask = {
+            taskType: 'delivery service',
+            locationStart, 
+            locationEnd,
+            lat,
+            long, 
+            duration,
+            vehicle, 
+            startDate, 
+            endDate,
+            taskDetails,
+            user_id: user.auth0_id
+        }
+        axios.post('/api/client', bookedTask).then(response => {
+            this.props.updateClientData(response.data)
+        })
     }
 
     render() {
@@ -58,12 +79,25 @@ class Delivery_Form extends Component {
                         <div className='question-box'>
                             <div className='inner-container'>
                                 <p>DURATION</p>
-                                <h2>Duration of Task</h2>
-                                <input placeholder='An estimated time of how long your task should take to be completed' onChange={e => this.props.updateDuration(e.target.value)}></input>
+                                <h2>How long should it take?</h2>
+                                <div className='duration-container'>
+                                    <div>
+                                        <input type='radio' id='r1' name='radio' onClick={()=>this.props.updateDuration('Est. 1 hr')}/>
+                                        <label  className='duration-radio'>Short - Est. 1 hr</label>
+                                    </div>   
+                                    <div>
+                                        <input type='radio' id='r2' name='radio' onClick={()=>this.props.updateDuration('Est. 2-3 hrs')}/>
+                                        <label  className='duration-radio'>Medium - Est. 2-3 hrs</label>
+                                    </div>   
+                                    <div>
+                                        <input type='radio' id='r3' name='radio' onClick={()=>this.props.updateDuration('Est. 4+ hrs')}/>
+                                        <label  className='duration-radio'>Long - Est. 4+ hrs</label>
+                                    </div>   
+                                </div>
+                            </div>
                                 <div className='form-button'>
                                     <button onClick={() => this.handleToggle('durationToggle', true, this.props.duration)}>Continue</button>
                                 </div>
-                            </div>
                         </div>
                         :
                         <div className='toggle-box'>
@@ -105,7 +139,7 @@ class Delivery_Form extends Component {
                                 <h2>Details of Task</h2>
                                 <input placeholder='Enter any additional details for the Tasker' className='details-input' onChange={e => this.props.updateTaskDetails(e.target.value)}></input>
                                 <div className='form-button'>
-                                    <button>Book Task</button>
+                                    <button onClick={()=>this.bookTask()}>Book Task</button>
                                 </div>
                             </div>
                         </div>
@@ -121,25 +155,31 @@ class Delivery_Form extends Component {
 }
 
 const mapStateToProps = state => {
-    const { taskType, locationStart, duration, vehicle, startDate, startTime, taskDetails } = state.client;
+    const { taskType, locationStart, locationEnd, lat, long, duration, vehicle, startDate, endDate, taskDetails } = state.client;
+    const { user } = state.tasker
     return {
         taskType,
         locationStart,
+        locationEnd,
+        lat,
+        long,
         duration,
         vehicle,
         startDate,
-        startTime,
-        taskDetails
+        endDate,
+        taskDetails,
+        user
     }
 }
 
 const mapDispatchToProps = {
-    updateDuration: updateDuration,
     updateLocationStart: updateLocationStart,
+    updateDuration: updateDuration,
+    updateVehicle: updateVehicle,
     updateStartDate: updateStartDate,
     updateEndDate: updateEndDate,
-    updateVehicle: updateVehicle,
-    updateTaskDetails: updateTaskDetails
+    updateTaskDetails: updateTaskDetails,
+    updateClientData: updateClientData
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Delivery_Form);
