@@ -80,12 +80,14 @@ class Cleaning_Form extends Component {
                         </div>
                     </div>  
                     :  
-                    <div className='question-box'>
-                        <p>LOCATION</p>
-                        <h2>Your Task Start Location</h2>
-                        <Autocompletesearch />
-                        <div className='form-button'  >
-                            <button onClick={() => this.handleToggle('locationToggle', true, this.props.locationStart)}>Continue</button>
+                    <div className='question-box' id='question-box'>
+                        <div className='inner-container'>
+                            <p>LOCATION</p>
+                            <h2>Your Task Start Location</h2>
+                            <Autocompletesearch />
+                            <div className='form-button'  >
+                                <button onClick={() => this.handleToggle('locationToggle', true, this.props.locationStart)}>Continue</button>
+                            </div>
                         </div>
                     </div>
                 }

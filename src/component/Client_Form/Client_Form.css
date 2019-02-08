@@ -88,7 +88,7 @@ h2 {
 .question-box {
     border: solid 2px lightgray;
     margin-top: 10px;
-    height:400px;
+    /* height:400px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,14 +96,17 @@ h2 {
     position: relative;
     background: whitesmoke;
 }
+#question-box div {
+    width: 400px;
+}
+#question-box input{
+    height: 40px;
+}
 .inner-container {
-    /* background: white; */
-    /* border: solid .5px rgb(221, 221, 221); */
     display: flex;
     flex-direction: column;
-    /* width: 600px;
-    height: 50%;
-    margin-top: 50px; */
+    justify-content: center;
+    margin: 50px;
 }
 .inner-container input {
     height: 20px;
@@ -212,7 +215,7 @@ h2 {
 .closed-box {
     background: whitesmoke;
     border: solid .5px rgb(221, 221, 221);
-    height: 100px;
+    /* height: 100px; */
     position: relative;
     display: flex;
     justify-content: center;
@@ -234,6 +237,9 @@ h2 {
     position: absolute;
     top: 5px;
     right: 5px;
+}
+.closed-box-inner {
+    margin: 20px;
 }
 /* .closed-box:hover .closedBox-img-container  {
     background: rgb(1, 187, 1);
