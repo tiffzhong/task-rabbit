@@ -4,7 +4,9 @@ import { setUser, createProfile } from "../../ducks/taskerReducer";
 import "./TaskerProfile.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import AutocompleteSearch from "../Googlemap/Autocompletesearch";
+import { GoogleApiWrapper } from "google-maps-react";
+import Autocomplete from "react-google-autocomplete";
+
 class TaskerProfile extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +15,7 @@ class TaskerProfile extends Component {
       name: "",
       email: "",
       phone: "",
+      place: "",
       about: "",
       mounting: false,
       mountingHourly: null,
@@ -72,6 +75,7 @@ class TaskerProfile extends Component {
       name,
       email,
       phone,
+      place,
       about,
       mounting,
       mountingHourly,
@@ -92,7 +96,7 @@ class TaskerProfile extends Component {
       cooking,
       cookingHourly
     } = this.state;
-    const { createProfile, user, place } = this.props;
+    const { createProfile, user } = this.props;
 
     return (
       <div className="tasker-profile">
@@ -117,22 +121,17 @@ class TaskerProfile extends Component {
               value={phone}
               onChange={event => this.handleInput(event)}
             />
-            {/* <input
-              placeholder="Where are you located?"
-              name="location"
-              value={location}
-              onChange={event => this.handleInput(event)}
-            /> */}
-            {/* <Autocomplete
-              style={{ width: "100%" }}
-              onPlaceSelected={place => {
-                this.setState({
-                  place: place.formatted_address
-                });
-              }}
-              types={["geocode"]}
-            /> */}
-
+            <div>
+              <Autocomplete
+                style={{ width: "250%" }}
+                onPlaceSelected={place => {
+                  this.setState({
+                    place: place.formatted_address
+                  });
+                }}
+                types={["geocode"]}
+              />
+            </div>
             <textarea
               placeholder="Write some details about yourself"
               name="about"
@@ -287,7 +286,7 @@ class TaskerProfile extends Component {
                     name,
                     email,
                     phone,
-
+                    place,
                     about,
                     mounting,
                     mountingHourly,
@@ -321,16 +320,15 @@ class TaskerProfile extends Component {
   }
 }
 function mapStateToProps(state) {
-  let { user, place } = state.tasker;
-  return { user, place };
+  let { user } = state.tasker;
+  return { user };
 }
+
+const WrappedContainer = GoogleApiWrapper({
+  apiKey: process.env.REACT_APP_GOOGLE_MAP
+})(TaskerProfile);
+
 export default connect(
   mapStateToProps,
   { setUser, createProfile }
-)(TaskerProfile);
-// export default connect(
-//   mapStateToProps,
-//   { setUser, createProfile }
-// )(
-//   GoogleApiWrapper({ apiKey: process.env.REACT_APP_GOOGLE_MAP })(TaskerProfile)
-// );
+)(WrappedContainer);

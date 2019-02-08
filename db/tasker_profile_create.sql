@@ -1,5 +1,6 @@
 insert into tasker_profile
-( tasker_id,
+( 
+tasker_id,
 name,
 email,
 phone,

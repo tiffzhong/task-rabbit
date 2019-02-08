@@ -24,21 +24,15 @@ create table reviews(
 select * from users
 
 drop table tasker_profile;
-drop table tasker_expertise;
 
 create table tasker_profile(
    tasker_profile_id serial primary key,
+   tasker_id text,
     name varchar(80), 
     email text,
     phone text,
     location text,
-    about text 
-)
-select * from tasker_profile;
-
-create table tasker_expertise(
-    skills_id serial primary key,
-    tasker_profile_id int references tasker_profile(tasker_profile_id),
+    about text,
     mounting boolean,
     mountingHourly text,
     delivery boolean,
@@ -59,7 +53,9 @@ create table tasker_expertise(
     cookingHourly text
 )
 
-select * from tasker_expertise;
+
+select * from tasker_profile;
+
 
 
 -- To stay logged in. No need to sign in w Auth0 every time

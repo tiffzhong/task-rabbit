@@ -33,7 +33,10 @@ export default (
     <Route path="/tasker-dashboard" component={TaskerDashboard} />
     <Route path="/client-dashboard" component={ClientDashboard} />
     <Route path="/tasker-profile" component={TaskerProfile} />
-    <Route path="/edit-tasker-profile" component={EditTaskerProfile} />
+    <Route
+      path="/edit-tasker-profile/:tasker_id"
+      component={EditTaskerProfile}
+    />
     <Route path="/confirmation" component={Confirmation} />
   </Switch>
 );
