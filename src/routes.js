@@ -30,10 +30,13 @@ export default (
     <Route path="/furniture_form" component={Furniture_Form} />
     <Route path="/cleaning_form" component={Cleaning_Form} />
     <Route path="/cooking_form" component={Cooking_Form} />
-    <Route path="/tasker-dashboard" component={TaskerDashboard} />
+    <Route path="/tasker-dashboard/:tasker_id" component={TaskerDashboard} />
     <Route path="/client-dashboard" component={ClientDashboard} />
     <Route path="/tasker-profile" component={TaskerProfile} />
-    <Route path="/edit-tasker-profile" component={EditTaskerProfile} />
+    <Route
+      path="/edit-tasker-profile/:tasker_id"
+      component={EditTaskerProfile}
+    />
     <Route path="/confirmation" component={Confirmation} />
   </Switch>
 );

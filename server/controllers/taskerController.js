@@ -3,8 +3,9 @@ module.exports = {
     const database = req.app.get("db");
     let {
       user,
-      name,
+      tasker_name,
       email,
+      selfie,
       phone,
       place,
       about,
@@ -31,8 +32,9 @@ module.exports = {
     database
       .tasker_profile_create([
         user,
-        name,
+        tasker_name,
         email,
+        selfie,
         phone,
         place,
         about,
@@ -62,11 +64,12 @@ module.exports = {
   },
   editProfile: (req, res) => {
     const database = req.app.get("db");
-    console.log(req.body, "body");
-    console.log(req.params, "params");
+    console.log(req.body, "body editprofile controler");
+    console.log(req.params, "params editprogile contrller");
     let {
-      name,
+      tasker_name,
       email,
+      selfie,
       phone,
       location,
       about,
@@ -93,8 +96,9 @@ module.exports = {
     database
       .tasker_profile_edit([
         user,
-        name,
+        tasker_name,
         email,
+        selfie,
         phone,
         location,
         about,
@@ -126,6 +130,7 @@ module.exports = {
   getProfile: (req, res) => {
     const database = req.app.get("db");
     let { tasker_id } = req.params;
+    console.log("req.params getProfile", req.params);
     database
       .tasker_profile_get([tasker_id])
       .then(profile => {
