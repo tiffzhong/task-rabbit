@@ -2,13 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: yellow;
+    /* background: yellow; */
     width: 1500px;
     height: 700px;
 }
 
 .mapcontainer > div{
-    background: blue;
+    /* background: blue; */
     width: 50%;
     height: 50%;
     /* position: relative; */
@@ -19,4 +19,7 @@
     /* position: relative; */
     /* top: 5px; */
     
+}
+img{
+    width: 70px;
 }
