@@ -39,11 +39,13 @@ export function getProfile(tasker_id) {
     payload: tasker_id
   };
 }
+// export function getPlace
 export function createProfile(
   name,
   email,
+  selfie,
   phone,
-  location,
+  place,
   about,
   mounting,
   mountingHourly,
@@ -72,8 +74,9 @@ export function createProfile(
       .post("/api/tasker", {
         name,
         email,
+        selfie,
         phone,
-        location,
+        place,
         about,
         mounting,
         mountingHourly,
@@ -96,16 +99,17 @@ export function createProfile(
         user,
         tasker_id
       })
-      .then(newUser => {
-        return newUser.data;
+      .then(() => {
+        return {};
       })
       .catch(error => console.log("error in creating profile", error))
   };
 }
 
 export function editProfile(
-  name,
+  tasker_name,
   email,
+  selfie,
   phone,
   location,
   about,
@@ -132,8 +136,9 @@ export function editProfile(
   return {
     type: EDIT_PROFILE,
     payload: axios.put(`/api/tasker/${tasker_id}`, {
-      name,
+      tasker_name,
       email,
+      selfie,
       phone,
       location,
       about,

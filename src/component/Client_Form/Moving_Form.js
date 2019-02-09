@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Client_Form.css';
-import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, updateVehicle, updateTaskDetails, updateLocationEnd } from '../../ducks/clientReducer';
-import Calendar from "../Calendar/Calendar";
-import CalendarEnd from "../Calendar/CalenderEnd";
+import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, updateVehicle, updateTaskDetails, updateLocationEnd, updateClientData } from '../../ducks/clientReducer';
+import axios from 'axios';
+import LocationDual from './QuestionBoxes/LocationDual';
+import Duration from './QuestionBoxes/Duration';
+import Vehicle from './QuestionBoxes/Vehicle';
+import Schedule from './QuestionBoxes/Schedule';
+import Details from './QuestionBoxes/Details';
+
 
 class Moving_Form extends Component {
     constructor() {
@@ -19,7 +24,7 @@ class Moving_Form extends Component {
 
     handleToggle = (name, value, state) => {
         if (name === 'scheduleToggle') {
-            if (this.props.startDate == '' || this.props.startTime == '') {
+            if (this.props.startDate === '' || this.props.startTime === '') {
                 alert('you must answer all questions before continuing')
             } else {
                 this.setState({
@@ -30,7 +35,7 @@ class Moving_Form extends Component {
             alert('you must answer all questions before continuing')
 
         } else if ( name === 'locationToggle') {
-            if (this.props.locationStart == '' || this.props.locationEnd == '') {
+            if (this.props.locationStart === '' || this.props.locationEnd === '') {
                 alert('you must answer all questions before continuing')
             } else {
                 this.setState({
@@ -46,6 +51,26 @@ class Moving_Form extends Component {
         
     }
 
+    bookTask = () => {
+        const { locationStart, locationEnd, long, lat, duration, vehicle, startDate, endDate, taskDetails, user } = this.props;
+        const bookedTask = {
+            taskType: 'moving & packing',
+            locationStart, 
+            locationEnd,
+            lat,
+            long, 
+            duration,
+            vehicle, 
+            startDate, 
+            endDate,
+            taskDetails,
+            user_id: user.auth0_id
+        }
+        axios.post('/api/client', bookedTask).then(response => {
+            this.props.updateClientData(response.data)
+        })
+    }
+
     render() {
 
 
@@ -55,94 +80,41 @@ class Moving_Form extends Component {
                 <span className='shadow-box'></span>
                 <div className='outer-container'>
                 <h1>Task: Moving & Packing</h1>
-                    <div className='question-box'>
-                        <div className='inner-container'>
-                            <p>LOCATION</p>
-                            <h2>Your Task Start Location</h2>
-                            <input placeholder='Enter a street address' onChange={e => this.props.updateLocationStart(e.target.value)} />
-                            <h2>Your Task End Location</h2>
-                            <input placeholder='Enter a street address' onChange={e => this.props.updateLocationEnd(e.target.value)} />
-                            <div className={!this.state.locationToggle ? 'form-button' : 'hide'}  >
-                                <button onClick={() => this.handleToggle('locationToggle', true, this.props.locationStart)}>Continue</button>
-                            </div>
-                        </div>
-                    </div>
-                    {this.state.locationToggle ?
-                        <div className='question-box'>
-                            <div className='inner-container'>
-                                <p>DURATION</p>
-                                <h2>Duration of Task</h2>
-                                <input placeholder='An estimated time of how long your task should take to be completed' onChange={e => this.props.updateDuration(e.target.value)}></input>
-                                <div className='form-button'>
-                                    <button onClick={() => this.handleToggle('durationToggle', true, this.props.duration)}>Continue</button>
-                                </div>
-                            </div>
-                        </div>
-                        :
-                        <div className='toggle-box'>
-                            <p>DURATION</p>
-                        </div>
-                    }
-                    {this.state.durationToggle ?
-                        <div className='question-box'>
-                            <div className='inner-container'>
-                                <p>VEHICLE</p>
-                                <h2>Vehicle Requirements</h2>
-                                <input placeholder='Is a vehicle needed for this task? If yes, please specify a car or truck' onChange={e => this.props.updateVehicle(e.target.value)}></input>
-                                <div className='form-button'>
-                                    <button onClick={() => this.handleToggle('vehicleToggle', true, this.props.vehicle)}>Continue</button>
-                                </div>
-                            </div>
-                        </div>
-                        :
-                        <div className='toggle-box'>
-                            <p>VEHICLE</p>
-                        </div>
-                    }
-                    {this.state.vehicleToggle ?
-                        <div className='question-box'>
-                            <div className='inner-container'>
-                                <p>SCHEDULE</p>
-                                <div className="time-box">
-                                    <div className="calendar-box">
-                                        <h2>Task Start Date & Time</h2>
-                                        <div className='small-question-box'>
-                                            <div className="calendar"><Calendar /></div>
-                                        </div>
-                                    </div>
-                                    <div className="calendar-box">
-                                        <h2>Task End Date & Time</h2>
-                                        <div className='small-question-box'>
-                                            <div className="calendar"><CalendarEnd /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='form-button'>
-                                <button onClick={() => this.handleToggle('vehicleToggle', true, this.props.vehicle)}>Continue</button>
-                            </div>
-                        </div>
-                        :
-                        <div className='toggle-box'>
-                            <p>SCHEDULE</p>
-                        </div>
-                    }
-                    {this.state.scheduleToggle ?
-                        <div className='question-box details'>
-                            <div className='inner-container'>
-                                <p>DETAILS</p>
-                                <h2>Details of Task</h2>
-                                <input placeholder='Enter any additional details for the Tasker' className='details-input' onChange={e => this.props.updateTaskDetails(e.target.value)}/>
-                                <div className='form-button'>
-                                    <button>Book Task</button>
-                                </div>
-                            </div>
-                        </div>
-                        :
-                        <div className='toggle-box'>
-                            <p>DETAILS</p>
-                        </div>
-                    }
+                <LocationDual 
+                    locationToggle={this.state.locationToggle}
+                    durationToggle={this.state.durationToggle}
+                    vehicleToggle={this.state.vehicleToggle}
+                    scheduleToggle={this.state.scheduleToggle}
+                    handleToggle={this.handleToggle}
+                />
+                <Duration 
+                    locationToggle={this.state.locationToggle}
+                    durationToggle={this.state.durationToggle}
+                    vehicleToggle={this.state.vehicleToggle}
+                    scheduleToggle={this.state.scheduleToggle}
+                    handleToggle={this.handleToggle}
+                />
+                <Vehicle 
+                    locationToggle={this.state.locationToggle}
+                    durationToggle={this.state.durationToggle}
+                    vehicleToggle={this.state.vehicleToggle}
+                    scheduleToggle={this.state.scheduleToggle}
+                    handleToggle={this.handleToggle}
+                />
+                <Schedule 
+                    locationToggle={this.state.locationToggle}
+                    durationToggle={this.state.durationToggle}
+                    vehicleToggle={this.state.vehicleToggle}
+                    scheduleToggle={this.state.scheduleToggle}
+                    handleToggle={this.handleToggle}
+                />
+                <Details
+                    locationToggle={this.state.locationToggle}
+                    durationToggle={this.state.durationToggle}
+                    vehicleToggle={this.state.vehicleToggle}
+                    scheduleToggle={this.state.scheduleToggle}
+                    handleToggle={this.handleToggle}
+                />
                 </div>
             </div>
         );
@@ -150,27 +122,32 @@ class Moving_Form extends Component {
 }
 
 const mapStateToProps = state => {
-    const { taskType, locationStart, duration, vehicle, startDate, startTime, taskDetails, locationEnd } = state.client;
+    const { taskType, locationStart, locationEnd, lat, long, duration, vehicle, startDate, endDate, taskDetails } = state.client;
+    const { user } = state.tasker
     return {
         taskType,
         locationStart,
+        locationEnd,
+        lat,
+        long,
         duration,
         vehicle,
         startDate,
-        startTime,
+        endDate,
         taskDetails,
-        locationEnd
+        user
     }
 }
 
 const mapDispatchToProps = {
-    updateDuration: updateDuration,
     updateLocationStart: updateLocationStart,
+    updateLocationEnd: updateLocationEnd,
+    updateDuration: updateDuration,
+    updateVehicle: updateVehicle,
     updateStartDate: updateStartDate,
     updateEndDate: updateEndDate,
-    updateVehicle: updateVehicle,
     updateTaskDetails: updateTaskDetails,
-    updateLocationEnd: updateLocationEnd
+    updateClientData: updateClientData
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Moving_Form);

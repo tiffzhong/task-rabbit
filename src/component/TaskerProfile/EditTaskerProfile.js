@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { setUser, createProfile } from "../../ducks/taskerReducer";
+import { editProfile, getProfile } from "../../ducks/taskerReducer";
 import "./TaskerProfile.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { GoogleApiWrapper } from "google-maps-react";
+import Autocomplete from "react-google-autocomplete";
+
 class EditTaskerProfile extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +15,7 @@ class EditTaskerProfile extends Component {
       name: "",
       email: "",
       phone: "",
-      location: "",
+      place: {},
       about: "",
       mounting: false,
       mountingHourly: null,
@@ -35,17 +38,42 @@ class EditTaskerProfile extends Component {
     };
   }
   componentDidMount() {
-    axios
-      .get("/auth/user-data")
-      .then(response => {
-        this.props.setUser(response.data.user);
-      })
-      .then(() => {
-        this.setState({
-          name: this.props.user.name,
-          email: this.props.user.email
-        });
-      });
+    if (this.props.match.params.tasker_id) {
+      axios
+        .get(`/api/tasker/${this.props.match.params.tasker_id}`)
+        .then(res => {
+          console.log(res.data);
+          return this.props.getProfile(res.data);
+        })
+        .then(() => {
+          this.setState({
+            name: this.props.taskerProfile.name,
+            email: this.props.taskerProfile.email,
+            phone: this.props.taskerProfile.phone,
+            place: this.props.taskerProfile.location,
+            about: this.props.taskerProfile.about,
+            mounting: this.props.taskerProfile.mounting,
+            mountingHourly: this.props.taskerProfile.mountingHourly,
+            delivery: this.props.taskerProfile.delivery,
+            deliveryHourly: this.props.taskerProfile.deliveryHourly,
+            yard: this.props.taskerProfile.yard,
+            yardHourly: this.props.taskerProfile.yardHourly,
+            home: this.props.taskerProfile.home,
+            homeHourly: this.props.taskerProfile.homeHourly,
+            moving: this.props.taskerProfile.moving,
+            movingHourly: this.props.taskerProfile.mountingHourly,
+            pet: this.props.taskerProfile.pet,
+            petHourly: this.props.taskerProfile.petHourly,
+            furniture: this.props.taskerProfile.furniture,
+            furnitureHourly: this.props.taskerProfile.furnitureHourly,
+            cleaning: this.props.taskerProfile.cleaning,
+            cleaningHourly: this.props.taskerProfile.cleaningHourly,
+            cooking: this.props.taskerProfile.cooking,
+            cookingHourly: this.props.taskerProfile.cookingHourly
+          });
+        })
+        .catch(error => console.log("error in getProfile"));
+    }
   }
   handleInput = event => {
     this.setState({
@@ -67,12 +95,13 @@ class EditTaskerProfile extends Component {
 
   render() {
     console.log(this.props, "tasker props");
+    console.log(this.props.taskerProfile, "profile");
     console.log(this.state, "stater");
     const {
       name,
       email,
       phone,
-      location,
+      place,
       about,
       mounting,
       mountingHourly,
@@ -98,10 +127,8 @@ class EditTaskerProfile extends Component {
     return (
       <div className="tasker-profile">
         <div className="profile-form-container">
-          <h2>Tasker Profile</h2>
-          <p>Your Tasker Profile</p>
-
           <form onSubmit={event => this.onSubmit(event)}>
+            <h2>Your Tasker Profile</h2>
             <input
               name="name"
               value={name}
@@ -120,12 +147,26 @@ class EditTaskerProfile extends Component {
               value={phone}
               onChange={event => this.handleInput(event)}
             />
-            <input
-              placeholder="Where are you located?"
-              name="location"
-              value={location}
-              onChange={event => this.handleInput(event)}
-            />
+            <div>
+              <Autocomplete
+                style={{ width: "250%" }}
+                onPlaceSelected={place => {
+                  var lat = place.geometry.location.lat();
+                  var lng = place.geometry.location.lng();
+                  this.setState({
+                    place: {
+                      address: place.formatted_address,
+                      lat: lat,
+                      lng: lng
+                    }
+                  });
+                  // if (this.state.place) {
+                  //   this.props.updateLocationStart(place.formatted_address);
+                  // }
+                }}
+                types={["geocode"]}
+              />
+            </div>
             <textarea
               placeholder="Write some details about yourself"
               name="about"
@@ -137,8 +178,8 @@ class EditTaskerProfile extends Component {
         </div>
 
         <div className="tasker-skill-form">
-          <h2>What is your hourly rate?</h2>
           <form onSubmit={event => this.onSubmit(event)}>
+            <h2>What is your hourly rate?</h2>
             <label>
               <input
                 type="checkbox"
@@ -273,14 +314,14 @@ class EditTaskerProfile extends Component {
                 onChange={this.handleChange}
               />
             </label>
-            <Link to="/tasker-dashboard">
+            <Link to={`/tasker-dashboard/${user.auth0_id}`}>
               <button
                 onClick={() =>
-                  createProfile(
+                  editProfile(
                     name,
                     email,
                     phone,
-                    location,
+                    place,
                     about,
                     mounting,
                     mountingHourly,
@@ -314,10 +355,15 @@ class EditTaskerProfile extends Component {
   }
 }
 function mapStateToProps(state) {
-  let { user } = state.tasker;
-  return { user };
+  let { user, taskerProfile } = state.tasker;
+  return { user, taskerProfile };
 }
+
+const WrappedContainer = GoogleApiWrapper({
+  apiKey: process.env.REACT_APP_GOOGLE_MAP
+})(EditTaskerProfile);
+
 export default connect(
   mapStateToProps,
-  { setUser }
-)(EditTaskerProfile);
+  { editProfile, getProfile }
+)(WrappedContainer);

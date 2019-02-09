@@ -1,7 +1,9 @@
 insert into tasker_profile
-( tasker_id,
-name,
+( 
+tasker_id,
+tasker_name,
 email,
+selfie,
 phone,
 location,
 about,
@@ -46,5 +48,6 @@ $20,
 $21,
 $22,
 $23,
-$24)
+$24,
+$25)
 returning *;

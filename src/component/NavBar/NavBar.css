@@ -213,6 +213,7 @@ nav li {
   margin-top: 15px;
   position: relative;
   z-index: 1;
+  color: white;
 }
 .nav-popover-link {
   width: 200px;

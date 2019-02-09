@@ -4,6 +4,9 @@ import { setUser, createProfile } from "../../ducks/taskerReducer";
 import "./TaskerProfile.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { GoogleApiWrapper } from "google-maps-react";
+import Autocomplete from "react-google-autocomplete";
+
 class TaskerProfile extends Component {
   constructor(props) {
     super(props);
@@ -11,8 +14,9 @@ class TaskerProfile extends Component {
     this.state = {
       name: "",
       email: "",
+      selfie: "",
       phone: "",
-      location: "",
+      place: "",
       about: "",
       mounting: false,
       mountingHourly: null,
@@ -43,7 +47,8 @@ class TaskerProfile extends Component {
       .then(() => {
         this.setState({
           name: this.props.user.name,
-          email: this.props.user.email
+          email: this.props.user.email,
+          selfie: this.props.user.selfie
         });
       });
   }
@@ -71,8 +76,9 @@ class TaskerProfile extends Component {
     const {
       name,
       email,
+      selfie,
       phone,
-      location,
+      place,
       about,
       mounting,
       mountingHourly,
@@ -98,10 +104,8 @@ class TaskerProfile extends Component {
     return (
       <div className="tasker-profile">
         <div className="profile-form-container">
-          <h2>Tasker Profile</h2>
-          <p>Your Tasker Profile</p>
-
           <form onSubmit={event => this.onSubmit(event)}>
+            <h2>Your Tasker Profile</h2>
             <input
               name="name"
               value={name}
@@ -120,12 +124,17 @@ class TaskerProfile extends Component {
               value={phone}
               onChange={event => this.handleInput(event)}
             />
-            <input
-              placeholder="Where are you located?"
-              name="location"
-              value={location}
-              onChange={event => this.handleInput(event)}
-            />
+            <div>
+              <Autocomplete
+                style={{ width: "250%" }}
+                onPlaceSelected={place => {
+                  this.setState({
+                    place: place.formatted_address
+                  });
+                }}
+                types={["geocode"]}
+              />
+            </div>
             <textarea
               placeholder="Write some details about yourself"
               name="about"
@@ -137,8 +146,8 @@ class TaskerProfile extends Component {
         </div>
 
         <div className="tasker-skill-form">
-          <h2>What is your hourly rate?</h2>
           <form onSubmit={event => this.onSubmit(event)}>
+            <h2>What is your hourly rate?</h2>
             <label>
               <input
                 type="checkbox"
@@ -273,14 +282,15 @@ class TaskerProfile extends Component {
                 onChange={this.handleChange}
               />
             </label>
-            <Link to="/tasker-dashboard">
+            <Link to={`/tasker-dashboard/${user.auth0_id}`}>
               <button
                 onClick={() =>
                   createProfile(
                     name,
                     email,
+                    selfie,
                     phone,
-                    location,
+                    place,
                     about,
                     mounting,
                     mountingHourly,
@@ -317,7 +327,12 @@ function mapStateToProps(state) {
   let { user } = state.tasker;
   return { user };
 }
+
+const WrappedContainer = GoogleApiWrapper({
+  apiKey: process.env.REACT_APP_GOOGLE_MAP
+})(TaskerProfile);
+
 export default connect(
   mapStateToProps,
   { setUser, createProfile }
-)(TaskerProfile);
+)(WrappedContainer);

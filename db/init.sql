@@ -8,37 +8,42 @@ create table users(
 
 
 -- Client Tables
-create table client_profile(
-    client_profile_id serial primary key,
-    client_id int references users(user_id), 
-    location text
-)
-create table reviews(
-    review_id serial primary key,
-    review_body text,
-    rating integer, 
-    review_date date
-)
+create table bookedTasks (
+    id serial primary key,
+    taskType text,
+    locationStart text,
+    locationEnd text,
+    lat numeric (15,6),
+    long numeric (15,6),
+    duration text,
+    vehicle text,
+    startDate text,
+    endDate text,
+    taskDetails text,
+    user_id text
+);
+
+drop table bookedTasks;
+
+
+select * from bookedTasks;
+
+
 
 -- Tasker Tables
-select * from users
-
+select * from users;
+select * from bookedtasks;
 drop table tasker_profile;
-drop table tasker_expertise;
 
 create table tasker_profile(
    tasker_profile_id serial primary key,
-    name varchar(80), 
+   tasker_id text,
+    tasker_name varchar(80), 
+    selfie text,
     email text,
     phone text,
     location text,
-    about text 
-)
-select * from tasker_profile;
-
-create table tasker_expertise(
-    skills_id serial primary key,
-    tasker_profile_id int references tasker_profile(tasker_profile_id),
+    about text,
     mounting boolean,
     mountingHourly text,
     delivery boolean,
@@ -59,8 +64,8 @@ create table tasker_expertise(
     cookingHourly text
 )
 
-select * from tasker_expertise;
 
+select * from tasker_profile;
 
 -- To stay logged in. No need to sign in w Auth0 every time
 CREATE TABLE "session" (
