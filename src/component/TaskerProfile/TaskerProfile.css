@@ -44,6 +44,7 @@
   height: 90px;
   border-radius: 5px;
   border: 1px solid rgb(181, 181, 181);
+  resize: none;
 }
 
 .profile-form-container button {

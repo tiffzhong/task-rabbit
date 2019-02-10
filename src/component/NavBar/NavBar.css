@@ -196,6 +196,7 @@ nav li {
 }
 
 .nav-popover-container {
+  text-align: start;
   top: 2.5px;
   left: -60px;
   position: absolute;
@@ -253,7 +254,6 @@ nav a {
   height: 50px;
   width: 160px;
   margin: 0 auto;
-  /* background: black; */
 }
 .hideDropdown {
   display: none;
@@ -308,10 +308,6 @@ button:focus {
     width: 100vw;
     text-align: center; */
   }
-
-  .menuButton:focus {
-  }
-
   .sidelinks {
     display: none;
   }
@@ -324,15 +320,5 @@ button:focus {
   }
   .menuButton-container a:hover {
     cursor: pointer;
-  }
-
-  #menuBox {
-    /* display: flex;
-    flex-direction: column;
-    position: absolute;
-    transform: translate(0, 0px);
-    width: 100vw;
-    text-align: center;
-    background: red; */
   }
 }

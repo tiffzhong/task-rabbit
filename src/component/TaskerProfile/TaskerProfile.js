@@ -146,7 +146,13 @@ class TaskerProfile extends Component {
 
         <div className="tasker-skill-form">
           <form onSubmit={event => this.onSubmit(event)}>
-            <h2>What is your hourly rate?</h2>
+            <h2>Register to become a Tasker</h2>
+            Add Your Skills & Rates
+            <p>
+              Select your tasking categories and set your hourly rates. You can
+              add or remove categories from your profile, or revise your rates,
+              at any time.
+            </p>
             <label>
               <input
                 type="checkbox"
@@ -170,7 +176,6 @@ class TaskerProfile extends Component {
                 />
               )}
             </label>
-
             <label>
               <input
                 type="checkbox"
@@ -194,7 +199,6 @@ class TaskerProfile extends Component {
                 />
               )}
             </label>
-
             <label>
               <input
                 type="checkbox"
@@ -218,7 +222,6 @@ class TaskerProfile extends Component {
                 />
               )}
             </label>
-
             <label>
               <input
                 type="checkbox"
@@ -242,7 +245,6 @@ class TaskerProfile extends Component {
                 />
               )}
             </label>
-
             <label>
               <input
                 type="checkbox"
@@ -266,7 +268,6 @@ class TaskerProfile extends Component {
                 />
               )}
             </label>
-
             <label>
               <input
                 type="checkbox"
@@ -290,7 +291,6 @@ class TaskerProfile extends Component {
                 />
               )}
             </label>
-
             <label>
               <input
                 type="checkbox"
@@ -314,7 +314,6 @@ class TaskerProfile extends Component {
                 />
               )}
             </label>
-
             <label>
               <input
                 type="checkbox"
@@ -338,7 +337,6 @@ class TaskerProfile extends Component {
                 />
               )}
             </label>
-
             <label>
               <input
                 type="checkbox"
