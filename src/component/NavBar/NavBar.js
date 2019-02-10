@@ -150,13 +150,14 @@ class NavBar extends Component {
               </div>
               <Link to="/how-it-works">How it works</Link>
               <Link to="/tasker-profile">Become a Tasker</Link>
+
+              <button className={user ? "hide" : "login"} onClick={this.login}>
+                Log in
+              </button>
+              <button className={user ? "login" : "hide"} onClick={this.logout}>
+                Log out
+              </button>
             </div>
-            <button className={user ? "hide" : "login"} onClick={this.login}>
-              Log in
-            </button>
-            <button className={user ? "login" : "hide"} onClick={this.logout}>
-              Log out
-            </button>
             {/* {user ? user.name : 'Please Log in!'} */}
           </div>
 

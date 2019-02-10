@@ -15,7 +15,7 @@ header {
 .header-links {
   display: flex;
   flex-wrap: wrap;
-  margin: 40px 0;
+  margin: 55px 0;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -150,17 +150,17 @@ header button:hover {
 
 .card button {
   background: white;
-  color: green;
+  color: #51af33;
   margin-top: 30px;
   height: 40px;
   width: 150px;
   border-radius: 5px;
   margin-bottom: 50px;
-  border: solid 1px green;
+  border: solid 1px #51af33;
 }
 
 .card button:hover {
-  background: green;
+  background: #51af33;
   color: white;
 }
 button:focus {
@@ -203,7 +203,7 @@ button:focus {
 }
 
 .reviews > div p {
-  /* background-color: green; */
+  /* background-color: ; */
   width: 350px;
   font-size: 12px;
 }

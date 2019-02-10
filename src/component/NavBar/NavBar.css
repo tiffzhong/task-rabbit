@@ -1,4 +1,3 @@
-/* How it Works*/
 .fullpage {
   width: 90%;
   margin: 0% auto;
@@ -13,13 +12,18 @@
 .words {
   font-size: 20px;
   padding: 10px;
+}
+.words {
   font-size: 18px;
   letter-spacing: 1px;
+
+  /* word-spacing: 1px; */
   text-align: justify;
   text-justify: inter-word;
 }
 .wholeitems {
-  background-color: rgb(232, 235, 239);
+  text-align: center;
+  background-color: rgb(240, 240, 240);
   width: 90%;
   margin: 0% auto;
   border-radius: 10px;
@@ -119,6 +123,8 @@
 /*Navbar*/
 nav {
   /* height: 120px; */
+  display: flex;
+
   width: 100%;
   position: fixed;
   top: 0;
@@ -146,62 +152,71 @@ nav li {
   color: white;
 }
 .sidelinks {
-  width: 800px;
   display: flex;
-  justify-content: space-between;
-  height: 40px;
+  /* justify-content: space-between; */
+  height: 100%;
   align-items: center;
   position: relative;
   z-index: 4;
 }
 .sidelinks a {
-  color: green;
+  color: #51af33;
 }
 .sidelinks button {
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
   background: white;
-  color: green;
+  color: #51af33;
   margin: 5px;
-  width: 60px;
-  height: 30px;
-  border: solid 1px rgb(117, 193, 117);
+  width: 80px;
+  height: 35px;
+  border: solid 1px #51af33;
+  font-size: 14px;
 }
 .sidelinks button:hover {
-  background: green;
+  background: #51af33;
   color: white;
 }
 .nav-links {
   /* background: purple; */
   width: 600px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   height: 20px;
   position: relative;
   z-index: 3;
   left: 100px;
 }
 .nav-links a {
-  margin-left: 50px;
+  margin: 0 15px;
 }
 .nav-links a:hover {
-  color: rgb(103, 170, 2);
+  color: #51af33;
 }
 
 .nav-popover-container {
+  top: 2.5px;
+  left: -60px;
+  position: absolute;
   flex-direction: column;
 }
 .services-link {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 200px;
 }
 .dropdown-title {
-  /* margin-top: 15px; */
+  margin-top: 15px;
   position: relative;
   z-index: 1;
   color: white;
 }
 .nav-popover-link {
-  width: 200px;
+  /* width: 200px; */
+
   position: relative;
   z-index: 4;
   height: 100%;
@@ -213,22 +228,22 @@ nav li {
   align-items: center;
   justify-content: center;
   position: relative;
-  left: 20px;
 }
-.dropdown-links a {
+/* .dropdown-links a {
   margin-left: 10px;
-  margin-top: 15px;
+  margin-top: 15px; 
 }
+  */
 
 nav a {
   color: white;
   text-decoration: none;
 }
 .showDropdown a {
-  color: green;
+  color: #51af33;
 }
 .showDropdown li {
-  color: green;
+  color: #51af33;
 }
 
 .login {
@@ -255,7 +270,7 @@ button:focus {
   outline: none;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
   nav ul {
     position: fixed;
     top: 50px;

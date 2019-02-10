@@ -155,11 +155,20 @@ class TaskerProfile extends Component {
                 onChange={this.handleChange}
               />
               Mounting & Installation
-              <input
-                name="mountingHourly"
-                value={this.state.mountingHourly}
-                onChange={this.handleChange}
-              />
+              {this.state.mounting ? (
+                <input
+                  name="mountingHourly"
+                  value={this.state.mountingHourly}
+                  onChange={this.handleChange}
+                />
+              ) : (
+                <input
+                  name="mountingHourly"
+                  value=""
+                  onChange={this.handleChange}
+                  disabled
+                />
+              )}
             </label>
 
             <label>
@@ -170,11 +179,20 @@ class TaskerProfile extends Component {
                 onChange={this.handleChange}
               />
               Delivery Service
-              <input
-                name="deliveryHourly"
-                value={this.state.deliveryHourly}
-                onChange={this.handleChange}
-              />
+              {this.state.delivery ? (
+                <input
+                  name="deliveryHourly"
+                  value={this.state.deliveryHourly}
+                  onChange={this.handleChange}
+                />
+              ) : (
+                <input
+                  name="deliveryHourly"
+                  value=""
+                  onChange={this.handleChange}
+                  disabled
+                />
+              )}
             </label>
 
             <label>
@@ -185,11 +203,20 @@ class TaskerProfile extends Component {
                 onChange={this.handleChange}
               />
               Yard Work/Landscaping
-              <input
-                name="yardHourly"
-                value={this.state.yardHourly}
-                onChange={this.handleChange}
-              />
+              {this.state.yard ? (
+                <input
+                  name="yardHourly"
+                  value={this.state.yardHourly}
+                  onChange={this.handleChange}
+                />
+              ) : (
+                <input
+                  name="yardHourly"
+                  value=""
+                  onChange={this.handleChange}
+                  disabled
+                />
+              )}
             </label>
 
             <label>
@@ -200,11 +227,20 @@ class TaskerProfile extends Component {
                 onChange={this.handleChange}
               />
               Home Improvement
-              <input
-                name="homeHourly"
-                value={this.state.homeHourly}
-                onChange={this.handleChange}
-              />
+              {this.state.home ? (
+                <input
+                  name="homeHourly"
+                  value={this.state.homeHourly}
+                  onChange={this.handleChange}
+                />
+              ) : (
+                <input
+                  name="homeHourly"
+                  value=""
+                  onChange={this.handleChange}
+                  disabled
+                />
+              )}
             </label>
 
             <label>
@@ -215,11 +251,20 @@ class TaskerProfile extends Component {
                 onChange={this.handleChange}
               />
               Moving & Packing
-              <input
-                name="movingHourly"
-                value={this.state.movingHourly}
-                onChange={this.handleChange}
-              />
+              {this.state.moving ? (
+                <input
+                  name="movingHourly"
+                  value={this.state.movingHourly}
+                  onChange={this.handleChange}
+                />
+              ) : (
+                <input
+                  name="movingHourly"
+                  value=""
+                  onChange={this.handleChange}
+                  disabled
+                />
+              )}
             </label>
 
             <label>
@@ -230,11 +275,20 @@ class TaskerProfile extends Component {
                 onChange={this.handleChange}
               />
               Pet Service
-              <input
-                name="petHourly"
-                value={this.state.petHourly}
-                onChange={this.handleChange}
-              />
+              {this.state.pet ? (
+                <input
+                  name="petHourly"
+                  value={this.state.petHourly}
+                  onChange={this.handleChange}
+                />
+              ) : (
+                <input
+                  name="petHourly"
+                  value=""
+                  onChange={this.handleChange}
+                  disabled
+                />
+              )}
             </label>
 
             <label>
@@ -245,11 +299,20 @@ class TaskerProfile extends Component {
                 onChange={this.handleChange}
               />
               Furniture Assembly
-              <input
-                name="furnitureHourly"
-                value={this.state.furnitureHourly}
-                onChange={this.handleChange}
-              />
+              {this.state.furniture ? (
+                <input
+                  name="furnitureHourly"
+                  value={this.state.furnitureHourly}
+                  onChange={this.handleChange}
+                />
+              ) : (
+                <input
+                  name="furnitureHourly"
+                  value=""
+                  onChange={this.handleChange}
+                  disabled
+                />
+              )}
             </label>
 
             <label>
@@ -260,11 +323,20 @@ class TaskerProfile extends Component {
                 onChange={this.handleChange}
               />
               Cleaning Service
-              <input
-                name="cleaningHourly"
-                value={this.state.cleaningHourly}
-                onChange={this.handleChange}
-              />
+              {this.state.cleaning ? (
+                <input
+                  name="cleaningHourly"
+                  value={this.state.cleaningHourly}
+                  onChange={this.handleChange}
+                />
+              ) : (
+                <input
+                  name="cleaningHourly"
+                  value=""
+                  onChange={this.handleChange}
+                  disabled
+                />
+              )}
             </label>
 
             <label>
@@ -275,11 +347,20 @@ class TaskerProfile extends Component {
                 onChange={this.handleChange}
               />
               Cooking Service
-              <input
-                name="cookingHourly"
-                value={this.state.cookingHourly}
-                onChange={this.handleChange}
-              />
+              {this.state.cooking ? (
+                <input
+                  name="cookingHourly"
+                  value={this.state.cookingHourly}
+                  onChange={this.handleChange}
+                />
+              ) : (
+                <input
+                  name="cookingHourly"
+                  value=""
+                  onChange={this.handleChange}
+                  disabled
+                />
+              )}
             </label>
             {/* <Link to={`/tasker-dashboard/${user.auth0_id}`}> */}
             <button
