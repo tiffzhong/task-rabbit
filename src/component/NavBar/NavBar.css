@@ -1,4 +1,3 @@
-
 /* How it Works*/
 .fullpage {
   width: 90%;
@@ -6,7 +5,7 @@
   margin-top: 100px;
 }
 
-.title{
+.title {
   font-weight: bold;
   margin-top: 100px;
 }
@@ -15,7 +14,7 @@
   font-size: 20px;
   padding: 10px;
 }
- .words {
+.words {
   font-size: 18px;
   letter-spacing: 1px;
 
@@ -121,15 +120,9 @@
   border-radius: 10px;
 }
 
-
-
-
-
-
-
 /*Navbar*/
 nav {
-  height: 120px;
+  /* height: 120px; */
   width: 100%;
   position: fixed;
   top: 0;
@@ -138,18 +131,15 @@ nav {
   z-index: 5;
 }
 .navBar {
-  /* max-width: 1000px; */
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 100%;
+  /* height: 100%; */
+  padding: 5px;
   margin: 0 auto;
-  padding: 20px;
   position: relative;
   z-index: 12;
-  /* background: yellow; */
-
 }
 nav div ul {
   display: flex;
@@ -166,7 +156,7 @@ nav li {
   height: 40px;
   align-items: center;
   position: relative;
-  z-index: 4
+  z-index: 4;
 }
 .sidelinks a {
   color: green;
@@ -198,7 +188,6 @@ nav li {
 .nav-links a:hover {
   color: rgb(103, 170, 2);
 }
-
 
 .nav-popover-container {
   flex-direction: column;
@@ -235,7 +224,6 @@ nav li {
   margin-top: 15px;
 }
 
-
 nav a {
   color: white;
   text-decoration: none;
@@ -252,7 +240,8 @@ nav a {
 }
 
 .logo img {
-  height: 80px;
+  height: 50px;
+  width: 160px;
   margin: 0 auto;
   /* background: black; */
 }
@@ -280,16 +269,15 @@ button:focus {
     padding: 20px;
     transition: 3s;
     z-index: -1;
-    
   }
   nav li {
     margin: 10px 0;
   }
-  
+
   .logo img {
     margin-left: 30vw;
   }
-  
+
   /* .menuButton-container {
     display: flex;
     position: absolute;
@@ -305,7 +293,6 @@ button:focus {
   .menuButton:hover {
     background: green;
     color: white;
-  
   }
   .showDropdown {
     display: flex;
@@ -319,7 +306,6 @@ button:focus {
   }
 
   .menuButton:focus {
-
   }
 
   .sidelinks {

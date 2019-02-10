@@ -6,7 +6,13 @@ const Header = () => {
   return (
     <header>
       <div className="header-main-text">
-        <h1>What task do you need help with today?</h1>
+        <h1>
+          The convenient & affordable way to get things done around the home
+        </h1>
+        <p>
+          Choose from over 140,000 vetted Taskers for help without breaking the
+          bank.
+        </p>
       </div>
       <div className="header-links">
         <span>
@@ -19,8 +25,7 @@ const Header = () => {
           <Link to="/yardwork_form">
             <button>Yardwork/Landscaping</button>
           </Link>
-        </span>
-        <span>
+
           <Link to="/home_form">
             <button>Home Improvement</button>
           </Link>
@@ -30,8 +35,7 @@ const Header = () => {
           <Link to="/pet_form">
             <button>Pet Service</button>
           </Link>
-        </span>
-        <span>
+
           <Link to="/furniture_form">
             <button>Furniture Assembly</button>
           </Link>
