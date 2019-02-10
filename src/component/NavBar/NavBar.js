@@ -148,7 +148,7 @@ class NavBar extends Component {
                   </div>
                 </ul>
               </div>
-              <Link to="/how-it-works">How it works</Link>
+              <Link to="/how-it-works">How It Works</Link>
               <Link to="/tasker-profile">Become a Tasker</Link>
 
               <button className={user ? "hide" : "login"} onClick={this.login}>

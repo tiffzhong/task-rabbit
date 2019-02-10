@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import { GoogleApiWrapper } from "google-maps-react";
 import Autocomplete from "react-google-autocomplete";
 import { connect } from "react-redux";
-import { updateLocationStart, updateLat, updateLong } from "../../ducks/clientReducer";
+import {
+  updateLocationStart,
+  updateLat,
+  updateLong
+} from "../../ducks/clientReducer";
 
 class AutocompleteSearch extends Component {
   constructor(props) {
@@ -30,7 +34,7 @@ class AutocompleteSearch extends Component {
             });
             if (this.state.place) {
               this.props.updateLocationStart(place.formatted_address);
-              console.log('what the hell? ====> ', lat)
+              console.log("what the hell? ====> ", lat);
               this.props.updateLat(lat);
               this.props.updateLong(lng);
             }

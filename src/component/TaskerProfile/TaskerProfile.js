@@ -125,7 +125,7 @@ class TaskerProfile extends Component {
             />
             <div>
               <Autocomplete
-                style={{ width: "250%" }}
+                style={{ width: "100%" }}
                 onPlaceSelected={place => {
                   this.setState({
                     place: place.formatted_address

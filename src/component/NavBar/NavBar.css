@@ -215,8 +215,7 @@ nav li {
   color: white;
 }
 .nav-popover-link {
-  /* width: 200px; */
-
+  width: 200px;
   position: relative;
   z-index: 4;
   height: 100%;
