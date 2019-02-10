@@ -3,7 +3,7 @@ module.exports = {
     const database = req.app.get("db");
     let {
       user,
-      tasker_name,
+      name,
       email,
       selfie,
       phone,
@@ -32,7 +32,7 @@ module.exports = {
     database
       .tasker_profile_create([
         user,
-        tasker_name,
+        name,
         email,
         selfie,
         phone,
@@ -57,7 +57,7 @@ module.exports = {
         cooking,
         cookingHourly
       ])
-      .then(() => res.status(200).send())
+      .then(response => res.status(200).send(response))
       .catch(err => {
         console.log("error in createProfile", err);
       });
@@ -92,10 +92,10 @@ module.exports = {
       cooking,
       cookingHourly
     } = req.body;
-    let { user } = req.params;
+    let { tasker_id } = req.params;
     database
       .tasker_profile_edit([
-        user,
+        tasker_id,
         tasker_name,
         email,
         selfie,

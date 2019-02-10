@@ -13,12 +13,8 @@
 .words {
   font-size: 20px;
   padding: 10px;
-}
-.words {
   font-size: 18px;
   letter-spacing: 1px;
-
-  /* word-spacing: 1px; */
   text-align: justify;
   text-justify: inter-word;
 }
@@ -199,7 +195,7 @@ nav li {
   width: 200px;
 }
 .dropdown-title {
-  margin-top: 15px;
+  /* margin-top: 15px; */
   position: relative;
   z-index: 1;
   color: white;
@@ -262,41 +258,35 @@ button:focus {
 @media only screen and (max-width: 700px) {
   nav ul {
     position: fixed;
-    top: 90px;
+    top: 50px;
     left: 0px;
     flex-direction: column;
     width: 100vw;
     padding: 20px;
-    transition: 3s;
     z-index: -1;
   }
-  nav li {
-    margin: 10px 0;
-  }
-
   .logo img {
     margin-left: 30vw;
   }
 
-  /* .menuButton-container {
-    display: flex;
-    position: absolute;
-    width: 100%;
-  } */
   .menuButton {
+    border: none;
+    background: transparent;
+    font-size: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40px;
-    width: 30px;
+    top: 10px;
+    right: 10px;
+    position: absolute;
   }
   .menuButton:hover {
-    background: green;
-    color: white;
+    cursor: pointer;
   }
   .showDropdown {
     display: flex;
     flex-direction: column;
+    /* margin: -20px; */
     /* z-index: 999; */
     /* position: absolute;
     transform: translate(0, 10px);
@@ -316,7 +306,7 @@ button:focus {
     display: flex;
   }
   .menuButton-container a {
-    margin: 5px;
+    margin: 15px;
   }
   .menuButton-container a:hover {
     cursor: pointer;

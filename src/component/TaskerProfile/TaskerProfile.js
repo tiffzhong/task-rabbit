@@ -14,7 +14,7 @@ class TaskerProfile extends Component {
     this.state = {
       name: "",
       email: "",
-      selfie: "",
+      selfie: this.props.user.picture,
       phone: "",
       place: "",
       about: "",
@@ -47,8 +47,7 @@ class TaskerProfile extends Component {
       .then(() => {
         this.setState({
           name: this.props.user.name,
-          email: this.props.user.email,
-          selfie: this.props.user.selfie
+          email: this.props.user.email
         });
       });
   }
@@ -282,41 +281,41 @@ class TaskerProfile extends Component {
                 onChange={this.handleChange}
               />
             </label>
-            <Link to={`/tasker-dashboard/${user.auth0_id}`}>
-              <button
-                onClick={() =>
-                  createProfile(
-                    name,
-                    email,
-                    selfie,
-                    phone,
-                    place,
-                    about,
-                    mounting,
-                    mountingHourly,
-                    delivery,
-                    deliveryHourly,
-                    yard,
-                    yardHourly,
-                    home,
-                    homeHourly,
-                    moving,
-                    movingHourly,
-                    pet,
-                    petHourly,
-                    furniture,
-                    furnitureHourly,
-                    cleaning,
-                    cleaningHourly,
-                    cooking,
-                    cookingHourly,
-                    user.auth0_id
-                  )
-                }
-              >
-                Submit
-              </button>
-            </Link>
+            {/* <Link to={`/tasker-dashboard/${user.auth0_id}`}> */}
+            <button
+              onClick={() =>
+                createProfile(
+                  name,
+                  email,
+                  selfie,
+                  phone,
+                  place,
+                  about,
+                  mounting,
+                  mountingHourly,
+                  delivery,
+                  deliveryHourly,
+                  yard,
+                  yardHourly,
+                  home,
+                  homeHourly,
+                  moving,
+                  movingHourly,
+                  pet,
+                  petHourly,
+                  furniture,
+                  furnitureHourly,
+                  cleaning,
+                  cleaningHourly,
+                  cooking,
+                  cookingHourly,
+                  user.auth0_id
+                )
+              }
+            >
+              Submit
+            </button>
+            {/* </Link> */}
           </form>
         </div>
       </div>

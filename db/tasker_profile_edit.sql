@@ -2,8 +2,8 @@ update tasker_profile
 set
 tasker_name = $2,
 email = $3,
-phone = $4,
-selfie = $5
+selfie = $4,
+phone = $5,
 location = $6,
 about = $7,
 mounting = $8,
@@ -23,5 +23,5 @@ furnitureHourly = $21,
 cleaning = $22,
 cleaningHourly = $23,
 cooking = $24,
-cookingHourly = $25,
+cookingHourly = $25
 where tasker_id = $1
