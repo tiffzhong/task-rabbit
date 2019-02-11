@@ -27,7 +27,7 @@ class LocationSingle extends Component {
                             <h2>Your Task Location</h2>
                             <Autocompletesearch />
                             <div className={!this.props.locationToggle ? 'form-button' : 'hide'}  >
-                                <button onClick={() => this.handleToggle('locationToggle', true, this.props.locationStart)}>Continue</button>
+                                <button onClick={() => this.props.handleToggle('locationToggle', true, this.props.locationStart)}>Continue</button>
                             </div>
                         </div>
                     </div>

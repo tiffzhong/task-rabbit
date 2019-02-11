@@ -12,15 +12,15 @@ class Duration extends Component {
                                 <p>DURATION</p>
                                 <h2>How long should it take?</h2>
                                 <div className='duration-container'>
-                                    <div>
+                                    <div className='radio-container'>
                                         <input type='radio' id='r1' name='radio' onClick={()=>this.props.updateDuration('Est. 1 hr')}/>
                                         <label  className='duration-radio'>Short - Est. 1 hr</label>
                                     </div>   
-                                    <div>
+                                    <div className='radio-container'>
                                         <input type='radio' id='r2' name='radio' onClick={()=>this.props.updateDuration('Est. 2-3 hrs')}/>
                                         <label  className='duration-radio'>Medium - Est. 2-3 hrs</label>
                                     </div>   
-                                    <div>
+                                    <div className='radio-container'>
                                         <input type='radio' id='r3' name='radio' onClick={()=>this.props.updateDuration('Est. 4+ hrs')}/>
                                         <label  className='duration-radio'>Long - Est. 4+ hrs</label>
                                     </div>   
