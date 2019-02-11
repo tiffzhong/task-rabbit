@@ -10,8 +10,7 @@ import {
   updateTaskDetails,
   updateClientData
 } from "../../ducks/clientReducer";
-import Calendar from "../Calendar/Calendar";
-import CalendarEnd from "../Calendar/CalenderEnd";
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Vehicle from './QuestionBoxes/Vehicle';
 import LocationSingle from "./QuestionBoxes/LocationSingle";
@@ -27,6 +26,10 @@ class Mounting_Form extends Component {
             durationToggle: false,
             vehicleToggle: false,
             scheduleToggle: false,
+            canEdit: false,
+
+
+
             // taskType: this.props.taskType,
             // locationStart: this.props.locationStart,
             // locationEnd: this.props.locationEnd,
@@ -59,29 +62,13 @@ class Mounting_Form extends Component {
     }
 
 
-    handleCheckbox = (id) => {
-        const uncheck = document.getElementById([id])
-        if(uncheck.checked === false) {
-            this.props.updateVehicle(null);
-        } else if(id === 'vehicleCar'){
-            this.props.updateVehicle("Car");
-            var truck = document.getElementById('vehicleTruck')
-                truck.checked=false;
-            var Vehicle = document.getElementById('vehicleNa')
-                Vehicle.checked = false;
-        } else if (id === "vehicleTruck") {
-            this.props.updateVehicle("Truck");
-            var carVehicle = document.getElementById('vehicleCar')
-                carVehicle.checked = false;
-            var naVehicle = document.getElementById('vehicleNa')
-                naVehicle.checked = false;
-        } else if (id === 'vehicleNa') {
-            this.props.updateVehicle(null)
-            var vehicleTruck = document.getElementById('vehicleTruck')
-                vehicleTruck.checked=false;
-            var car = document.getElementById('vehicleCar')
-                car.checked = false;
-        }
+    editToggler = () => {
+        this.setState((prevState) => {
+
+            return {
+                canEdit: !prevState.canEdit
+            };
+        })
     }
 
     bookTask = () => {
@@ -102,6 +89,7 @@ class Mounting_Form extends Component {
         axios.post('/api/client', bookedTask).then(response => {
             this.props.updateClientData(response.data)
         })
+        this.props.reducerfunction(bookedTask.taskType)
     }
 
     render() {
@@ -150,6 +138,7 @@ class Mounting_Form extends Component {
                     scheduleToggle={this.state.scheduleToggle}
                     handleToggle={this.handleToggle}
                 />
+                <Link to='/mountingEdit'><button>Edit</button></Link>
 
         </div>
       </div>

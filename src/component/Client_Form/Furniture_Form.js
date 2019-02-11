@@ -57,6 +57,7 @@ class Furniture_Form extends Component {
         axios.post('/api/client', bookedTask).then(response => {
             this.props.updateClientData(response.data)
         })
+        this.props.reducerFunction(bookedTask.taskType)
     }
 
     render() {
