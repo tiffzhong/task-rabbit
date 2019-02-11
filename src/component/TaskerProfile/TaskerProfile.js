@@ -14,7 +14,7 @@ class TaskerProfile extends Component {
     this.state = {
       name: "",
       email: "",
-      selfie: this.props.user.picture,
+      selfie: "",
       phone: "",
       place: "",
       about: "",
@@ -47,7 +47,8 @@ class TaskerProfile extends Component {
       .then(() => {
         this.setState({
           name: this.props.user.name,
-          email: this.props.user.email
+          email: this.props.user.email,
+          selfie: this.props.user.picture
         });
       });
   }
@@ -103,8 +104,16 @@ class TaskerProfile extends Component {
     return (
       <div className="tasker-profile">
         <div className="profile-form-container">
+          <span>
+            <h3>Start Tasking.</h3>
+            <h4>Earn money your way.</h4>
+            <p>
+              Be someone's hero today. Earn money by helping people with their
+              everyday to-dos.
+            </p>
+          </span>
           <form onSubmit={event => this.onSubmit(event)}>
-            <h2>Your Tasker Profile</h2>
+            <h2>Become a Tasker</h2>
             <input
               name="name"
               value={name}
@@ -125,7 +134,7 @@ class TaskerProfile extends Component {
             />
             <div>
               <Autocomplete
-                style={{ width: "100%" }}
+                style={{ width: "510%", marginLeft: "-137px" }}
                 onPlaceSelected={place => {
                   this.setState({
                     place: place.formatted_address
@@ -145,14 +154,16 @@ class TaskerProfile extends Component {
         </div>
 
         <div className="tasker-skill-form">
+          <h2>Register to become a Tasker</h2>
           <form onSubmit={event => this.onSubmit(event)}>
-            <h2>Register to become a Tasker</h2>
-            Add Your Skills & Rates
-            <p>
-              Select your tasking categories and set your hourly rates. You can
-              add or remove categories from your profile, or revise your rates,
-              at any time.
-            </p>
+            <span>
+              <h6>Add Your Skills & Rates</h6>
+              <p>
+                Select your tasking categories and set your hourly rates. You
+                can add or remove categories from your profile, or revise your
+                rates, at any time.
+              </p>
+            </span>
             <label>
               <input
                 type="checkbox"
