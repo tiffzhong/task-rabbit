@@ -97,8 +97,9 @@
 /* ==========TASKER SKILL SECTION ==========*/
 .tasker-skill-form {
   padding: 20px;
-  background-color: #fafafa;
+  background-color: #fefefe;
   display: flex;
+  align-items: center;
   flex-direction: column;
   width: 100%;
 }
@@ -107,10 +108,12 @@
   font-weight: bold;
   align-self: flex-start;
 }
+
 .tasker-skill-form form {
   border: 1px solid black;
   background-color: white;
   display: flex;
+  width: 85%;
   flex-direction: column;
   margin: 20px;
 }
@@ -127,6 +130,38 @@
   font-size: 15px;
 }
 
+.tasker-skill-form input {
+}
+.tasker-skill-form input:disabled {
+}
+.tasker-display-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: left;
+  padding: 20px;
+  border-bottom: 1px solid red;
+}
+.tasker-display-text button {
+  padding: 0 10px;
+  cursor: pointer;
+  border: none;
+  color: #51af33;
+  font-size: 16px;
+}
+.tasker-display-text p {
+  flex-basis: 100%;
+}
+
+.pop-a-roo {
+  transition: all 1s;
+  transform: translate(0, 0);
+  border-bottom: 1px solid black;
+}
+
+.hide-a-roo {
+  display: none;
+}
 /* ============== MEDIAS ============ */
 @media (max-width: 890px) {
   .profile-form-container {
