@@ -1,261 +1,253 @@
 .form {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* color: white; */
-    
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* color: white; */
 }
 
 .form p {
-    color: gray;
-    position: absolute;
-    top: 10px;
-    left: 10px;
+  color: gray;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 .form input {
-    height: 50px;
-    width: 400px;
-    text-align: center;
-    font-size: 10px;
+  height: 50px;
+  width: 400px;
+  text-align: center;
+  font-size: 10px;
 }
 
 .form h1 {
-    /* color: black; */
-    font-size: 30px;
-    font-weight: lighter;
+  /* color: black; */
+  font-size: 30px;
+  font-weight: lighter;
 }
 
 .form h2 {
-    color: black;
-    margin: 0% auto;
-    font-weight: lighter;
-    margin-bottom: 10px;
-    margin-top: 10px;
+  color: black;
+  margin: 0% auto;
+  font-weight: lighter;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .form-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
 }
 
 .form-button button {
-    /* margin-top: 10px; */
-    height: 60px;
-    width: 130px;
-    background: rgb(0, 170, 0);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 15px;
+  /* margin-top: 10px; */
+  height: 60px;
+  width: 130px;
+  background: rgb(0, 170, 0);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 .form-button button:hover {
-    background: rgb(0, 151, 0);
+  background: rgb(0, 151, 0);
 }
 
 .form-button button:focus {
-    outline: none;
+  outline: none;
 }
 
 h2 {
-    font-weight: lighter;
-  }
+  font-weight: lighter;
+}
 
 .shadow-box {
-    width: 150%;
-    height: 4px;
-    box-shadow: 0px 4px 12px 2px lightgray;
-    border: none;
-    position: fixed;
-    top: 120px;
-    background: white;
-    z-index: 4;
+  width: 150%;
+  height: 4px;
+  box-shadow: 0px 4px 12px 2px lightgray;
+  border: none;
+  position: fixed;
+  top: 60px;
+  background: white;
+  z-index: 4;
 }
 
 .outer-container {
-    margin-top: 50px;
-    width: 70vw;
-    margin-bottom: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-    
+  margin-top: 50px;
+  width: 70vw;
+  margin-bottom: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 .question-box {
-    border: solid 2px lightgray;
-    margin-top: 10px;
-    /* height:400px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-    background: whitesmoke;
+  border: solid 2px lightgray;
+  margin-top: 10px;
+  /* height:400px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background: whitesmoke;
 }
 #question-box div {
-    width: 400px;
+  width: 400px;
 }
-#question-box input{
-    height: 40px;
+#question-box input {
+  height: 40px;
 }
 .inner-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 50px;
 }
 .inner-container input {
-    height: 20px;
-    width: 150px;
+  height: 20px;
+  width: 150px;
 }
 #details-inner {
-    background: transparent;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0px;
-    height: 100%;
-    width: 100%;
-    margin-top: 0px;
-    margin-left: 0px;
-
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  margin-top: 0px;
+  margin-left: 0px;
 }
 #details-inner textarea {
-    height: 150px;
-    width: 50vw;
-    /* position: absolute; */
-    top: 50px;
+  height: 150px;
+  width: 50vw;
+  /* position: absolute; */
+  top: 50px;
 }
 #details-inner button {
-    position: relative;
-    top: 20px;
+  position: relative;
+  top: 20px;
 }
-.duration-container{
-    border: solid .5px rgb(221, 221, 221);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 120px;
-    width: 400px;
-    margin-bottom: 15px;
-    background: white;
+.duration-container {
+  border: solid 0.5px rgb(221, 221, 221);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 120px;
+  width: 400px;
+  margin-bottom: 15px;
+  background: white;
 }
 .duration-container div {
-    margin: 5px;
-    
+  margin: 5px;
 }
 
 .time-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 .react-datetime-picker__wrapper {
-    background: white;
-    
+  background: white;
 }
 
 .small-question-box {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .calendar-box {
-    height: 100px;
+  height: 100px;
 }
 
-.calendar{
-    font-weight: bold;
-    font-size: 10px;
-    background-color:white;
+.calendar {
+  font-weight: bold;
+  font-size: 10px;
+  background-color: white;
 }
 
 .checkbox-input-container {
-    width: 400px;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    border: solid .5px rgb(221, 221, 221);
+  width: 400px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  border: solid 0.5px rgb(221, 221, 221);
 }
 .checkbox-input {
-    /* background: white; */
-    display: flex;
-    align-items: center;
-    
+  /* background: white; */
+  display: flex;
+  align-items: center;
 }
 
 .checkbox-input input {
-    height: 20px;
-    width: 40px;
-    margin: 10px;
+  height: 20px;
+  width: 40px;
+  margin: 10px;
 }
 
 .details {
-    height: 400px;
+  height: 400px;
 }
 .toggle-box {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 100px;
-    border: solid 2px lightgray;
-    margin-top: 10px;
-    color: black;
-    position: relative;
-    background: whitesmoke;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100px;
+  border: solid 2px lightgray;
+  margin-top: 10px;
+  color: black;
+  position: relative;
+  background: whitesmoke;
 }
 
 .closed-box {
-    background: whitesmoke;
-    border: solid .5px rgb(221, 221, 221);
-    /* height: 100px; */
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: gray;
-    flex-direction: column;
+  background: whitesmoke;
+  border: solid 0.5px rgb(221, 221, 221);
+  /* height: 100px; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  flex-direction: column;
 }
 .closed-schedule-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .closed-schedule-box span {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 .closed-box img {
-    height: 12px;
-    position: absolute;
-    top: 5px;
-    right: 5px;
+  height: 12px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 .closed-box-inner {
-    margin: 20px;
+  margin: 20px;
 }
 /* .closed-box:hover .closedBox-img-container  {
     background: rgb(1, 187, 1);
 } */
 .closedBox-img-container {
-    background: white;
-    border-radius: 50%;
-    height: 25px;
-    width: 25px;
-    border: solid 1px lightgray;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: white;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  border: solid 1px lightgray;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-

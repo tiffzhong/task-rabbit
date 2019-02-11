@@ -1,235 +1,297 @@
 header {
+  font-family: "Montserrat", sans-serif;
   background-image: url("./tools.jpg");
-  height: 500px;
   width: 100%;
+  padding-top: 120px;
   background-position: center;
-  background-attachment: fixed;
+  background-size: cover;
   background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 200px;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-links {
-    display: flex;
-    margin: 10px;
-    justify-content: center;
-    align-items: center;
-    /* background: red; */
-    width: 50%;
-    margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 55px 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* margin-top: 40px; */
 }
 
-
 header button {
-    background: white;
-    color: green;
-    border: solid 1px green;
-    border-radius: 5px;
-    height: 50px;
-    width: 200px;
-    margin: 10px;
-    font-size: 15px;
+  background: white;
+  transition: all 0.2s;
+  color: #51af33;
+  border: solid 1px #51af33;
+  border-radius: 5px;
+  height: 50px;
+  width: 200px;
+  margin: 10px;
+  font-size: 15px;
 }
 
 header button:hover {
-    background: green;
-    color: white;
+  background: #51af33;
+  transition: all 0.2s;
+  color: white;
+}
+.header-main-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header-main-text h1 {
-  /* color: black; */
+  font-weight: 300;
+  font-size: 38px;
+  line-height: 1.5;
   text-align: center;
-  width: 100%;
-  margin-top: 70px;
-  font-size: 30px;
-  
+  width: 50%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.header-main-text p {
+  font-size: 20px;
+  text-align: center;
 }
 .header-links span {
-  /* send help */
-  /* background: yellow; */
-  height: 200px;
+  width: 50%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   color: black;
   font-weight: bold;
   flex-wrap: wrap;
-  justify-content: space-around;
 }
 
 .LandingPage-component {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 130px;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  flex-direction: column;
 }
 
 .TaskCards-component {
-    width: 70vw;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .TaskCards-component div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .TaskCards-component h1 {
-    margin: 10px;
-    font-size: 30px;
+  margin: 10px;
+  font-size: 30px;
 }
 
 .slick-slider button {
-    /* border-radius: 50%; */
-    background: gray;
-    color: black;
-    height: 300px;
-    width: 25px;
+  background: gray;
+  color: black;
+  height: 300px;
+  width: 25px;
 }
 
 .slick-prev:hover {
-    color: black;
-    background: gray;
+  color: black;
+  background: gray;
 }
 
 .slick-next:hover {
-    color: black;
-    background: gray;
+  color: black;
+  background: gray;
 }
 
 .slick-list {
-    width: 70vw;
+  width: 70vw;
 }
 
 .slick-track {
-    /* height: 400px; */
-    width: 100%;
-    /* background: yellow; */
-    
+  width: 100%;
 }
 
-.slick-slide  {
-    margin: 20px;
-    /* background: blue; */
-    
-    
+.slick-slide {
+  margin: 20px;
 }
 
 .card {
-    background: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
-    width: 400px;
-    box-shadow: 2px 5px 12px 2px rgb(179, 179, 179);
-    
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  width: 400px;
+  box-shadow: 2px 5px 12px 2px rgb(179, 179, 179);
 }
 
 .card img {
-    height: 150px;
-    margin-top: 30px;
+  height: 150px;
+  margin-top: 30px;
 }
 
 .card button {
-    background: white;
-    color: green;
-    margin-top: 30px;
-    height: 40px;
-    width: 150px;
-    border-radius: 5px;
-    margin-bottom: 50px;
-    border: solid 1px green;
+  background: white;
+  color: #51af33;
+  margin-top: 30px;
+  height: 40px;
+  width: 150px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  border: solid 1px #51af33;
 }
 
 .card button:hover {
-    background: green;
-    color: white;
-    
+  background: #51af33;
+  color: white;
 }
 button:focus {
-    outline: none;
+  outline: none;
 }
- 
 
-
-
-
-
-/* Reviews*/
-.reviewsContainer{
-    /* background-color: grey; */
-    /* margin: 0 auto; */
+/* ===========Reviews=================*/
+.reviewsContainer {
   display: flex;
   justify-content: center;
-  width: 90vw;
-    flex-direction: column;
-    align-items: center;
+  width: 80%;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.reviewsContainer h1{
-    font-size: 30px;
-    margin-bottom: 20px;
+.reviewsContainer h1 {
+  font-size: 30px;
 }
 
 .inner-review-container {
-    display: flex;
-    width: 70vw;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 20px;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
-.reviews{
-    /* display: inline-block; */
-    margin: 20px;
-    width: 400px;
-    
-    /* background: yellow; */
-
+.reviews {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  width: 45%;
 }
-.reviews > div{
-
-    margin: 10px;
-   
-
+.review-text {
+  display: flex;
+  text-align: start;
+  flex-direction: column;
 }
 
-.reviews > div p {
-    /* background-color: green; */
-    width: 350px;
-    font-size: 12px;
-    
+.review-text h6 {
+  font-size: 22px;
 }
-.reviews img{
-    border-radius: 50%;
-    width: 125px;
+.review-text p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.reviews > div {
+  margin: 10px;
 }
 
-
-
-
-@media (max-width: 1500px) {
-    .slick-list {
-        width: 80vw;
-    }
-
+.reviews img {
+  border-radius: 50%;
+  width: 160px;
 }
 
 @media (max-width: 1500px) {
-    .inner-review-container {
-        width: 100%;
-        /* background: pink; */
-    }
+  .slick-list {
+    width: 80vw;
+  }
+  .inner-review-container {
+    width: 100%;
+    /* background: pink; */
+  }
+}
+
+@media (max-width: 1350px) {
+  .header-main-text h1 {
+    width: 60%;
+  }
+  .header-links span {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1130px) {
+  .header-main-text h1 {
+    width: 70%;
+  }
+  .header-links span {
+    width: 70%;
+  }
+}
+@media (max-width: 970px) {
+  .header-main-text h1 {
+    width: 80%;
+  }
+  .header-main-text p {
+    font-size: 18px;
+  }
+  .header-links span {
+    width: 80%;
+  }
+}
+@media (max-width: 850px) {
+  .header-main-text h1 {
+    width: 90%;
+    font-size: 30px;
+  }
+  .header-links span {
+    width: 90%;
+  }
+}
+@media (max-width: 750px) {
+  .header-main-text h1 {
+    width: 95%;
+  }
+  .header-main-text p {
+    font-size: 16px;
+    width: 85%;
+  }
+  .header-links span {
+    width: 95%;
+  }
+}
+@media (max-width: 715px) {
+  .header-main-text h1 {
+    width: 90%;
+  }
+  .header-links span {
+    width: 90%;
+  }
+}
+@media (max-width: 620px) {
+  .header-main-text h1 {
+    font-size: 30px;
+    margin-top: 40px;
+    /* margin-bottom: 20px; */
+  }
+  .header-main-text p {
+    font-size: 15px;
+    text-align: center;
+  }
+}
+@media (max-width: 580px) {
+  .header-main-text h1 {
+    font-size: 26px;
+  }
 }

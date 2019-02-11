@@ -47,32 +47,32 @@ class EditTaskerProfile extends Component {
         })
         .then(() => {
           this.setState({
-            name: this.props.taskerProfile.name,
+            name: this.props.taskerProfile.tasker_name,
             email: this.props.taskerProfile.email,
             phone: this.props.taskerProfile.phone,
             place: this.props.taskerProfile.location,
             about: this.props.taskerProfile.about,
             mounting: this.props.taskerProfile.mounting,
-            mountingHourly: this.props.taskerProfile.mountingHourly,
+            mountingHourly: this.props.taskerProfile.mountinghourly,
             delivery: this.props.taskerProfile.delivery,
-            deliveryHourly: this.props.taskerProfile.deliveryHourly,
+            deliveryHourly: this.props.taskerProfile.deliveryhourly,
             yard: this.props.taskerProfile.yard,
-            yardHourly: this.props.taskerProfile.yardHourly,
+            yardHourly: this.props.taskerProfile.yardhourly,
             home: this.props.taskerProfile.home,
-            homeHourly: this.props.taskerProfile.homeHourly,
+            homeHourly: this.props.taskerProfile.homehourly,
             moving: this.props.taskerProfile.moving,
-            movingHourly: this.props.taskerProfile.mountingHourly,
+            movingHourly: this.props.taskerProfile.movinghourly,
             pet: this.props.taskerProfile.pet,
-            petHourly: this.props.taskerProfile.petHourly,
+            petHourly: this.props.taskerProfile.pethourly,
             furniture: this.props.taskerProfile.furniture,
-            furnitureHourly: this.props.taskerProfile.furnitureHourly,
+            furnitureHourly: this.props.taskerProfile.furniturehourly,
             cleaning: this.props.taskerProfile.cleaning,
-            cleaningHourly: this.props.taskerProfile.cleaningHourly,
+            cleaningHourly: this.props.taskerProfile.cleaninghourly,
             cooking: this.props.taskerProfile.cooking,
-            cookingHourly: this.props.taskerProfile.cookingHourly
+            cookingHourly: this.props.taskerProfile.cookinghourly
           });
         })
-        .catch(error => console.log("error in getProfile"));
+        .catch(error => console.log("error in getProfile", error));
     }
   }
   handleInput = event => {
@@ -98,7 +98,7 @@ class EditTaskerProfile extends Component {
     console.log(this.props.taskerProfile, "profile");
     console.log(this.state, "stater");
     const {
-      name,
+      tasker_name,
       email,
       phone,
       place,
@@ -122,7 +122,7 @@ class EditTaskerProfile extends Component {
       cooking,
       cookingHourly
     } = this.state;
-    const { createProfile, user } = this.props;
+    const { user } = this.props;
 
     return (
       <div className="tasker-profile">
@@ -131,7 +131,7 @@ class EditTaskerProfile extends Component {
             <h2>Your Tasker Profile</h2>
             <input
               name="name"
-              value={name}
+              value={this.state.name}
               onChange={event => this.handleInput(event)}
             />
 
@@ -142,33 +142,23 @@ class EditTaskerProfile extends Component {
             />
 
             <input
-              placeholder="Phone"
               name="phone"
               value={phone}
               onChange={event => this.handleInput(event)}
             />
             <div>
               <Autocomplete
+                placeholder={place}
                 style={{ width: "250%" }}
                 onPlaceSelected={place => {
-                  var lat = place.geometry.location.lat();
-                  var lng = place.geometry.location.lng();
                   this.setState({
-                    place: {
-                      address: place.formatted_address,
-                      lat: lat,
-                      lng: lng
-                    }
+                    place: place.formatted_address
                   });
-                  // if (this.state.place) {
-                  //   this.props.updateLocationStart(place.formatted_address);
-                  // }
                 }}
                 types={["geocode"]}
               />
             </div>
             <textarea
-              placeholder="Write some details about yourself"
               name="about"
               value={about}
               onChange={event => this.handleInput(event)}
@@ -184,13 +174,13 @@ class EditTaskerProfile extends Component {
               <input
                 type="checkbox"
                 name="mounting"
-                checked={this.state.mounting}
+                checked={mounting}
                 onChange={this.handleChange}
               />
               Mounting & Installation
               <input
                 name="mountingHourly"
-                value={this.state.mountingHourly}
+                value={mountingHourly}
                 onChange={this.handleChange}
               />
             </label>
@@ -199,13 +189,13 @@ class EditTaskerProfile extends Component {
               <input
                 type="checkbox"
                 name="delivery"
-                checked={this.state.delivery}
+                checked={delivery}
                 onChange={this.handleChange}
               />
               Delivery Service
               <input
                 name="deliveryHourly"
-                value={this.state.deliveryHourly}
+                value={deliveryHourly}
                 onChange={this.handleChange}
               />
             </label>
@@ -214,13 +204,13 @@ class EditTaskerProfile extends Component {
               <input
                 type="checkbox"
                 name="yard"
-                checked={this.state.yard}
+                checked={yard}
                 onChange={this.handleChange}
               />
               Yard Work/Landscaping
               <input
                 name="yardHourly"
-                value={this.state.yardHourly}
+                value={yardHourly}
                 onChange={this.handleChange}
               />
             </label>
@@ -229,13 +219,13 @@ class EditTaskerProfile extends Component {
               <input
                 type="checkbox"
                 name="home"
-                checked={this.state.home}
+                checked={home}
                 onChange={this.handleChange}
               />
               Home Improvement
               <input
                 name="homeHourly"
-                value={this.state.homeHourly}
+                value={homeHourly}
                 onChange={this.handleChange}
               />
             </label>
@@ -244,13 +234,13 @@ class EditTaskerProfile extends Component {
               <input
                 type="checkbox"
                 name="moving"
-                checked={this.state.moving}
+                checked={moving}
                 onChange={this.handleChange}
               />
               Moving & Packing
               <input
                 name="movingHourly"
-                value={this.state.movingHourly}
+                value={movingHourly}
                 onChange={this.handleChange}
               />
             </label>
@@ -259,13 +249,13 @@ class EditTaskerProfile extends Component {
               <input
                 type="checkbox"
                 name="pet"
-                checked={this.state.pet}
+                checked={pet}
                 onChange={this.handleChange}
               />
               Pet Service
               <input
                 name="petHourly"
-                value={this.state.petHourly}
+                value={petHourly}
                 onChange={this.handleChange}
               />
             </label>
@@ -274,13 +264,13 @@ class EditTaskerProfile extends Component {
               <input
                 type="checkbox"
                 name="furniture"
-                checked={this.state.furniture}
+                checked={furniture}
                 onChange={this.handleChange}
               />
               Furniture Assembly
               <input
                 name="furnitureHourly"
-                value={this.state.furnitureHourly}
+                value={furnitureHourly}
                 onChange={this.handleChange}
               />
             </label>
@@ -289,13 +279,13 @@ class EditTaskerProfile extends Component {
               <input
                 type="checkbox"
                 name="cleaning"
-                checked={this.state.cleaning}
+                checked={cleaning}
                 onChange={this.handleChange}
               />
               Cleaning Service
               <input
                 name="cleaningHourly"
-                value={this.state.cleaningHourly}
+                value={cleaningHourly}
                 onChange={this.handleChange}
               />
             </label>
@@ -304,13 +294,13 @@ class EditTaskerProfile extends Component {
               <input
                 type="checkbox"
                 name="cooking"
-                checked={this.state.cooking}
+                checked={cooking}
                 onChange={this.handleChange}
               />
               Cooking Service
               <input
                 name="cookingHourly"
-                value={this.state.cookingHourly}
+                value={cookingHourly}
                 onChange={this.handleChange}
               />
             </label>
@@ -318,8 +308,9 @@ class EditTaskerProfile extends Component {
               <button
                 onClick={() =>
                   editProfile(
-                    name,
+                    this.state.name,
                     email,
+                    this.props.user.picture,
                     phone,
                     place,
                     about,

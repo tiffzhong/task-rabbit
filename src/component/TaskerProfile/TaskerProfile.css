@@ -1,15 +1,39 @@
 .tasker-profile {
-  padding-top: 100px;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  font-weight: 300;
+  margin-top: 60px;
 }
 
 .profile-form-container {
   background-image: url("./taskerbecome.jpg");
   height: 100vh;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+}
+.profile-form-container h3 {
+  font-size: 3rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+.profile-form-container h4 {
+  font-size: 2rem;
+  font-weight: lighter;
+  margin-bottom: 1rem;
+}
+.profile-form-container p {
+  font-size: 1rem;
+}
+.profile-form-container span {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: left;
+  width: 50%;
 }
 
 .profile-form-container form {
@@ -43,6 +67,7 @@
   height: 90px;
   border-radius: 5px;
   border: 1px solid rgb(181, 181, 181);
+  resize: none;
 }
 
 .profile-form-container button {
@@ -69,15 +94,111 @@
   font-size: 18px;
 }
 
+/* ==========TASKER SKILL SECTION ==========*/
 .tasker-skill-form {
-  background-image: url("./profile.jpg");
-  height: 100vh;
-  background-size: cover;
-}
-.tasker-skill-form form {
+  padding: 20px;
+  background-color: #fefefe;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+}
+.tasker-skill-form h2 {
+  font-size: 35px;
+  font-weight: bold;
+  align-self: flex-start;
+}
+
+.tasker-skill-form form {
+  border: 1px solid black;
+  background-color: white;
+  display: flex;
+  width: 85%;
+  flex-direction: column;
   margin: 20px;
+}
+.tasker-skill-form span {
+  border-bottom: 1px solid black;
+  width: 100%;
+  padding: 15px;
+  text-align: start;
+}
+.tasker-skill-form h6 {
+  font-size: 20px;
+}
+.tasker-skill-form p {
+  font-size: 15px;
+}
+
+.tasker-skill-form input {
+}
+.tasker-skill-form input:disabled {
+}
+.tasker-display-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: left;
+  padding: 20px;
+  border-bottom: 1px solid red;
+}
+.tasker-display-text button {
+  padding: 0 10px;
+  cursor: pointer;
+  border: none;
+  color: #51af33;
+  font-size: 16px;
+}
+.tasker-display-text p {
+  flex-basis: 100%;
+}
+
+.pop-a-roo {
+  transition: all 1s;
+  transform: translate(0, 0);
+  border-bottom: 1px solid black;
+}
+
+.hide-a-roo {
+  display: none;
+}
+/* ============== MEDIAS ============ */
+@media (max-width: 890px) {
+  .profile-form-container {
+    padding: 40px 0;
+    flex-direction: column;
+    height: 100%;
+  }
+  .profile-form-container form {
+    height: 100%;
+  }
+  .profile-form-container span {
+    width: 45%;
+  }
+}
+
+@media (max-width: 790px) {
+  .profile-form-container h3 {
+    font-size: 40px;
+  }
+  .profile-form-container h4 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 670px) {
+  .profile-form-container span {
+    width: 55%;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-form-container span {
+    width: 65%;
+  }
+}
+
+@media (max-width: 550px) {
+  .profile-form-container span {
+    width: 70%;
+  }
 }

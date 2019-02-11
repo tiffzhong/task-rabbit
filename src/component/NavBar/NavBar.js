@@ -64,7 +64,7 @@ class NavBar extends Component {
         <div className="navBar">
           <div className="logo">
             <Link to="/">
-              <img src="https://www.logosurfer.com/wp-content/uploads/2018/03/taskrabbit-logo_1.png" />
+              <img src="https://assets.taskrabbit.com/v3/assets/web/logos/logo-h-b1502abe9deb95e9b28f6125aeee018f.svg" />
             </Link>
           </div>
 
@@ -74,30 +74,90 @@ class NavBar extends Component {
                 <a className="services-link" onClick={this.linkToggler}>
                   Services
                 </a>
-                <ul  id='nav-popover-dropdown' className={this.state.toggleLinks ? "showDropdown" : "hideDropdown"}>
-                  <div className='dropdown-links'>
-                  <p className='dropdown-title' >Task Services</p>
-                  <Link to="/cleaning_form" className='nav-popover-link' onClick={this.linkToggler} >Cleaning Service</Link>
-                  <Link to="/cooking_form" className='nav-popover-link' onClick={this.linkToggler} >Cooking Service</Link>
-                  <Link to="/delivery_form"  className='nav-popover-link' onClick={this.linkToggler} >Delivery Service</Link>
-                  <Link to="/furniture_form" className='nav-popover-link' onClick={this.linkToggler} >Furniture Assembly</Link>
-                  <Link to="/home_form" className='nav-popover-link' onClick={this.linkToggler} >Home Improvement</Link>
-                  <Link to="/mounting_form" className='nav-popover-link' onClick={this.linkToggler} >Mounting & Installation</Link>
-                  <Link to="/moving_form" className='nav-popover-link' onClick={this.linkToggler} >Moving & Packing</Link>
-                  <Link to="/pet_form" className='nav-popover-link' onClick={this.linkToggler} >Pet Service</Link>
-                  <Link to="/yardwork_form" className='nav-popover-link' onClick={this.linkToggler} >Yardwork/Landscaping</Link>
+                <ul
+                  id="nav-popover-dropdown"
+                  className={
+                    this.state.toggleLinks ? "showDropdown" : "hideDropdown"
+                  }
+                >
+                  <div className="dropdown-links">
+                    <p className="dropdown-title">Task Services</p>
+                    <Link
+                      to="/cleaning_form"
+                      className="nav-popover-link"
+                      onClick={this.linkToggler}
+                    >
+                      Cleaning Service
+                    </Link>
+                    <Link
+                      to="/cooking_form"
+                      className="nav-popover-link"
+                      onClick={this.linkToggler}
+                    >
+                      Cooking Service
+                    </Link>
+                    <Link
+                      to="/delivery_form"
+                      className="nav-popover-link"
+                      onClick={this.linkToggler}
+                    >
+                      Delivery Service
+                    </Link>
+                    <Link
+                      to="/furniture_form"
+                      className="nav-popover-link"
+                      onClick={this.linkToggler}
+                    >
+                      Furniture Assembly
+                    </Link>
+                    <Link
+                      to="/home_form"
+                      className="nav-popover-link"
+                      onClick={this.linkToggler}
+                    >
+                      Home Improvement
+                    </Link>
+                    <Link
+                      to="/mounting_form"
+                      className="nav-popover-link"
+                      onClick={this.linkToggler}
+                    >
+                      Mounting & Installation
+                    </Link>
+                    <Link
+                      to="/moving_form"
+                      className="nav-popover-link"
+                      onClick={this.linkToggler}
+                    >
+                      Moving & Packing
+                    </Link>
+                    <Link
+                      to="/pet_form"
+                      className="nav-popover-link"
+                      onClick={this.linkToggler}
+                    >
+                      Pet Service
+                    </Link>
+                    <Link
+                      to="/yardwork_form"
+                      className="nav-popover-link"
+                      onClick={this.linkToggler}
+                    >
+                      Yardwork/Landscaping
+                    </Link>
                   </div>
                 </ul>
               </div>
-              <Link to="/how-it-works">How it works</Link>
+              <Link to="/how-it-works">How It Works</Link>
               <Link to="/tasker-profile">Become a Tasker</Link>
+
+              <button className={user ? "hide" : "login"} onClick={this.login}>
+                Log in
+              </button>
+              <button className={user ? "login" : "hide"} onClick={this.logout}>
+                Log out
+              </button>
             </div>
-            <button className={user ? "hide" : "login"} onClick={this.login}>
-              Log in
-            </button>
-            <button className={user ? "login" : "hide"} onClick={this.logout}>
-              Log out
-            </button>
             {/* {user ? user.name : 'Please Log in!'} */}
           </div>
 

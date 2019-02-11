@@ -35,7 +35,16 @@ class TaskerProfile extends Component {
       cleaning: false,
       cleaningHourly: null,
       cooking: false,
-      cookingHourly: null
+      cookingHourly: null,
+      mountingtoggle: false,
+      deliverytoggle: false,
+      yardtoggle: false,
+      hometoggle: false,
+      movingtoggle: false,
+      pettoggle: false,
+      furnituretoggle: false,
+      cleaningtoggle: false,
+      cookingtoggle: false
     };
   }
   componentDidMount() {
@@ -48,7 +57,7 @@ class TaskerProfile extends Component {
         this.setState({
           name: this.props.user.name,
           email: this.props.user.email,
-          selfie: this.props.user.selfie
+          selfie: this.props.user.picture
         });
       });
   }
@@ -69,6 +78,53 @@ class TaskerProfile extends Component {
   onSubmit(event) {
     event.preventDefault();
   }
+
+  mountingtoggle = event => {
+    this.setState({
+      [event.target.name]: !this.state.mountingtoggle
+    });
+  };
+
+  deliverytoggle = event => {
+    this.setState({
+      [event.target.name]: !this.state.deliverytoggle
+    });
+  };
+  yardtoggle = event => {
+    this.setState({
+      [event.target.name]: !this.state.yardtoggle
+    });
+  };
+  hometoggle = event => {
+    this.setState({
+      [event.target.name]: !this.state.hometoggle
+    });
+  };
+  movingtoggle = event => {
+    this.setState({
+      [event.target.name]: !this.state.movingtoggle
+    });
+  };
+  pettoggle = event => {
+    this.setState({
+      [event.target.name]: !this.state.pettoggle
+    });
+  };
+  furnituretoggle = event => {
+    this.setState({
+      [event.target.name]: !this.state.furnituretoggle
+    });
+  };
+  cleaningtoggle = event => {
+    this.setState({
+      [event.target.name]: !this.state.cleaningtoggle
+    });
+  };
+  cookingtoggle = event => {
+    this.setState({
+      [event.target.name]: !this.state.cookingtoggle
+    });
+  };
 
   render() {
     console.log(this.props, "tasker props");
@@ -104,8 +160,16 @@ class TaskerProfile extends Component {
     return (
       <div className="tasker-profile">
         <div className="profile-form-container">
+          <span>
+            <h3>Start Tasking.</h3>
+            <h4>Earn money your way.</h4>
+            <p>
+              Be someone's hero today. Earn money by helping people with their
+              everyday to-dos.
+            </p>
+          </span>
           <form onSubmit={event => this.onSubmit(event)}>
-            <h2>Your Tasker Profile</h2>
+            <h2>Become a Tasker</h2>
             <input
               name="name"
               value={name}
@@ -126,7 +190,7 @@ class TaskerProfile extends Component {
             />
             <div>
               <Autocomplete
-                style={{ width: "250%" }}
+                style={{ width: "510%", marginLeft: "-137px" }}
                 onPlaceSelected={place => {
                   this.setState({
                     place: place.formatted_address
@@ -145,178 +209,490 @@ class TaskerProfile extends Component {
           </form>
         </div>
 
+        {/* =========== SKILL FORM SECTION =============== */}
         <div className="tasker-skill-form">
+          <h2>Register to become a Tasker</h2>
           <form onSubmit={event => this.onSubmit(event)}>
-            <h2>What is your hourly rate?</h2>
-            <label>
-              <input
-                type="checkbox"
-                name="mounting"
-                checked={this.state.mounting}
-                onChange={this.handleChange}
-              />
-              Mounting & Installation
-              <input
-                name="mountingHourly"
-                value={this.state.mountingHourly}
-                onChange={this.handleChange}
-              />
-            </label>
+            <span>
+              <h6>Add Your Skills & Rates</h6>
+              <p>
+                Select your tasking categories and set your hourly rates. You
+                can add or remove categories from your profile, or revise your
+                rates, at any time.
+              </p>
+            </span>
+            <div className="task-container">
+              <div className="tasker-display-text">
+                <h3>Mounting & Installation</h3>
+                <button name="mountingtoggle" onClick={this.mountingtoggle}>
+                  <i class="fas fa-chevron-down" />
+                </button>
+                <p>Mounting TVs, paintings, and art onto walls.</p>
+              </div>
 
-            <label>
-              <input
-                type="checkbox"
-                name="delivery"
-                checked={this.state.delivery}
-                onChange={this.handleChange}
-              />
-              Delivery Service
-              <input
-                name="deliveryHourly"
-                value={this.state.deliveryHourly}
-                onChange={this.handleChange}
-              />
-            </label>
-
-            <label>
-              <input
-                type="checkbox"
-                name="yard"
-                checked={this.state.yard}
-                onChange={this.handleChange}
-              />
-              Yard Work/Landscaping
-              <input
-                name="yardHourly"
-                value={this.state.yardHourly}
-                onChange={this.handleChange}
-              />
-            </label>
-
-            <label>
-              <input
-                type="checkbox"
-                name="home"
-                checked={this.state.home}
-                onChange={this.handleChange}
-              />
-              Home Improvement
-              <input
-                name="homeHourly"
-                value={this.state.homeHourly}
-                onChange={this.handleChange}
-              />
-            </label>
-
-            <label>
-              <input
-                type="checkbox"
-                name="moving"
-                checked={this.state.moving}
-                onChange={this.handleChange}
-              />
-              Moving & Packing
-              <input
-                name="movingHourly"
-                value={this.state.movingHourly}
-                onChange={this.handleChange}
-              />
-            </label>
-
-            <label>
-              <input
-                type="checkbox"
-                name="pet"
-                checked={this.state.pet}
-                onChange={this.handleChange}
-              />
-              Pet Service
-              <input
-                name="petHourly"
-                value={this.state.petHourly}
-                onChange={this.handleChange}
-              />
-            </label>
-
-            <label>
-              <input
-                type="checkbox"
-                name="furniture"
-                checked={this.state.furniture}
-                onChange={this.handleChange}
-              />
-              Furniture Assembly
-              <input
-                name="furnitureHourly"
-                value={this.state.furnitureHourly}
-                onChange={this.handleChange}
-              />
-            </label>
-
-            <label>
-              <input
-                type="checkbox"
-                name="cleaning"
-                checked={this.state.cleaning}
-                onChange={this.handleChange}
-              />
-              Cleaning Service
-              <input
-                name="cleaningHourly"
-                value={this.state.cleaningHourly}
-                onChange={this.handleChange}
-              />
-            </label>
-
-            <label>
-              <input
-                type="checkbox"
-                name="cooking"
-                checked={this.state.cooking}
-                onChange={this.handleChange}
-              />
-              Cooking Service
-              <input
-                name="cookingHourly"
-                value={this.state.cookingHourly}
-                onChange={this.handleChange}
-              />
-            </label>
-            <Link to={`/tasker-dashboard/${user.auth0_id}`}>
-              <button
-                onClick={() =>
-                  createProfile(
-                    name,
-                    email,
-                    selfie,
-                    phone,
-                    place,
-                    about,
-                    mounting,
-                    mountingHourly,
-                    delivery,
-                    deliveryHourly,
-                    yard,
-                    yardHourly,
-                    home,
-                    homeHourly,
-                    moving,
-                    movingHourly,
-                    pet,
-                    petHourly,
-                    furniture,
-                    furnitureHourly,
-                    cleaning,
-                    cleaningHourly,
-                    cooking,
-                    cookingHourly,
-                    user.auth0_id
-                  )
+              <div
+                className={
+                  this.state.mountingtoggle ? "pop-a-roo" : "hide-a-roo"
                 }
               >
-                Submit
-              </button>
-            </Link>
+                <p>
+                  Scope Task Check with the Client if they know what material
+                  the wall is made of so you can correctly gauge what tools and
+                  skills the task will require. Clients will expect you to be
+                  able to distinguish between different wall types (i.e. studs
+                  and drywall, brick, concrete, or lath and plaster) in order to
+                  properly mount items into them. You’ll also need to navigate
+                  around structural, electrical, or plumbing materials that
+                  might line the walls. Be sure you have the right tools, such
+                  as a drill, level, and stud finder.
+                </p>
+                <input
+                  type="checkbox"
+                  name="mounting"
+                  checked={this.state.mounting}
+                  onChange={this.handleChange}
+                />
+                Your Tasker Rate
+                <div className="mounting-tasker-rate">
+                  {this.state.mounting ? (
+                    <input
+                      name="mountingHourly"
+                      value={this.state.mountingHourly}
+                      onChange={this.handleChange}
+                    />
+                  ) : (
+                    <input
+                      name="mountingHourly"
+                      value=""
+                      onChange={this.handleChange}
+                      disabled
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+            {/* =====DELIVERY CONTAINER===== */}
+            <div className="task-container">
+              <div className="tasker-display-text">
+                <h3>Delivery Service</h3>
+                <button name="deliverytoggle" onClick={this.deliverytoggle}>
+                  <i class="fas fa-chevron-down" />
+                </button>
+                <p>
+                  Deliveries for food, clothing, documents, and other items.
+                </p>
+              </div>
+
+              <div
+                className={
+                  this.state.deliverytoggle ? "pop-a-roo" : "hide-a-roo"
+                }
+              >
+                <p>
+                  Scope of Task Making deliveries of food, clothing, documents,
+                  and other items. Note: You will not be reimbursed for travel
+                  expenses such as gas, parking, or public transportation fees.
+                  These costs should be included in your hourly rate.
+                </p>
+                <input
+                  type="checkbox"
+                  name="delivery"
+                  checked={this.state.delivery}
+                  onChange={this.handleChange}
+                />
+                <div className="delivery-tasker-rate">
+                  Your Tasker Rate
+                  {this.state.delivery ? (
+                    <input
+                      name="deliveryHourly"
+                      value={this.state.deliveryHourly}
+                      onChange={this.handleChange}
+                    />
+                  ) : (
+                    <input
+                      name="deliveryHourly"
+                      value=""
+                      onChange={this.handleChange}
+                      disabled
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+            {/* =====YARD WORK CONTAINER ======*/}
+            <div className="task-container">
+              <div className="tasker-display-text">
+                <h3> Yard Work/Landscaping</h3>
+                <button name="yardtoggle" onClick={this.yardtoggle}>
+                  <i class="fas fa-chevron-down" />
+                </button>
+                <p>
+                  Raking leaves, lawn mowing, gardening, landscaping, watering,
+                  hauling of waste.
+                </p>
+              </div>
+
+              <div
+                className={this.state.yardtoggle ? "pop-a-roo" : "hide-a-roo"}
+              >
+                <p>
+                  Scope of Task Raking leaves. Lawn mowing. Gardening.
+                  Landscaping. Watering. Hauling of yard waste. Clients
+                  typically expect you to clean the entire space and bring your
+                  own supplies. Make sure to check with your Client if they have
+                  their own tools (such as a lawn mower and rake or blower), or
+                  if they expect you to bring your own to each task.
+                </p>
+                <input
+                  type="checkbox"
+                  name="yard"
+                  checked={this.state.yard}
+                  onChange={this.handleChange}
+                />
+                <div className="yard-tasker-rate">
+                  Your Tasker Rate
+                  {this.state.yard ? (
+                    <input
+                      name="yardHourly"
+                      value={this.state.yardHourly}
+                      onChange={this.handleChange}
+                    />
+                  ) : (
+                    <input
+                      name="yardHourly"
+                      value=""
+                      onChange={this.handleChange}
+                      disabled
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+            {/* =======HOME IMPROVEMENT CONTAINER====== */}
+            <div className="task-container">
+              <div className="tasker-display-text">
+                <h3>Home Improvement</h3>
+                <button name="hometoggle" onClick={this.hometoggle}>
+                  <i class="fas fa-chevron-down" />
+                </button>
+                <p>Repair and maintenance work around the home or office.</p>
+              </div>
+              <div
+                className={this.state.hometoggle ? "pop-a-roo" : "hide-a-roo"}
+              >
+                <p>
+                  Scope of Task • Putting up shelves. • Hanging curtains,
+                  blinds, and picture frames. • Repairing holes in drywall. •
+                  Taking care of small paint jobs. • Changing light bulbs. •
+                  Repairing broken door handles. Before arriving, be sure you
+                  have the right tools, such as a drill, screw driver, level,
+                  stud finder, and check whether the Client needs special
+                  supplies.
+                </p>
+
+                <input
+                  type="checkbox"
+                  name="home"
+                  checked={this.state.home}
+                  onChange={this.handleChange}
+                />
+                <div className="home-tasker-rate">
+                  Your Tasker Rate
+                  {this.state.home ? (
+                    <input
+                      name="homeHourly"
+                      value={this.state.homeHourly}
+                      onChange={this.handleChange}
+                    />
+                  ) : (
+                    <input
+                      name="homeHourly"
+                      value=""
+                      onChange={this.handleChange}
+                      disabled
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* =====MOVING AND PACKING CONTAINER==== */}
+            <div className="task-container">
+              <div className="tasker-display-text">
+                <h3> Moving & Packing</h3>
+                <button name="movingtoggle" onClick={this.movingtoggle}>
+                  <i class="fas fa-chevron-down" />
+                </button>
+                <p>
+                  Packing or un-packing boxes, or moving boxes and furniture.
+                </p>
+              </div>
+              <div
+                className={this.state.movingtoggle ? "pop-a-roo" : "hide-a-roo"}
+              >
+                <p>
+                  Scope of Task Moving boxes and furniture into and out of
+                  homes. Carrying boxes and furniture up and down stairs.
+                  Helping with packing or unpacking items. It can help to ask
+                  the Client in advance if there will be stairs, an elevator, or
+                  a loading dock, and to inquire about stairwell and doorway
+                  width. Make sure to check with Clients if they need supplies
+                  such as packing tape, boxes, moving blankets, or a rented
+                  hauling vehicle.
+                </p>
+
+                <input
+                  type="checkbox"
+                  name="moving"
+                  checked={this.state.moving}
+                  onChange={this.handleChange}
+                />
+                <div className="moving-tasker-rate">
+                  Your Tasker Rate
+                  {this.state.moving ? (
+                    <input
+                      name="movingHourly"
+                      value={this.state.movingHourly}
+                      onChange={this.handleChange}
+                    />
+                  ) : (
+                    <input
+                      name="movingHourly"
+                      value=""
+                      onChange={this.handleChange}
+                      disabled
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+            {/* ==========PET SERVICE CONTAINER======== */}
+            <div className="task-container">
+              <div className="tasker-display-text">
+                <h3>Pet Service</h3>
+                <button name="pettoggle" onClick={this.pettoggle}>
+                  <i class="fas fa-chevron-down" />
+                </button>
+                <p>Watching house pets while owners are out of town.</p>
+              </div>
+              <div
+                className={this.state.pettoggle ? "pop-a-roo" : "hide-a-roo"}
+              >
+                <p>
+                  Scope of Task Caring for animal's needs. Experienced in
+                  handling animals.
+                </p>
+                <input
+                  type="checkbox"
+                  name="pet"
+                  checked={this.state.pet}
+                  onChange={this.handleChange}
+                />
+                <div className="pet-tasker-rate">
+                  Your Tasker Rate
+                  {this.state.pet ? (
+                    <input
+                      name="petHourly"
+                      value={this.state.petHourly}
+                      onChange={this.handleChange}
+                    />
+                  ) : (
+                    <input
+                      name="petHourly"
+                      value=""
+                      onChange={this.handleChange}
+                      disabled
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+            {/* =====FURNITURE=====  */}
+            <div className="task-container">
+              <div className="tasker-display-text">
+                <h3>Furniture Assembly</h3>
+                <button name="furnituretoggle" onClick={this.furnituretoggle}>
+                  <i class="fas fa-chevron-down" />
+                </button>
+                <p>
+                  Putting together furniture from IKEA and other furniture
+                  stores.
+                </p>
+              </div>
+              <div
+                className={
+                  this.state.furnituretoggle ? "pop-a-roo" : "hide-a-roo"
+                }
+              >
+                <p>
+                  Scope of Task • Reading assembly instructions. • Assembling
+                  furniture. • Carrying furniture up or down stairs. • Arranging
+                  furniture in the Client's home, and securing it to the wall if
+                  so indicated in assembly instructions. • Removing recycling
+                  and garbage, such as empty boxes. It can help to get the brand
+                  and item number from your Client upfront so you can scope what
+                  tools are needed. Before arriving, be sure you have the right
+                  tools, and check whether the Client needs special supplies.{" "}
+                </p>
+                Your Tasker Rate
+                <input
+                  type="checkbox"
+                  name="furniture"
+                  checked={this.state.furniture}
+                  onChange={this.handleChange}
+                />
+                <div className="furniture-tasker-rate">
+                  Your Tasker Rate
+                  {this.state.furniture ? (
+                    <input
+                      name="furnitureHourly"
+                      value={this.state.furnitureHourly}
+                      onChange={this.handleChange}
+                    />
+                  ) : (
+                    <input
+                      name="furnitureHourly"
+                      value=""
+                      onChange={this.handleChange}
+                      disabled
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* ===========CLEANING CONTAINER========== */}
+            <div className="task-container">
+              <div className="tasker-display-text">
+                <h3> Cleaning Service</h3>
+                <button name="cleaningtoggle" onClick={this.cleaningtoggle}>
+                  <i class="fas fa-chevron-down" />
+                </button>
+                <p>Cleaning an apartment, house, vacation home, or office.</p>
+              </div>
+
+              <div
+                className={
+                  this.state.cleaningtoggle ? "pop-a-roo" : "hide-a-roo"
+                }
+              >
+                <p>
+                  Scope of Task • Bathrooms: Scrubbing sink, toilet, and
+                  shower/bathtub; wiping mirrors. • Kitchen: Washing dishes;
+                  cleaning/wiping backsplash, stove, counters, and appliances. •
+                  Floors: Vacuuming, sweeping and/or mopping floors. • Dusting:
+                  Furniture, hard surfaces, and window sills. • Tidying:
+                  Straighten and organize. • Taking out garbage/recycling and
+                  replacing trash bags. Clients typically expect you to clean
+                  the entire space and bring your own cleaning supplies and
+                  tools (such as a vacuum, mop, and cleaning sprays) to each
+                  task.
+                </p>
+
+                <input
+                  type="checkbox"
+                  name="cleaning"
+                  checked={this.state.cleaning}
+                  onChange={this.handleChange}
+                />
+                <div className="cleaning-tasker-rate">
+                  Your Tasker Rate
+                  {this.state.cleaning ? (
+                    <input
+                      name="cleaningHourly"
+                      value={this.state.cleaningHourly}
+                      onChange={this.handleChange}
+                    />
+                  ) : (
+                    <input
+                      name="cleaningHourly"
+                      value=""
+                      onChange={this.handleChange}
+                      disabled
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+            {/* ==============COOKING============ */}
+            <div className="task-container">
+              <div className="tasker-display-text">
+                <h3> Cooking Service</h3>
+                <button name="cookingtoggle" onClick={this.cookingtoggle}>
+                  <i class="fas fa-chevron-down" />
+                </button>
+                <p>Cooking up your Client's favorite dishes.</p>
+              </div>
+              <div
+                className={
+                  this.state.cookingtoggle ? "pop-a-roo" : "hide-a-roo"
+                }
+              >
+                <p>
+                  Scope of Task • Running errands (e.g., shopping). * Picking up
+                  items (e.g. dry cleaning). • Shipping packages.
+                </p>
+                <input
+                  type="checkbox"
+                  name="cooking"
+                  checked={this.state.cooking}
+                  onChange={this.handleChange}
+                />
+                <div className="cooking-tasker-rate">
+                  Your Tasker Rate
+                  {this.state.cooking ? (
+                    <input
+                      name="cookingHourly"
+                      value={this.state.cookingHourly}
+                      onChange={this.handleChange}
+                    />
+                  ) : (
+                    <input
+                      name="cookingHourly"
+                      value=""
+                      onChange={this.handleChange}
+                      disabled
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* <Link to={`/tasker-dashboard/${user.auth0_id}`}> */}
+            <button
+              onClick={() =>
+                createProfile(
+                  name,
+                  email,
+                  selfie,
+                  phone,
+                  place,
+                  about,
+                  mounting,
+                  mountingHourly,
+                  delivery,
+                  deliveryHourly,
+                  yard,
+                  yardHourly,
+                  home,
+                  homeHourly,
+                  moving,
+                  movingHourly,
+                  pet,
+                  petHourly,
+                  furniture,
+                  furnitureHourly,
+                  cleaning,
+                  cleaningHourly,
+                  cooking,
+                  cookingHourly,
+                  user.auth0_id
+                )
+              }
+            >
+              Submit
+            </button>
+            {/* </Link> */}
           </form>
         </div>
       </div>

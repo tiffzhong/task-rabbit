@@ -21,7 +21,7 @@ export default class LandingPage_TaskCards extends Component {
     };
     return (
       <div className="TaskCards-component">
-        <h1>Popular Tasks</h1>
+        <h1>Popular Tasks In Your Area</h1>
         <Slider {...settings}>
           <div className="card">
             <div>
