@@ -15,7 +15,7 @@ export default function taskerReducer(
   state = INITIAL_STATE,
   action = { payload: "" }
 ) {
-  console.log("REDUCER HIT(Tasker): Action =>", action);
+  // console.log("REDUCER HIT(Tasker): Action =>", action);
   switch (action.type) {
     case SET_USER:
       return { ...state, user: action.payload };
@@ -115,7 +115,7 @@ export function createProfile(
         .then(res => {
           window.location.pathname = `/tasker-dashboard/${
             res.data[0].tasker_id
-          }`;
+            }`;
           return {};
         })
         .catch(error => console.log("error in creating profile", error))
