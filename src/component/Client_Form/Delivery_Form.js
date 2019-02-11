@@ -63,8 +63,11 @@ class Delivery_Form extends Component {
         })
         // alert('Your Task has been created! ... Tiffany is a Lemon')
        this.props.allTaskerForClient().then(response => {
+           console.log('get all from reducer ====>', response)
            this.props.updateTaskType(response)
        })
+       const { taskType } = this.props;
+       console.log('taskType array ====> ', taskType )
     }
 
     render() {
