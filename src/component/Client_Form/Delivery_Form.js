@@ -80,7 +80,7 @@ class Delivery_Form extends Component {
         axios.post("/api/client", bookedTask).then(response => {
             this.props.updateClientData(response.data);
         });
-        // alert('Your Task has been created! ... Tiffany is a Lemon')
+        this.props.updateTaskType('delivery service')
     };
 
     render() {
@@ -151,7 +151,7 @@ const mapDispatchToProps = {
     updateTaskDetails: updateTaskDetails,
     updateClientData: updateClientData,
     allTaskerForClient: allTaskerForClient,
-    updateTaskType: updateTaskType
+    updateTaskType: updateTaskType,
 };
 
 export default connect(
