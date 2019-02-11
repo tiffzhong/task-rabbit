@@ -66,8 +66,9 @@ class Delivery_Form extends Component {
            console.log('get all from reducer ====>', response)
            this.props.updateTaskType(response)
        })
-       const { taskType } = this.props;
-       console.log('taskType array ====> ', taskType )
+       
+       const { taskType, allTaskers } = this.props;
+       console.log('allTaskers array ====> ', allTaskers )
     }
 
     render() {
@@ -118,7 +119,8 @@ const mapStateToProps = state => {
         endDate,
         taskDetails,
         user,
-        taskerProfile
+        taskerProfile,
+        allTaskers
     }
 }
 
