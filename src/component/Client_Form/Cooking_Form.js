@@ -14,7 +14,8 @@ class Cooking_Form extends Component {
         this.state = {
             locationToggle: false,
             durationToggle: false,
-            scheduleToggle: false,
+            vehicleToggle: false,
+            scheduleToggle: false
 
         }
     }
@@ -95,6 +96,7 @@ class Cooking_Form extends Component {
                         vehicleToggle={this.state.vehicleToggle}
                         scheduleToggle={this.state.scheduleToggle}
                         handleToggle={this.handleToggle}
+                        bookTask={this.bookTask}
                     />
                 </div>
             </div>
