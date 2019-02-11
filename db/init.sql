@@ -79,6 +79,15 @@ ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFE
 select * from "session";
 
 
+create table picktasker(
+   id serial primary key,
+   user_id  text,
+   tasker_id text,
+   completed boolean,
+   created_date text,
+   confirmation_number text
+)
+
 booked task has tasker_id text column
 --join table for confirmation component--
 select t.tasker_id, t.email, t.tasker_name,t.selfie, t.mounting, t.mountinghourly, t.delivery, t.deliveryhourly, t.yard, t.yardhourly, t.home, t.homehourly, t.moving, t.movinghourly, t.pet, t.pethourly, t.furniture, t.furniturehourly, t.cleaning, t.cleaninghourly, t.cooking, t.cookinghourly, b.user_id,b.locationstart, b.locationend, b.startdate, b.enddate, b.duration, b.taskdetails, b.tasktype, u.name, u.email, u.picture
