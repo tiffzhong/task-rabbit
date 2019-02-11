@@ -77,7 +77,7 @@ export function allTaskerForClient(){
   return {
     type:All_TASKER_FOR_CLIENT,
     payload: axios.get(`/api/pickatasker`).then(response =>{
-      console.log("alltaskers=====>", response)
+      console.log("alltaskers=====>", response.data)
      return response.data 
   })
   }

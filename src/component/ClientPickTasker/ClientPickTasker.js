@@ -31,7 +31,7 @@ class clientPickTasker extends Component {
     }
 
     render() {
-        const { taskType } = this.props
+        const { allTasker } = this.props
         console.log("this.props=>>>>", this.props)
        
                 // const allTaskers = this.state.picktasker.map(taskers=>{

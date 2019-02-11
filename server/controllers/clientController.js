@@ -76,8 +76,9 @@ module.exports = {
         const db = req.app.get("db");
         var p1 = db.allTaskers()
        var p2 = db.allClient()
-        Promise.all([p1, p2]).then(response=>{
+        Promise.all([p1, p2]).then(responser => {
             console.log("promiseallresponse", response)
+            res.send(responser)
         }).catch(error => {
             console.log('Error in allTaskers', error);
         })
