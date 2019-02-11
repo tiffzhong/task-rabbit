@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Client_Form.css';
-import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, updateVehicle, updateTaskDetails, updateClientData } from '../../ducks/clientReducer';
+import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, updateVehicle, updateTaskDetails, updateClientData, updateTaskType } from '../../ducks/clientReducer';
 import LocationSingle from './QuestionBoxes/LocationSingle';
 import Duration from './QuestionBoxes/Duration';
 import Schedule from './QuestionBoxes/Schedule';
@@ -58,6 +58,7 @@ class Cooking_Form extends Component {
         axios.post('/api/client', bookedTask).then(response => {
             this.props.updateClientData(response.data)
         })
+        this.props.updateTaskType('cooking service');
     }
 
     render() {
@@ -129,7 +130,8 @@ const mapDispatchToProps = {
     updateStartDate: updateStartDate,
     updateEndDate: updateEndDate,
     updateTaskDetails: updateTaskDetails,
-    updateClientData: updateClientData
+    updateClientData: updateClientData,
+    updateTaskType: updateTaskType
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cooking_Form);

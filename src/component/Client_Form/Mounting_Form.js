@@ -8,7 +8,8 @@ import {
   updateEndDate,
   updateVehicle,
   updateTaskDetails,
-  updateClientData
+  updateClientData,
+  updateTaskType
 } from "../../ducks/clientReducer";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -89,7 +90,7 @@ class Mounting_Form extends Component {
         axios.post('/api/client', bookedTask).then(response => {
             this.props.updateClientData(response.data)
         })
-        this.props.reducerfunction(bookedTask.taskType)
+        this.props.updateTaskType('mounting & installation')
     }
 
     render() {
@@ -172,7 +173,8 @@ const mapDispatchToProps = {
     updateVehicle: updateVehicle,
     updateEndDate: updateEndDate,
     updateTaskDetails: updateTaskDetails,
-    updateClientData: updateClientData
+    updateClientData: updateClientData,
+    updateTaskType: updateTaskType
 }
 
 export default connect(

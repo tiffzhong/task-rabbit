@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Client_Form.css';
-import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, updateVehicle, updateTaskDetails, updateLocationEnd, updateClientData } from '../../ducks/clientReducer';
+import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, updateVehicle, updateTaskDetails, updateLocationEnd, updateClientData, updateTaskType } from '../../ducks/clientReducer';
 import LocationDual from './QuestionBoxes/LocationDual';
 import Duration from './QuestionBoxes/Duration';
 import Vehicle from './QuestionBoxes/Vehicle';
@@ -68,6 +68,7 @@ class Yardwork_Form extends Component {
         axios.post('/api/client', bookedTask).then(response => {
             this.props.updateClientData(response.data)
         })
+        this.props.updateTaskType('yardwork/landscaping')
     }
 
     render() {
@@ -147,7 +148,8 @@ const mapDispatchToProps = {
     updateStartDate: updateStartDate,
     updateEndDate: updateEndDate,
     updateTaskDetails: updateTaskDetails,
-    updateClientData: updateClientData
+    updateClientData: updateClientData,
+    updateTaskType: updateTaskType
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Yardwork_Form);

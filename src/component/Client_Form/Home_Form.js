@@ -57,6 +57,7 @@ class Home_Form extends Component {
         axios.post('/api/client', bookedTask).then(response => {
             this.props.updateClientData(response.data)
         })
+        this.props.updateTaskType('home service')
     }
 
     render() {
