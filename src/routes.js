@@ -17,6 +17,7 @@ import ClientDashboard from "./component/ClientDashboard/ClientDashboard";
 import EditTaskerProfile from "./component/TaskerProfile/EditTaskerProfile";
 import Confirmation from "./component/Confirmation/Confirmation";
 import ClientPickTasker from "./component/ClientPickTasker/ClientPickTasker";
+import MountingEdit from "./component/ClientEdit/MountingEdit";
 
 export default (
   <Switch>
@@ -35,6 +36,7 @@ export default (
     <Route path="/client-dashboard" component={ClientDashboard} />
     <Route path="/tasker-profile" component={TaskerProfile} />
     <Route path="/pick_a_tasker" component={ClientPickTasker} />
+    <Route path='mountingEdit' component={MountingEdit} />
     <Route
       path="/edit-tasker-profile/:tasker_id"
       component={EditTaskerProfile}
