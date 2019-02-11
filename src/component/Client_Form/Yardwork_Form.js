@@ -113,7 +113,11 @@ class Yardwork_Form extends Component {
                     vehicleToggle={this.state.vehicleToggle}
                     scheduleToggle={this.state.scheduleToggle}
                     handleToggle={this.handleToggle}
+<<<<<<< HEAD
                     
+=======
+                    bookTask={this.bookTask}
+>>>>>>> development
                 />
                 </div>
             </div>

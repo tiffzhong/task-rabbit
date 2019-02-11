@@ -9,10 +9,12 @@
 
 .profile-form-container {
   background-image: url("./taskerbecome.jpg");
-  height: 100vh;
+  background-size: cover;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-repeat: none;
 }
 .profile-form-container h3 {
   font-size: 3rem;
@@ -42,11 +44,11 @@
   align-items: center;
   flex-direction: column;
   margin: 20px;
-  border: 1px solid black;
+  border: 1px solid #242a30;
   background-color: #e8ebef;
   padding: 20px;
   border-radius: 5px;
-  height: 70%;
+  height: 65%;
 }
 
 .profile-form-container form input {
@@ -96,21 +98,26 @@
 
 /* ==========TASKER SKILL SECTION ==========*/
 .tasker-skill-form {
-  padding: 20px;
-  background-color: #fefefe;
+  background-color: #f9fafb;
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
 }
 .tasker-skill-form h2 {
+  margin-top: 30px;
+  width: 85%;
   font-size: 35px;
   font-weight: bold;
-  align-self: flex-start;
+  text-align: start;
 }
 
 .tasker-skill-form form {
-  border: 1px solid black;
+  padding: 1rem 1rem 0.5rem;
+  width: 100%;
+  font-size: 1.25em;
+  position: relative;
+  border: 1px solid #dce0e6;
   background-color: white;
   display: flex;
   width: 85%;
@@ -118,29 +125,51 @@
   margin: 20px;
 }
 .tasker-skill-form span {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #dce0e6;
   width: 100%;
   padding: 15px;
   text-align: start;
 }
 .tasker-skill-form h6 {
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 100;
 }
 .tasker-skill-form p {
+  margin-top: 20px;
   font-size: 15px;
 }
 
-.tasker-skill-form input {
+.tasker-rate-section section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
 }
-.tasker-skill-form input:disabled {
+/* .tasker-rate-section h3 {
+  align-self: flex-start;
+} */
+.tasker-rate-section input {
+  text-align: center;
+  border: 1px solid #545e69;
+  color: black;
+  font-size: 16px;
+  width: 60px;
+  border-radius: 5px;
+  height: 35px;
+  width: 60px;
 }
+.tasker-rate-section input:hover {
+  border: 1px solid #51af33;
+}
+
 .tasker-display-text {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   text-align: left;
   padding: 20px;
-  border-bottom: 1px solid red;
+
+  border-bottom: 1px solid #dce0e6;
 }
 .tasker-display-text button {
   padding: 0 10px;
@@ -149,6 +178,10 @@
   color: #51af33;
   font-size: 16px;
 }
+.tasker-display-text h3 {
+  font-size: 18px;
+}
+
 .tasker-display-text p {
   flex-basis: 100%;
 }
@@ -157,6 +190,36 @@
   transition: all 1s;
   transform: translate(0, 0);
   border-bottom: 1px solid black;
+}
+
+.pop-a-roo section {
+  color: #545e69;
+  text-align: start;
+  border-radius: 4px;
+  padding: 1em 1.4em;
+  margin-bottom: 1.5em;
+  background-color: #f9fafb;
+}
+.pop-a-roo section p {
+  line-height: 1.5;
+}
+.pop-a-roo section ul {
+  padding: 15px 0;
+}
+.pop-a-roo section h4 {
+  text-align: start;
+  color: #242a30;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #dce0e6;
+}
+
+.pop-a-roo section fieldset {
+  color: #242a30;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-bottom: 20px;
 }
 
 .hide-a-roo {

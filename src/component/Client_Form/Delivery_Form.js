@@ -1,12 +1,22 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import './Client_Form.css';
-import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, updateVehicle, updateTaskDetails, updateClientData,allTaskerForClient, updateTaskType } from '../../ducks/clientReducer';
-import axios from 'axios';
-import LocationDual from './QuestionBoxes/LocationDual';
-import Schedule from './QuestionBoxes/Schedule';
-import Duration from './QuestionBoxes/Duration';
-import Details from './QuestionBoxes/Details';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import "./Client_Form.css";
+import {
+    updateDuration,
+    updateLocationStart,
+    updateStartDate,
+    updateEndDate,
+    updateVehicle,
+    updateTaskDetails,
+    updateClientData,
+    allTaskerForClient,
+    updateTaskType
+} from "../../ducks/clientReducer";
+import axios from "axios";
+import LocationDual from "./QuestionBoxes/LocationDual";
+import Schedule from "./QuestionBoxes/Schedule";
+import Duration from "./QuestionBoxes/Duration";
+import Details from "./QuestionBoxes/Details";
 
 class Delivery_Form extends Component {
     constructor() {
@@ -15,98 +25,107 @@ class Delivery_Form extends Component {
             locationToggle: false,
             durationToggle: false,
             vehicleToggle: false,
-            scheduleToggle: false,
-
-        }
+            scheduleToggle: false
+        };
     }
 
     handleToggle = (name, value, state) => {
-        if (name === 'scheduleToggle') {
-            if (this.props.startDate === '' || this.props.startTime === '') {
-                alert('you must answer all questions before continuing')
+        if (name === "scheduleToggle") {
+            if (this.props.startDate === "" || this.props.startTime === "") {
+                alert("you must answer all questions before continuing");
             } else {
-                console.log('name in state', name);
+                console.log("name in state", name);
                 this.setState({
                     [name]: value
-            })
+                });
             }
-        } else if (state === '') {
-            alert('you must answer all questions before continuing')
-
+        } else if (state === "") {
+            alert("you must answer all questions before continuing");
         } else {
-            console.log('name in state', name);
+            console.log("name in state", name);
             this.setState({
                 [name]: value
-            })
+            });
         }
-    }
+    };
 
     bookTask = () => {
-        const {delivery} = this.props.taskerProfile
-        console.log("Taker!!!", this.props)
-        const { locationStart, locationEnd, long, lat, duration, vehicle, startDate, endDate, taskDetails, user } = this.props;
+        const { delivery } = this.props.taskerProfile;
+        console.log("Taker!!!", this.props);
+        const {
+            locationStart,
+            locationEnd,
+            long,
+            lat,
+            duration,
+            vehicle,
+            startDate,
+            endDate,
+            taskDetails,
+            user
+        } = this.props;
         const bookedTask = {
-            taskType: 'delivery service',
-            locationStart, 
+            taskType: "delivery service",
+            locationStart,
             locationEnd,
             lat,
-            long, 
+            long,
             duration,
-            vehicle, 
-            startDate, 
+            vehicle,
+            startDate,
             endDate,
             taskDetails,
             user_id: user.auth0_id
-        }
-        axios.post('/api/client', bookedTask).then(response => {
-            this.props.updateClientData(response.data)
-        })
+        };
+        axios.post("/api/client", bookedTask).then(response => {
+            this.props.updateClientData(response.data);
+        });
         // alert('Your Task has been created! ... Tiffany is a Lemon')
-       this.props.allTaskerForClient().then(response => {
-           console.log('get all from reducer ====>', response)
-           this.props.updateTaskType(response)
-       })
-       
-       const { taskType, allTaskers } = this.props;
-       console.log('allTaskers array ====> ', allTaskers )
-    }
+    };
 
     render() {
-
-
         return (
-            <div className='form'>
-
-                <span className='shadow-box'></span>
-                <div className='outer-container'>
-                <h1>Task: Delivery Service</h1>
-                <LocationDual 
-                    locationToggle={this.state.locationToggle}
-                    handleToggle={this.handleToggle}
-                />
-                <Duration 
-                    locationToggle={this.state.locationToggle}
-                    handleToggle={this.handleToggle}
-                />
-                <Schedule 
-                    durationToggle={this.state.durationToggle}
-                    handleToggle={this.handleToggle}
-                />
-                <Details 
-                    scheduleToggle={this.state.scheduleToggle}
-                    handleToggle={this.handleToggle}
-                    bookTask={this.bookTask}
-                />
+            <div className="form">
+                <span className="shadow-box" />
+                <div className="outer-container">
+                    <h1>Task: Delivery Service</h1>
+                    <LocationDual
+                        locationToggle={this.state.locationToggle}
+                        handleToggle={this.handleToggle}
+                    />
+                    <Duration
+                        locationToggle={this.state.locationToggle}
+                        handleToggle={this.handleToggle}
+                    />
+                    <Schedule
+                        durationToggle={this.state.durationToggle}
+                        handleToggle={this.handleToggle}
+                    />
+                    <Details
+                        scheduleToggle={this.state.scheduleToggle}
+                        handleToggle={this.handleToggle}
+                        bookTask={this.bookTask}
+                    />
                 </div>
-                
             </div>
         );
     }
 }
 
 const mapStateToProps = state => {
-    const { taskType, locationStart, locationEnd, lat, long, duration, vehicle, startDate, endDate, taskDetails } = state.client;
-    const { user, taskerProfile } = state.tasker
+    const {
+        taskType,
+        locationStart,
+        locationEnd,
+        lat,
+        long,
+        duration,
+        vehicle,
+        startDate,
+        endDate,
+        taskDetails
+    } = state.client;
+    const { user, taskerProfile } = state.tasker;
     return {
         taskType,
         locationStart,
@@ -119,10 +138,9 @@ const mapStateToProps = state => {
         endDate,
         taskDetails,
         user,
-        taskerProfile,
-        allTaskers
-    }
-}
+        taskerProfile
+    };
+};
 
 const mapDispatchToProps = {
     updateLocationStart: updateLocationStart,
@@ -134,6 +152,9 @@ const mapDispatchToProps = {
     updateClientData: updateClientData,
     allTaskerForClient: allTaskerForClient,
     updateTaskType: updateTaskType
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Delivery_Form);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Delivery_Form);

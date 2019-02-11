@@ -235,40 +235,64 @@ class TaskerProfile extends Component {
                   this.state.mountingtoggle ? "pop-a-roo" : "hide-a-roo"
                 }
               >
-                <p>
-                  Scope Task Check with the Client if they know what material
-                  the wall is made of so you can correctly gauge what tools and
-                  skills the task will require. Clients will expect you to be
-                  able to distinguish between different wall types (i.e. studs
-                  and drywall, brick, concrete, or lath and plaster) in order to
-                  properly mount items into them. You’ll also need to navigate
-                  around structural, electrical, or plumbing materials that
-                  might line the walls. Be sure you have the right tools, such
-                  as a drill, level, and stud finder.
-                </p>
-                <input
-                  type="checkbox"
-                  name="mounting"
-                  checked={this.state.mounting}
-                  onChange={this.handleChange}
-                />
-                Your Tasker Rate
-                <div className="mounting-tasker-rate">
-                  {this.state.mounting ? (
+                <section>
+                  <h4>Scope of Task</h4>
+                  <p>
+                    <li>
+                      Bathrooms: Scrubbing sink, toilet, and shower/bathtub
+                      wiping mirrors.
+                    </li>
+                    <li>
+                      Kitchen: Washing dishes; cleaning/wiping backsplash,
+                      stove, counters, and appliances.
+                    </li>
+                    <li>Floors: Vacuuming, sweeping and/or mopping floors.</li>
+                    <li>
+                      Dusting: Furniture, hard surfaces, and window sills.
+                    </li>
+                    <li>Tidying: Straighten and organize. </li>
+                    <li>
+                      Taking out garbage/recycling and replacing trash bags.
+                    </li>
+                    <ul>
+                      Clients typically expect you to clean the entire space and
+                      bring your own cleaning supplies and tools (such as a
+                      vacuum, mop, and cleaning sprays) to each task.
+                    </ul>
+                  </p>
+                  <fieldset>
                     <input
-                      name="mountingHourly"
-                      value={this.state.mountingHourly}
+                      type="checkbox"
+                      name="mounting"
+                      checked={this.state.mounting}
                       onChange={this.handleChange}
                     />
-                  ) : (
-                    <input
-                      name="mountingHourly"
-                      value=""
-                      onChange={this.handleChange}
-                      disabled
-                    />
-                  )}
-                </div>
+                    I have the skills and qualifications to task in this
+                    category.
+                  </fieldset>
+                  <div className="tasker-rate-section">
+                    <h4>Your Tasker Rate</h4>
+                    <section>
+                      ${"  "}
+                      {this.state.mounting ? (
+                        <input
+                          name="mountingHourly"
+                          value={this.state.mountingHourly}
+                          onChange={this.handleChange}
+                        />
+                      ) : (
+                        <input
+                          name="mountingHourly"
+                          value=""
+                          onChange={this.handleChange}
+                          disabled
+                        />
+                      )}
+                      <h3>Most Taskers with your experience hired at:</h3>
+                      <p>$25/hr</p>
+                    </section>
+                  </div>
+                </section>
               </div>
             </div>
             {/* =====DELIVERY CONTAINER===== */}
@@ -300,7 +324,7 @@ class TaskerProfile extends Component {
                   checked={this.state.delivery}
                   onChange={this.handleChange}
                 />
-                <div className="delivery-tasker-rate">
+                <div className="tasker-rate-section">
                   Your Tasker Rate
                   {this.state.delivery ? (
                     <input
