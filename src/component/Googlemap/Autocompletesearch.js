@@ -21,7 +21,7 @@ class AutocompleteSearch extends Component {
     return (
       <div>
         <Autocomplete
-          style={{ width: "250%" }}
+          style={{ width: "100%" }}
           onPlaceSelected={place => {
             var lat = place.geometry.location.lat();
             var lng = place.geometry.location.lng();
