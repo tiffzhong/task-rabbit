@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Client_Form.css';
-import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, updateVehicle, updateTaskDetails, updateClientData } from '../../ducks/clientReducer';
+import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, updateVehicle, updateTaskDetails, updateClientData,allTaskerForClient, updateTaskType } from '../../ducks/clientReducer';
 import axios from 'axios';
 import LocationDual from './QuestionBoxes/LocationDual';
 import Schedule from './QuestionBoxes/Schedule';
@@ -42,6 +42,8 @@ class Delivery_Form extends Component {
     }
 
     bookTask = () => {
+        const {delivery} = this.props.taskerProfile
+        console.log("Taker!!!", this.props)
         const { locationStart, locationEnd, long, lat, duration, vehicle, startDate, endDate, taskDetails, user } = this.props;
         const bookedTask = {
             taskType: 'delivery service',
@@ -59,7 +61,10 @@ class Delivery_Form extends Component {
         axios.post('/api/client', bookedTask).then(response => {
             this.props.updateClientData(response.data)
         })
-        alert('Your Task has been created! ... Tiffany is a Lemon')
+        // alert('Your Task has been created! ... Tiffany is a Lemon')
+       this.props.allTaskerForClient().then(response => {
+           this.props.updateTaskType(response)
+       })
     }
 
     render() {
@@ -97,7 +102,7 @@ class Delivery_Form extends Component {
 
 const mapStateToProps = state => {
     const { taskType, locationStart, locationEnd, lat, long, duration, vehicle, startDate, endDate, taskDetails } = state.client;
-    const { user } = state.tasker
+    const { user, taskerProfile } = state.tasker
     return {
         taskType,
         locationStart,
@@ -109,7 +114,8 @@ const mapStateToProps = state => {
         startDate,
         endDate,
         taskDetails,
-        user
+        user,
+        taskerProfile
     }
 }
 
@@ -120,7 +126,9 @@ const mapDispatchToProps = {
     updateStartDate: updateStartDate,
     updateEndDate: updateEndDate,
     updateTaskDetails: updateTaskDetails,
-    updateClientData: updateClientData
+    updateClientData: updateClientData,
+    allTaskerForClient: allTaskerForClient,
+    updateTaskType: updateTaskType
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Delivery_Form);

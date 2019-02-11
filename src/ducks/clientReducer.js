@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const INITIAL_STATE = {
-  taskType: '',
+  taskType: [],
   locationStart: '',
   locationEnd: '',
   lat: '',
@@ -12,7 +12,8 @@ const INITIAL_STATE = {
   startDate: '',
   endDate: '',
   taskDetails: '',
-  clientData: []
+  clientData: [],
+  allTaskers: []
 };
 
 const UPDATE_TASK_TYPE = "UPDATE_TASK_TYPE";
@@ -25,7 +26,8 @@ const UPDATE_VEHICLE = 'UPDATE_VEHICLE';
 const UPDATE_START_DATE = 'UPDATE_START_DATE';
 const UPDATE_END_DATE = 'UPDATE_END_DATE';
 const UPDATE_TASK_DETAILS = 'UPDATE_TASK_DETAILS';
-const UPDATE_CLIENT_DATA = 'UPDATE_CLIENT_DATA'
+const UPDATE_CLIENT_DATA = 'UPDATE_CLIENT_DATA';
+const All_TASKER_FOR_CLIENT= 'All_TASKER_FOR_CLIENT'
 
 export default function clientReducer(state = INITIAL_STATE, action) {
   console.log("REDUCER HIT: Action =>", action);
@@ -62,9 +64,22 @@ export default function clientReducer(state = INITIAL_STATE, action) {
 
     case UPDATE_CLIENT_DATA:
       return { ...state, clientData: action.payload };
+    
+    case `${All_TASKER_FOR_CLIENT}_FULFILLED`:
+      return { ...state, allTaskers: action.payload}
 
     default:
       return { ...state };
+  }
+}
+
+export function allTaskerForClient(){
+  return {
+    type:All_TASKER_FOR_CLIENT,
+    payload: axios.get(`/api/pickatasker`).then(response =>{
+      console.log("alltaskers=====>", response)
+     return response.data 
+  })
   }
 }
 
@@ -144,3 +159,4 @@ export function updateClientData(clientData) {
     payload: clientData
   }
 }
+

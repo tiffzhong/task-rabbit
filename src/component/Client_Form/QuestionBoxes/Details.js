@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, updateVehicle, updateTaskDetails, updateClientData } from '../../../ducks/clientReducer';
 
 class Details extends Component {
@@ -7,21 +8,21 @@ class Details extends Component {
         return (
             <div>
                 {this.props.scheduleToggle ?
-                        <div className='question-box details'>
-                            <div className='inner-container' id='details-inner'>
-                                <p>DETAILS</p>
-                                <h2>Details of Task</h2>
-                                <textarea placeholder='Enter any additional details for the Tasker' className='details-input' onChange={e => this.props.updateTaskDetails(e.target.value)}></textarea>
-                                <div className='form-button'>
-                                    <button onClick={()=>this.props.bookTask()}>Book Task</button>
-                                </div>
+                    <div className='question-box details'>
+                        <div className='inner-container' id='details-inner'>
+                            <p>DETAILS</p>
+                            <h2>Details of Task</h2>
+                            <textarea placeholder='Enter any additional details for the Tasker' className='details-input' onChange={e => this.props.updateTaskDetails(e.target.value)}></textarea>
+                            <div className='form-button'>
+                                <Link to="pick_a_tasker"> <button onClick={() => this.props.bookTask()}>Book Task</button></Link>
                             </div>
                         </div>
-                        :
-                        <div className='toggle-box'>
-                            <p>DETAILS</p>
-                        </div>
-                    }
+                    </div>
+                    :
+                    <div className='toggle-box'>
+                        <p>DETAILS</p>
+                    </div>
+                }
             </div>
         );
     }
