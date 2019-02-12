@@ -14,6 +14,17 @@ import { connect } from 'react-redux';
 import { updateTaskType } from "../../ducks/clientReducer";
 
 class LandingPage_TaskCards extends Component {
+  constructor(){
+    super();
+    this.state = {
+
+    }
+  }
+  setTaskType = task => {
+    this.props.updateTaskType(task);
+  };
+  
+  
   render() {
     var settings = {
       dots: true,
@@ -22,6 +33,9 @@ class LandingPage_TaskCards extends Component {
       slidesToShow: 3,
       slidesToScroll: 3
     };
+
+
+
     return (
       <div className="TaskCards-component">
         <h1>Popular Tasks In Your Area</h1>
@@ -32,7 +46,12 @@ class LandingPage_TaskCards extends Component {
             </div>
             <div className="card-button">
               <Link path to="/clientForm">
-                <button onClick={()=>this.props.updateTaskType('Mounting & Installation')} >Mounting & Installation</button>
+                <button onClick={() =>
+                  this.setTaskType({
+                    taskType:"Mounting & Installation",
+                    task: 'mounting'
+                  })
+                } >Mounting & Installation</button>
               </Link>
             </div>
           </div>
@@ -42,7 +61,12 @@ class LandingPage_TaskCards extends Component {
             </div>
             <div className="card-button">
               <Link path to="/clientForm">
-                <button onClick={()=>this.props.updateTaskType('Delivery Service')} >Delivery Service</button>
+                <button onClick={() =>
+                  this.setTaskType({
+                    taskType: "Delivery Service",
+                    task: "delivery"
+                  })
+                } >Delivery Service</button>
               </Link>
             </div>
           </div>
@@ -52,7 +76,12 @@ class LandingPage_TaskCards extends Component {
             </div>
             <div className="card-button">
               <Link path to="/clientForm">
-                <button onClick={()=>this.props.updateTaskType('Yardwork/Landscaping')}>Yardwork/Landscaping</button>
+                <button onClick={() =>
+                  this.setTaskType({
+                    taskType: "Yardwork/Landscaping",
+                    task: "yard"
+                  })
+                }>Yardwork/Landscaping</button>
               </Link>
             </div>
           </div>
@@ -62,7 +91,12 @@ class LandingPage_TaskCards extends Component {
             </div>
             <div className="card-button">
               <Link path to="/clientForm">
-                <button onClick={()=>this.props.updateTaskType('Home Improvement')}>Home Improvement</button>
+                <button onClick={() =>
+                  this.setTaskType({
+                    taskType: "Home Improvement",
+                    task: "home"
+                  })
+                }>Home Improvement</button>
               </Link>
             </div>
           </div>
@@ -72,7 +106,12 @@ class LandingPage_TaskCards extends Component {
             </div>
             <div className="card-button">
               <Link path to="/clientForm">
-                <button onClick={()=>this.props.updateTaskType('Moving & Packing')}>Moving & Packing</button>
+                <button onClick={() =>
+                  this.setTaskType({
+                    taskType: "Moving & Packing",
+                    task: "moving"
+                  })
+                }>Moving & Packing</button>
               </Link>
             </div>
           </div>
@@ -82,7 +121,12 @@ class LandingPage_TaskCards extends Component {
             </div>
             <div className="card-button">
               <Link path to="/clientForm">
-                <button onClick={()=>this.props.updateTaskType('Pet Service')}>Pet Service</button>
+                <button onClick={() =>
+                  this.setTaskType({
+                    taskType: "Pet Service",
+                    task: "pet"
+                  })
+                }>Pet Service</button>
               </Link>
             </div>
           </div>
@@ -92,7 +136,13 @@ class LandingPage_TaskCards extends Component {
             </div>
             <div className="card-button">
               <Link path to="/clientForm">
-                <button onClick={()=>this.props.updateTaskType('Furniture Assembly')}>Furniture Assembly</button>
+                <button onClick={() =>
+                  this.setTaskType({
+                    taskType: "Furniture Assembly",
+                    task: "furniture"
+                  })
+                }
+                >Furniture Assembly</button>
               </Link>
             </div>
           </div>
@@ -102,7 +152,13 @@ class LandingPage_TaskCards extends Component {
             </div>
             <div className="card-button">
               <Link path to="/clientForm">
-                <button onClick={()=>this.props.updateTaskType('Cleaning Service')}>Cleaning Service</button>
+                <button onClick={() =>
+                  this.setTaskType({
+                    taskType: "Cleaning Service",
+                    task: "cleaning"
+                  })
+                }
+                >Cleaning Service</button>
               </Link>
             </div>
           </div>
@@ -112,7 +168,12 @@ class LandingPage_TaskCards extends Component {
             </div>
             <div className="card-button">
               <Link path to="/clientForm">
-                <button onClick={()=>this.props.updateTaskType('Cooking Service')}>Cooking Service</button>
+                <button onClick={() =>
+                  this.setTaskType({
+                    taskType: "Cooking Service",
+                    task: "cooking"
+                  })
+                }>Cooking Service</button>
               </Link>
             </div>
           </div>

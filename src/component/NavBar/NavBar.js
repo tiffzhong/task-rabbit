@@ -19,6 +19,7 @@ class NavBar extends Component {
   componentDidMount() {
     axios.get("/auth/user-data").then(response => {
       this.props.setUser(response.data.user);
+      console.log('user', response.data.user)
     });
   }
 
@@ -33,12 +34,17 @@ class NavBar extends Component {
     }&scope=openid%20profile%20email&redirect_uri=${redirectUri}&response_type=code`;
   }
 
-  logout = () => {
-    axios.post("/auth/logout").then(() => {
+  logout=()=> {
+    console.log('logout user', this.props.user)
+    axios.post('/auth/logout').then(() => {
+      this.setState({
+        user: null
+      });
+      console.log('logging out')
       this.props.setUser(null);
-      console.log("logging out");
     });
-  };
+  }
+
   redirectToLandingPage() {
     window.location.pathname = "/";
   }
@@ -64,6 +70,7 @@ class NavBar extends Component {
 
   render() {
     const { user, taskType } = this.props;
+    console.log('user after render', user);
     console.log("taskType", this.props.taskType);
     return (
       <nav>
@@ -88,19 +95,28 @@ class NavBar extends Component {
                 >
                   <div className="dropdown-links">
                     {/* <p className="dropdown-title">Task Services</p> */}
-                    <Link
-                      to="/clientForm"
-                      className="nav-popover-link"
-                      onClick={() =>
-                        this.setTaskType({
-                          taskType: "Cleaning Service",
-                          task: "cleaning"
-                        })
-                      }
-                    >
-                      Cleaning Service
-                    </Link>
-                    <Link
+                    {
+                      this.props.user
+                      ?
+                      <Link
+                        to="/clientForm"
+                        className="nav-popover-link"
+                        onClick={() =>
+                          this.setTaskType({
+                            taskType: "Cleaning Service",
+                            task: "cleaning"
+                          })
+                        }
+                      >
+                        Cleaning Service
+                      </Link>
+                      :
+                      <Link className="nav-popover-link" to='/' onClick={this.login} >Cleaning Service</Link>
+                    }
+                    {
+                      this.props.user
+                      ?
+                      <Link
                       to="/clientForm"
                       className="nav-popover-link"
                       onClick={() =>
@@ -109,105 +125,149 @@ class NavBar extends Component {
                           task: "cooking"
                         })
                       }
-                    >
+                      >
                       Cooking Service
-                    </Link>
-                    <Link
-                      to="/clientForm"
-                      className="nav-popover-link"
-                      onClick={() =>
-                        this.setTaskType({
-                          taskType: "Delivery Service",
-                          task: "delivery"
-                        })
-                      }
-                    >
-                      Delivery Service
-                    </Link>
-                    <Link
-                      to="/clientForm"
-                      className="nav-popover-link"
-                      onClick={() =>
-                        this.setTaskType({
-                          taskType: "Furniture Assembly",
-                          task: "furniture"
-                        })
-                      }
-                    >
-                      Furniture Assembly
-                    </Link>
-                    <Link
-                      to="/clientForm"
-                      className="nav-popover-link"
-                      onClick={() =>
-                        this.setTaskType({
-                          taskType: "Home Improvement",
-                          task: "home"
-                        })
-                      }
-                    >
-                      Home Improvement
-                    </Link>
-                    <Link
-                      to="/clientForm"
-                      className="nav-popover-link"
-                      onClick={() =>
-                        this.setTaskType({
-                          taskType: "Mounting & Installation",
-                          task: "mounting"
-                        })
-                      }
-                    >
-                      Mounting & Installation
-                    </Link>
-                    <Link
-                      to="/clientForm"
-                      className="nav-popover-link"
-                      onClick={() =>
-                        this.setTaskType({
-                          taskType: "Moving & Packing",
-                          task: "moving"
-                        })
-                      }
-                    >
-                      Moving & Packing
-                    </Link>
-                    <Link
-                      to="/clientForm"
-                      className="nav-popover-link"
-                      onClick={() =>
-                        this.setTaskType({
-                          taskType: "Pet Service",
-                          task: "pet"
-                        })
-                      }
-                    >
-                      Pet Service
-                    </Link>
-                    <Link
-                      to="/clientForm"
-                      className="nav-popover-link"
-                      onClick={() =>
-                        this.setTaskType({
-                          taskType: "Yardwork/Landscaping",
-                          task: "yard"
-                        })
-                      }
-                    >
-                      Yardwork/Landscaping
-                    </Link>
+                      </Link>
+                      :
+                      <Link className="nav-popover-link" onClick={this.login} to='/' >Cooking Service</Link>
+                    }
+                    {
+                      this.props.user
+                      ?
+                      <Link
+                        to="/clientForm"
+                        className="nav-popover-link"
+                        onClick={() =>
+                          this.setTaskType({
+                            taskType: "Delivery Service",
+                            task: "delivery"
+                          })
+                        }
+                      >
+                        Delivery Service
+                      </Link>
+                      :
+                      <Link className="nav-popover-link" to='/' onClick={this.login} >Delivery Service</Link>
+                    }
+                    {
+                      this.props.user
+                      ?
+                      <Link
+                        to="/clientForm"
+                        className="nav-popover-link"
+                        onClick={() =>
+                          this.setTaskType({
+                            taskType: "Furniture Assembly",
+                            task: "furniture"
+                          })
+                        }
+                      >
+                        Furniture Assembly
+                      </Link>
+                      :
+                      <Link className="nav-popover-link" to='/' onClick={this.login}  >Furniture Assembly</Link>
+                    }
+                    {
+                      this.props.user
+                      ?
+                      <Link
+                        to="/clientForm"
+                        className="nav-popover-link"
+                        onClick={() =>
+                          this.setTaskType({
+                            taskType: "Home Improvement",
+                            task: "home"
+                          })
+                        }
+                      >
+                        Home Improvement
+                      </Link>
+                      :
+                      <Link className="nav-popover-link" to='/' onClick={this.login} >Home Improvement</Link>
+                    }
+                    {
+                      this.props.user
+                      ?
+                      <Link
+                        to="/clientForm"
+                        className="nav-popover-link"
+                        onClick={() =>
+                          this.setTaskType({
+                            taskType: "Mounting & Installation",
+                            task: "mounting"
+                          })
+                        }
+                      >
+                        Mounting & Installation
+                      </Link>
+                      :
+                      <Link className="nav-popover-link" to='/' onClick={this.login} >Mounting & Installation</Link>
+                    }
+                    {
+                      this.props.user
+                      ?
+                      <Link
+                        to="/clientForm"
+                        className="nav-popover-link"
+                        onClick={() =>
+                          this.setTaskType({
+                            taskType: "Moving & Packing",
+                            task: "moving"
+                          })
+                        }
+                      >
+                        Moving & Packing
+                      </Link>
+                      :
+                      <Link to='/' className="nav-popover-link" onClick={this.login} >Moving & Packing</Link>
+                    }
+                    {
+                      this.props.user
+                      ?
+
+                      <Link
+                        to="/clientForm"
+                        className="nav-popover-link"
+                        onClick={() =>
+                          this.setTaskType({
+                            taskType: "Pet Service",
+                            task: "pet"
+                          })
+                        }
+                      >
+                        Pet Service
+                      </Link>
+                      :
+                      <Link to='/' className="nav-popover-link" onClick={this.login}>Pet Service</Link>
+                    }
+                    {
+                      this.props.user
+                      ?
+                      <Link
+                        to="/clientForm"
+                        className="nav-popover-link"
+                        onClick={() =>
+                          this.setTaskType({
+                            taskType: "Yardwork/Landscaping",
+                            task: "yard"
+                          })
+                        }
+                      >
+                        Yardwork/Landscaping
+                      </Link>
+                      :
+                      <Link to='/' className="nav-popover-link" onClick={this.login} >Yardwork/Landscaping</Link>
+                    }
                   </div>
                 </ul>
               </div>
               <Link to="/how-it-works">How It Works</Link>
               <Link to="/tasker-profile">Become a Tasker</Link>
-
-              <button className={user ? "hide" : "login"} onClick={this.login}>
-                Log in
-              </button>
-              <button className={user ? "login" : "hide"} onClick={this.logout}>
-                Log out
-              </button>
+              <div className='login-container'>
+                <img  src={user ? user.picture : ''} />
+                <button className={user ? 'hide' : 'login'} onClick={this.login}>Log in</button>
+                <button className={user ? 'login' : 'hide'} onClick={this.logout}>Log out</button>
+              </div>
             </div>
             {/* {user ? user.name : 'Please Log in!'} */}
           </div>
@@ -233,7 +293,8 @@ class NavBar extends Component {
   }
 }
 function mapStateToProps(state) {
-  let { user } = state;
+  console.log('reducer state', state)
+  let { user } = state.tasker;
   const { taskType } = state.client;
   return {
     user,

@@ -179,7 +179,7 @@ nav li {
 }
 .nav-links {
   /* background: purple; */
-  width: 600px;
+  width: 700px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -250,6 +250,16 @@ nav a {
 
 .login {
   color: white;
+}
+.login-container {
+  /* background: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-container img {
+  height: 35px;
+  border-radius: 50%;
 }
 
 .logo img {
