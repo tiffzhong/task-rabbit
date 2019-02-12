@@ -36,24 +36,25 @@ module.exports = {
         vehicle
       })
       .then(response => {
+        console.log(response, "289374892374");
         res.status(200).send(response);
       })
       .catch(error => {
         console.log(error, "error in confirmed");
       });
-  }
+  },
 
-  // getConfirmation: (req, res) => {
-  //   const database = req.app.get("db");
-  //   let { confirmation_id } = req.params;
-  //   console.log(req.params, "r ya here mr.params?");
-  //   database
-  //     .confirm_task_get([confirmation_id])
-  //     .then(conformation => {
-  //       res.status(200).send(conformation[0]);
-  //     })
-  //     .catch(error => {
-  //       console.log(error, "getConfirmation error");
-  //     });
-  // }
+  getConfirmation: (req, res) => {
+    const database = req.app.get("db");
+    let { confirmation_id } = req.params;
+    console.log(req.params, "r ya here mr.params?");
+    database
+      .confirm_task_get([confirmation_id])
+      .then(conformation => {
+        res.status(200).send(conformation[0]);
+      })
+      .catch(error => {
+        console.log(error, "getConfirmation error");
+      });
+  }
 };

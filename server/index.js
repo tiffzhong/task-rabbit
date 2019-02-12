@@ -54,7 +54,10 @@ app.get("/api/pickatasker", clientController.allTaskers);
 
 //Confirmation
 app.post("/api/confirmed", confirmationController.createConfirmed);
-// app.get("/api/confirmed/:id", confirmationController.getConfirmation);
+app.get(
+  "/api/confirmed/:confirmation_id",
+  confirmationController.getConfirmation
+);
 
 const PORT = 4000;
 app.listen(PORT, () => {

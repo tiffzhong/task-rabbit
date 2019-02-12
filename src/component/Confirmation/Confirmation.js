@@ -10,24 +10,24 @@ class Confirmation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      confirmation: []
+      confirmation: {}
     };
   }
   componentDidMount() {
-    // this.confirmation();
+    this.confirmation();
     // this.getTasker();
   }
 
-  // confirmation = () => {
-  //   axios
-  //     .get(`/api/confirmed/${this.props.confirmedTask.confirmation_id}`)
-  //     .then(response => {
-  //       console.log("herro", response.data);
-  //       this.setState({
-  //         confirmation: response.data
-  //       });
-  //     });
-  // };
+  confirmation = () => {
+    axios
+      .get(`/api/confirmed/${this.props.confirmedTask[0].confirmation_id}`)
+      .then(response => {
+        console.log("herroasdsafsf", response.data);
+        this.setState({
+          confirmation: response.data[0]
+        });
+      });
+  };
 
   // getTasker = () => {
   //   axios.get("/api/pickatasker").then(response => {

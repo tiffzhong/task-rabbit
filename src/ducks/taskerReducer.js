@@ -201,7 +201,8 @@ export function createConfirmation(
   task_details,
   lat,
   long,
-  vehicle
+  vehicle,
+  history
 ) {
   return {
     type: CREATE_CONFIRMATION,
@@ -222,7 +223,11 @@ export function createConfirmation(
         long,
         vehicle
       })
-      .then(() => (window.location.pathname = "/confirmation"))
+      .then(response => {
+        console.log(response, "herro?");
+        history.push("/confirmation");
+        return response.data;
+      })
       .catch(error => console.log("error in creating confirmation", error))
   };
 }

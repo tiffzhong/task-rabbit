@@ -10,7 +10,7 @@
 .profile-form-container {
   background-image: url("./taskerbecome.jpg");
   background-size: cover;
-  height: 80vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +48,7 @@
   background-color: #e8ebef;
   padding: 20px;
   border-radius: 5px;
-  height: 65%;
+  height: 70%;
 }
 
 .profile-form-container form input {
@@ -120,7 +120,7 @@
   border: 1px solid #dce0e6;
   background-color: white;
   display: flex;
-  width: 85%;
+
   flex-direction: column;
   margin: 20px;
 }

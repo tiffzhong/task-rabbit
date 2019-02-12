@@ -29,4 +29,5 @@ ${task_details},
 ${lat},
 ${long},
 ${vehicle}
-);
+)
+returning *;

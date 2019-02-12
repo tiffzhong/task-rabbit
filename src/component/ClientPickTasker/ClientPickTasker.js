@@ -59,7 +59,8 @@ class clientPickTasker extends Component {
                     clientData[0].taskdetails,
                     clientData[0].lat,
                     clientData[0].long,
-                    clientData[0].vehicle
+                    clientData[0].vehicle,
+                    this.props.history
                   );
                 }}
               >
