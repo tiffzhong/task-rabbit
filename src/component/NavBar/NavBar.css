@@ -135,7 +135,7 @@ nav {
 .navBar {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   /* height: 100%; */
   padding: 5px;
@@ -186,7 +186,7 @@ nav li {
   height: 20px;
   position: relative;
   z-index: 3;
-  left: 100px;
+  /* left: 100px; */
 }
 .nav-links a {
   margin: 0 15px;
@@ -198,7 +198,7 @@ nav li {
 .nav-popover-container {
   text-align: start;
   top: 2.5px;
-  left: -60px;
+  left: -25px;
   position: absolute;
   flex-direction: column;
 }
@@ -267,6 +267,7 @@ nav a {
   height: 50px;
   width: 160px;
   margin: 0 auto;
+  margin-left: 100px;
 }
 .hideDropdown {
   display: none;
