@@ -13,6 +13,7 @@ import ClientEdit from "./component/ClientEdit/ClientEdit";
 import ClientForm from "./component/Client_Form/ClientForm";
 import Cleaning_Form from "./component/Client_Form/Cleaning_Form";
 import Reviews from "./component/Reviews/Reviews";
+import EmailModalContent from "./component/Emailmodal/EmailModalContent";
 
 export default (
   <Switch>
@@ -31,5 +32,6 @@ export default (
     />
     <Route path="/confirmation" component={Confirmation} />
     <Route path="/review" component={Reviews} />
+    <Route path="/discount" component={EmailModalContent} />
   </Switch>
 );

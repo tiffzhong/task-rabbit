@@ -1,0 +1,9 @@
+.emailmodal-profile {
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+    margin-top: 60px;
+  
+  }
