@@ -2,7 +2,8 @@ import axios from "axios";
 
 const INITIAL_STATE = {
   user: null,
-  taskerProfile: []
+  taskerProfile: [],
+  confirmedTask: []
 };
 
 const SET_USER = "SET_USER";
@@ -10,12 +11,13 @@ const CREATE_PROFILE = "CREATE_PROFILE";
 const GET_PROFILE = "GET_PROFILE";
 const EDIT_PROFILE = "EDIT_PROFILE";
 const ERROR = "ERROR";
+const CREATE_CONFIRMATION = "CREATE_CONFIRMATION";
+const GET_CONFIRMATION = "GET_CONFIRMATION";
 
 export default function taskerReducer(
   state = INITIAL_STATE,
   action = { payload: "" }
 ) {
-  // console.log("REDUCER HIT(Tasker): Action =>", action);
   switch (action.type) {
     case SET_USER:
       return { ...state, user: action.payload };
@@ -28,6 +30,10 @@ export default function taskerReducer(
     case ERROR:
       alert("Please complete every field");
       return { ...state };
+    case `${CREATE_CONFIRMATION}_FULFILLED`:
+      return { ...state };
+    case GET_CONFIRMATION:
+      return { ...state, confirmedTask: action.payload };
     default:
       return { ...state };
   }
@@ -115,7 +121,7 @@ export function createProfile(
         .then(res => {
           window.location.pathname = `/tasker-dashboard/${
             res.data[0].tasker_id
-            }`;
+          }`;
           return {};
         })
         .catch(error => console.log("error in creating profile", error))
@@ -178,5 +184,51 @@ export function editProfile(
       cooking,
       cookingHourly
     })
+  };
+}
+
+export function createConfirmation(
+  created_date,
+  task,
+  client_id,
+  tasker_id,
+  tasker_hourly,
+  start_date,
+  end_date,
+  location_start,
+  location_end,
+  duration,
+  task_details,
+  lat,
+  long,
+  vehicle
+) {
+  return {
+    type: CREATE_CONFIRMATION,
+    payload: axios
+      .post("/api/confirmed", {
+        created_date,
+        task,
+        client_id,
+        tasker_id,
+        tasker_hourly,
+        start_date,
+        end_date,
+        location_start,
+        location_end,
+        duration,
+        task_details,
+        lat,
+        long,
+        vehicle
+      })
+      .then(() => (window.location.pathname = "/confirmation"))
+      .catch(error => console.log("error in creating confirmation", error))
+  };
+}
+export function getConfirmation(confirmation_id) {
+  return {
+    type: GET_CONFIRMATION,
+    payload: confirmation_id
   };
 }

@@ -209,12 +209,12 @@ nav li {
   align-items: center;
   width: 200px;
 }
-.dropdown-title {
+/* .dropdown-title {
   margin-top: 15px;
   position: relative;
   z-index: 1;
   color: white;
-}
+} */
 .nav-popover-link {
   width: 200px;
   position: relative;
@@ -222,6 +222,8 @@ nav li {
   height: 100%;
 }
 .dropdown-links {
+  margin-top: 25px;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   height: 370px;

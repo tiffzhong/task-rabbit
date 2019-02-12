@@ -15,7 +15,7 @@ create table bookedTasks (
     locationEnd text,
     lat numeric (15,6),
     long numeric (15,6),
-    duration text,
+    duration text,``
     vehicle text,
     startDate text,
     endDate text,
@@ -67,6 +67,29 @@ create table tasker_profile(
 
 select * from tasker_profile;
 
+----CONFIRMED TASK 
+create table confirmed_task(
+confirmation_id serial primary key,
+created_date text,
+task text,
+client_id text,
+tasker_id text,
+tasker_hourly text,
+start_date text,
+end_date text,
+location_start text,
+location_end text,
+duration text,
+task_details text,
+lat numeric (15,6),
+long numeric (15,6),
+vehicle text
+);
+
+select * from confirmed_task;
+
+
+
 -- To stay logged in. No need to sign in w Auth0 every time
 CREATE TABLE "session" (
   "sid" varchar NOT NULL COLLATE "default",
@@ -79,21 +102,21 @@ ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFE
 select * from "session";
 
 
-create table picktasker(
-   id serial primary key,
-   user_id  text,
-   tasker_id text,
-   completed boolean,
-   created_date text,
-   confirmation_number text
-)
+-- create table picktasker(
+--    id serial primary key,
+--    user_id  text,
+--    tasker_id text,
+--    completed boolean,
+--    created_date text,
+--    confirmation_number text
+-- )
 
-booked task has tasker_id text column
---join table for confirmation component--
-select t.tasker_id, t.email, t.tasker_name,t.selfie, t.mounting, t.mountinghourly, t.delivery, t.deliveryhourly, t.yard, t.yardhourly, t.home, t.homehourly, t.moving, t.movinghourly, t.pet, t.pethourly, t.furniture, t.furniturehourly, t.cleaning, t.cleaninghourly, t.cooking, t.cookinghourly, b.user_id,b.locationstart, b.locationend, b.startdate, b.enddate, b.duration, b.taskdetails, b.tasktype, u.name, u.email, u.picture
-from tasker_profile t
-join bookedtasks b
-on t.tasker_id =  b.tasker_id
-join users u
-on  u.auth0_id = b.user_id
-where b.user_id = 'github|42826280'
+-- booked task has tasker_id text column
+-- --join table for confirmation component--
+-- select t.tasker_id, t.email, t.tasker_name,t.selfie, t.mounting, t.mountinghourly, t.delivery, t.deliveryhourly, t.yard, t.yardhourly, t.home, t.homehourly, t.moving, t.movinghourly, t.pet, t.pethourly, t.furniture, t.furniturehourly, t.cleaning, t.cleaninghourly, t.cooking, t.cookinghourly, b.user_id,b.locationstart, b.locationend, b.startdate, b.enddate, b.duration, b.taskdetails, b.tasktype, u.name, u.email, u.picture
+-- from tasker_profile t
+-- join bookedtasks b
+-- on t.tasker_id =  b.tasker_id
+-- join users u
+-- on  u.auth0_id = b.user_id
+-- where b.user_id = 'github|42826280'

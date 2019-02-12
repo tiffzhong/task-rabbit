@@ -35,7 +35,7 @@ app.use(
 const authController = require("./controllers/authContoller");
 const taskerController = require("./controllers/taskerController");
 const clientController = require("./controllers/clientController");
-
+const confirmationController = require("./controllers/confirmationController");
 //Endpoints
 //Auth
 app.get("/auth/callback", authController.login);
@@ -47,14 +47,14 @@ app.post("/api/tasker", taskerController.createProfile);
 app.get("/api/tasker/:tasker_id", taskerController.getProfile);
 app.put("/api/tasker/:tasker_id", taskerController.editProfile);
 
-//Client ..
-app.get("/api/confirmation", clientController.confirmationForm)
 //Client
-app.post('/api/client', clientController.bookTask);
+app.post("/api/client", clientController.bookTask);
 app.put("/api/client/:client_id", clientController.editTask);
-app.get("/api/pickatasker", clientController.allTaskers)
+app.get("/api/pickatasker", clientController.allTaskers);
 
-
+//Confirmation
+app.post("/api/confirmed", confirmationController.createConfirmed);
+// app.get("/api/confirmed/:id", confirmationController.getConfirmation);
 
 const PORT = 4000;
 app.listen(PORT, () => {
