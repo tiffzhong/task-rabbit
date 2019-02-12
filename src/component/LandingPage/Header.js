@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./LandingPage.css";
+import { connect } from 'react-redux';
+import { updateTaskType } from "../../ducks/clientReducer";
 
 const Header = () => {
   return (
@@ -16,38 +18,47 @@ const Header = () => {
       </div>
       <div className="header-links">
         <span>
-          <Link to="/mounting_form">
-            <button>Mounting & Installation</button>
+          <Link to="/clientForm">
+            <button onClick={()=>this.props.updateTaskType('Mounting & Installation')} >Mounting & Installation</button>
           </Link>
-          <Link to="/delivery_form">
-            <button>Delivery Service</button>
+          <Link to="/clientForm">
+            <button onClick={()=>this.props.updateTaskType('Delivery Service')}>Delivery Service</button>
           </Link>
-          <Link to="/yardwork_form">
-            <button>Yardwork/Landscaping</button>
-          </Link>
-
-          <Link to="/home_form">
-            <button>Home Improvement</button>
-          </Link>
-          <Link to="/moving_form">
-            <button>Moving & Packing</button>
-          </Link>
-          <Link to="/pet_form">
-            <button>Pet Service</button>
+          <Link to="/clientForm">
+            <button onClick={()=>this.props.updateTaskType('Yardwork/Landscaping')}>Yardwork/Landscaping</button>
           </Link>
 
-          <Link to="/furniture_form">
-            <button>Furniture Assembly</button>
+          <Link to="/clientForm">
+            <button onClick={()=>this.props.updateTaskType('Home Improvement')}>Home Improvement</button>
           </Link>
-          <Link to="/cleaning_form">
-            <button>Cleaning Service</button>
+          <Link to="/clientForm">
+            <button onClick={()=>this.props.updateTaskType('Moving & Packing')}>Moving & Packing</button>
           </Link>
-          <Link to="/cooking_form">
-            <button>Cooking Service</button>
+          <Link to="/clientForm">
+            <button onClick={()=>this.props.updateTaskType('Pet Service')}>Pet Service</button>
+          </Link>
+
+          <Link to="/clientForm">
+            <button onClick={()=>this.props.updateTaskType('Furniture Assembly')} >Furniture Assembly</button>
+          </Link>
+          <Link to="/clientForm">
+            <button onClick={()=>this.props.updateTaskType('Cleaning Service')}>Cleaning Service</button>
+          </Link>
+          <Link to="/clientForm">
+            <button onClick={()=>this.props.updateTaskType('Cooking Service')}>Cooking Service</button>
           </Link>
         </span>
       </div>
     </header>
   );
 };
-export default Header;
+
+const mapStateToProps = state => {
+
+}
+
+const mapDispatchToProps = {
+  updateTaskType: updateTaskType
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

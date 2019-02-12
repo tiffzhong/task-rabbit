@@ -10,7 +10,10 @@ import homeimprove from "./homeimprove.png";
 import light from "./light.png";
 import toilet from "./toilet.png";
 import cleaning from "./cleaning.png";
-export default class LandingPage_TaskCards extends Component {
+import { connect } from 'react-redux';
+import { updateTaskType } from "../../ducks/clientReducer";
+
+class LandingPage_TaskCards extends Component {
   render() {
     var settings = {
       dots: true,
@@ -28,8 +31,8 @@ export default class LandingPage_TaskCards extends Component {
               <img src={mounting} alt="" />
             </div>
             <div className="card-button">
-              <Link path to="/mounting_form">
-                <button>Mounting & Installation</button>
+              <Link path to="/clientForm">
+                <button onClick={()=>this.props.updateTaskType('Mounting & Installation')} >Mounting & Installation</button>
               </Link>
             </div>
           </div>
@@ -38,8 +41,8 @@ export default class LandingPage_TaskCards extends Component {
               <img src={delivery} alt="" />
             </div>
             <div className="card-button">
-              <Link path to="/delivery_form">
-                <button>Delivery Service</button>
+              <Link path to="/clientForm">
+                <button onClick={()=>this.props.updateTaskType('Delivery Service')} >Delivery Service</button>
               </Link>
             </div>
           </div>
@@ -48,8 +51,8 @@ export default class LandingPage_TaskCards extends Component {
               <img src={gardening} alt="" />
             </div>
             <div className="card-button">
-              <Link path to="/yardwork_form">
-                <button>Yardwork/Landscaping</button>
+              <Link path to="/clientForm">
+                <button onClick={()=>this.props.updateTaskType('Yardwork/Landscaping')}>Yardwork/Landscaping</button>
               </Link>
             </div>
           </div>
@@ -58,8 +61,8 @@ export default class LandingPage_TaskCards extends Component {
               <img src={homeimprove} alt="" />
             </div>
             <div className="card-button">
-              <Link path to="/home_form">
-                <button>Home Improvement</button>
+              <Link path to="/clientForm">
+                <button onClick={()=>this.props.updateTaskType('Home Improvement')}>Home Improvement</button>
               </Link>
             </div>
           </div>
@@ -68,8 +71,8 @@ export default class LandingPage_TaskCards extends Component {
               <img src={moving} alt="" />
             </div>
             <div className="card-button">
-              <Link path to="/moving_form">
-                <button>Moving & Packing</button>
+              <Link path to="/clientForm">
+                <button onClick={()=>this.props.updateTaskType('Moving & Packing')}>Moving & Packing</button>
               </Link>
             </div>
           </div>
@@ -78,8 +81,8 @@ export default class LandingPage_TaskCards extends Component {
               <img src={toilet} alt="" />
             </div>
             <div className="card-button">
-              <Link path to="/pet_form">
-                <button>Pet Service</button>
+              <Link path to="/clientForm">
+                <button onClick={()=>this.props.updateTaskType('Pet Service')}>Pet Service</button>
               </Link>
             </div>
           </div>
@@ -88,8 +91,8 @@ export default class LandingPage_TaskCards extends Component {
               <img src={furniture} alt="" />
             </div>
             <div className="card-button">
-              <Link path to="/furniture_form">
-                <button>Furniture Assembly</button>
+              <Link path to="/clientForm">
+                <button onClick={()=>this.props.updateTaskType('Furniture Assembly')}>Furniture Assembly</button>
               </Link>
             </div>
           </div>
@@ -98,8 +101,8 @@ export default class LandingPage_TaskCards extends Component {
               <img src={cleaning} alt="" />
             </div>
             <div className="card-button">
-              <Link path to="cleaning_form">
-                <button>Cleaning Service</button>
+              <Link path to="/clientForm">
+                <button onClick={()=>this.props.updateTaskType('Cleaning Service')}>Cleaning Service</button>
               </Link>
             </div>
           </div>
@@ -108,8 +111,8 @@ export default class LandingPage_TaskCards extends Component {
               <img src={light} alt="" />
             </div>
             <div className="card-button">
-              <Link path to="/cooking_form">
-                <button>Cooking Service</button>
+              <Link path to="/clientForm">
+                <button onClick={()=>this.props.updateTaskType('Cooking Service')}>Cooking Service</button>
               </Link>
             </div>
           </div>
@@ -118,3 +121,13 @@ export default class LandingPage_TaskCards extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+
+}
+
+const mapDispatchToProps = {
+  updateTaskType: updateTaskType
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LandingPage_TaskCards)
