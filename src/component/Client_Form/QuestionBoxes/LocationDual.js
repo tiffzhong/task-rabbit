@@ -8,27 +8,27 @@ import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, up
 class LocationDual extends Component {
     render() {
         return (
-            <div>
+                <div>
                 {this.props.locationStart && this.props.locationToggle
-                ?
-                <div className='closed-box' onClick={() => this.props.handleToggle('locationToggle', false, this.props.locationStart)}>
-                    <div className='closed-box-inner'>
-                    <p>LOCATION</p>
-                    <div className='closedBox-img-container'>
-                        <img src={pencil} />
-                    </div>
-                        <div>
-                            <h2>Your Task Start Location</h2>
-                            <span>{this.props.locationStart}</span>
+                    ?
+                    <div className='closed-box' onClick={() => this.props.handleToggle('locationToggle', false, this.props.locationStart)}>
+                        <div className='closed-box-inner'>
+                        <p>LOCATION</p>
+                        <div className='closedBox-img-container'>
+                            <img src={pencil} />
                         </div>
-                        <div>
-                            <h2>Your Task End Location</h2>
-                            <span>{this.props.locationEnd}</span>
+                            <div>
+                                <h2>Your Task Start Location</h2>
+                                <span>{this.props.locationStart}</span>
+                            </div>
+                            <div>
+                                <h2>Your Task End Location</h2>
+                                <span>{this.props.locationEnd}</span>
+                            </div>
                         </div>
-                    </div>
                     </div>
                     :
-                <div className='question-box' id='question-box'>
+                    <div className='question-box' id='question-box'>
                         <div className='inner-container'>
                             <p>LOCATION</p>
                             <h2>Your Task Far Location</h2>

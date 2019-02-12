@@ -24,15 +24,15 @@ class Details extends Component {
                             <p>DETAILS</p>
                             <h2>Details of Task</h2>
                             <textarea placeholder='Enter any additional details for the Tasker' className='details-input' onChange={e => this.props.updateTaskDetails(e.target.value)}></textarea>
-                            <div className='form-button'>
+                            {/* <div className='form-button'>
                                 {
                                     this.state.editToggle
                                     ?
                                     <button onClick={()=>this.test()} >Edit</button>
                                     :
-                                    <Link to="pick_a_tasker"> <button onClick={() => this.props.bookTask()}>Book Task</button></Link>
+                                    <Link to="/pick_a_tasker"> <button onClick={() => this.props.bookTask()}>Book Task</button></Link>
                                 }
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     :

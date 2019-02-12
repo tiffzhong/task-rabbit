@@ -9,6 +9,7 @@ import Schedule from './QuestionBoxes/Schedule';
 import Details from './QuestionBoxes/Details';
 import LocationSingle from './QuestionBoxes/LocationSingle';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 class ClientForm extends Component {
@@ -271,6 +272,15 @@ class ClientForm extends Component {
                         </div>
                     
                 }
+                <div className='form-button'>
+                                {
+                                    this.state.editToggle
+                                    ?
+                                    <button onClick={()=>this.test()} >Edit</button>
+                                    :
+                                    <Link to="/pick_a_tasker"> <button onClick={() => this.bookTask()}>Book Task</button></Link>
+                                }
+                            </div>
             </div>
         );
     }

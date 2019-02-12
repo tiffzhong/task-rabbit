@@ -1,12 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateVehicle } from '../../../ducks/clientReducer';
+import pencil from '../../Images/edit-pencil.png';
 
 class Vehicle extends Component {
     render() {
         return (
             <div>
-                {!this.props.durationToggle ?
+                {this.props.vehicle && this.props.durationToggle 
+                ?
+                    <div className='closed-box' onClick={() => this.props.handleToggle('locationToggle', false, this.props.locationStart)}>
+                        <div className='closed-box-inner'>
+                        <p>DURATION</p>
+                        <div className='closedBox-img-container'>
+                            <img src={pencil} />
+                        </div>
+                            <div>
+                                <h2>Duration</h2>
+                                <span>{this.props.duration}</span>
+                            </div>
+                        </div>
+                    </div>
+                    :
                         <div className='question-box'>
                             <div className='inner-container'>
                                 <p>VEHICLE</p>
@@ -31,10 +46,7 @@ class Vehicle extends Component {
                                 </div>
                             </div>
                         </div>
-                        :
-                        <div className='toggle-box' onClick={()=>this.handleToggle('vehicleToggle', false, this.props.vehicle)}>
-                            <p>VEHICLE</p>
-                        </div>
+                       
                     }
             </div>
         );

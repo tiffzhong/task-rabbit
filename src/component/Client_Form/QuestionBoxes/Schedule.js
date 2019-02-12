@@ -10,12 +10,25 @@ class Schedule extends Component {
         return (
             <div>
                 {this.props.durationToggle ?
+                        this.props.scheduleToggle && this.props.startDate && this.props.endDate ?
+                        <div className='closed-box' onClick={() => this.props.handleToggle('scheduleToggle', false, this.props.duration)} >
+                            <p>SCHEDULE</p>
+                            <div className='closedBox-img-container'>
+                                <img src={pencil} />
+                            </div>
+                                <h2>Schedule Your Task</h2>
+                            <div className='closed-schedule-box'>
+                                <span>Start:{JSON.stringify(this.props.startDate)}</span>
+                                <span>End:{JSON.stringify(this.props.endDate)}</span>
+                            </div>
+                        </div> 
+                        :
                         <div className='question-box'>
                             <div className='inner-container'>
                                 <p>SCHEDULE</p>
                                 <div className="time-box">
                                     <div className="calendar-box">
-                                        <h2>Task Start Date & Time</h2>
+                                        <h2>Schedule Your Task</h2>
                                         <div className='small-question-box'>
                                             <div className="calendar"><Calendar /></div>
                                         </div>
@@ -27,9 +40,9 @@ class Schedule extends Component {
                                         </div>
                                     </div>
                                 </div>
-                            <div className='form-button'>
-                                <button onClick={() => this.props.handleToggle('scheduleToggle', true, this.props.schedule)}>Continue</button>
                             </div>
+                            <div className='form-button'>
+                                <button onClick={() => this.props.handleToggle('scheduleToggle', true, this.props.vehicle)}>Continue</button>
                             </div>
                         </div>
                         :
