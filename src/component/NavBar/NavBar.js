@@ -4,6 +4,7 @@ import "./NavBar.css";
 import axios from "axios";
 import { connect } from "react-redux";
 import { setUser } from "../../ducks/taskerReducer";
+import { updateTaskType } from '../../ducks/clientReducer';
 
 class NavBar extends Component {
   constructor(props) {
@@ -56,9 +57,14 @@ class NavBar extends Component {
     });
   };
 
-  render() {
-    const { user } = this.props;
+  setTaskType = task => {
+    this.props.updateTaskType(task)
+    this.linkToggler();
+}
 
+  render() {
+    const { user, taskType } = this.props;
+    console.log('taskType', this.props.taskType)
     return (
       <nav>
         <div className="navBar">
@@ -83,65 +89,65 @@ class NavBar extends Component {
                   <div className="dropdown-links">
                     <p className="dropdown-title">Task Services</p>
                     <Link
-                      to="/cleaning_form"
+                      to="/clientForm"
                       className="nav-popover-link"
-                      onClick={this.linkToggler}
+                      onClick={()=>this.setTaskType('Cleaning Service')}
                     >
                       Cleaning Service
                     </Link>
                     <Link
-                      to="/cooking_form"
+                      to="/clientForm"
                       className="nav-popover-link"
-                      onClick={this.linkToggler}
+                      onClick={()=>this.setTaskType('Cooking Service')}
                     >
                       Cooking Service
                     </Link>
                     <Link
-                      to="/delivery_form"
+                      to="/clientForm"
                       className="nav-popover-link"
-                      onClick={this.linkToggler}
+                      onClick={()=>this.setTaskType('Delivery Service')}
                     >
                       Delivery Service
                     </Link>
                     <Link
-                      to="/furniture_form"
+                      to="/clientForm"
                       className="nav-popover-link"
-                      onClick={this.linkToggler}
+                      onClick={()=>this.setTaskType('Furniture Assembly')}
                     >
                       Furniture Assembly
                     </Link>
                     <Link
-                      to="/home_form"
+                      to="/clientForm"
                       className="nav-popover-link"
-                      onClick={this.linkToggler}
+                      onClick={()=>this.setTaskType('Home Improvement')}
                     >
                       Home Improvement
                     </Link>
                     <Link
-                      to="/mounting_form"
+                      to="/clientForm"
                       className="nav-popover-link"
-                      onClick={this.linkToggler}
+                      onClick={()=>this.setTaskType('Mounting & Installation')}
                     >
                       Mounting & Installation
                     </Link>
                     <Link
-                      to="/moving_form"
+                      to="/clientForm"
                       className="nav-popover-link"
-                      onClick={this.linkToggler}
+                      onClick={()=>this.setTaskType('Moving & Packing')}
                     >
                       Moving & Packing
                     </Link>
                     <Link
-                      to="/pet_form"
+                      to="/clientForm"
                       className="nav-popover-link"
-                      onClick={this.linkToggler}
+                      onClick={()=>this.setTaskType('Pet Service')}
                     >
                       Pet Service
                     </Link>
                     <Link
-                      to="/yardwork_form"
+                      to="/clientForm"
                       className="nav-popover-link"
-                      onClick={this.linkToggler}
+                      onClick={()=>this.setTaskType('Yardwork/Landscaping')}
                     >
                       Yardwork/Landscaping
                     </Link>
@@ -183,12 +189,14 @@ class NavBar extends Component {
 }
 function mapStateToProps(state) {
   let { user } = state;
+  const { taskType } = state.client;
   return {
-    user
+    user,
+    taskType
   };
 }
 
 export default connect(
   mapStateToProps,
-  { setUser }
+  { setUser, updateTaskType }
 )(NavBar);

@@ -11,20 +11,19 @@ class ClientEdit extends Component {
     constructor() {
         super();
         this.state = {
-            formType: 'moving'
+            formType: 'pet'
         }
     }
 
     render() {
+        console.log('what the HELLLLLLL',this.state.formType)
         return (
-            <div className='edit-outer-container'>
+            <div className='form'>
                 Client Edit
                 {
-                    this.state.formType && this.state.formType
-                    ?
-                        this.state.formType === 'moving' || 'yardwork' 
+                        (this.state.formType === 'moving' || this.state.formType === 'yardwork') 
                         ?
-                        <div className='edit-inner-container'>
+                        <div className='outer-container'>
                             <LocationDual />
                             <Duration />
                             <Vehicle />
@@ -32,9 +31,9 @@ class ClientEdit extends Component {
                             <Details />
                         </div>
                         :
-                        this.state.formType === 'mounting'
+                        (this.state.formType === 'mounting')
                         ?
-                        <div>
+                        <div className='outer-container'>
                             <LocationSingle />
                             <Duration />
                             <Vehicle />
@@ -42,18 +41,18 @@ class ClientEdit extends Component {
                             <Details />
                         </div>
                         :
-                        this.state.formType === 'delivery'
+                        (this.state.formType === 'delivery')
                         ?
-                        <div>
+                        <div className='outer-container'>
                             <LocationDual />
                             <Duration />
                             <Schedule />
                             <Details />
                         </div>
                         :
-                        this.state.formType === 'furniture' || 'home' || 'cleaning' || 'pet' || 'cooking'
+                        (this.state.formType === 'furniture' || this.state.formType === 'home' || this.state.formType === 'cleaning' || this.state.formType === 'pet' || this.state.formType === 'cooking')
                         ?
-                        <div>
+                        <div className='outer-container'>
                             <LocationSingle />
                             <Duration />
                             <Schedule />
@@ -63,10 +62,6 @@ class ClientEdit extends Component {
                         <div>
 
                         </div>
-                    :
-                    <div>
-                        Not Working
-                    </div>
                     
                 }
             </div>

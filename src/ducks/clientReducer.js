@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const INITIAL_STATE = {
-  taskType: [],
+  taskType: '',
   locationStart: "",
   locationEnd: "",
   lat: "",

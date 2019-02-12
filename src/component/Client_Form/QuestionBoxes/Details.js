@@ -4,6 +4,17 @@ import { Link } from "react-router-dom";
 import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, updateVehicle, updateTaskDetails, updateClientData } from '../../../ducks/clientReducer';
 
 class Details extends Component {
+    constructor() {
+        super();
+        this.state = {
+            editToggle: false
+        }
+    }
+    test = () => {
+        alert('Test worked')
+    }
+
+
     render() {
         return (
             <div>
@@ -14,7 +25,13 @@ class Details extends Component {
                             <h2>Details of Task</h2>
                             <textarea placeholder='Enter any additional details for the Tasker' className='details-input' onChange={e => this.props.updateTaskDetails(e.target.value)}></textarea>
                             <div className='form-button'>
-                                <Link to="pick_a_tasker"> <button onClick={() => this.props.bookTask()}>Book Task</button></Link>
+                                {
+                                    this.state.editToggle
+                                    ?
+                                    <button onClick={()=>this.test()} >Edit</button>
+                                    :
+                                    <Link to="pick_a_tasker"> <button onClick={() => this.props.bookTask()}>Book Task</button></Link>
+                                }
                             </div>
                         </div>
                     </div>
