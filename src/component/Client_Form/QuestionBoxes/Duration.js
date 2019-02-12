@@ -10,13 +10,15 @@ class Duration extends Component {
                 {   this.props.locationToggle ?
                          this.props.durationToggle && this.props.duration ? 
                          <div className='closed-box' onClick={() => this.props.handleToggle('durationToggle', false, this.props.duration)} >
-                            <p>DURATION</p>
-                            <div className='closedBox-img-container'>
-                                <img src={pencil} />
-                            </div>
-                            <div>
-                                <h2>How Long Should it Take?</h2>
-                                <span>{this.props.duration}</span>
+                            <div className='closed-box-inner'>
+                                <p>DURATION</p>
+                                <div className='closedBox-img-container'>
+                                    <img src={pencil} />
+                                </div>
+                                <div>
+                                    <h2>How Long Should it Take?</h2>
+                                    <span>{this.props.duration}</span>
+                                </div>
                             </div>
                         </div> 
                         :

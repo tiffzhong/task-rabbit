@@ -12,14 +12,16 @@ class Schedule extends Component {
                 {this.props.durationToggle ?
                         this.props.scheduleToggle && this.props.startDate && this.props.endDate ?
                         <div className='closed-box' onClick={() => this.props.handleToggle('scheduleToggle', false, this.props.duration)} >
-                            <p>SCHEDULE</p>
-                            <div className='closedBox-img-container'>
-                                <img src={pencil} />
-                            </div>
-                                <h2>Schedule Your Task</h2>
-                            <div className='closed-schedule-box'>
-                                <span>Start:{JSON.stringify(this.props.startDate)}</span>
-                                <span>End:{JSON.stringify(this.props.endDate)}</span>
+                            <div className='closed-box-inner'>
+                                <p>SCHEDULE</p>
+                                <div className='closedBox-img-container'>
+                                    <img src={pencil} />
+                                </div>
+                                    <h2>Schedule Your Task</h2>
+                                <div className='closed-schedule-box'>
+                                    <span>Start:{JSON.stringify(this.props.startDate)}</span>
+                                    <span>End:{JSON.stringify(this.props.endDate)}</span>
+                                </div>
                             </div>
                         </div> 
                         :

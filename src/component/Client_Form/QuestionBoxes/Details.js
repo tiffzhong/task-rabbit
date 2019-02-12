@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from "react-router-dom";
+import pencil from '../../Images/edit-pencil.png';
 import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, updateVehicle, updateTaskDetails, updateClientData } from '../../../ducks/clientReducer';
 
 class Details extends Component {
     constructor() {
         super();
         this.state = {
-            editToggle: false
+            editToggle: false,
+            detailToggle: false
         }
     }
     test = () => {
@@ -19,11 +20,29 @@ class Details extends Component {
         return (
             <div>
                 {this.props.scheduleToggle ?
+                    this.props.detailToggle && this.props.taskDetails 
+                ?
+                    <div className='closed-box' onClick={() => this.props.handleToggle('durationToggle', false, this.props.duration)} >
+                            <div className='closed-box-inner'>
+                                <p>DETAILS</p>
+                                <div className='closedBox-img-container'>
+                                    <img src={pencil} />
+                                </div>
+                                <div>
+                                    <h2>Details of Task</h2>
+                                    <span>{this.props.taskDetails}</span>
+                                </div>
+                            </div>
+                        </div> 
+                        :
                     <div className='question-box details'>
                         <div className='inner-container' id='details-inner'>
                             <p>DETAILS</p>
                             <h2>Details of Task</h2>
                             <textarea placeholder='Enter any additional details for the Tasker' className='details-input' onChange={e => this.props.updateTaskDetails(e.target.value)}></textarea>
+                            <div className='form-button'>
+                                <button onClick={() => this.props.handleToggle('detailToggle', true, this.props.taskDetails)}>Continue</button>    
+                            </div>
                             {/* <div className='form-button'>
                                 {
                                     this.state.editToggle

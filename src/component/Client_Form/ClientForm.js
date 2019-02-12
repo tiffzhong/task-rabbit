@@ -21,7 +21,8 @@ class ClientForm extends Component {
             locationToggle: false,
             durationToggle: false,
             vehicleToggle: false,
-            scheduleToggle: false
+            scheduleToggle: false,
+            detailToggle: false
         }
     }
 
@@ -38,7 +39,8 @@ class ClientForm extends Component {
             alert('you must answer all questions before continuing')
 
         } else {
-            console.log('name in state', name);
+            console.log('name in handleToggle', name);
+            console.log('value in handleToggle', value)
             this.setState({
                 [name]: value
             })
@@ -118,6 +120,7 @@ class ClientForm extends Component {
                                 durationToggle={this.state.durationToggle}
                                 vehicleToggle={this.state.vehicleToggle}
                                 scheduleToggle={this.state.scheduleToggle}
+                                detailToggle={this.state.detailToggle}
                                 handleToggle={this.handleToggle}
                                 bookTask={this.bookTask}
                             />
@@ -162,6 +165,7 @@ class ClientForm extends Component {
                                 scheduleToggle={this.state.scheduleToggle}
                                 handleToggle={this.handleToggle}
                                 bookTask={this.bookTask}
+                                detailToggle={this.state.detailToggle}
                             />
                         </div>
                         :
@@ -196,6 +200,7 @@ class ClientForm extends Component {
                                 vehicleToggle={this.state.vehicleToggle}
                                 scheduleToggle={this.state.scheduleToggle}
                                 handleToggle={this.handleToggle}
+                                detailToggle={this.state.detailToggle}
                                 bookTask={this.bookTask}
                             />
                         </div>
@@ -232,6 +237,7 @@ class ClientForm extends Component {
                                 scheduleToggle={this.state.scheduleToggle}
                                 handleToggle={this.handleToggle}
                                 bookTask={this.bookTask}
+                                detailToggle={this.state.detailToggle}
                             />
                         </div>
                         :
@@ -267,6 +273,7 @@ class ClientForm extends Component {
                                     scheduleToggle={this.state.scheduleToggle}
                                     handleToggle={this.handleToggle}
                                     bookTask={this.bookTask}
+                                    detailToggle={this.state.detailToggle}
                                 />
                             </div>
                         </div>
