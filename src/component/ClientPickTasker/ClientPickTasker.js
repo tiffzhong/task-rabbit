@@ -46,7 +46,6 @@ class clientPickTasker extends Component {
               <button
                 onClick={() => {
                   this.props.createConfirmation(
-                    clientData[0].id,
                     new Date(),
                     task,
                     clientData[0].user_id,

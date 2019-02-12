@@ -226,9 +226,9 @@ export function createConfirmation(
       .catch(error => console.log("error in creating confirmation", error))
   };
 }
-export function getConfirmation(id) {
+export function getConfirmation(confirmation_id) {
   return {
     type: GET_CONFIRMATION,
-    payload: id
+    payload: confirmation_id
   };
 }
