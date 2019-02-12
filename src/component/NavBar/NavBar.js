@@ -42,6 +42,7 @@ class NavBar extends Component {
       });
       console.log('logging out')
       this.props.setUser(null);
+      this.redirectToLandingPage();
     });
   }
 
