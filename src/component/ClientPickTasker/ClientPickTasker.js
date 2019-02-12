@@ -3,7 +3,7 @@ import "./ClientPickTasker.css";
 import axios from "axios";
 import { connect } from "react-redux";
 import { allTaskersForClient } from "../../ducks/clientReducer";
-import { confirmation } from "../../ducks/taskerReducer";
+import { createConfirmation } from "../../ducks/taskerReducer";
 
 class clientPickTasker extends Component {
   constructor(props) {
@@ -45,7 +45,8 @@ class clientPickTasker extends Component {
               <a href="">View Profile & Reviews</a>
               <button
                 onClick={() => {
-                  this.props.confirmation(
+                  this.props.createConfirmation(
+                    clientData[0].id,
                     new Date(),
                     task,
                     clientData[0].user_id,
@@ -105,7 +106,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   allTaskersForClient,
-  confirmation
+  createConfirmation
 };
 
 export default connect(

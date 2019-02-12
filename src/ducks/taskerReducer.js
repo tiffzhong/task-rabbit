@@ -2,7 +2,8 @@ import axios from "axios";
 
 const INITIAL_STATE = {
   user: null,
-  taskerProfile: []
+  taskerProfile: [],
+  confirmedTask: []
 };
 
 const SET_USER = "SET_USER";
@@ -10,13 +11,13 @@ const CREATE_PROFILE = "CREATE_PROFILE";
 const GET_PROFILE = "GET_PROFILE";
 const EDIT_PROFILE = "EDIT_PROFILE";
 const ERROR = "ERROR";
-const CONFIRMATION = "CONFIRMATION";
+const CREATE_CONFIRMATION = "CREATE_CONFIRMATION";
+const GET_CONFIRMATION = "GET_CONFIRMATION";
 
 export default function taskerReducer(
   state = INITIAL_STATE,
   action = { payload: "" }
 ) {
-  // console.log("REDUCER HIT(Tasker): Action =>", action);
   switch (action.type) {
     case SET_USER:
       return { ...state, user: action.payload };
@@ -29,8 +30,10 @@ export default function taskerReducer(
     case ERROR:
       alert("Please complete every field");
       return { ...state };
-    case CONFIRMATION:
+    case `${CREATE_CONFIRMATION}_FULFILLED`:
       return { ...state };
+    case GET_CONFIRMATION:
+      return { ...state, confirmedTask: action.payload };
     default:
       return { ...state };
   }
@@ -184,7 +187,7 @@ export function editProfile(
   };
 }
 
-export function confirmation(
+export function createConfirmation(
   created_date,
   task,
   client_id,
@@ -201,7 +204,7 @@ export function confirmation(
   vehicle
 ) {
   return {
-    type: CONFIRMATION,
+    type: CREATE_CONFIRMATION,
     payload: axios
       .post("/api/confirmed", {
         created_date,
@@ -221,5 +224,11 @@ export function confirmation(
       })
       .then(() => (window.location.pathname = "/confirmation"))
       .catch(error => console.log("error in creating confirmation", error))
+  };
+}
+export function getConfirmation(id) {
+  return {
+    type: GET_CONFIRMATION,
+    payload: id
   };
 }
