@@ -8,12 +8,12 @@ import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, up
 class LocationDual extends Component {
     render() {
         return (
-                <div>
+                <div className='first-question-box'>
                 {this.props.locationStart && this.props.locationToggle
                     ?
                     <div className='closed-box' onClick={() => this.props.handleToggle('locationToggle', false, this.props.locationStart)}>
                         <div className='closed-box-inner'>
-                        <p>LOCATION</p>
+                        <p>YOUR TASK LOCATION</p>
                         <div className='closedBox-img-container'>
                             <img src={pencil} />
                         </div>
@@ -30,8 +30,8 @@ class LocationDual extends Component {
                     :
                     <div className='question-box' id='question-box'>
                         <div className='inner-container'>
-                            <p>LOCATION</p>
-                            <h2>Your Task Far Location</h2>
+                            <p>YOUR TASK LOCATION</p>
+                            <h2>Your Task Start Location</h2>
                             <Autocompletesearch />
                             <h2>Your Task End Location</h2>
                             <AutocompletesearchEnd />

@@ -8,12 +8,12 @@ import { updateDuration, updateLocationStart, updateStartDate, updateEndDate, up
 class LocationSingle extends Component {
     render() {
         return (
-            <div>
+            <div className='first-question-box'>
                 {this.props.locationStart && this.props.locationToggle
                 ?
                     <div className='closed-box' onClick={() => this.props.handleToggle('locationToggle', false, this.props.locationStart)}>
                         <div className='closed-box-inner'>
-                            <p>LOCATION</p>
+                            <p>YOUR TASK LOCATION</p>
                             <div className='closedBox-img-container'>
                                 <img src={pencil} />
                             </div>
