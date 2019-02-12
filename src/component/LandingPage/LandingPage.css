@@ -188,7 +188,7 @@ button:focus {
   display: flex;
   align-items: center;
   margin: 20px;
-  width: 45%;
+  width: 600px;
 }
 .review-text {
   display: flex;

@@ -15,7 +15,7 @@ create table bookedTasks (
     locationEnd text,
     lat numeric (15,6),
     long numeric (15,6),
-    duration text,
+    duration text,``
     vehicle text,
     startDate text,
     endDate text,
@@ -66,6 +66,29 @@ create table tasker_profile(
 
 
 select * from tasker_profile;
+
+----CONFIRMED TASK 
+
+create table confirmed_task(
+confirmation_id serial primary key, 
+tasktype text,
+client_id text,
+tasker_id text,
+tasker_hourly text,
+start_date text,
+end_date text,
+location_start text,
+location_end text,
+duration text,
+task_details text,
+lat numeric (15,6),
+long numeric (15,6),
+vehicle text
+);
+
+select * from confirmed_task;
+
+
 
 -- To stay logged in. No need to sign in w Auth0 every time
 CREATE TABLE "session" (

@@ -10,6 +10,7 @@ const CREATE_PROFILE = "CREATE_PROFILE";
 const GET_PROFILE = "GET_PROFILE";
 const EDIT_PROFILE = "EDIT_PROFILE";
 const ERROR = "ERROR";
+const CONFIRMATION = "CONFIRMATION";
 
 export default function taskerReducer(
   state = INITIAL_STATE,
@@ -27,6 +28,8 @@ export default function taskerReducer(
       return { ...state };
     case ERROR:
       alert("Please complete every field");
+      return { ...state };
+    case CONFIRMATION:
       return { ...state };
     default:
       return { ...state };
@@ -115,7 +118,7 @@ export function createProfile(
         .then(res => {
           window.location.pathname = `/tasker-dashboard/${
             res.data[0].tasker_id
-            }`;
+          }`;
           return {};
         })
         .catch(error => console.log("error in creating profile", error))
@@ -178,5 +181,45 @@ export function editProfile(
       cooking,
       cookingHourly
     })
+  };
+}
+
+export function confirmation(
+  created_date,
+  task,
+  client_id,
+  tasker_id,
+  tasker_hourly,
+  start_date,
+  end_date,
+  location_start,
+  location_end,
+  duration,
+  task_details,
+  lat,
+  long,
+  vehicle
+) {
+  return {
+    type: CONFIRMATION,
+    payload: axios
+      .post("/api/confirmed", {
+        created_date,
+        task,
+        client_id,
+        tasker_id,
+        tasker_hourly,
+        start_date,
+        end_date,
+        location_start,
+        location_end,
+        duration,
+        task_details,
+        lat,
+        long,
+        vehicle
+      })
+      .then(() => (window.location.pathname = "/confirmation"))
+      .catch(error => console.log("error in creating confirmation", error))
   };
 }

@@ -4,7 +4,7 @@ import "./NavBar.css";
 import axios from "axios";
 import { connect } from "react-redux";
 import { setUser } from "../../ducks/taskerReducer";
-import { updateTaskType } from '../../ducks/clientReducer';
+import { updateTaskType } from "../../ducks/clientReducer";
 
 class NavBar extends Component {
   constructor(props) {
@@ -58,13 +58,13 @@ class NavBar extends Component {
   };
 
   setTaskType = task => {
-    this.props.updateTaskType(task)
+    this.props.updateTaskType(task);
     this.linkToggler();
-}
+  };
 
   render() {
     const { user, taskType } = this.props;
-    console.log('taskType', this.props.taskType)
+    console.log("taskType", this.props.taskType);
     return (
       <nav>
         <div className="navBar">
@@ -87,67 +87,112 @@ class NavBar extends Component {
                   }
                 >
                   <div className="dropdown-links">
-                    <p className="dropdown-title">Task Services</p>
+                    {/* <p className="dropdown-title">Task Services</p> */}
                     <Link
                       to="/clientForm"
                       className="nav-popover-link"
-                      onClick={()=>this.setTaskType('Cleaning Service')}
+                      onClick={() =>
+                        this.setTaskType({
+                          taskType: "Cleaning Service",
+                          task: "cleaning"
+                        })
+                      }
                     >
                       Cleaning Service
                     </Link>
                     <Link
                       to="/clientForm"
                       className="nav-popover-link"
-                      onClick={()=>this.setTaskType('Cooking Service')}
+                      onClick={() =>
+                        this.setTaskType({
+                          taskType: "Cooking Service",
+                          task: "cooking"
+                        })
+                      }
                     >
                       Cooking Service
                     </Link>
                     <Link
                       to="/clientForm"
                       className="nav-popover-link"
-                      onClick={()=>this.setTaskType('Delivery Service')}
+                      onClick={() =>
+                        this.setTaskType({
+                          taskType: "Delivery Service",
+                          task: "delivery"
+                        })
+                      }
                     >
                       Delivery Service
                     </Link>
                     <Link
                       to="/clientForm"
                       className="nav-popover-link"
-                      onClick={()=>this.setTaskType('Furniture Assembly')}
+                      onClick={() =>
+                        this.setTaskType({
+                          taskType: "Furniture Assembly",
+                          task: "furniture"
+                        })
+                      }
                     >
                       Furniture Assembly
                     </Link>
                     <Link
                       to="/clientForm"
                       className="nav-popover-link"
-                      onClick={()=>this.setTaskType('Home Improvement')}
+                      onClick={() =>
+                        this.setTaskType({
+                          taskType: "Home Improvement",
+                          task: "home"
+                        })
+                      }
                     >
                       Home Improvement
                     </Link>
                     <Link
                       to="/clientForm"
                       className="nav-popover-link"
-                      onClick={()=>this.setTaskType('Mounting & Installation')}
+                      onClick={() =>
+                        this.setTaskType({
+                          taskType: "Mounting & Installation",
+                          task: "mounting"
+                        })
+                      }
                     >
                       Mounting & Installation
                     </Link>
                     <Link
                       to="/clientForm"
                       className="nav-popover-link"
-                      onClick={()=>this.setTaskType('Moving & Packing')}
+                      onClick={() =>
+                        this.setTaskType({
+                          taskType: "Moving & Packing",
+                          task: "moving"
+                        })
+                      }
                     >
                       Moving & Packing
                     </Link>
                     <Link
                       to="/clientForm"
                       className="nav-popover-link"
-                      onClick={()=>this.setTaskType('Pet Service')}
+                      onClick={() =>
+                        this.setTaskType({
+                          taskType: "Pet Service",
+                          task: "pet"
+                        })
+                      }
                     >
                       Pet Service
                     </Link>
                     <Link
                       to="/clientForm"
                       className="nav-popover-link"
-                      onClick={()=>this.setTaskType('Yardwork/Landscaping')}
+                      onClick={() =>
+                        this.setTaskType({
+                          taskType: "Yardwork/Landscaping",
+                          task: "yard"
+                        })
+                      }
                     >
                       Yardwork/Landscaping
                     </Link>

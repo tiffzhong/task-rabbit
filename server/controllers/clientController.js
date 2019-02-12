@@ -1,16 +1,4 @@
 module.exports = {
-  confirmationForm: (req, res) => {
-    // console.log("body", req.body)
-    const { user_id } = req.body;
-    const db = req.app.get("db");
-    db.confirmation([user_id])
-      .then(confirm => {
-        res.status(200).json(confirm);
-      })
-      .catch(error => {
-        console.log("Error in ConfirmForm", error);
-      });
-  },
   bookTask: (req, res) => {
     // console.log('req.body ========>', req.body)
     const {
@@ -40,8 +28,9 @@ module.exports = {
       taskDetails,
       user_id
     ])
-      .then(() => {
-        console.log("You created a new task");
+      .then(resp => {
+        res.send(resp);
+        console.log("You created a new task", resp);
       })
       .catch(error => {
         console.log("Error in Booktask", error);
@@ -64,9 +53,8 @@ module.exports = {
       endDate,
       taskDetails
     } = req.body;
-    // let { client_id } = req.params;
     database
-      .tasker_profile_edit([
+      .client_update_edit([
         client_id,
         locationStart,
         locationEnd,
@@ -86,15 +74,12 @@ module.exports = {
       );
   },
   allTaskers: (req, res) => {
-    console.log("response All tasker");
-    // console.log("req.params===NAT", req.params)
-    // const { tasktype} = req.params
     const db = req.app.get("db");
     var p1 = db.allTaskers();
     var p2 = db.allClient();
     Promise.all([p1, p2])
-      .then(responser => {
-        res.send(responser);
+      .then(response => {
+        res.send(response);
       })
       .catch(error => {
         console.log("Error in allTaskers", error);

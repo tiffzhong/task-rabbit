@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const INITIAL_STATE = {
-  taskType: '',
+  taskType: "",
+  task: "",
   locationStart: "",
   locationEnd: "",
   lat: "",
@@ -32,7 +33,11 @@ export default function clientReducer(state = INITIAL_STATE, action) {
   console.log("REDUCER HIT: Action =>", action);
   switch (action.type) {
     case UPDATE_TASK_TYPE:
-      return { ...state, taskType: action.payload };
+      return {
+        ...state,
+        taskType: action.payload.taskType,
+        task: action.payload.task
+      };
 
     case UPDATE_LOCATION_START:
       return { ...state, locationStart: action.payload };
@@ -72,7 +77,7 @@ export default function clientReducer(state = INITIAL_STATE, action) {
   }
 }
 
-export function allTaskerForClient() {
+export function allTaskersForClient() {
   return {
     type: ALL_TASKER_FOR_CLIENT,
     payload: axios

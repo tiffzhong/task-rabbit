@@ -24,7 +24,7 @@ class ClientForm extends Component {
   constructor() {
     super();
     this.state = {
-      // taskType: this.props.taskType,
+      //   taskType: this.props.taskType || "",
       editToggle: false,
       locationToggle: false,
       durationToggle: false,
@@ -72,6 +72,7 @@ class ClientForm extends Component {
       taskDetails,
       user
     } = this.props;
+
     const bookedTask = {
       taskType,
       locationStart,
@@ -86,13 +87,14 @@ class ClientForm extends Component {
       user_id: user.auth0_id
     };
     axios.post("/api/client", bookedTask).then(response => {
+      console.log(response.data, "big boy response wohooo");
       this.props.updateClientData(response.data);
     });
     // this.props.updateTaskType('cooking service');
   };
 
   render() {
-    console.log("what the HELLLLLLL", this.props.taskType);
+    console.log("what the HELLLLLLL", this.props);
     return (
       <div className="form">
         {this.state.editToggle ? <p>Client Edit</p> : <p>Client Form</p>}
@@ -294,7 +296,6 @@ class ClientForm extends Component {
             <button onClick={() => this.test()}>Edit</button>
           ) : (
             <Link to="/pick-a-tasker">
-              {" "}
               <button onClick={() => this.bookTask()}>Book Task</button>
             </Link>
           )}
@@ -306,6 +307,7 @@ class ClientForm extends Component {
 
 const mapStateToProps = state => {
   const {
+    task,
     taskType,
     locationStart,
     locationEnd,
@@ -319,6 +321,7 @@ const mapStateToProps = state => {
   } = state.client;
   const { user } = state.tasker;
   return {
+    task,
     taskType,
     locationStart,
     locationEnd,
