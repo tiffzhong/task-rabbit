@@ -76,6 +76,7 @@ class ClientForm extends Component {
         console.log('what the HELLLLLLL',this.props.taskType)
         return (
             <div className='form'>
+                <span className='shadow-box'></span>
                 {this.state.editToggle
                 ?
                 <p>Client Edit</p>
@@ -241,7 +242,7 @@ class ClientForm extends Component {
                             />
                         </div>
                         :
-                        <div>
+                        <div className='task-container'>
                             <h1>You Must Select a Task</h1>
                             <div className='outer-container'>
                                 <h1>{this.props.taskType}</h1>

@@ -28,20 +28,10 @@ class clientPickTasker extends Component {
         const { allTasker } = this.props;
         console.log("this.props=>>>>", this.props);
 
-        // const allTaskers = this.state.picktasker.map(taskers=>{
-        //     return(  <div>
-        //         <div> {taskers.tasker_name} </div>
-        //         <div> <img src={taskers.selfie}/> </div>
-        //         <div>{taskers.email} </div>
-        //         <div>{taskers.about} </div>
-        //         <div>hourly amount?</div>
-
-        //      </div>
-        //          )
-        // })
         return (
             <div className="taskercontainer">
                 PickTasker
+                <button>Edit Task</button>
         {/* <p> {allTaskers} </p> */}
             </div>
         );

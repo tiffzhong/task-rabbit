@@ -1,16 +1,16 @@
 .form {
-  margin-top: 100px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* background: black; */
+  background: whitesmoke;
   
   /* color: white; */
 }
 
 .form p {
-  color: gray;
+  color: rgb(82, 81, 81);
   position: absolute;
   top: 10px;
   left: 10px;
@@ -18,7 +18,7 @@
 
 .form input {
   height: 50px;
-  width: 400px;
+  /* width: 400px; */
   text-align: center;
   font-size: 10px;
 }
@@ -41,6 +41,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
   height: 100px;
 }
 
@@ -53,6 +54,7 @@
   border: none;
   border-radius: 5px;
   font-size: 15px;
+  margin-bottom: 20px;
 }
 
 .form-button button:hover {
@@ -60,7 +62,7 @@
 }
 
 .form-button button:focus {
-  outline: none;
+  /* outline: none; */
 }
 
 h2 {
@@ -84,18 +86,27 @@ h2 {
   margin-bottom: 50px;
   margin-left: 50px;
   margin-right: 50px;
+  position: relative;
 }
+.outer-container h1 {
+  position: absolute;
+}
+
 .question-box {
   border: solid 2px lightgray;
   margin-top: 10px;
-  /* height:400px; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   position: relative;
-  background: whitesmoke;
+  background: white;
+  box-shadow: 0px 4px 12px 2px lightgray;
 }
+.first-question-box {
+  margin-top: 50px;
+}
+
 #question-box div {
   width: 400px;
 }
@@ -106,30 +117,36 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 50px;
+  margin-top: 50px;
+  /* position: relative; */
 }
+/* .inner-container h2 {
+  position: relative;
+  right: 120px;
+} */
 .inner-container input {
   height: 20px;
-  width: 150px;
+  margin-bottom: 10px;
+  /* width: 150px; */
 }
 #details-inner {
-  background: transparent;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
+  /* background: transparent; */
+  /* border: none; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* position: absolute; */
   top: 0px;
-  height: 100%;
-  width: 100%;
-  margin-top: 0px;
-  margin-left: 0px;
+  /* height: 100%; */
+  /* width: 100%; */
+  /* margin-top: 0px; */
+  /* margin-left: 0px; */
 }
 #details-inner textarea {
   height: 150px;
   width: 50vw;
   /* position: absolute; */
-  top: 50px;
+  /* top: 50px; */
 }
 #details-inner button {
   position: relative;
@@ -143,12 +160,21 @@ h2 {
   height: 120px;
   width: 400px;
   margin-bottom: 15px;
-  background: white;
+  /* background: white; */
 }
 .duration-container div {
   margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
-
+.duration-container > div {
+  margin-top: 10px;
+  width: 350px;
+}
+.duration-container input {
+  height: 15px;
+}
 .time-box {
   display: flex;
   justify-content: center;
@@ -174,7 +200,7 @@ h2 {
   background-color: white;
 }
 
-.checkbox-input-container {
+/* .checkbox-input-container {
   width: 400px;
   background: white;
   display: flex;
@@ -182,7 +208,7 @@ h2 {
   border: solid 0.5px rgb(221, 221, 221);
 }
 .checkbox-input {
-  /* background: white; */
+  
   display: flex;
   align-items: center;
 }
@@ -191,10 +217,10 @@ h2 {
   height: 20px;
   width: 40px;
   margin: 10px;
-}
+} */
 
 .details {
-  height: 400px;
+  /* height: 400px; */
 }
 .toggle-box {
   display: flex;
@@ -206,18 +232,20 @@ h2 {
   color: black;
   position: relative;
   background: whitesmoke;
+  background: white;
 }
 
 .closed-box {
-  background: whitesmoke;
+  background: white;
   border: solid 0.5px rgb(221, 221, 221);
-  /* height: 100px; */
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   color: gray;
   flex-direction: column;
+  margin-top: 5px;
+  /* box-shadow: 0px 4px 12px 2px lightgray; */
 }
 .closed-schedule-box {
   display: flex;
@@ -245,11 +273,21 @@ h2 {
   border-radius: 50%;
   height: 25px;
   width: 25px;
-  border: solid 1px lightgray;
+  border: solid 1px #51af33;
   position: absolute;
   top: 5px;
   right: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+.task-container {
+  margin-top: 50px;
+  position: relative;
+}
+.task-container h1 {
+  position: absolute;
+  margin-left: 50px;
 }
