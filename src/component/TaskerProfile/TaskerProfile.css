@@ -105,7 +105,7 @@
   width: 100%;
 }
 .tasker-skill-form h2 {
-  margin-top: 30px;
+  margin-top: 20px;
   width: 85%;
   font-size: 35px;
   font-weight: bold;
@@ -114,7 +114,7 @@
 
 .tasker-skill-form form {
   padding: 1rem 1rem 0.5rem;
-  width: 100%;
+  width: 85%;
   font-size: 1.25em;
   position: relative;
   border: 1px solid #dce0e6;
@@ -175,7 +175,7 @@
   padding: 20px;
   border-bottom: 1px solid #dce0e6;
 }
-.tasker-display-text button {
+.tasker-display-text i {
   padding: 0 10px;
   cursor: pointer;
   border: none;
@@ -205,15 +205,14 @@
 .pop-a-roo {
   transition: all 1s;
   transform: translate(0, 0);
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #dce0e6;
 }
 
 .pop-a-roo section {
   color: #545e69;
   text-align: start;
-  border-radius: 4px;
-  padding: 1em 1.4em;
-  margin-bottom: 1.5em;
+  border-radius: 10px;
+  padding: 25px;
   background-color: #f9fafb;
 }
 .pop-a-roo section p {
@@ -235,7 +234,7 @@
   font-weight: bold;
   font-size: 1rem;
   line-height: 1.5;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .hide-a-roo {
@@ -252,7 +251,7 @@
     height: 100%;
   }
   .profile-form-container span {
-    width: 45%;
+    width: 375px;
   }
 }
 
@@ -262,22 +261,5 @@
   }
   .profile-form-container h4 {
     font-size: 28px;
-  }
-}
-@media (max-width: 670px) {
-  .profile-form-container span {
-    width: 55%;
-  }
-}
-
-@media (max-width: 600px) {
-  .profile-form-container span {
-    width: 65%;
-  }
-}
-
-@media (max-width: 550px) {
-  .profile-form-container span {
-    width: 70%;
   }
 }
