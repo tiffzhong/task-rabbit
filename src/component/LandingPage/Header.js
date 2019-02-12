@@ -1,101 +1,156 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./LandingPage.css";
 import { connect } from "react-redux";
 import { updateTaskType } from "../../ducks/clientReducer";
 
-const Header = () => {
-  return (
-    <header>
-      <div className="header-main-text">
-        <h1>
-          The convenient & affordable way to get things done around the home
-        </h1>
-        <p>
-          Choose from over 140,000 vetted Taskers for help without breaking the
-          bank.
-        </p>
-      </div>
-      <div className="header-links">
-        <span>
-          <Link to="/clientForm">
-            <button
-              onClick={() =>
-                this.props.updateTaskType("Mounting & Installation")
-              }
-            >
-              Mounting & Installation
-            </button>
-          </Link>
-          <Link to="/clientForm">
-            <button
-              onClick={() => this.props.updateTaskType("Delivery Service")}
-            >
-              Delivery Service
-            </button>
-          </Link>
-          <Link to="/clientForm">
-            <button
-              onClick={() => this.props.updateTaskType("Yardwork/Landscaping")}
-            >
-              Yardwork/Landscaping
-            </button>
-          </Link>
+class Header extends Component {
+  constructor() {
+    super();
+    this.state = {
 
-          <Link to="/clientForm">
-            <button
-              onClick={() => this.props.updateTaskType("Home Improvement")}
-            >
-              Home Improvement
-            </button>
-          </Link>
-          <Link to="/clientForm">
-            <button
-              onClick={() => this.props.updateTaskType("Moving & Packing")}
-            >
-              Moving & Packing
-            </button>
-          </Link>
-          <Link to="/clientForm">
-            <button onClick={() => this.props.updateTaskType("Pet Service")}>
-              Pet Service
-            </button>
-          </Link>
+    }
+  }
+  setTaskType = task => {
+    this.props.updateTaskType(task);
+  };
 
-          <Link to="/clientForm">
-            <button
-              onClick={() => this.props.updateTaskType("Furniture Assembly")}
-            >
-              Furniture Assembly
-            </button>
-          </Link>
-          <Link to="/clientForm">
-            <button
-              onClick={() => this.props.updateTaskType("Cleaning Service")}
-            >
-              Cleaning Service
-            </button>
-          </Link>
-          <Link to="/clientForm">
-            <button
-              onClick={() => this.props.updateTaskType("Cooking Service")}
-            >
-              Cooking Service
-            </button>
-          </Link>
-        </span>
-      </div>
-    </header>
-  );
+  render() {
+    return (
+      <header>
+        <div className="header-main-text">
+          <h1>
+            The convenient & affordable way to get things done around the home
+          </h1>
+          <p>
+            Choose from over 140,000 vetted Taskers for help without breaking the
+            bank.
+          </p>
+        </div>
+        <div className="header-links">
+          <span>
+            <Link to="/clientForm">
+              <button
+                onClick={() =>
+                  this.setTaskType({
+                    taskType:"Mounting & Installation",
+                    task: 'mounting'
+                  })
+                }
+              >
+                Mounting & Installation
+              </button>
+            </Link>
+            <Link to="/clientForm">
+              <button
+                onClick={() =>
+                  this.setTaskType({
+                    taskType: "Delivery Service",
+                    task: "delivery"
+                  })
+                }
+              >
+                Delivery Service
+              </button>
+            </Link>
+            <Link to="/clientForm">
+              <button
+                onClick={() =>
+                  this.setTaskType({
+                    taskType: "Yardwork/Landscaping",
+                    task: "yard"
+                  })
+                }
+              >
+                Yardwork/Landscaping
+              </button>
+            </Link>
+
+            <Link to="/clientForm">
+              <button
+                onClick={() =>
+                  this.setTaskType({
+                    taskType: "Home Improvement",
+                    task: "home"
+                  })
+                }
+              >
+                Home Improvement
+              </button>
+            </Link>
+            <Link to="/clientForm">
+              <button
+                onClick={() =>
+                  this.setTaskType({
+                    taskType: "Moving & Packing",
+                    task: "moving"
+                  })
+                }
+              >
+                Moving & Packing
+              </button>
+            </Link>
+            <Link to="/clientForm">
+              <button 
+                onClick={() =>
+                  this.setTaskType({
+                    taskType: "Pet Service",
+                    task: "pet"
+                  })
+                }
+              >
+                Pet Service
+              </button>
+            </Link>
+
+            <Link to="/clientForm">
+              <button
+                onClick={() =>
+                  this.setTaskType({
+                    taskType: "Furniture Assembly",
+                    task: "furniture"
+                  })
+                }
+              >
+                Furniture Assembly
+              </button>
+            </Link>
+            <Link to="/clientForm">
+              <button
+                onClick={() =>
+                  this.setTaskType({
+                    taskType: "Cleaning Service",
+                    task: "cleaning"
+                  })
+                }
+              >
+                Cleaning Service
+              </button>
+            </Link>
+            <Link to="/clientForm">
+              <button
+                onClick={() =>
+                  this.setTaskType({
+                    taskType: "Cooking Service",
+                    task: "cooking"
+                  })
+                }
+              >
+                Cooking Service
+              </button>
+            </Link>
+          </span>
+        </div>
+      </header>
+    );
+  }
 };
 
 const mapStateToProps = state => {};
 
-const mapDispatchToProps = {
-  updateTaskType: updateTaskType
-};
+
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  {updateTaskType}
 )(Header);
