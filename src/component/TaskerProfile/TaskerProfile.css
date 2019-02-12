@@ -141,13 +141,10 @@
 
 .tasker-rate-section section {
   display: flex;
-  justify-content: center;
   align-items: center;
   align-self: flex-start;
 }
-/* .tasker-rate-section h3 {
-  align-self: flex-start;
-} */
+
 .tasker-rate-section input {
   text-align: center;
   border: 1px solid #545e69;
@@ -160,6 +157,14 @@
 }
 .tasker-rate-section input:hover {
   border: 1px solid #51af33;
+}
+
+.tasker-rate-section h3 {
+  font-size: 16px;
+}
+.tasker-rate-section p {
+  font-size: 16px;
+  margin: 0;
 }
 
 .tasker-display-text {
@@ -184,6 +189,18 @@
 
 .tasker-display-text p {
   flex-basis: 100%;
+}
+
+.submit-button {
+  background-color: #51af33;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
 }
 
 .pop-a-roo {
