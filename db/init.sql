@@ -101,6 +101,14 @@ ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFE
 
 select * from "session";
 
+create table client_review(
+    id serial primary key,
+    user_id text,
+    tasker_id text,
+    review text,
+    created_date text
+)
+
 
 -- create table picktasker(
 --    id serial primary key,

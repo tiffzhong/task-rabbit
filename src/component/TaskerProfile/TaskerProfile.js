@@ -81,48 +81,48 @@ class TaskerProfile extends Component {
 
   mountingtoggle = event => {
     this.setState({
-      [event.target.name]: !this.state.mountingtoggle
+      mountingtoggle: !this.state.mountingtoggle
     });
   };
 
   deliverytoggle = event => {
     this.setState({
-      [event.target.name]: !this.state.deliverytoggle
+      deliverytoggle: !this.state.deliverytoggle
     });
   };
   yardtoggle = event => {
     this.setState({
-      [event.target.name]: !this.state.yardtoggle
+      yardtoggle: !this.state.yardtoggle
     });
   };
   hometoggle = event => {
     this.setState({
-      [event.target.name]: !this.state.hometoggle
+      hometoggle: !this.state.hometoggle
     });
   };
   movingtoggle = event => {
     this.setState({
-      [event.target.name]: !this.state.movingtoggle
+      movingtoggle: !this.state.movingtoggle
     });
   };
   pettoggle = event => {
     this.setState({
-      [event.target.name]: !this.state.pettoggle
+      pettoggle: !this.state.pettoggle
     });
   };
   furnituretoggle = event => {
     this.setState({
-      [event.target.name]: !this.state.furnituretoggle
+      furnituretoggle: !this.state.furnituretoggle
     });
   };
   cleaningtoggle = event => {
     this.setState({
-      [event.target.name]: !this.state.cleaningtoggle
+      cleaningtoggle: !this.state.cleaningtoggle
     });
   };
   cookingtoggle = event => {
     this.setState({
-      [event.target.name]: !this.state.cookingtoggle
+      cookingtoggle: !this.state.cookingtoggle
     });
   };
 
@@ -221,12 +221,12 @@ class TaskerProfile extends Component {
                 rates, at any time.
               </p>
             </span>
-            <div className="task-container">
+            <div className="tasker-profile-container">
               <div className="tasker-display-text">
                 <h3>Mounting & Installation</h3>
-                <button name="mountingtoggle" onClick={this.mountingtoggle}>
-                  <i class="fas fa-chevron-down" />
-                </button>
+
+                <i onClick={this.mountingtoggle} class="fas fa-chevron-down" />
+
                 <p>Mounting TVs, paintings, and art onto walls.</p>
               </div>
 
@@ -299,9 +299,7 @@ class TaskerProfile extends Component {
             <div className="task-container">
               <div className="tasker-display-text">
                 <h3>Delivery Service</h3>
-                <button name="deliverytoggle" onClick={this.deliverytoggle}>
-                  <i class="fas fa-chevron-down" />
-                </button>
+                <i onClick={this.deliverytoggle} class="fas fa-chevron-down" />
                 <p>
                   Deliveries for food, clothing, documents, and other items.
                 </p>
@@ -347,9 +345,7 @@ class TaskerProfile extends Component {
             <div className="task-container">
               <div className="tasker-display-text">
                 <h3> Yard Work/Landscaping</h3>
-                <button name="yardtoggle" onClick={this.yardtoggle}>
-                  <i class="fas fa-chevron-down" />
-                </button>
+                <i onClick={this.yardtoggle} class="fas fa-chevron-down" />
                 <p>
                   Raking leaves, lawn mowing, gardening, landscaping, watering,
                   hauling of waste.
@@ -396,9 +392,9 @@ class TaskerProfile extends Component {
             <div className="task-container">
               <div className="tasker-display-text">
                 <h3>Home Improvement</h3>
-                <button name="hometoggle" onClick={this.hometoggle}>
-                  <i class="fas fa-chevron-down" />
-                </button>
+
+                <i onClick={this.hometoggle} class="fas fa-chevron-down" />
+
                 <p>Repair and maintenance work around the home or office.</p>
               </div>
               <div
@@ -444,9 +440,8 @@ class TaskerProfile extends Component {
             <div className="task-container">
               <div className="tasker-display-text">
                 <h3> Moving & Packing</h3>
-                <button name="movingtoggle" onClick={this.movingtoggle}>
-                  <i class="fas fa-chevron-down" />
-                </button>
+                <i onClick={this.movingtoggle} class="fas fa-chevron-down" />
+
                 <p>
                   Packing or un-packing boxes, or moving boxes and furniture.
                 </p>
@@ -494,9 +489,9 @@ class TaskerProfile extends Component {
             <div className="task-container">
               <div className="tasker-display-text">
                 <h3>Pet Service</h3>
-                <button name="pettoggle" onClick={this.pettoggle}>
-                  <i class="fas fa-chevron-down" />
-                </button>
+
+                <i onClick={this.pettoggle} class="fas fa-chevron-down" />
+
                 <p>Watching house pets while owners are out of town.</p>
               </div>
               <div
@@ -535,9 +530,9 @@ class TaskerProfile extends Component {
             <div className="task-container">
               <div className="tasker-display-text">
                 <h3>Furniture Assembly</h3>
-                <button name="furnituretoggle" onClick={this.furnituretoggle}>
-                  <i class="fas fa-chevron-down" />
-                </button>
+
+                <i onClick={this.furnituretoggle} class="fas fa-chevron-down" />
+
                 <p>
                   Putting together furniture from IKEA and other furniture
                   stores.
@@ -589,9 +584,7 @@ class TaskerProfile extends Component {
             <div className="task-container">
               <div className="tasker-display-text">
                 <h3> Cleaning Service</h3>
-                <button name="cleaningtoggle" onClick={this.cleaningtoggle}>
-                  <i class="fas fa-chevron-down" />
-                </button>
+                <i onClick={this.cleaningtoggle} class="fas fa-chevron-down" />
                 <p>Cleaning an apartment, house, vacation home, or office.</p>
               </div>
 
@@ -642,9 +635,7 @@ class TaskerProfile extends Component {
             <div className="task-container">
               <div className="tasker-display-text">
                 <h3> Cooking Service</h3>
-                <button name="cookingtoggle" onClick={this.cookingtoggle}>
-                  <i class="fas fa-chevron-down" />
-                </button>
+                <i onClick={this.cookingtoggle} class="fas fa-chevron-down" />
                 <p>Cooking up your Client's favorite dishes.</p>
               </div>
               <div

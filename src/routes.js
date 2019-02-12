@@ -12,6 +12,7 @@ import ClientPickTasker from "./component/ClientPickTasker/ClientPickTasker";
 import ClientEdit from "./component/ClientEdit/ClientEdit";
 import ClientForm from "./component/Client_Form/ClientForm";
 import Cleaning_Form from "./component/Client_Form/Cleaning_Form";
+import Reviews from "./component/Reviews/Reviews";
 
 export default (
   <Switch>
@@ -29,5 +30,6 @@ export default (
       component={EditTaskerProfile}
     />
     <Route path="/confirmation" component={Confirmation} />
+    <Route path="/review" component={Reviews} />
   </Switch>
 );

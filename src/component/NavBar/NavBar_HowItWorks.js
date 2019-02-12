@@ -62,6 +62,7 @@ const NavBar_HowItWorks = () => {
             </div>
           </div>
         </div>
+        <Link to="/review">review</Link>
       </div>
       <Link to="/confirmation">confirmation</Link>
     </div>
