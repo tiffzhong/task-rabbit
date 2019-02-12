@@ -273,7 +273,7 @@ class TaskerProfile extends Component {
                   <div className="tasker-rate-section">
                     <h4>Your Tasker Rate</h4>
                     <section>
-                      ${"  "}
+                      $
                       {this.state.mounting ? (
                         <input
                           name="mountingHourly"
@@ -288,7 +288,7 @@ class TaskerProfile extends Component {
                           disabled
                         />
                       )}
-                      <h3>Most Taskers with your experience hired at:</h3>
+                      <h3>Most Taskers with your experience hired at: </h3>
                       <p>$25/hr</p>
                     </section>
                   </div>
@@ -682,8 +682,8 @@ class TaskerProfile extends Component {
               </div>
             </div>
 
-            {/* <Link to={`/tasker-dashboard/${user.auth0_id}`}> */}
             <button
+              className="submit-button"
               onClick={() =>
                 createProfile(
                   name,
@@ -716,7 +716,6 @@ class TaskerProfile extends Component {
             >
               Submit
             </button>
-            {/* </Link> */}
           </form>
         </div>
       </div>
