@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
  class Messages extends Component {
      render() {
         // console.log('what are my match params bitch',this.props.match.params)
-        
+        console.log('props in messages', this.props)
         return (
             <div className='messages-component'>
-                <Link to={`/messages/:tasker_id`} ><span className='messages' >
+                <Link to={`/messages/${this.props.tasker_id}`} ><span className='messages' >
                     <div className='messager-container'>
                         <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png' />
                         <div className='messager-info' >
@@ -33,4 +33,15 @@ import { Link } from 'react-router-dom';
     }
 }
 
-export default connect()(Messages);
+const mapStateToProps = state => {
+    const { taskerProfile } = state.tasker
+    return {
+        taskerProfile
+    }
+}
+
+const mapDispatchToProps = {
+    
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Messages);
