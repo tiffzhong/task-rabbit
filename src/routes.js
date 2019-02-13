@@ -12,12 +12,9 @@ import ClientEdit from "./component/ClientEdit/ClientEdit";
 import ClientForm from "./component/Client_Form/ClientForm";
 import Cleaning_Form from "./component/Client_Form/Cleaning_Form";
 import Reviews from "./component/Reviews/Reviews";
-<<<<<<< HEAD
 import MessagesForm from "./component/Messages/MessagesForm";
 import PersonalMessages from "./component/Messages/PersonalMessages";
-=======
 import EmailModalContent from "./component/Emailmodal/EmailModalContent";
->>>>>>> tasker_style
 
 export default (
   <Switch>
@@ -36,11 +33,8 @@ export default (
     />
     <Route path="/confirmation" component={Confirmation} />
     <Route path="/review" component={Reviews} />
-<<<<<<< HEAD
     <Route path='/messages' component={MessagesForm} />
     <Route exact path='/messages/:tasker_id' component={PersonalMessages} />
-=======
     <Route path="/discount" component={EmailModalContent} />
->>>>>>> tasker_style
   </Switch>
 );
