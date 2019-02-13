@@ -1,3 +1,7 @@
+.LandingPage-component {
+  color: #242a30;
+}
+
 header {
   font-family: "Montserrat", sans-serif;
   background-image: url("./tools.jpg");
@@ -18,7 +22,7 @@ header {
   margin: 55px 0;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 95%;
   /* margin-top: 40px; */
 }
 
@@ -60,7 +64,7 @@ header button:hover {
   text-align: center;
 }
 .header-links span {
-  width: 50%;
+  width: 800px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,18 +107,18 @@ header button:hover {
 
 .slick-slider button {
   /* background: gray; */
-  color: black;
+  color: #242a30;
   height: 300px;
   width: 25px;
 }
 
 .slick-prev:hover {
-  color: black;
+  color: #242a30;
   /* background: gray; */
 }
 
 .slick-next:hover {
-  color: black;
+  color: #242a30;
   /* background: gray; */
 }
 
@@ -192,7 +196,7 @@ header button:hover {
   display: flex;
   align-items: center;
   margin: 20px;
-  width: 40%;
+  width: 45%;
 }
 .review-text {
   display: flex;
@@ -220,26 +224,15 @@ header button:hover {
   .slick-list {
     width: 80vw;
   }
-  .inner-review-container {
-    width: 100%;
-    /* background: pink; */
-  }
 }
-
 @media (max-width: 1350px) {
   .header-main-text h1 {
-    width: 60%;
-  }
-  .header-links span {
-    width: 60%;
+    width: 80%;
   }
 }
 
 @media (max-width: 1130px) {
   .header-main-text h1 {
-    width: 70%;
-  }
-  .header-links span {
     width: 70%;
   }
 }
@@ -250,15 +243,16 @@ header button:hover {
   .header-main-text p {
     font-size: 18px;
   }
-  .header-links span {
-    width: 80%;
-  }
+
   .inner-review-container {
     margin-bottom: 10px;
   }
   .reviews {
     margin-top: 10px;
-    width: 60%;
+    width: 85%;
+  }
+  .reviewsContainer {
+    padding: 40px 5px 5px 10px;
   }
 }
 @media (max-width: 850px) {
@@ -278,15 +272,9 @@ header button:hover {
     font-size: 16px;
     width: 85%;
   }
-  .header-links span {
-    width: 95%;
-  }
 }
 @media (max-width: 715px) {
   .header-main-text h1 {
-    width: 90%;
-  }
-  .header-links span {
     width: 90%;
   }
 }
@@ -304,5 +292,15 @@ header button:hover {
 @media (max-width: 580px) {
   .header-main-text h1 {
     font-size: 26px;
+  }
+  .reviews {
+    margin: 5px 0px;
+  }
+  .reviews img {
+    border-radius: 50%;
+    width: 120px;
+  }
+  .review-text p {
+    font-size: 14px;
   }
 }
