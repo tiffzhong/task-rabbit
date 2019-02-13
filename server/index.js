@@ -58,6 +58,8 @@ app.get(
   "/api/confirmed/:confirmation_id",
   confirmationController.getConfirmation
 );
+//nodemailer
+app.post('/api/email', clientController.nodemailerEmail);
 
 const PORT = 4000;
 app.listen(PORT, () => {
