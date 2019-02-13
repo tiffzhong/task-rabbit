@@ -112,7 +112,7 @@ class Confirmation extends Component {
           </div>
 
           <div className="confirmation-image-container">
-            <section>
+            {/* <section>
               <img
                 src={
                   client.picture
@@ -123,7 +123,7 @@ class Confirmation extends Component {
               />
               You
               {client.name}
-            </section>
+            </section> */}
             <section>
               <img
                 src={
