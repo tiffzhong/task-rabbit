@@ -13,7 +13,9 @@ const INITIAL_STATE = {
   endDate: "",
   taskDetails: "",
   clientData: [],
-  allTaskers: []
+  allTaskers: [],
+  clientReview: "",
+  reviewData: []
 };
 
 const UPDATE_TASK_TYPE = "UPDATE_TASK_TYPE";
@@ -28,6 +30,8 @@ const UPDATE_END_DATE = "UPDATE_END_DATE";
 const UPDATE_TASK_DETAILS = "UPDATE_TASK_DETAILS";
 const UPDATE_CLIENT_DATA = "UPDATE_CLIENT_DATA";
 const ALL_TASKER_FOR_CLIENT = "ALL_TASKER_FOR_CLIENT";
+const UPDATE_CLIENT_REVIEW = "UPDATE_CLIENT_REVIEW";
+const UPDATE_REVIEW_DATA = "UPDATE_REVIEW_DATA";
 
 export default function clientReducer(state = INITIAL_STATE, action) {
   console.log("REDUCER HIT: Action =>", action);
@@ -71,6 +75,12 @@ export default function clientReducer(state = INITIAL_STATE, action) {
 
     case `${ALL_TASKER_FOR_CLIENT}_FULFILLED`:
       return { ...state, allTaskers: action.payload };
+
+    case UPDATE_CLIENT_REVIEW:
+      return { ...state, clientReview: action.payload };
+
+    case UPDATE_REVIEW_DATA:
+      return { ...state, reviewData: action.payload }
 
     default:
       return { ...state };
@@ -165,4 +175,19 @@ export function updateClientData(clientData) {
     type: UPDATE_CLIENT_DATA,
     payload: clientData
   };
+}
+
+export function updateClientReview(clientReview) {
+
+  return {
+    type: UPDATE_CLIENT_REVIEW,
+    payload: clientReview
+  }
+}
+
+export function updateReviewData(reviewData) {
+  return {
+    type: UPDATE_REVIEW_DATA,
+    payload: reviewData
+  }
 }

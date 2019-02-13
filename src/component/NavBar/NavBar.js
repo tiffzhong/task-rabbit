@@ -42,6 +42,7 @@ class NavBar extends Component {
       });
       console.log('logging out')
       this.props.setUser(null);
+      this.redirectToLandingPage();
     });
   }
 
@@ -82,6 +83,7 @@ class NavBar extends Component {
           </div>
 
           <div className="sidelinks">
+              <Link to='/messages' >Messages</Link>
             <div className="nav-links">
               <div className="nav-popover-container">
                 <a className="services-link" onClick={this.linkToggler}>
