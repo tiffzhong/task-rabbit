@@ -149,7 +149,7 @@ class EditTaskerProfile extends Component {
             <div>
               <Autocomplete
                 placeholder={place}
-                style={{ width: "250%" }}
+                style={{ width: "100%" }}
                 onPlaceSelected={place => {
                   this.setState({
                     place: place.formatted_address
