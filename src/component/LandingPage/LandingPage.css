@@ -18,7 +18,7 @@ header {
   margin: 55px 0;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 90%;
   /* margin-top: 40px; */
 }
 
@@ -80,12 +80,14 @@ header button:hover {
 
 .TaskCards-component {
   width: 100%;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  background-color: #e8ebef;
+
+  /* margin-bottom: 50px; */
   justify-content: center;
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 40px;
 }
 
 .TaskCards-component div {
@@ -100,7 +102,7 @@ header button:hover {
 }
 
 .slick-slider button {
-  background: gray;
+  /* background: gray; */
   color: black;
   height: 300px;
   width: 25px;
@@ -108,12 +110,12 @@ header button:hover {
 
 .slick-prev:hover {
   color: black;
-  background: gray;
+  /* background: gray; */
 }
 
 .slick-next:hover {
   color: black;
-  background: gray;
+  /* background: gray; */
 }
 
 .slick-list {
@@ -159,17 +161,17 @@ header button:hover {
   background: #51af33;
   color: white;
 }
-button:focus {
-  /* outline: none; */
-}
 
 /* ===========Reviews=================*/
 .reviewsContainer {
+  font-family: "Montserrat", sans-serif;
   display: flex;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   flex-wrap: wrap;
   align-items: center;
+  padding: 40px;
+  flex-direction: column;
 }
 
 .reviewsContainer h1 {
@@ -178,9 +180,11 @@ button:focus {
 
 .inner-review-container {
   display: flex;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: row; */
   flex-wrap: wrap;
-  justify-content: space-around;
+  width: 100%;
   margin-bottom: 20px;
 }
 
@@ -188,7 +192,7 @@ button:focus {
   display: flex;
   align-items: center;
   margin: 20px;
-  width: 600px;
+  width: 40%;
 }
 .review-text {
   display: flex;
@@ -248,6 +252,13 @@ button:focus {
   }
   .header-links span {
     width: 80%;
+  }
+  .inner-review-container {
+    margin-bottom: 10px;
+  }
+  .reviews {
+    margin-top: 10px;
+    width: 60%;
   }
 }
 @media (max-width: 850px) {

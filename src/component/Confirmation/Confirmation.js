@@ -6,7 +6,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { getConfirmation } from "../../ducks/taskerReducer";
 import { Link } from "react-router-dom";
-
+import moment from "moment";
 class Confirmation extends Component {
   constructor(props) {
     super(props);
@@ -112,52 +112,52 @@ class Confirmation extends Component {
           </div>
 
           <div className="confirmation-image-container">
-            {/* <section>
-              <img
-                src={
-                  client.picture
-                    ? client.picture
-                    : "https://processing.org/tutorials/pixels/imgs/tint1.jpg"
-                }
-                alt="client"
-              />
-              You
-              {client.name}
-            </section> */}
-            <section>
-              <img
-                src={
-                  tasker.selfie
-                    ? tasker.selfie
-                    : "https://processing.org/tutorials/pixels/imgs/tint1.jpg"
-                }
-                alt="tasker"
-              />
+            <img
+              src={
+                tasker.selfie
+                  ? tasker.selfie
+                  : "https://processing.org/tutorials/pixels/imgs/tint1.jpg"
+              }
+              alt="tasker"
+            />
+            <h5>
               Tasker
-              {tasker.tasker_name}
-            </section>
+              <br /> {tasker.tasker_name}
+            </h5>
           </div>
 
           <div className="confirmation-date-and-time-container">
             <label>Date & Time</label>
             <h6>
-              {start_date ? start_date : "DateStart"}
-              {end_date ? end_date : "DateEnd"}
+              {start_date
+                ? moment(start_date).format("MMMM Do YYYY (h:mm a)")
+                : ""}
+              {"  "}
+              {end_date
+                ? moment(" - " + end_date).format("MMMM Do YYYY (h:mm a)")
+                : ""}
             </h6>
           </div>
 
           <div className="confirmation-location-container">
             <label>Task Location</label>
-            <h6>
-              {location_start ? location_start : "location_start"}
-              {location_end ? location_end : "location_end"}
-            </h6>
+            <p2>
+              {location_start
+                ? "Start: " + location_start
+                : "Start: 101 N 1st Ave Ste 2075, Phoenix, AZ 85003"}
+            </p2>
+            <br />
+            <p1>{location_end ? "End: " + location_end : ""}</p1>
           </div>
 
           <div className="confirmation-options-container">
             <label>Task Options</label>
-            <h6>{duration ? duration : "Small: 1hr"}</h6>
-            <h6>{vehicle ? vehicle : "Truck"}</h6>
+            <p1>
+              {duration
+                ? "Duration: " + duration
+                : "Duration: Short - Est. 1 hr"}
+            </p1>
+            <p2>{vehicle ? "Vehicle Needed: " + vehicle : ""}</p2>
           </div>
 
           <div className="confirmation-desc-container">

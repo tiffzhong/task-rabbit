@@ -10,7 +10,7 @@ const LandingPage_Reviews = () => {
           <img src="Images/sean.jpg" alt="" />
           <div className="review-text">
             <p>
-              Using TaskTiger to have a new bookcase built was a great choice!
+              Using TaskRabbit to have a new bookcase built was a great choice!
               Rick did wonderful work with a job that was much bigger than we
               anticipated.
             </p>
@@ -48,7 +48,7 @@ const LandingPage_Reviews = () => {
           <img src="Images/josh.jpg" alt="" />
           <div className="review-text">
             <p>
-              TaskTiger makes moving into your new apartment a 1 hr job instead
+              TaskRabbit makes moving into your new apartment a 1 hr job instead
               of 1 day job! Moving was seamless!
             </p>
             <h6>Josh B.</h6>
