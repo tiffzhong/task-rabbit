@@ -58,6 +58,7 @@ class Details extends Component {
                   placeholder="Enter any additional details for the Tasker"
                   className="details-input"
                   onChange={e => this.props.updateTaskDetails(e.target.value)}
+                  value={this.props.details}
                 />
                 <div className="form-button">
                   <button

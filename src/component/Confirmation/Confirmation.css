@@ -1,3 +1,95 @@
-.Confirmation-component {
-  padding-top: 100px;
+.confirmation-window {
+  padding-top: 80px;
+  background-color: #f9fafb;
+  color: #242a30;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.confirmation-window h2 {
+  margin-top: 20px;
+  width: 80%;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: start;
+  padding-bottom: 20px;
+}
+.confirmation-form {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2em 3em;
+  border: 1px solid #dce0e6;
+  width: 80%;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+.confirmation-form label {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 15px;
+  color: #545e69;
+}
+.confirmation-form h6 {
+  display: flex;
+  justify-content: flex-start;
+  font-weight: 500;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+.confirmation-name-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.confirmation-image-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.confirmation-image-container > section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+}
+.confirmation-image-container img {
+  width: 70px;
+  border-radius: 50%;
+}
+.confirmation-name-container h4 {
+  font-size: 30px;
+  font-weight: 600;
+}
+.confirmation-name-container h3 {
+  font-size: 30px;
+  font-weight: 200;
+}
+.confirmation-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.confirmation-submit-button {
+  background-color: #51af33;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin: 20px;
+}
+.confirmation-form p {
+  margin: 10px;
+}
+.confirmation-form a {
+  text-decoration: none;
+  color: #51af33;
+  padding: 10px;
 }

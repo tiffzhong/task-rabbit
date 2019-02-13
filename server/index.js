@@ -51,13 +51,14 @@ app.put("/api/tasker/:tasker_id", taskerController.editProfile);
 app.post("/api/client", clientController.bookTask);
 app.put("/api/client/:client_id", clientController.editTask);
 app.get("/api/pickatasker", clientController.allTaskers);
+app.get("/api/client/:client_id", clientController.getClient);
 
 //Confirmation
 app.post("/api/confirmed", confirmationController.createConfirmed);
-// app.get(
-//   "/api/confirmed/:confirmation_id",
-//   confirmationController.getConfirmation
-// );
+app.get(
+  "/api/confirmed/:confirmation_id",
+  confirmationController.getConfirmation
+);
 
 const PORT = 4000;
 app.listen(PORT, () => {

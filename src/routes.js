@@ -20,18 +20,20 @@ export default (
   <Switch>
     <Route exact path="/" component={LandingPage} />
     <Route path="/how-it-works" component={NavBar_HowItWorks} />
-    <Route path="/tasker-dashboard/:tasker_id" component={TaskerDashboard} />
-    <Route path="/client-dashboard" component={ClientDashboard} />
-    <Route path="/tasker-profile" component={TaskerProfile} />
-    <Route path="/pick-a-tasker" component={ClientPickTasker} />
-    <Route path="/clientForm" component={ClientForm} />
     <Route path="/clientEdit" component={ClientEdit} />
+    <Route path="/clientForm" component={ClientForm} />
+    <Route path="/client-dashboard" component={ClientDashboard} />
+    <Route path="/pick-a-tasker" component={ClientPickTasker} />
     <Route path="/cleaning_form" component={Cleaning_Form} />
+    <Route path="/confirmation" component={Confirmation} />
+
+    <Route path="/tasker-profile" component={TaskerProfile} />
+    <Route path="/tasker-dashboard/:tasker_id" component={TaskerDashboard} />
     <Route
       path="/edit-tasker-profile/:tasker_id"
       component={EditTaskerProfile}
     />
-    <Route path="/confirmation" component={Confirmation} />
+    <Route path="/edit-client-form/:confirmation_id" component={ClientForm} />
     <Route path="/review" component={Reviews} />
     <Route path="/messages/:confirmation_id" component={MessagesForm} />
     <Route path="/messages/:tasker_id" component={PersonalMessages} />

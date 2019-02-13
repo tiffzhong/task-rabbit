@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import { GoogleApiWrapper } from "google-maps-react";
 import Autocomplete from "react-google-autocomplete";
 import { connect } from "react-redux";
-import { updateLocationEnd, updateLat, updateLong } from "../../ducks/clientReducer";
+import {
+  updateLocationEnd,
+  updateLat,
+  updateLong
+} from "../../ducks/clientReducer";
 
 class AutocompleteSearchEnd extends Component {
   constructor(props) {
@@ -17,6 +21,9 @@ class AutocompleteSearchEnd extends Component {
     return (
       <div>
         <Autocomplete
+          placeholder={
+            this.props.locationEnd ? this.props.locationEnd : "Enter a Location"
+          }
           style={{ width: "100%" }}
           onPlaceSelected={place => {
             var lat = place.geometry.location.lat();

@@ -32,6 +32,7 @@ const UPDATE_CLIENT_DATA = "UPDATE_CLIENT_DATA";
 const ALL_TASKER_FOR_CLIENT = "ALL_TASKER_FOR_CLIENT";
 const UPDATE_CLIENT_REVIEW = "UPDATE_CLIENT_REVIEW";
 const UPDATE_REVIEW_DATA = "UPDATE_REVIEW_DATA";
+const UPDATE_ALL_DETAILS = "UPDATE_ALL_DETAILS";
 
 export default function clientReducer(state = INITIAL_STATE, action) {
   console.log("REDUCER HIT: Action =>", action);
@@ -80,8 +81,10 @@ export default function clientReducer(state = INITIAL_STATE, action) {
       return { ...state, clientReview: action.payload };
 
     case UPDATE_REVIEW_DATA:
-      return { ...state, reviewData: action.payload }
+      return { ...state, reviewData: action.payload };
 
+    case UPDATE_ALL_DETAILS:
+      return { ...state, ...action.payload };
     default:
       return { ...state };
   }
@@ -99,6 +102,13 @@ export function allTaskersForClient() {
       .catch(error => console.log("Error in allTaskerForClient", error))
   };
 }
+
+// export function editClientForm() {
+//   return {
+//     type: EDIT_CLIENT_FORM,
+//     payload: axios.put("/api/")
+//   };
+// }
 
 export function updateTaskType(taskType) {
   return {
@@ -178,16 +188,21 @@ export function updateClientData(clientData) {
 }
 
 export function updateClientReview(clientReview) {
-
   return {
     type: UPDATE_CLIENT_REVIEW,
     payload: clientReview
-  }
+  };
 }
 
 export function updateReviewData(reviewData) {
   return {
     type: UPDATE_REVIEW_DATA,
     payload: reviewData
-  }
+  };
+}
+export function editTaskDetails(allDetails) {
+  return {
+    type: UPDATE_ALL_DETAILS,
+    payload: allDetails
+  };
 }
