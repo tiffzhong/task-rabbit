@@ -36,6 +36,7 @@ const authController = require("./controllers/authContoller");
 const taskerController = require("./controllers/taskerController");
 const clientController = require("./controllers/clientController");
 const confirmationController = require("./controllers/confirmationController");
+const messagesController = require("./controllers/messagesController");
 //Endpoints
 //Auth
 app.get("/auth/callback", authController.login);
@@ -59,6 +60,9 @@ app.get(
   "/api/confirmed/:confirmation_id",
   confirmationController.getConfirmation
 );
+
+//Messages
+app.get('/messages/api/:id', messagesController.getClientMessages);
 
 const PORT = 4000;
 app.listen(PORT, () => {

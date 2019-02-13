@@ -185,8 +185,10 @@ class Confirmation extends Component {
 
 function mapStateToProps(state) {
   let { confirmedTask } = state.tasker;
+  let { clientData } = state.client;
   return {
-    confirmedTask
+    confirmedTask,
+    clientData
   };
 }
 export default connect(
