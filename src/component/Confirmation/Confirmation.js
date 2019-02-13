@@ -12,14 +12,16 @@ class Confirmation extends Component {
     super(props);
     this.state = {
       confirmation: {},
-      confirmation_id: ""
+      confirmation_id: "",
+      client_id: ''
     };
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
       this.setState({
-        confirmation_id: this.props.confirmedTask[0].confirmation_id
+        confirmation_id: this.props.confirmedTask[0].confirmation_id,
+        client_id: this.props.clientData[0].id
       });
     }
   }
@@ -32,7 +34,7 @@ class Confirmation extends Component {
         {/* {this.props.confirmedTask.length &&
           this.props.confirmedTask[0].confirmation_id} */}
 
-        <Link to={`/messages/${this.state.confirmation_id}`}>Messages</Link>
+        <Link to={`/messages/${this.state.client_id}`}>Messages</Link>
       </div>
     );
   }
@@ -40,8 +42,10 @@ class Confirmation extends Component {
 
 function mapStateToProps(state) {
   let { confirmedTask } = state.tasker;
+  let { clientData } = state.client;
   return {
-    confirmedTask
+    confirmedTask,
+    clientData
   };
 }
 export default connect(

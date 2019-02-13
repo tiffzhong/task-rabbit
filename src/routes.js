@@ -33,8 +33,8 @@ export default (
     />
     <Route path="/confirmation" component={Confirmation} />
     <Route path="/review" component={Reviews} />
-    <Route path="/messages/:confirmation_id" component={MessagesForm} />
-    <Route path="/messages/:tasker_id" component={PersonalMessages} />
+    <Route path="/messages/:client_id" component={MessagesForm} />
+    <Route path="/messages-personal/:tasker_id" component={PersonalMessages} />
     <Route path="/discount" component={EmailModalContent} />
   </Switch>
 );

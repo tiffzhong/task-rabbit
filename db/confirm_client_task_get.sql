@@ -1,0 +1,1 @@
+select * from confirmed_task where client_id = $1;

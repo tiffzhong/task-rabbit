@@ -145,6 +145,7 @@ h2 {
 #details-inner textarea {
   height: 150px;
   width: 50vw;
+  resize: none;
   /* position: absolute; */
   /* top: 50px; */
 }

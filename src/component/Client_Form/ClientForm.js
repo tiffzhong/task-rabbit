@@ -97,6 +97,7 @@ class ClientForm extends Component {
     console.log("what the HELLLLLLL", this.props);
     return (
       <div className="form">
+      <span className='shadow-box'></span>
         {this.state.editToggle ? <p>Client Edit</p> : <p>Client Form</p>}
         {this.props.taskType === "Moving & Packing" ||
         this.props.taskType === "Yardwork/Landscaping" ? (
