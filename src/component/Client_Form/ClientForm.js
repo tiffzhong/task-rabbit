@@ -295,7 +295,7 @@ class ClientForm extends Component {
           {this.state.editToggle ? (
             <button onClick={() => this.test()}>Edit</button>
           ) : (
-            <Link to="/pick-a-tasker">
+            <Link to={`/pick-a-tasker`}>
               <button onClick={() => this.bookTask()}>Book Task</button>
             </Link>
           )}

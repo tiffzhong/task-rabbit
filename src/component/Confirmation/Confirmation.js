@@ -13,37 +13,42 @@ class Confirmation extends Component {
       confirmation: {}
     };
   }
-  componentDidMount() {
-    this.confirmation();
-    // this.getTasker();
-  }
+  // componentDidUpdate(prevProps) {
+  //   if (
+  //     prevProps.confirmedTask[0].confirmation_id !==
+  //     this.props.confirmedTask[0].confirmation_id
+  //   ) {
+  //     axios
+  //       .get(`/api/confirmed/${this.props.confirmedTask[0].confirmation_id}`)
+  //       .then(response => {
+  //         console.log("herroasdsafsf", response.data);
+  //         this.setState({
+  //           confirmation: response.data
+  //         });
+  //       });
+  //   }
+  // }
 
-  confirmation = () => {
-    axios
-      .get(`/api/confirmed/${this.props.confirmedTask[0].confirmation_id}`)
-      .then(response => {
-        console.log("herroasdsafsf", response.data);
-        this.setState({
-          confirmation: response.data[0]
-        });
-      });
-  };
-
-  // getTasker = () => {
-  //   axios.get("/api/pickatasker").then(response => {
-  //     console.log(response.data, "twerkinn??");
-  //     this.setState({
-  //       tasker: response.data[0].tasker_id
+  // confirmation = () => {
+  //   axios
+  //     .get(`/api/confirmed/${this.props.confirmedTask.confirmation_id}`)
+  //     .then(response => {
+  //       console.log("herroasdsafsf", response.data);
+  //       this.setState({
+  //         confirmation: response.data[0]
+  //       });
   //     });
-  //   });
   // };
 
-  // getClient = () => {
-  //   axios.get("")
-  // }
   render() {
     console.log(this.props, "kadsklfjs9ur");
-    return <div />;
+
+    return (
+      <div>
+        {this.props.confirmedTask.length &&
+          this.props.confirmedTask[0].confirmation_id}
+      </div>
+    );
   }
 }
 

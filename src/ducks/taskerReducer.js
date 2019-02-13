@@ -31,7 +31,7 @@ export default function taskerReducer(
       alert("Please complete every field");
       return { ...state };
     case `${CREATE_CONFIRMATION}_FULFILLED`:
-      return { ...state };
+      return { ...state, confirmedTask: action.payload };
     case GET_CONFIRMATION:
       return { ...state, confirmedTask: action.payload };
     default:
