@@ -34,9 +34,10 @@ import { Link } from 'react-router-dom';
 }
 
 const mapStateToProps = state => {
-    const { taskerProfile } = state.tasker
+    const { taskerProfile, confirmedTask } = state.tasker
     return {
-        taskerProfile
+        taskerProfile,
+        confirmedTask
     }
 }
 
