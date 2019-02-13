@@ -5,51 +5,34 @@ import Autocompletesearch from "../Googlemap/Autocompletesearch";
 import axios from "axios";
 import { connect } from "react-redux";
 import { getConfirmation } from "../../ducks/taskerReducer";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 class Confirmation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      confirmation: {}
+      confirmation: {},
+      confirmation_id: ""
     };
   }
-  // componentDidUpdate(prevProps) {
-  //   if (
-  //     prevProps.confirmedTask[0].confirmation_id !==
-  //     this.props.confirmedTask[0].confirmation_id
-  //   ) {
-  //     axios
-  //       .get(`/api/confirmed/${this.props.confirmedTask[0].confirmation_id}`)
-  //       .then(response => {
-  //         console.log("herroasdsafsf", response.data);
-  //         this.setState({
-  //           confirmation: response.data
-  //         });
-  //       });
-  //   }
-  // }
 
-  // confirmation = () => {
-  //   axios
-  //     .get(`/api/confirmed/${this.props.confirmedTask.confirmation_id}`)
-  //     .then(response => {
-  //       console.log("herroasdsafsf", response.data);
-  //       this.setState({
-  //         confirmation: response.data[0]
-  //       });
-  //     });
-  // };
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      this.setState({
+        confirmation_id: this.props.confirmedTask[0].confirmation_id
+      });
+    }
+  }
 
   render() {
     console.log(this.props, "kadsklfjs9ur");
 
     return (
-      <div className='Confirmation-component'>
-        {this.props.confirmedTask.length &&
-          this.props.confirmedTask[0].confirmation_id}
-          <p>Confirmation Component - check props!</p>
-          <Link to={`/messages/${this.props.confirmedTask[0].confirmation_id}`}><button>Messages</button></Link>
+      <div className="Confirmation-component">
+        {/* {this.props.confirmedTask.length &&
+          this.props.confirmedTask[0].confirmation_id} */}
+
+        <Link to={`/messages/${this.state.confirmation_id}`}>Messages</Link>
       </div>
     );
   }

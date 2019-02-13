@@ -1,13 +1,3 @@
 .Confirmation-component {
-    position: relative;
-    top: 60px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    font-size: 30px;
-    flex-direction: column;
-}
-.Confirmation-component p {
-    color: red;
+  padding-top: 100px;
 }
