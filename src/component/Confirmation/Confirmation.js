@@ -49,7 +49,7 @@ class Confirmation extends Component {
         {this.props.confirmedTask.length &&
           this.props.confirmedTask[0].confirmation_id}
           <p>Confirmation Component - check props!</p>
-          <Link to={`/messages/${this.props.confirmedTask[0].confirmation_id}`}><button>Messages</button></Link>
+          <Link to={`/messages`}><button>Messages</button></Link>
       </div>
     );
   }
