@@ -36,6 +36,7 @@ const authController = require("./controllers/authContoller");
 const taskerController = require("./controllers/taskerController");
 const clientController = require("./controllers/clientController");
 const confirmationController = require("./controllers/confirmationController");
+const messagesController = require("./controllers/messagesController");
 //Endpoints
 //Auth
 app.get("/auth/callback", authController.login);
@@ -51,6 +52,7 @@ app.put("/api/tasker/:tasker_id", taskerController.editProfile);
 app.post("/api/client", clientController.bookTask);
 app.put("/api/client/:client_id", clientController.editTask);
 app.get("/api/pickatasker", clientController.allTaskers);
+app.get("/api/client/:client_id", clientController.getClient);
 
 //Confirmation
 app.post("/api/confirmed", confirmationController.createConfirmed);
@@ -60,6 +62,9 @@ app.get(
 );
 //nodemailer
 app.post('/api/email', clientController.nodemailerEmail);
+
+//Messages
+app.get('/messages/api/:id', messagesController.getClientMessages);
 
 const PORT = 4000;
 app.listen(PORT, () => {

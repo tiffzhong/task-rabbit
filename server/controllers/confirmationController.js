@@ -36,7 +36,7 @@ module.exports = {
         vehicle
       })
       .then(response => {
-        console.log(response, "289374892374");
+        console.log(response, "response from confirm task create");
         res.status(200).send(response);
       })
       .catch(error => {

@@ -116,6 +116,18 @@ module.exports = {
       } else{
         return console.log("Email sent"+ " " + info.response);
       }
-    });
+    })
+  },
+  getClient: (req, res) => {
+    const database = req.app.get("db");
+    const { client_id } = req.params;
+    database
+      .client_get([client_id])
+      .then(client => {
+        res.send(client[0]);
+      })
+      .catch(error => {
+        console.log(error, "error in getclient");
+      });
   }
 };

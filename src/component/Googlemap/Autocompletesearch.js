@@ -16,11 +16,16 @@ class AutocompleteSearch extends Component {
     };
   }
   render() {
-    console.log("this.state.place", this.state.place);
+    console.log("this.props", this.props);
 
     return (
       <div>
         <Autocomplete
+          placeholder={
+            this.props.locationStart
+              ? this.props.locationStart
+              : "Enter a Location"
+          }
           style={{ width: "100%" }}
           onPlaceSelected={place => {
             var lat = place.geometry.location.lat();
