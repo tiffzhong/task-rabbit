@@ -15,7 +15,6 @@ class Messages extends Component {
     }
 
     componentDidMount() {
-        this.getConfirmation();
         this.getConfirmedTask();
     }
 
@@ -35,7 +34,7 @@ class Messages extends Component {
             console.log("LINKS+++++++", e.confirmation_id)
             return (
                 <div>
-                    <Link onClick={()=>this.getMessages()} to={`/messages-personal/${e.confirmation_id && e.confirmation_id}`} >
+                    <Link onClick={()=>this.getMessages(e.confirmation_id)} to={`/messages-personal/${e.confirmation_id && e.confirmation_id}`} >
                         <span className='messages' >
                             <div className='messager-container'>
                                 <img src={e.selfie} />
