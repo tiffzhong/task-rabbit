@@ -1,0 +1,1 @@
+select * from messages where confirmation_id = $1;

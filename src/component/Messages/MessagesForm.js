@@ -18,20 +18,10 @@ class MessagesForm extends Component {
         this.getMessages();
     }
 
-    // componentDidUpdate() {
-    //     this.giveMeThoseProps()
-    //   }
 
-    // giveMeThoseProps = (prevProps) => {
-    //     if (prevProps !== this.props) {
-    //         this.setState({
-    //           client_id: this.props.user.auth0_id
-    //         });
-    //     }
-    // }
 
     getMessages = () => {
-        axios.get(`/messages/api/${this.props.user && this.props.user.auth0_id}`).then(response => {
+        axios.get(`/messages/${this.props.user && this.props.user.auth0_id}`).then(response => {
             console.log('id in messagesForm', this.props.user.auth0_id)
             console.log('getMessages response.data', response.data)
             this.setState({

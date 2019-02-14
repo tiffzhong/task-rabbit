@@ -1,6 +1,9 @@
 footer {
   height: 70px;
   width: 100%;
+  background-color: lightgray;
+  font-size: 18px;
+  position: fixed;
   background-color: #e8ebef;
 }
 .fruit-by-the-foot {

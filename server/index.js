@@ -46,6 +46,7 @@ app.post("/auth/logout", authController.logout);
 
 //Tasker
 app.post("/api/tasker", taskerController.createProfile);
+app.get("/api/tasker", taskerController.getAllTaskers);
 app.get("/api/tasker/:tasker_id", taskerController.getProfile);
 app.put("/api/tasker/:tasker_id", taskerController.editProfile);
 
@@ -68,7 +69,12 @@ app.post('/api/email', clientController.nodemailerEmail);
 app.post('/api/stripe', stripeController.stripeCheckout);
 
 //Messages
-app.get('/messages/api/:id', messagesController.getClientMessages);
+app.get('/messages/:id', messagesController.getClientMessages);
+app.get('/api/personal/messages/:id', messagesController.getMessages);
+app.post('/api/messages', messagesController.createMessage);
+// app.get('/api/messages', messagesController.getMessages);
+
+
 
 const PORT = 4000;
 app.listen(PORT, () => {

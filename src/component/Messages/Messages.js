@@ -2,62 +2,60 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { getConfirmation } from '../../ducks/taskerReducer';
 
 class Messages extends Component {
     constructor(){
         super();
         this.state = {
-        messagesList:[],
-        client_id: ''
+            messagesList:[],
+            client_id: '',
+            
         }
     }
 
     componentDidMount() {
-        // this.getMessages()
+        this.getConfirmation();
     }
 
-    // giveMeThoseProps = () => {
-    //     this.setState({
-    //         client_id: ''
-    //     })
-    // }
+    getConfirmedTask = (confirmation_id) => {
+        axios.get(`/api/confirmed/${confirmation_id}`).then(response => {
+            this.props.getConfirmation(response.data)
+        })
+    }
 
-    //  componentDidUpdate(prevProps) {
-    //     if (prevProps !== this.props) {
-    //       this.setState({
-    //         client_id: this.props.user.auth0_id
-    //       });
-    //     }
-        
-    //   }
 
     
 
     render() {
+        console.log('show me my magical props',this.props)
+        console.log('Its ALIVE!!!!! ====', this.state.personalMessagesList)
         const messages = this.props.confirmedTasks.map(e => {
-            console.log('messagesList', this.state.messagesList)
+            console.log("LINKS+++++++", e.confirmation_id)
             return (
                 <div>
-                    <Link to={`/messages/${this.props.taskerProfile.tasker_profile_id}`} >
+                    <Link onClick={()=>this.getMessages()} to={`/messages-personal/${e.confirmation_id && e.confirmation_id}`} >
                         <span className='messages' >
                             <div className='messager-container'>
-                                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png' />
+                                <img src={e.selfie} />
                                 <div className='messager-info' >
-                                    <p>{e.tasker_id}</p>
+                                    <p>{e.tasker_name}</p>
                                     <p>{e.created_date}</p>
                                 </div>
                             </div>
+                            <div className='details-container' >
                             {
                                 this.props.messages
                                 ?
                                 <p>This is a message test dummy data</p>
                                 :
-                                <p>You Currently have NO messages with this Individual</p>
+                                <p>{e.task_details}</p>
                             }
-                            <div className='price-container' >
+                            </div>
+                            {/* <div className='price-container' >
                                 <p>Expected</p>
                                 <p>$306.00</p>
-                            </div>
+                            </div> */}
                         </span>
                     </Link>
                 </div>
@@ -83,7 +81,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-    
+    getConfirmation: getConfirmation
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Messages);
