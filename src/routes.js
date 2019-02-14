@@ -14,7 +14,6 @@ import Cleaning_Form from "./component/Client_Form/Cleaning_Form";
 import Reviews from "./component/Reviews/Reviews";
 import MessagesForm from "./component/Messages/MessagesForm";
 import PersonalMessages from "./component/Messages/PersonalMessages";
-import EmailModalContent from "./component/Emailmodal/EmailModalContent";
 
 export default (
   <Switch>

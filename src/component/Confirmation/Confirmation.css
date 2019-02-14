@@ -20,14 +20,14 @@
   flex-direction: column;
   padding: 2em 3em;
   border: 1px solid #dce0e6;
-  width: 80%;
+  width: 70%;
   border-radius: 10px;
   margin-bottom: 40px;
 }
 .confirmation-form label {
   display: flex;
   justify-content: flex-start;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   color: #545e69;
 }
 .confirmation-form h6 {
@@ -35,7 +35,7 @@
   justify-content: flex-start;
   font-weight: 500;
   font-size: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 35px;
 }
 .confirmation-name-container {
   display: flex;
@@ -48,11 +48,15 @@
   justify-content: space-evenly;
   flex-direction: row;
 }
-.confirmation-image-container > section {
+.confirmation-image-container {
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 15px;
+}
+.confirmation-image-container h5 {
+  font-size: 20px;
+  font-weight: 300;
 }
 .confirmation-image-container img {
   width: 70px;
@@ -66,6 +70,7 @@
   font-size: 30px;
   font-weight: 200;
 }
+
 .confirmation-buttons-container {
   display: flex;
   justify-content: center;
@@ -79,7 +84,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  width: 350px;
   height: 40px;
   font-size: 20px;
   border-radius: 5px;
@@ -92,4 +97,47 @@
   text-decoration: none;
   color: #51af33;
   padding: 10px;
+}
+
+.confirmation-location-container p2 {
+  display: flex;
+  justify-content: flex-start;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.confirmation-location-container p1 {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 20px;
+}
+.confirmation-options-container p1 {
+  display: flex;
+  justify-content: flex-start;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.confirmation-options-container p2 {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0px;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.google-maps-container{
+  /* background-color: #51af33; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:820px;
+  height: 350px;
+  margin: 10px;
+  margin-top: 140px;
+  position: absolute;
 }

@@ -1,9 +1,61 @@
+.modal {
+  position: fixed;
+  top: 0;
+  padding: 20px;
+}
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+} 
+
 .emailmodal-profile {
-    font-family: "Montserrat", sans-serif;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    font-weight: 300;
-    margin-top: 60px;
+  position: fixed;
+  background: rgb(30, 199, 30);
+  border: 2px solid black;
+  width: 60%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  padding: 15px;
+  transform: translate(-50%, -50%);
   
+  }
+
+  .content-inside-modal .inside-button{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .content-inside-modal input {
+    font-size: 18px;
+    color: green;
+    height: 40px;
+    width: 40%;
+    border: 1px solid rgb(99, 99, 99);
+    padding: 5px;
+    margin: 5px;
+  }
+
+
+  .x-button-modal{
+    top: -10px;
+    right: -10px;
+    position: absolute;
+  }
+  .x-button-modal button {
+    background-color: yellow;
+    border: none;
+    width: 
+    45px;
+    height: 35px;
+    margin-top: 250px;
+    padding: 2px;
+    color: black;
+    font-size: 15px;
+    border-radius: 50%;
   }

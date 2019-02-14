@@ -109,6 +109,11 @@ create table client_review(
     created_date text
 )
 
+create table nodemailerEmail(
+  id serial primary key,
+  email text
+)
+
 
 -- create table picktasker(
 --    id serial primary key,
