@@ -1,14 +1,37 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { connect } from "react-redux";
-class ClientDashboard extends Component {
-  constructor(props) {
-    super(props);
+import { Link } from "react-router-dom";
 
-    this.state = {};
+class ClientDashboard extends Component {
+  constructor() {
+    super();
+    this.state = {
+
+    }
   }
+
+
   render() {
-    return <div>Client Dashboard</div>;
+    return (
+      <div>
+        Client Dashboard
+        <Link to={`/edit-client-profile/${this.props.match.params.client_id}`}>
+          Edit Profile
+        </Link>
+      </div>
+    );
   }
 }
 
-export default ClientDashboard;
+const mapStateToProps = state => {
+
+  return {
+
+  }
+}
+
+const mapDispatchToProps = {
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ClientDashboard);
