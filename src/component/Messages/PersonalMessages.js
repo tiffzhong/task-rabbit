@@ -29,9 +29,9 @@ class PersonalMessages extends Component {
 
     getMessages = () => {
         const id = this.props.match.params.confirmation_id;
-        // console.log('id in getMessages', id)
+        console.log('id in getMessages', id)
         axios.get(`/api/personal/messages/${id}`).then(response => {
-            // console.log('personal messages all the way!', response.data)
+            console.log('personal messages all the way!', response.data)
             this.setState({
                 personalMessagesList: response.data
             })
@@ -41,7 +41,7 @@ class PersonalMessages extends Component {
     getConfirmedTask = () => {
         const {confirmation_id} = this.props.match.params
         axios.get(`/api/confirmed/${confirmation_id}`).then(response => {
-            // console.log('confirmed task', response.data)
+            console.log('confirmed task', response.data)
             this.setState({
                 confirmation: response.data
             })
