@@ -37,6 +37,7 @@ const taskerController = require("./controllers/taskerController");
 const clientController = require("./controllers/clientController");
 const confirmationController = require("./controllers/confirmationController");
 const messagesController = require("./controllers/messagesController");
+const stripeController = require("./controllers/stripeController");
 //Endpoints
 //Auth
 app.get("/auth/callback", authController.login);
@@ -62,6 +63,9 @@ app.get(
 );
 //nodemailer
 app.post('/api/email', clientController.nodemailerEmail);
+
+//stripe
+app.post('/api/stripe', stripeController.stripeCheckout);
 
 //Messages
 app.get('/messages/api/:id', messagesController.getClientMessages);

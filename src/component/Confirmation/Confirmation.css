@@ -93,3 +93,17 @@
   color: #51af33;
   padding: 10px;
 }
+.confirmation-location-container p{
+margin-right: 10px;
+}
+.google-maps-container{
+  /* background-color: #51af33; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:820px;
+  height: 350px;
+  margin: 10px;
+  margin-top: 140px;
+  position: absolute;
+}
