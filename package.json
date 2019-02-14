@@ -15,11 +15,8 @@
     "google-maps-react": "^2.0.2",
     "http-proxy-middleware": "^0.19.1",
     "massive": "^5.7.4",
-<<<<<<< HEAD
     "moment": "^2.24.0",
-=======
     "nodemailer": "^5.1.1",
->>>>>>> tasker_style
     "react": "^16.7.0",
     "react-datetime-picker": "^2.1.1",
     "react-dom": "^16.7.0",
