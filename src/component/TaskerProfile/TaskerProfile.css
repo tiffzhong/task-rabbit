@@ -236,14 +236,26 @@
   border-bottom: 1px solid #dce0e6;
 }
 
-.pop-a-roo section fieldset {
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+.pop-a-roo fieldset {
   color: #242a30;
   font-weight: bold;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 16px;
   padding-bottom: 30px;
 }
-
+.pop-a-roo input[type="checkbox"] {
+  /* -webkit-appearance: none; */
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+.pop-a-roo input[type="checkbox"]:checked {
+  color: green;
+}
 .hide-a-roo {
   display: none;
 }

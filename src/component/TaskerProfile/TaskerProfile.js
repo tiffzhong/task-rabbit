@@ -190,7 +190,7 @@ class TaskerProfile extends Component {
             />
             <div>
               <Autocomplete
-                style={{ width: "390%", marginLeft: "-127px" }}
+                style={{ width: "517%", marginLeft: "-138px" }}
                 onPlaceSelected={place => {
                   this.setState({
                     place: place.formatted_address
@@ -251,16 +251,18 @@ class TaskerProfile extends Component {
                       level, and stud finder.
                     </ul>
                   </p>
-                  <fieldset>
-                    <input
-                      type="checkbox"
-                      name="mounting"
-                      checked={this.state.mounting}
-                      onChange={this.handleChange}
-                    />
-                    I have the skills and qualifications to task in this
-                    category.
-                  </fieldset>
+                  <div className="checkbox-container">
+                    <fieldset>
+                      <input
+                        type="checkbox"
+                        name="mounting"
+                        checked={this.state.mounting}
+                        onChange={this.handleChange}
+                      />
+                      I have the skills and qualifications to task in this
+                      category.
+                    </fieldset>
+                  </div>
                   <div className="tasker-rate-section">
                     <h4>Your Tasker Rate</h4>
                     <section>
