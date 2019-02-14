@@ -125,6 +125,9 @@ nav li {
   background: #51af33;
   color: white;
 }
+.messagesLink {
+  margin-left: 30px;
+}
 .nav-links {
   /* background: purple; */
   width: 700px;
@@ -134,6 +137,7 @@ nav li {
   height: 20px;
   position: relative;
   z-index: 3;
+  margin: 5px;
   /* left: 100px; */
 }
 .nav-links a {
