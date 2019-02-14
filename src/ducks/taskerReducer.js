@@ -4,7 +4,6 @@ const INITIAL_STATE = {
   user: null,
   taskerProfile: [],
   confirmedTask: [],
-  confirmedClientTasks: []
 };
 
 const SET_USER = "SET_USER";
@@ -14,7 +13,7 @@ const EDIT_PROFILE = "EDIT_PROFILE";
 const ERROR = "ERROR";
 const CREATE_CONFIRMATION = "CREATE_CONFIRMATION";
 const GET_CONFIRMATION = "GET_CONFIRMATION";
-const GET_CLIENT_CONFIRMATIONS = "GET_CLIENT_CONFIRMATIONS";
+// const GET_CLIENT_CONFIRMATIONS = "GET_CLIENT_CONFIRMATIONS";
 
 export default function taskerReducer(
   state = INITIAL_STATE,
@@ -36,8 +35,6 @@ export default function taskerReducer(
       return { ...state, confirmedTask: action.payload };
     case GET_CONFIRMATION:
       return { ...state, confirmedTask: action.payload };
-    case GET_CLIENT_CONFIRMATIONS:
-      return { ...state, confirmedClientTasks: action.payload}
     default:
       return { ...state };
   }
@@ -240,11 +237,4 @@ export function getConfirmation(confirmation_id) {
     type: GET_CONFIRMATION,
     payload: confirmation_id
   };
-}
-
-export function getClientConfirmations(client_id) {
-  return {
-    type: GET_CLIENT_CONFIRMATIONS,
-    payload: client_id
-  }
 }

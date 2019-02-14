@@ -206,7 +206,6 @@ class TaskerProfile extends Component {
               onChange={event => this.handleInput(event)}
             />
             <button>Continue</button>
-
           </form>
         </div>
 
@@ -239,26 +238,17 @@ class TaskerProfile extends Component {
                 <section>
                   <h4>Scope of Task</h4>
                   <p>
-                    <li>
-                      Bathrooms: Scrubbing sink, toilet, and shower/bathtub
-                      wiping mirrors.
-                    </li>
-                    <li>
-                      Kitchen: Washing dishes; cleaning/wiping backsplash,
-                      stove, counters, and appliances.
-                    </li>
-                    <li>Floors: Vacuuming, sweeping and/or mopping floors.</li>
-                    <li>
-                      Dusting: Furniture, hard surfaces, and window sills.
-                    </li>
-                    <li>Tidying: Straighten and organize. </li>
-                    <li>
-                      Taking out garbage/recycling and replacing trash bags.
-                    </li>
+                    Check with the Client if they know what material the wall is
+                    made of so you can correctly gauge what tools and skills the
+                    task will require. Clients will expect you to be able to
+                    distinguish between different wall types (i.e. studs and
+                    drywall, brick, concrete, or lath and plaster) in order to
+                    properly mount items into them.
                     <ul>
-                      Clients typically expect you to clean the entire space and
-                      bring your own cleaning supplies and tools (such as a
-                      vacuum, mop, and cleaning sprays) to each task.
+                      You’ll also need to navigate around structural,
+                      electrical, or plumbing materials that might line the
+                      walls. Be sure you have the right tools, such as a drill,
+                      level, and stud finder.
                     </ul>
                   </p>
                   <fieldset>
@@ -282,13 +272,13 @@ class TaskerProfile extends Component {
                           onChange={this.handleChange}
                         />
                       ) : (
-                          <input
-                            name="mountingHourly"
-                            value=""
-                            onChange={this.handleChange}
-                            disabled
-                          />
-                        )}
+                        <input
+                          name="mountingHourly"
+                          value=""
+                          onChange={this.handleChange}
+                          disabled
+                        />
+                      )}
                       <h3>Most Taskers with your experience hired at: </h3>
                       <p>$25/hr</p>
                     </section>
@@ -314,11 +304,15 @@ class TaskerProfile extends Component {
                 <section>
                   <h4>Scope of Task</h4>
                   <p>
-                    <li>Making deliveries of food, clothing, documents,
-                    and other items.
-                    </li> <ul> Note: You will not be reimbursed for travel
-                    expenses such as gas, parking, or public transportation fees.
-                    These costs should be included in your hourly rate.</ul>
+                    <li>
+                      Making deliveries of food, clothing, documents, and other
+                      items.
+                    </li>
+                    <ul>
+                      Note: You will not be reimbursed for travel expenses such
+                      as gas, parking, or public transportation fees. These
+                      costs should be included in your hourly rate.
+                    </ul>
                   </p>
                   <fieldset>
                     <input
@@ -328,8 +322,8 @@ class TaskerProfile extends Component {
                       onChange={this.handleChange}
                     />
                     I have the skills and qualifications to task in this
-                     category.
-                   </fieldset>
+                    category.
+                  </fieldset>
                   <div className="tasker-rate-section">
                     <h4> Your Tasker Rate </h4>
                     <section>
@@ -341,13 +335,13 @@ class TaskerProfile extends Component {
                           onChange={this.handleChange}
                         />
                       ) : (
-                          <input
-                            name="deliveryHourly"
-                            value=""
-                            onChange={this.handleChange}
-                            disabled
-                          />
-                        )}
+                        <input
+                          name="deliveryHourly"
+                          value=""
+                          onChange={this.handleChange}
+                          disabled
+                        />
+                      )}
                       <h3>Most Taskers with your experience hired at:</h3>
                       <p>$17/hr</p>
                     </section>
@@ -378,10 +372,13 @@ class TaskerProfile extends Component {
                     <li>Landscaping.</li>
                     <li>Watering.</li>
                     <li>Hauling of yard waste.</li>
-                    <ul>Clients typically expect you to clean the entire space and bring your
-                      own supplies. Make sure to check with your Client if they have
-                      their own tools (such as a lawn mower and rake or blower), or
-                    if they expect you to bring your own to each task.</ul>
+                    <ul>
+                      Clients typically expect you to clean the entire space and
+                      bring your own supplies. Make sure to check with your
+                      Client if they have their own tools (such as a lawn mower
+                      and rake or blower), or if they expect you to bring your
+                      own to each task.
+                    </ul>
                   </p>
                   <fieldset>
                     <input
@@ -391,7 +388,7 @@ class TaskerProfile extends Component {
                       onChange={this.handleChange}
                     />
                     I have the skills and qualifications to task in this
-                  category.
+                    category.
                   </fieldset>
                   <div className="tasker-rate-section">
                     <h4> Your Tasker Rate </h4>
@@ -404,13 +401,13 @@ class TaskerProfile extends Component {
                           onChange={this.handleChange}
                         />
                       ) : (
-                          <input
-                            name="yardHourly"
-                            value=""
-                            onChange={this.handleChange}
-                            disabled
-                          />
-                        )}
+                        <input
+                          name="yardHourly"
+                          value=""
+                          onChange={this.handleChange}
+                          disabled
+                        />
+                      )}
                       <h3>Most Taskers with your experience hired at: </h3>
                       <p>$18/hr</p>
                     </section>
@@ -439,9 +436,12 @@ class TaskerProfile extends Component {
                     <li>Taking care of small paint jobs.</li>
                     <li>Changing light bulbs.</li>
                     <li>Repairing broken door handles.</li>
-                    <ul> Before arriving, be sure you
-                     have the right tools, such as a drill, screw driver, level,stud finder, and check whether the Client needs special supplies.
-                   </ul>
+                    <ul>
+                      {" "}
+                      Before arriving, be sure you have the right tools, such as
+                      a drill, screw driver, level,stud finder, and check
+                      whether the Client needs special supplies.
+                    </ul>
                   </p>
                   <fieldset>
                     <input
@@ -451,26 +451,26 @@ class TaskerProfile extends Component {
                       onChange={this.handleChange}
                     />
                     I have the skills and qualifications to task in this
-                      category.
-                     </fieldset>
+                    category.
+                  </fieldset>
                   <div className="tasker-rate-section">
                     <h4>Your Tasker Rate</h4>
                     <section>
                       $
-                  {this.state.home ? (
+                      {this.state.home ? (
                         <input
                           name="homeHourly"
                           value={this.state.homeHourly}
                           onChange={this.handleChange}
                         />
                       ) : (
-                          <input
-                            name="homeHourly"
-                            value=""
-                            onChange={this.handleChange}
-                            disabled
-                          />
-                        )}
+                        <input
+                          name="homeHourly"
+                          value=""
+                          onChange={this.handleChange}
+                          disabled
+                        />
+                      )}
                       <h3>Most Taskers with your experience hired at:</h3>
                       <p>$23/hr</p>
                     </section>
@@ -495,16 +495,17 @@ class TaskerProfile extends Component {
                 <section>
                   <h4>Scope of Task</h4>
                   <p>
-                    <li>Moving boxes and furniture into and out of
-                    homes.</li>
+                    <li>Moving boxes and furniture into and out of homes.</li>
                     <li>Carrying boxes and furniture up and down stairs.</li>
                     <li>Helping with packing or unpacking items.</li>
-                    <ul> It can help to ask
-                    the Client in advance if there will be stairs, an elevator, or
-                    a loading dock, and to inquire about stairwell and doorway
-                    width. Make sure to check with Clients if they need supplies
-                    such as packing tape, boxes, moving blankets, or a rented
-                    hauling vehicle.</ul>
+                    <ul>
+                      {" "}
+                      It can help to ask the Client in advance if there will be
+                      stairs, an elevator, or a loading dock, and to inquire
+                      about stairwell and doorway width. Make sure to check with
+                      Clients if they need supplies such as packing tape, boxes,
+                      moving blankets, or a rented hauling vehicle.
+                    </ul>
                   </p>
                   <fieldset>
                     <input
@@ -514,7 +515,7 @@ class TaskerProfile extends Component {
                       onChange={this.handleChange}
                     />
                     I have the skills and qualifications to task in this
-                      category.
+                    category.
                   </fieldset>
                   <div className="tasker-rate-section">
                     <h4>Your Tasker Rate</h4>
@@ -527,13 +528,13 @@ class TaskerProfile extends Component {
                           onChange={this.handleChange}
                         />
                       ) : (
-                          <input
-                            name="movingHourly"
-                            value=""
-                            onChange={this.handleChange}
-                            disabled
-                          />
-                        )}
+                        <input
+                          name="movingHourly"
+                          value=""
+                          onChange={this.handleChange}
+                          disabled
+                        />
+                      )}
                       <h3>Most Taskers with your experience hired at: </h3>
                       <p>$25/hr</p>
                     </section>
@@ -556,12 +557,22 @@ class TaskerProfile extends Component {
                 <section>
                   <h4>Scope of Task</h4>
                   <p>
-                    <ul>Spend quality time with the animal(s) in the client's home. Care includes:</ul>
+                    <ul>
+                      Spend quality time with the animal(s) in the client's
+                      home. Care includes:
+                    </ul>
                     <li>Feeding and providing water.</li>
                     <li>Dispensing and adminstering medication</li>
                     <li>Exercising </li>
-                    <li>Most importantly, being there to play and comfort the animal(s) while their owners are away!</li>
-                    <ul> Experienced in caring, triage, and                     handling a variety of animals.</ul>
+                    <li>
+                      Most importantly, being there to play and comfort the
+                      animal(s) while their owners are away!
+                    </li>
+                    <ul>
+                      {" "}
+                      Experienced in caring, triage, and handling a variety of
+                      animals.
+                    </ul>
                   </p>
                   <fieldset>
                     <input
@@ -570,26 +581,27 @@ class TaskerProfile extends Component {
                       checked={this.state.pet}
                       onChange={this.handleChange}
                     />
-                    I have the skills and qualifications to task in this category.
+                    I have the skills and qualifications to task in this
+                    category.
                   </fieldset>
                   <div className="tasker-rate-section">
                     <h4>Your Tasker Rate</h4>
                     <section>
                       $
-                  {this.state.pet ? (
+                      {this.state.pet ? (
                         <input
                           name="petHourly"
                           value={this.state.petHourly}
                           onChange={this.handleChange}
                         />
                       ) : (
-                          <input
-                            name="petHourly"
-                            value=""
-                            onChange={this.handleChange}
-                            disabled
-                          />
-                        )}
+                        <input
+                          name="petHourly"
+                          value=""
+                          onChange={this.handleChange}
+                          disabled
+                        />
+                      )}
                       <h3>Most Taskers with your experience hired at: </h3>
                       <p>$15/hr</p>
                     </section>
@@ -620,12 +632,20 @@ class TaskerProfile extends Component {
                     <li>Reading assembly instructions.</li>
                     <li> Assembling furniture.</li>
                     <li> Carrying furniture up or down stairs.</li>
-                    <li> Arranging furniture in the Client's home, and securing it to the wall if so indicated in assembly instructions. </li>
-                    <li>Removing recycling and garbage, such as empty boxes. </li>
-                    <ul>It can help to get the brand
-                     and item number from your Client upfront so you can scope what
-                     tools are needed. Before arriving, be sure you have the right
-                  tools, and check whether the Client needs special supplies.{" "}</ul>
+                    <li>
+                      {" "}
+                      Arranging furniture in the Client's home, and securing it
+                      to the wall if so indicated in assembly instructions.{" "}
+                    </li>
+                    <li>
+                      Removing recycling and garbage, such as empty boxes.{" "}
+                    </li>
+                    <ul>
+                      It can help to get the brand and item number from your
+                      Client upfront so you can scope what tools are needed.
+                      Before arriving, be sure you have the right tools, and
+                      check whether the Client needs special supplies.{" "}
+                    </ul>
                   </p>
                   <fieldset>
                     <input
@@ -635,26 +655,26 @@ class TaskerProfile extends Component {
                       onChange={this.handleChange}
                     />
                     I have the skills and qualifications to task in this
-                     category.
+                    category.
                   </fieldset>
                   <div className="tasker-rate-section">
                     <h4> Your Tasker Rate</h4>
                     <section>
                       $
-                  {this.state.furniture ? (
+                      {this.state.furniture ? (
                         <input
                           name="furnitureHourly"
                           value={this.state.furnitureHourly}
                           onChange={this.handleChange}
                         />
                       ) : (
-                          <input
-                            name="furnitureHourly"
-                            value=""
-                            onChange={this.handleChange}
-                            disabled
-                          />
-                        )}
+                        <input
+                          name="furnitureHourly"
+                          value=""
+                          onChange={this.handleChange}
+                          disabled
+                        />
+                      )}
                       <h3>Most Taskers with your experience hired at: </h3>
                       <p>$19/hr</p>
                     </section>
@@ -679,19 +699,34 @@ class TaskerProfile extends Component {
                 <section>
                   <h4> Scope of Task</h4>
                   <p>
-                    <li> Bathrooms: Scrubbing sink, toilet, and
-                   shower/bathtub; wiping mirrors. </li>
-                    <li> Kitchen: Washing dishes;
-                   cleaning/wiping backsplash, stove, counters, and appliances. </li>
-                    <li> Floors: Vacuuming, sweeping and/or mopping floors. </li>
-                    <li> Dusting: Furniture, hard surfaces, and window sills.</li>
+                    <li>
+                      {" "}
+                      Bathrooms: Scrubbing sink, toilet, and shower/bathtub;
+                      wiping mirrors.{" "}
+                    </li>
+                    <li>
+                      {" "}
+                      Kitchen: Washing dishes; cleaning/wiping backsplash,
+                      stove, counters, and appliances.{" "}
+                    </li>
+                    <li>
+                      {" "}
+                      Floors: Vacuuming, sweeping and/or mopping floors.{" "}
+                    </li>
+                    <li>
+                      {" "}
+                      Dusting: Furniture, hard surfaces, and window sills.
+                    </li>
                     <li> Tidying: Straighten and organize.</li>
-                    <li> Taking out garbage/recycling and
-                   replacing trash bags.</li>
-                    <ul>Clients typically expect you to clean
-                     the entire space and bring your own cleaning supplies and
-                     tools (such as a vacuum, mop, and cleaning sprays) to each
-                   task.</ul>
+                    <li>
+                      {" "}
+                      Taking out garbage/recycling and replacing trash bags.
+                    </li>
+                    <ul>
+                      Clients typically expect you to clean the entire space and
+                      bring your own cleaning supplies and tools (such as a
+                      vacuum, mop, and cleaning sprays) to each task.
+                    </ul>
                   </p>
                   <fieldset>
                     <input
@@ -701,26 +736,26 @@ class TaskerProfile extends Component {
                       onChange={this.handleChange}
                     />
                     I have the skills and qualifications to task in this
-                     category.
+                    category.
                   </fieldset>
                   <div className="tasker-rate-section">
                     <h4> Your Tasker Rate</h4>
                     <section>
                       $
-                  {this.state.cleaning ? (
+                      {this.state.cleaning ? (
                         <input
                           name="cleaningHourly"
                           value={this.state.cleaningHourly}
                           onChange={this.handleChange}
                         />
                       ) : (
-                          <input
-                            name="cleaningHourly"
-                            value=""
-                            onChange={this.handleChange}
-                            disabled
-                          />
-                        )}
+                        <input
+                          name="cleaningHourly"
+                          value=""
+                          onChange={this.handleChange}
+                          disabled
+                        />
+                      )}
                       <h3>Most Taskers with your experience hired at: </h3>
                       <p>$17/hr</p>
                     </section>
@@ -739,13 +774,18 @@ class TaskerProfile extends Component {
                 className={
                   this.state.cookingtoggle ? "pop-a-roo" : "hide-a-roo"
                 }
-              ><section>
+              >
+                <section>
                   <h4>Scope of Task</h4>
                   <p>
                     <li>Culinary experience</li>
                     <li>Food safety</li>
                     <li>Food preparation</li>
-                    <ul>Be able to come to a client's home with everything needed including groceries and prepare a meal of the client's choice in their kitchen.</ul>
+                    <ul>
+                      Be able to come to a client's home with everything needed
+                      including groceries and prepare a meal of the client's
+                      choice in their kitchen.
+                    </ul>
                   </p>
                   <fieldset>
                     <input
@@ -755,26 +795,26 @@ class TaskerProfile extends Component {
                       onChange={this.handleChange}
                     />
                     I have the skills and qualifications to task in this
-                     category.
+                    category.
                   </fieldset>
                   <div className="tasker-rate-section">
                     <h4>Your Tasker Rate</h4>
                     <section>
                       $
-                  {this.state.cooking ? (
+                      {this.state.cooking ? (
                         <input
                           name="cookingHourly"
                           value={this.state.cookingHourly}
                           onChange={this.handleChange}
                         />
                       ) : (
-                          <input
-                            name="cookingHourly"
-                            value=""
-                            onChange={this.handleChange}
-                            disabled
-                          />
-                        )}
+                        <input
+                          name="cookingHourly"
+                          value=""
+                          onChange={this.handleChange}
+                          disabled
+                        />
+                      )}
                       <h3>Most Taskers with your experience hired at: </h3>
                       <p>$25/hr</p>
                     </section>
@@ -783,43 +823,45 @@ class TaskerProfile extends Component {
               </div>
             </div>
 
-            <button
-              className="submit-button"
-              onClick={() =>
-                createProfile(
-                  name,
-                  email,
-                  selfie,
-                  phone,
-                  place,
-                  about,
-                  mounting,
-                  mountingHourly,
-                  delivery,
-                  deliveryHourly,
-                  yard,
-                  yardHourly,
-                  home,
-                  homeHourly,
-                  moving,
-                  movingHourly,
-                  pet,
-                  petHourly,
-                  furniture,
-                  furnitureHourly,
-                  cleaning,
-                  cleaningHourly,
-                  cooking,
-                  cookingHourly,
-                  user.auth0_id
-                )
-              }
-            >
-              Submit
-            </button>
+            <div className="tasker-profile-submit">
+              <button
+                className="submit-button"
+                onClick={() =>
+                  createProfile(
+                    name,
+                    email,
+                    selfie,
+                    phone,
+                    place,
+                    about,
+                    mounting,
+                    mountingHourly,
+                    delivery,
+                    deliveryHourly,
+                    yard,
+                    yardHourly,
+                    home,
+                    homeHourly,
+                    moving,
+                    movingHourly,
+                    pet,
+                    petHourly,
+                    furniture,
+                    furnitureHourly,
+                    cleaning,
+                    cleaningHourly,
+                    cooking,
+                    cookingHourly,
+                    user.auth0_id
+                  )
+                }
+              >
+                Submit
+              </button>
+            </div>
           </form>
         </div>
-      </div >
+      </div>
     );
   }
 }

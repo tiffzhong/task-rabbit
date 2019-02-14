@@ -22,9 +22,7 @@ class AutocompleteSearch extends Component {
       <div>
         <Autocomplete
           placeholder={
-            this.props.locationStart
-              ? this.props.locationStart
-              : "Enter a Location"
+            this.props.location ? this.props.location : "Enter a Location"
           }
           style={{ width: "100%" }}
           onPlaceSelected={place => {

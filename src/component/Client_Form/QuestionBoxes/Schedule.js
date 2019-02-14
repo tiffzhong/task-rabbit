@@ -15,6 +15,8 @@ import {
 import moment from "moment";
 class Schedule extends Component {
   render() {
+    console.log(this.props, "THIS IS WHAT IM WORKING ON");
+
     return (
       <div>
         {this.props.durationToggle ? (
@@ -65,7 +67,7 @@ class Schedule extends Component {
                     <h2>Schedule Your Task</h2>
                     <div className="small-question-box">
                       <div className="calendar">
-                        <Calendar />
+                        <Calendar default={this.props.startDate} />
                       </div>
                     </div>
                   </div>
@@ -73,7 +75,7 @@ class Schedule extends Component {
                     <h2>Task End Date & Time</h2>
                     <div className="small-question-box">
                       <div className="calendar">
-                        <CalendarEnd />
+                        <CalendarEnd default={this.props.endDate} />
                       </div>
                     </div>
                   </div>

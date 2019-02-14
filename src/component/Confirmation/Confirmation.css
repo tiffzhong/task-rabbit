@@ -101,14 +101,14 @@
 
 .confirmation-location-container p2 {
   display: flex;
-  justify-content: flex-start;
+  align-items: flex-start;
   font-weight: 500;
   font-size: 20px;
 }
 
 .confirmation-location-container p1 {
   display: flex;
-  justify-content: flex-start;
+  align-items: flex-start;
   margin: 0px;
   padding-bottom: 20px;
   margin-bottom: 20px;
@@ -117,27 +117,30 @@
 }
 .confirmation-options-container p1 {
   display: flex;
-  justify-content: flex-start;
+  align-items: flex-start;
   font-weight: 500;
   font-size: 20px;
   margin-bottom: 5px;
 }
 .confirmation-options-container p2 {
   display: flex;
-  justify-content: flex-start;
+  align-items: flex-start;
   margin: 0px;
   font-weight: 500;
   font-size: 20px;
   margin-bottom: 20px;
 }
-.google-maps-container{
-  /* background-color: #51af33; */
+
+.google-mapper {
+  height: 400px;
+  width: 100%;
+}
+.google-maps-container {
+  position: relative;
+  margin-bottom: -90px;
+}
+
+.confirmation-payment-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width:820px;
-  height: 350px;
-  margin: 10px;
-  margin-top: 140px;
-  position: absolute;
+  flex-direction: column;
 }

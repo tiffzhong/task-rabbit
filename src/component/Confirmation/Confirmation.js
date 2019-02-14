@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import { getConfirmation } from "../../ducks/taskerReducer";
 import { Link } from "react-router-dom";
 import moment from "moment";
-import Stripecheckout from 'react-stripe-checkout';
+import Stripecheckout from "react-stripe-checkout";
 
 class Confirmation extends Component {
   constructor(props) {
@@ -15,13 +15,13 @@ class Confirmation extends Component {
     this.state = {
       tasker: "",
       client: "",
-      total: [],
+      total: []
       // confirmation= null
       // confirmation_id: "",
       // client_id: "",
       // confirmation_id: 0,
       // created_date: "",
-      duration: "",
+      // duration: "",
       // end_date: "",
       // lat: "",
       // location_end: "",
@@ -30,29 +30,42 @@ class Confirmation extends Component {
       // start_date: "",
       // task: "",
       // task_details: "",
-      tasker_hourly: 0,
+      // tasker_hourly: 0,
       // tasker_id: "",
-      // vehicle: "",
-      shortDuration: []
+      // vehicle: ""
     };
   }
 
   componentDidMount() {
     this.propsToState();
-    this.totalCost()
-   
+    this.totalCost();
+    this.getUpdate();
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
-      console.log('Hello CDU')
       this.getClient();
       this.getTasker();
       this.propsToState();
-      this.totalCost()
-      this.setState({duration: this.props.confirmedTask[0].duration})
+      this.totalCost();
+      // this.setState({ duration: this.props.confirmedTask[0].duration });
     }
   }
+
+  getUpdate = () => {
+    console.log("get update ran");
+    if (this.props.match.params.confirmation_id) {
+      console.log("get update ran and passed");
+      axios
+        .get(`/api/confirmed/${this.props.match.params.confirmation_id}`)
+        .then(res => {
+          console.log(res.data, "getting hte uupdate");
+          this.setState({
+            ...res.data
+          });
+        });
+    }
+  };
 
   getTasker = () => {
     axios
@@ -67,7 +80,7 @@ class Confirmation extends Component {
 
   getClient = () => {
     axios
-      .get(`/api/client/${this.props.confirmedTask[0].client_id}`)
+      .get(`/api/client/${this.props.confirmedTask.client_id}`)
       .then(response => {
         console.log(response.data, "resi-poo-client");
         this.setState({
@@ -76,53 +89,37 @@ class Confirmation extends Component {
       });
   };
 
-  propsToState() {
+  propsToState = () => {
     this.setState({
       ...this.props.confirmedTask[0]
-      // duration: this.props.confirmedTask[0]
     });
   };
 
-  totalCost = ()=>{
-   
-     var short = "Est. 1 hr";
-     let medium = "Est. 2-3 hrs";
-     let long = "Est. 4+ hrs";
+  totalCost = () => {
+    //  short: "Est. 1 hr",
+    //  medium: "Est. 2-3 hrs",
+    // long: "Est. 4+ hrs"
+  };
 
-    //  let shortDuration = [];
-     if(this.state.duration === short ) {
-       this.setState({
-         shortDuration: 1
-       })
-      }
-      //  let medDuration = if( this.state.duration === medium) {return 3 };
-      //  let longDuration = if(this.state.duration === long) { return 4};
-      
-      
-      // let amount = shortDuration * this.state.task_hourly
-      console.log("State TiFF", this.state)
-      console.log("statetask", this.state.task_hourly )
-      //  console.log("stateduration", this.state.duration)
-      //  var amount = duration * task_hourly
-      // console.log("need a num", shortDuration)
-      // console.log("amount", amount)
-      // this.setState({
-      //   total: amount
-      // })
-      console.log("total in state", this.state.total)
-    }
-    
-    ontoken = (token) => {
-      // const { total } = this.state
-      axios.post("/api/stripe", { token}).then(response => alert("Successful payment"))
-    };
-    
+  ontoken = token => {
+    // const { total } = this.state
+    axios
+      .post("/api/stripe", { token })
+      .then(response => alert("Successful payment"));
+  };
 
-    render() {
-      console.log("sean!!", this.state.shortDuration)
-      
-      console.log(this.props, "kadsklfjs9ur");
+  render() {
+    // console.log("sean!!", this.state.shortDuration);
+
+    console.log(this.props, "this.props in Confirmation.js");
     console.log(this.state, "leh stateh");
+
+    const hourly = {
+      "Est. 1 hr": 1,
+      "Est. 2-3 hrs": 2,
+      "Est. 4+ hrs": 4
+    };
+
     const taskNames = {
       pet: "Pet Services",
       mounting: "Mounting & Installation",
@@ -182,7 +179,7 @@ class Confirmation extends Component {
                 : ""}
               {"  "}
               {end_date
-                ? moment(" - " + end_date).format("MMMM Do YYYY (h:mm a)")
+                ? " - " + moment(end_date).format("MMMM Do YYYY (h:mm a)")
                 : ""}
             </h6>
           </div>
@@ -196,10 +193,13 @@ class Confirmation extends Component {
             </p2>
             <br />
             <p1>{location_end ? "End: " + location_end : ""}</p1>
+<<<<<<< HEAD
             {/* <h6>
               <p>Start: {location_start ? location_start : "location_start"} </p>
               <p>End: {location_end ? location_end : "location_end"}</p>
             </h6> */}
+=======
+>>>>>>> dfadc4576475b13411adc39e0300212c2f56882d
           </div>
 
           <div className="confirmation-options-container">
@@ -216,25 +216,25 @@ class Confirmation extends Component {
             <label>Task Description</label>
             <h6>{task_details ? task_details : "Details About Task"}</h6>
           </div>
-          <div className="google-maps-container"><ConfirmationMap lat={this.state.lat} lng={this.state.long}/></div>
-         
+          <div className="google-maps-container">
+            <ConfirmationMap lat={lat} lng={long} />
+          </div>
 
-          <p>You are charged only after your task is completed</p>
-          <p>total:{this.state.total} </p>
-          <div className="confirmation-buttons-container">
-            {/* <button>Checkout With Stripe</button> */}
-            {/* <button className="confirmation-submit-button"> */}
-            <Stripecheckout
-               ComponentClass="stripe"
-               name="TaskRabbit"
-               email="test@gmail.com"
-              //  amount={total * 100}
-               token={this.ontoken}
-               allowRememberMe={false}
-               stripeKey={process.env.REACT_APP_STRIPE_KEY}
-            />
-
-
+          <div className="confirmation-payment-container">
+            <p>You are charged only after your task is completed</p>
+            <p>Total: ${hourly[duration] * tasker_hourly}.00 </p>
+            <div className="confirmation-buttons-container">
+              {/* <button>Checkout With Stripe</button> */}
+              <Stripecheckout
+                ComponentClass="stripe"
+                name="TaskRabbit"
+                email="test@gmail.com"
+                //  amount={total * 100}
+                token={this.ontoken}
+                allowRememberMe={false}
+                stripeKey={process.env.REACT_APP_STRIPE_KEY}
+              />
+            </div>
           </div>
           <Link to={`/edit-client-form/${this.state.confirmation_id}`}>
             Edit Task
