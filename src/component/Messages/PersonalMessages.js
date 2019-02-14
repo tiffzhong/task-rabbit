@@ -109,7 +109,6 @@ class PersonalMessages extends Component {
         return (
             <div className='PersonalMessages-component'>
                 <div className='PersonalMessages-inner-component' >
-                    <p>personalMessages</p>
                     <div className='messages-header'>
                         <img src={taskerInfo.selfie} />
                         <h4>{taskerInfo.tasker_name}</h4>

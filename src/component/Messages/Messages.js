@@ -33,7 +33,7 @@ class Messages extends Component {
         const messages = this.props.confirmedTasks.map(e => {
             console.log("LINKS+++++++", e.confirmation_id)
             return (
-                <div>
+                <div className={this.props.confirmedTasks ? '' : 'hide'}>
                     <Link onClick={()=>this.getMessages(e.confirmation_id)} to={`/messages-personal/${e.confirmation_id && e.confirmation_id}`} >
                         <span className='messages' >
                             <div className='messager-container'>

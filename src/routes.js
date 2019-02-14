@@ -14,6 +14,7 @@ import Cleaning_Form from "./component/Client_Form/Cleaning_Form";
 import Reviews from "./component/Reviews/Reviews";
 import MessagesForm from "./component/Messages/MessagesForm";
 import PersonalMessages from "./component/Messages/PersonalMessages";
+import TaskerMessages from "./component/Messages/TaskerMessages";
 
 export default (
   <Switch>
@@ -35,7 +36,8 @@ export default (
     <Route path="/edit-client-form/:confirmation_id" component={ClientForm} />
     <Route path="/review" component={Reviews} />
     <Route path="/messages/:client_id" component={MessagesForm} />
-    <Route path='/messages' component={MessagesForm} />
+    <Route path='/confirmedTasks' component={MessagesForm} />
     <Route path="/messages-personal/:confirmation_id" component={PersonalMessages} />
+    <Route path='/tasker-message' component={TaskerMessages} />
   </Switch>
 );

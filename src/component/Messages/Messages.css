@@ -1,5 +1,6 @@
 .messagesForm-component {
     background: whitesmoke;
+    height: 1000px;
     width: 100vw;
     position: relative;
     top: 60px;
@@ -14,7 +15,6 @@
     border: solid 1px rgb(184, 182, 182);
     box-shadow: 0px 4px 12px 2px lightgray;
     position:relative;
-    background: white;
 }
 .messages {
     display: flex;
@@ -126,7 +126,7 @@
 
 .clientMessage {
     padding: 20px;
-    background: blue;
+    background: #51af33;
     color: white;
     border-radius: 10px;
     position: relative;
@@ -166,8 +166,16 @@
 .createMessage-container textarea {
     resize: none;
     width: 400px;
+    border: solid .5px #51af33;
 }
 .createMessage-container button {
     margin-left: 10px;
     width: 60px;
+    background: white;
+    color: #51af33;
+    border: #51af33;
+}
+.createMessage-container button:hover {
+    background: #51af33;
+    color: white;
 }

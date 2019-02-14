@@ -32,13 +32,12 @@ class MessagesForm extends Component {
 
     render() {
         console.log('client id ------', this.state.client_id);
+        const { confirmedTasks } = this.state;
         return (
             <div className='messagesForm-component'>
-                <p>Messages Component</p>
-                <div className='messages-form-container'>
-                    <p>Messages-form-Container</p>
+                <div className={ confirmedTasks ? 'messages-form-container' : 'hide'}>
                     <Messages 
-                        confirmedTasks={this.state.confirmedTasks}
+                        confirmedTasks={confirmedTasks}
                     />
                 </div>
             </div>
