@@ -99,6 +99,7 @@
 /* ==========TASKER SKILL SECTION ==========*/
 .tasker-skill-form {
   background-color: #f9fafb;
+  color: #242a30;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -120,7 +121,7 @@
   border: 1px solid #dce0e6;
   background-color: white;
   display: flex;
-
+  border-radius: 10px;
   flex-direction: column;
   margin: 20px;
 }

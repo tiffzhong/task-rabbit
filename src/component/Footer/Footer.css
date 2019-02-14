@@ -3,31 +3,68 @@ footer {
   width: 100%;
   background-color: lightgray;
   font-size: 18px;
+  position: fixed;
+  background-color: #e8ebef;
+}
+.fruit-by-the-foot {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-footer div {
-  padding-top: 25px;
-  margin: 0 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.footer-left-links {
+  flex-grow: 1;
 }
-.footer-links {
-  /* background: red; */
-  /* margin-top: 15px;
-  margin: 20px; */
-  display: flex;
-  align-items: center;
+.logo-image-footer {
+  flex-grow: 7;
+}
+
+.footer-right-links {
+  flex-grow: 1;
+}
+.logo-image-footer img {
+  width: 150px;
 }
 footer p {
+  font-size: 16px;
   color: black;
   font-weight: 100;
 }
 footer a {
+  font-size: 16px;
   text-decoration: none;
   color: black;
   font-weight: 100;
 }
+footer a i {
+  font-size: 20px;
+  letter-spacing: 5px;
+}
 footer a:hover {
   color: #51af33;
+  font-weight: bold;
+}
+
+@media (max-width: 800px) {
+  footer p {
+    font-size: 16px;
+  }
+  footer a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  footer {
+    height: 90px;
+  }
+  .fruit-by-the-foot {
+    position: relative;
+    padding-top: 0px;
+    flex-direction: column;
+  }
+  .fruit-by-the-foot > div {
+    padding: 3px;
+  }
 }

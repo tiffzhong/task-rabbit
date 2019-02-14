@@ -1,48 +1,87 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { getConfirmation } from '../../ducks/taskerReducer';
 
- class Messages extends Component {
-     render() {
+class Messages extends Component {
+    constructor(){
+        super();
+        this.state = {
+            messagesList:[],
+            client_id: '',
+            
+        }
+    }
+
+    componentDidMount() {
+        this.getConfirmation();
+    }
+
+    getConfirmedTask = (confirmation_id) => {
+        axios.get(`/api/confirmed/${confirmation_id}`).then(response => {
+            this.props.getConfirmation(response.data)
+        })
+    }
+
+
+    
+
+    render() {
+        console.log('show me my magical props',this.props)
+        console.log('Its ALIVE!!!!! ====', this.state.personalMessagesList)
+        const messages = this.props.confirmedTasks.map(e => {
+            console.log("LINKS+++++++", e.confirmation_id)
+            return (
+                <div>
+                    <Link onClick={()=>this.getMessages()} to={`/messages-personal/${e.confirmation_id && e.confirmation_id}`} >
+                        <span className='messages' >
+                            <div className='messager-container'>
+                                <img src={e.selfie} />
+                                <div className='messager-info' >
+                                    <p>{e.tasker_name}</p>
+                                    <p>{e.created_date}</p>
+                                </div>
+                            </div>
+                            <div className='details-container' >
+                            {
+                                this.props.messages
+                                ?
+                                <p>This is a message test dummy data</p>
+                                :
+                                <p>{e.task_details}</p>
+                            }
+                            </div>
+                            {/* <div className='price-container' >
+                                <p>Expected</p>
+                                <p>$306.00</p>
+                            </div> */}
+                        </span>
+                    </Link>
+                </div>
+            )
+        })
         // console.log('what are my match params bitch',this.props.match.params)
         console.log('props in messages', this.props)
         return (
             <div className='messages-component'>
-                <Link to={`/messages/${this.props.tasker_id}`} ><span className='messages' >
-                    <div className='messager-container'>
-                        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png' />
-                        <div className='messager-info' >
-                            <p>Natalie P.</p>
-                            <p>Date</p>
-                        </div>
-                    </div>
-                    {
-                        this.props.messages
-                        ?
-                        <p>This is a message test dummy data</p>
-                        :
-                        <p>You Currently have NO messages with this Individual</p>
-                    }
-                    <div className='price-container' >
-                        <p>Expected</p>
-                        <p>$306.00</p>
-                    </div>
-                </span></Link>
+                {messages}
             </div>
         );
     }
 }
 
 const mapStateToProps = state => {
-    const { taskerProfile, confirmedTask } = state.tasker
+    const { user, taskerProfile, confirmedTask } = state.tasker
     return {
         taskerProfile,
-        confirmedTask
+        confirmedTask,
+        user
     }
 }
 
 const mapDispatchToProps = {
-    
+    getConfirmation: getConfirmation
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Messages);

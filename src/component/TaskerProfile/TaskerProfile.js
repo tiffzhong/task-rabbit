@@ -206,7 +206,7 @@ class TaskerProfile extends Component {
               onChange={event => this.handleInput(event)}
             />
             <button>Continue</button>
-            <button><Link to="/discount">Get $10!</Link></button>
+
           </form>
         </div>
 

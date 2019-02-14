@@ -3,7 +3,7 @@ import axios from "axios";
 const INITIAL_STATE = {
   user: null,
   taskerProfile: [],
-  confirmedTask: []
+  confirmedTask: [],
 };
 
 const SET_USER = "SET_USER";
@@ -13,6 +13,7 @@ const EDIT_PROFILE = "EDIT_PROFILE";
 const ERROR = "ERROR";
 const CREATE_CONFIRMATION = "CREATE_CONFIRMATION";
 const GET_CONFIRMATION = "GET_CONFIRMATION";
+// const GET_CLIENT_CONFIRMATIONS = "GET_CLIENT_CONFIRMATIONS";
 
 export default function taskerReducer(
   state = INITIAL_STATE,
