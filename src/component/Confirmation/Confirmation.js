@@ -189,7 +189,6 @@ class Confirmation extends Component {
 
           <div className="confirmation-location-container">
             <label>Task Location</label>
-<<<<<<< HEAD
             <p2>
               {location_start
                 ? "Start: " + location_start
@@ -197,12 +196,10 @@ class Confirmation extends Component {
             </p2>
             <br />
             <p1>{location_end ? "End: " + location_end : ""}</p1>
-=======
-            <h6>
+            {/* <h6>
               <p>Start: {location_start ? location_start : "location_start"} </p>
               <p>End: {location_end ? location_end : "location_end"}</p>
-            </h6>
->>>>>>> tasker_style
+            </h6> */}
           </div>
 
           <div className="confirmation-options-container">
