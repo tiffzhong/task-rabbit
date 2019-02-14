@@ -3,6 +3,7 @@ footer {
   width: 100%;
   background-color: lightgray;
   font-size: 18px;
+  position: fixed;
 }
 
 footer div {

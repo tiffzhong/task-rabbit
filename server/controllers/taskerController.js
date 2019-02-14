@@ -139,5 +139,14 @@ module.exports = {
       .catch(error => {
         console.log("error in getProfile in Controller", error);
       });
+  },
+
+  getAllTaskers: (req, res) => {
+    const db = req.app.get('db');
+    db.allTaskers().then(response => {
+      res.status(200).json(response);
+    }).catch(error => {
+      console.log('Error in getAllTaskers @taskerController', error);
+    })
   }
 };
