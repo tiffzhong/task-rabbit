@@ -16,13 +16,13 @@ class AutocompleteSearchEnd extends Component {
     };
   }
   render() {
-    console.log("this.state.place", this.state.place);
+    // console.log("this.props from end", this.props);
 
     return (
       <div>
         <Autocomplete
           placeholder={
-            this.props.locationEnd ? this.props.locationEnd : "Enter a Location"
+            this.props.location ? this.props.location : "Enter a Location"
           }
           style={{ width: "100%" }}
           onPlaceSelected={place => {

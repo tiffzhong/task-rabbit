@@ -48,9 +48,16 @@ class LocationDual extends Component {
             <div className="inner-container">
               <p>YOUR TASK LOCATION</p>
               <h2>Your Task Start Location</h2>
-              <Autocompletesearch location={this.props.location_start} />
+              <Autocompletesearch
+                placeholder={this.props.location_start}
+                placeholder={this.props.locationStart}
+                location={this.props.location_start}
+              />
               <h2>Your Task End Location</h2>
-              <AutocompletesearchEnd location={this.props.location_end} />
+              <AutocompletesearchEnd
+                locationEnd={this.props.locationEnd}
+                location={this.props.location_end}
+              />
               <div
                 className={!this.props.locationToggle ? "form-button" : "hide"}
               >
@@ -77,8 +84,8 @@ class LocationDual extends Component {
 const mapStateToProps = state => {
   const {
     taskType,
-    locationStart,
-    locationEnd,
+    location_start,
+    location_end,
     lat,
     long,
     duration,
@@ -90,8 +97,8 @@ const mapStateToProps = state => {
   const { user } = state.tasker;
   return {
     taskType,
-    locationStart,
-    locationEnd,
+    location_start,
+    location_end,
     lat,
     long,
     duration,
