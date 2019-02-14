@@ -33,6 +33,7 @@ const ALL_TASKER_FOR_CLIENT = "ALL_TASKER_FOR_CLIENT";
 const UPDATE_CLIENT_REVIEW = "UPDATE_CLIENT_REVIEW";
 const UPDATE_REVIEW_DATA = "UPDATE_REVIEW_DATA";
 const UPDATE_ALL_DETAILS = "UPDATE_ALL_DETAILS";
+const SET_ALL_DETAILS = "SET_ALL_DETAILS";
 
 export default function clientReducer(state = INITIAL_STATE, action) {
   console.log("REDUCER HIT: Action =>", action);
@@ -85,6 +86,10 @@ export default function clientReducer(state = INITIAL_STATE, action) {
 
     case UPDATE_ALL_DETAILS:
       return { ...state, ...action.payload };
+
+    case SET_ALL_DETAILS:
+      return { ...state, ...action.payload };
+
     default:
       return { ...state };
   }
@@ -200,9 +205,17 @@ export function updateReviewData(reviewData) {
     payload: reviewData
   };
 }
+
 export function editTaskDetails(allDetails) {
   return {
     type: UPDATE_ALL_DETAILS,
+    payload: allDetails
+  };
+}
+
+export function setInitialState(allDetails) {
+  return {
+    type: SET_ALL_DETAILS,
     payload: allDetails
   };
 }

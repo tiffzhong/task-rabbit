@@ -24,6 +24,7 @@ export default (
     <Route path="/client-dashboard" component={ClientDashboard} />
     <Route path="/pick-a-tasker" component={ClientPickTasker} />
     <Route path="/cleaning_form" component={Cleaning_Form} />
+    <Route path="/confirmation/:confirmation_id" component={Confirmation} />
     <Route path="/confirmation" component={Confirmation} />
 
     <Route path="/tasker-profile" component={TaskerProfile} />

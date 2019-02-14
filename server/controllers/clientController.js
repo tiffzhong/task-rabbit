@@ -1,4 +1,4 @@
-const nodemailer = require("nodemailer")
+const nodemailer = require("nodemailer");
 
 module.exports = {
   bookTask: (req, res) => {
@@ -44,7 +44,6 @@ module.exports = {
     // console.log(req.body, "body");
     // console.log(req.params, "params");
     let {
-      client_id,
       locationStart,
       locationEnd,
       lat,
@@ -55,21 +54,26 @@ module.exports = {
       endDate,
       taskDetails
     } = req.body;
+    let { confirmation_id } = req.params;
+    parseInt(lat);
+    parseInt(long);
+    console.log(req.params, "from edit");
     database
-      .client_update_edit([
-        client_id,
+      .confirm_task_update([
+        confirmation_id,
         locationStart,
         locationEnd,
-        lat,
-        long,
+        +lat,
+        +long,
         duration,
         vehicle,
         startDate,
         endDate,
         taskDetails
       ])
-      .then(() => {
-        res.status(200).send();
+      .then(resp => {
+        console.log(resp, "helloooo");
+        res.status(200).send(resp);
       })
       .catch(error =>
         console.log("Error in editTask in clientController", error)
@@ -89,17 +93,17 @@ module.exports = {
   },
   nodemailerEmail(req, res) {
     const db = req.app.get("db");
-    const{email} =req.body;
-    db.nodemailer_Email([email]).then(()=>res.status(200).send());
+    const { email } = req.body;
+    db.nodemailer_Email([email]).then(() => res.status(200).send());
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
-      auth:{
+      auth: {
         user: process.env.EMAIL,
         pass: process.env.EMAIL_PASSWORD
       }
     });
-    const mailOptions = { 
+    const mailOptions = {
       from: `"TaskRabbit" <${process.env.EMAIL}`,
       to: String(email),
       subject: `A friend referred you to use TaskRabbit!`,
@@ -110,13 +114,13 @@ module.exports = {
       <a href='https://www.taskrabbit.com'> Get $10 </a>
        </p> `
     };
-    transporter.sendMail(mailOptions, (error, info)=>{
-      if(error){
-        return console.log("---- Send email error". error);
-      } else{
-        return console.log("Email sent"+ " " + info.response);
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return console.log("---- Send email error".error);
+      } else {
+        return console.log("Email sent" + " " + info.response);
       }
-    })
+    });
   },
   getClient: (req, res) => {
     const database = req.app.get("db");

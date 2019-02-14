@@ -130,14 +130,17 @@
   font-size: 20px;
   margin-bottom: 20px;
 }
-.google-maps-container{
-  /* background-color: #51af33; */
+
+.google-mapper {
+  height: 400px;
+  width: 100%;
+}
+.google-maps-container {
+  position: relative;
+  margin-bottom: -90px;
+}
+
+.confirmation-payment-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width:820px;
-  height: 350px;
-  margin: 10px;
-  margin-top: 140px;
-  position: absolute;
+  flex-direction: column;
 }

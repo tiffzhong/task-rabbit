@@ -55,7 +55,11 @@ class Details extends Component {
                 <p>DETAILS</p>
                 <h2>Details of Task</h2>
                 <textarea
-                  placeholder="Enter any additional details for the Tasker"
+                  placeholder={
+                    this.props.taskDetails
+                      ? this.props.taskDetails
+                      : "Enter any additional details for the Tasker"
+                  }
                   className="details-input"
                   onChange={e => this.props.updateTaskDetails(e.target.value)}
                   value={this.props.details}
