@@ -10,7 +10,7 @@
 .profile-form-container {
   background-image: url("./taskerbecome.jpg");
   background-size: cover;
-  height: 90vh;
+  height: 700px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -156,9 +156,9 @@
   height: 35px;
   width: 60px;
 }
-.tasker-rate-section input:hover {
+/* .tasker-rate-section input:hover {
   border: 1px solid #51af33;
-}
+} */
 
 .tasker-rate-section h3 {
   font-size: 16px;
@@ -174,7 +174,7 @@
   align-items: center;
   text-align: left;
   padding: 20px;
-  border-bottom: 1px solid #dce0e6;
+  /* border-bottom: 1px solid #dce0e6; */
 }
 .tasker-display-text i {
   padding: 0 10px;
@@ -191,6 +191,12 @@
   flex-basis: 100%;
 }
 
+.tasker-profile-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+}
 .submit-button {
   background-color: #51af33;
   color: white;
