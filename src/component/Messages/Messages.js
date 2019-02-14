@@ -16,6 +16,7 @@ class Messages extends Component {
 
     componentDidMount() {
         this.getConfirmation();
+        this.getConfirmedTask();
     }
 
     getConfirmedTask = (confirmation_id) => {
