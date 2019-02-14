@@ -236,10 +236,10 @@
   border-bottom: 1px solid #dce0e6;
 }
 
-.checkbox-container {
+/* .checkbox-container {
   display: flex;
   align-items: center;
-}
+} */
 .pop-a-roo fieldset {
   color: #242a30;
   font-weight: bold;

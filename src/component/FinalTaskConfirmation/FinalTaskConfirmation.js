@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ConfirmationMap from "./ConfirmationMap";
-import "./Confirmation.css";
-import Autocompletesearch from "../Googlemap/Autocompletesearch";
+import "./FinalTaskConfirmation.css";
 import axios from "axios";
 import { connect } from "react-redux";
 import { getConfirmation } from "../../ducks/taskerReducer";
@@ -9,7 +8,7 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import Stripecheckout from "react-stripe-checkout";
 
-class Confirmation extends Component {
+class FinalTaskConfirmation extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -96,10 +95,8 @@ class Confirmation extends Component {
   };
 
   render() {
-    // console.log("sean!!", this.state.shortDuration);
-
-    console.log(this.props, "this.props in Confirmation.js");
-    console.log(this.state, "leh stateh");
+    console.log(this.props, "this.props in FinalTaskConfirmation.js");
+    console.log(this.state, "state in FinalTaskConfirmation");
 
     const hourly = {
       "Est. 1 hr": 1,
@@ -241,4 +238,4 @@ function mapStateToProps(state) {
 export default connect(
   mapStateToProps,
   { getConfirmation }
-)(Confirmation);
+)(FinalTaskConfirmation);
