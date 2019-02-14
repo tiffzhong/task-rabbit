@@ -13,10 +13,9 @@ class Messages extends Component {
     };
   }
 
-  componentDidMount() {
-    this.getConfirmation();
-    this.getConfirmedTask();
-  }
+    componentDidMount() {
+        this.getConfirmedTask();
+    }
 
   getConfirmedTask = confirmation_id => {
     axios.get(`/api/confirmed/${confirmation_id}`).then(response => {

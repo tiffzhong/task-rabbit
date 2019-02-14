@@ -14,7 +14,6 @@ class MessagesForm extends Component {
     }
 
     componentDidMount() {
-        // this.giveMeThoseProps()
         this.getMessages();
     }
 
