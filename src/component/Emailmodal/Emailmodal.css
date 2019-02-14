@@ -98,22 +98,7 @@
     height: 45px;
     border-radius: 5px;
   }
-  /* .content-inside-modal .inside-button{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .content-inside-modal input {
-    font-size: 18px;
-    color: green;
-    height: 40px;
-    width: 40%;
-    border: 1px solid rgb(99, 99, 99);
-    padding: 5px;
-    margin: 5px;
-  } */
+
 
 
   .x-button-modal{
@@ -124,11 +109,13 @@
   .x-button-modal button {
     position: relative;
     border: none;
-    width:55px;
+    width:25px;
     height: 35px;
     margin-top: 10px;
+    margin-right: 15px;
     padding: 2px;
     color: black;
     font-size: 20px;
+    border-radius: 5px;
   
   }

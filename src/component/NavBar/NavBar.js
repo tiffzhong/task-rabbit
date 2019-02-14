@@ -98,13 +98,13 @@ class NavBar extends Component {
 
             {this.state.display ? (
               <EmailModalContent
-              display={this.state.display}
-              onHide={this.hideModal}
+                display={this.state.display}
+                onHide={this.hideModal}
               />
-              ) : null}
+            ) : null}
 
 
-            <button className='modalButton' onClick={this.showModal}>Get $10!</button>
+            <button className={this.props.user ? 'modalButton' : 'hide'} onClick={this.showModal}>Get $10!</button>
 
             <Link className={this.props.user ? 'messagesLink' : 'hide'} to='/confirmedTasks' >My Tasks</Link>
 
