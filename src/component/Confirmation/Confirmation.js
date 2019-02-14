@@ -85,7 +85,7 @@ class Confirmation extends Component {
 
   totalCost = ()=>{
    
-     var short = "Est. 1 hr";
+     let short = "Est. 1 hr";
      let medium = "Est. 2-3 hrs";
      let long = "Est. 4+ hrs";
 
@@ -189,7 +189,6 @@ class Confirmation extends Component {
 
           <div className="confirmation-location-container">
             <label>Task Location</label>
-<<<<<<< HEAD
             <p2>
               {location_start
                 ? "Start: " + location_start
@@ -197,12 +196,6 @@ class Confirmation extends Component {
             </p2>
             <br />
             <p1>{location_end ? "End: " + location_end : ""}</p1>
-=======
-            <h6>
-              <p>Start: {location_start ? location_start : "location_start"} </p>
-              <p>End: {location_end ? location_end : "location_end"}</p>
-            </h6>
->>>>>>> tasker_style
           </div>
 
           <div className="confirmation-options-container">
