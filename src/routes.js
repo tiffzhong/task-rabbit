@@ -37,6 +37,5 @@ export default (
     <Route path="/messages/:client_id" component={MessagesForm} />
     <Route path='/messages' component={MessagesForm} />
     <Route path="/messages-personal/:confirmation_id" component={PersonalMessages} />
-    <Route path="/discount" component={EmailModalContent} />
   </Switch>
 );
