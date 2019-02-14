@@ -10,7 +10,8 @@ import {
   updateTaskDetails,
   updateClientData,
   updateTaskType,
-  editTaskDetails
+  editTaskDetails,
+  setInitialState
 } from "../../ducks/clientReducer";
 import { getConfirmation } from "../../ducks/taskerReducer";
 import LocationDual from "./QuestionBoxes/LocationDual";
@@ -37,16 +38,21 @@ class ClientForm extends Component {
   }
 
   componentDidMount() {
+    this.getTaskInfo();
+  }
+
+  getTaskInfo = () => {
     if (this.props.match.params.confirmation_id) {
       axios
         .get(`/api/confirmed/${this.props.match.params.confirmation_id}`)
         .then(res => {
-          console.log(res.data);
+          // console.log(res.data, "log from get task info");
+          this.props.setInitialState(res.data);
           return this.props.getConfirmation(res.data);
-        })
-        .then(() => {});
+        });
     }
-  }
+  };
+
   handleToggle = (name, value, state) => {
     if (name === "scheduleToggle") {
       if (this.props.startDate === "" || this.props.endDate === "") {
@@ -105,21 +111,58 @@ class ClientForm extends Component {
     });
     // this.props.updateTaskType('cooking service');
   };
+  updateTask = () => {
+    const {
+      taskType,
+      locationStart,
+      locationEnd,
+      long,
+      lat,
+      duration,
+      vehicle,
+      startDate,
+      endDate,
+      taskDetails,
+      user,
+      confirmation_id
+    } = this.props;
+
+    const bookedTask = {
+      taskType,
+      locationStart,
+      locationEnd,
+      lat,
+      long,
+      duration,
+      vehicle,
+      startDate,
+      endDate,
+      taskDetails,
+      user_id: user.auth0_id
+    };
+    axios
+      .put(`/api/client/${this.props.match.params.confirmation_id}`, bookedTask)
+      .then(response => {
+        console.log(response.data, "wohooo");
+        this.props.updateClientData(response.data);
+      });
+    // this.props.updateTaskType('cooking service');
+  };
 
   render() {
     console.log("what the HELLLLLLL", this.props);
     return (
       <div className="form">
-        {this.props.match.params.confirmation_id ? (
-          <h2>Edit {this.props.taskType}</h2>
-        ) : (
-          <h2>{this.props.taskType}</h2>
-        )}
         {/* {this.state.editToggle ? <p>Client Edit</p> : <p>Client Form</p>} */}
         {this.props.taskType === "Moving & Packing" ||
         this.props.taskType === "Yardwork/Landscaping" ? (
           <div className="outer-container">
-            <h1>{this.props.taskType}</h1>
+            {this.props.match.params.confirmation_id ? (
+              <h1>Edit {this.props.taskType}</h1>
+            ) : (
+              <h1>{this.props.taskType}</h1>
+            )}
+            {/* <h1>{this.props.taskType}</h1> */}
             <LocationDual
               locationToggle={this.state.locationToggle}
               durationToggle={this.state.durationToggle}
@@ -165,7 +208,12 @@ class ClientForm extends Component {
           </div>
         ) : this.props.taskType === "Mounting & Installation" ? (
           <div className="outer-container">
-            <h1>{this.props.taskType}</h1>
+            {this.props.match.params.confirmation_id ? (
+              <h1>Edit {this.props.taskType}</h1>
+            ) : (
+              <h1>{this.props.taskType}</h1>
+            )}
+            {/* <h1>{this.props.taskType}</h1> */}
             <LocationSingle
               locationToggle={this.state.locationToggle}
               durationToggle={this.state.durationToggle}
@@ -211,7 +259,12 @@ class ClientForm extends Component {
           </div>
         ) : this.props.taskType === "Delivery Service" ? (
           <div className="outer-container">
-            <h1>{this.props.taskType}</h1>
+            {this.props.match.params.confirmation_id ? (
+              <h1>Edit {this.props.taskType}</h1>
+            ) : (
+              <h1>{this.props.taskType}</h1>
+            )}
+            {/* <h1>{this.props.taskType}</h1> */}
             <LocationDual
               locationToggle={this.state.locationToggle}
               durationToggle={this.state.durationToggle}
@@ -253,7 +306,11 @@ class ClientForm extends Component {
           this.props.taskType === "Pet Service" ||
           this.props.taskType === "Cooking Service" ? (
           <div className="outer-container">
-            <h1>{this.props.taskType}</h1>
+            {this.props.match.params.confirmation_id ? (
+              <h1>Edit {this.props.taskType}</h1>
+            ) : (
+              <h1>{this.props.taskType}</h1>
+            )}
             <LocationSingle
               locationToggle={this.state.locationToggle}
               durationToggle={this.state.durationToggle}
@@ -290,10 +347,14 @@ class ClientForm extends Component {
             />
           </div>
         ) : (
-          <div>
+          <div className="you-must-select">
             <h1>You Must Select a Task</h1>
             <div className="outer-container">
-              <h1>{this.props.taskType}</h1>
+              {this.props.match.params.confirmation_id ? (
+                <h1>Edit {this.props.taskType}</h1>
+              ) : (
+                <h1>{this.props.taskType}</h1>
+              )}
               <LocationSingle
                 locationToggle={this.state.locationToggle}
                 durationToggle={this.state.durationToggle}
@@ -333,7 +394,11 @@ class ClientForm extends Component {
         )}
         <div className="form-button">
           {this.props.match.params.confirmation_id ? (
-            <button onClick={() => this.test()}>Edit</button>
+            <Link
+              to={`/confirmation/${this.props.match.params.confirmation_id}`}
+            >
+              <button onClick={() => this.updateTask()}>Edit</button>
+            </Link>
           ) : (
             <Link to={`/pick-a-tasker`}>
               <button onClick={() => this.bookTask()}>Book Task</button>
@@ -387,7 +452,8 @@ const mapDispatchToProps = {
   updateClientData: updateClientData,
   updateTaskType: updateTaskType,
   getConfirmation,
-  editTaskDetails
+  editTaskDetails,
+  setInitialState
 };
 
 export default connect(

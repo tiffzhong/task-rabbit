@@ -8,18 +8,17 @@ class PersonalMessages extends Component {
         super();
         this.state = {
             personalMessagesList: [],
-            taskerInfo: [],
-            client_id: '2',
-            postId: '',
             message: '',
-            allTaskers: []
+            allTaskers: [],
+            taskerInfo: [],
+            confirmation: []
         }
     }
 
     componentDidMount() {
         this.getMessages();
         this.getAllTaskers();
-        
+        this.getConfirmedTask();
     }
 
     setMessage = text => {
@@ -40,32 +39,38 @@ class PersonalMessages extends Component {
     }
 
     getConfirmedTask = () => {
-        // this.props.getConfirmation(id)
+        const {confirmation_id} = this.props.match.params
+        axios.get(`/api/confirmed/${confirmation_id}`).then(response => {
+            console.log('confirmed task', response.data)
+            this.setState({
+                confirmation: response.data
+            })
+            this.getTaskerProfile();
+        })
     }
 
     getAllTaskers = () => {
-        
         axios.get('/api/tasker').then(response => {
-            console.log('all taskers', response.data);
+            // console.log('all taskers', response.data);
             this.setState({
                 allTaskers: response.data
             })
         })
-        // const { allTaskers } = this.state;
-        // this.getTaskerProfile();
-        // const thisTasker = allTaskers.filter(e => e.tasker_id )
+        
     }
 
-    // getTaskerProfile = () => {
-    //     const id = this.props.confirmedTask[0].tasker_id;
-    //     console.log('-+-+-+id', id);
-    //     axios.get(`/api/tasker/${id}`).then(response => {
-    //         console.log('_=_=_=_= taskerInfo', response.data)
-    //         this.setState({
-    //             taskerInfo: response.data
-    //         })
-    //     })
-    // }
+    getTaskerProfile = () => {
+        const { confirmation } = this.state;
+        // console.log('confirmation', confirmation)
+        const id = confirmation.tasker_id;
+        // console.log('-+-+-+id', id);
+        axios.get(`/api/tasker/${confirmation.tasker_id}`).then(response => {
+            // console.log('_=_=_=_= taskerInfo', response.data)
+            this.setState({
+                taskerInfo: response.data
+            })
+        })
+    }
 
     createMessage = (id) => {
         const { auth0_id, name, picture } = this.props.user
@@ -78,7 +83,7 @@ class PersonalMessages extends Component {
             message: this.state.message
         }
         axios.post('/api/messages', newMessage).then(response => {
-            console.log('handy dandy message maker', response.data)
+            // console.log('handy dandy message maker', response.data)
             this.setState({
                 personalMessagesList: response.data
             })
@@ -86,10 +91,11 @@ class PersonalMessages extends Component {
     }
     
     render() {
-        console.log('proppies', this.props)
+        // console.log('proppies', this.props)
         // console.log('message', this.state.message)
-        console.log('response from creating message',this.state.personalMessagesList);
-        console.log('+++++>>>>>> tasker', this.state.taskerInfo)
+        // console.log('confirmation ====>>> ', this.state.confirmation);
+        // console.log('this.state.personalMessagesList',this.state.personalMessagesList);
+        // console.log('+++++>>>>>> tasker', this.state.taskerInfo)
         const { user } = this.props;
         const { personalMessagesList, taskerInfo } = this.state;
         const { confirmation_id } = this.props.match.params
@@ -109,7 +115,7 @@ class PersonalMessages extends Component {
         return (
             <div className='PersonalMessages-component'>
                 <div className='PersonalMessages-inner-component' >
-                    <p>personalMessages</p>
+                    {/* <p>personalMessages</p> */}
                     <div className='messages-header'>
                         <img src={taskerInfo.selfie} />
                         <h4>{taskerInfo.tasker_name}</h4>

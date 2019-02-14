@@ -238,26 +238,17 @@ class TaskerProfile extends Component {
                 <section>
                   <h4>Scope of Task</h4>
                   <p>
-                    <li>
-                      Bathrooms: Scrubbing sink, toilet, and shower/bathtub
-                      wiping mirrors.
-                    </li>
-                    <li>
-                      Kitchen: Washing dishes; cleaning/wiping backsplash,
-                      stove, counters, and appliances.
-                    </li>
-                    <li>Floors: Vacuuming, sweeping and/or mopping floors.</li>
-                    <li>
-                      Dusting: Furniture, hard surfaces, and window sills.
-                    </li>
-                    <li>Tidying: Straighten and organize. </li>
-                    <li>
-                      Taking out garbage/recycling and replacing trash bags.
-                    </li>
+                    Check with the Client if they know what material the wall is
+                    made of so you can correctly gauge what tools and skills the
+                    task will require. Clients will expect you to be able to
+                    distinguish between different wall types (i.e. studs and
+                    drywall, brick, concrete, or lath and plaster) in order to
+                    properly mount items into them.
                     <ul>
-                      Clients typically expect you to clean the entire space and
-                      bring your own cleaning supplies and tools (such as a
-                      vacuum, mop, and cleaning sprays) to each task.
+                      You’ll also need to navigate around structural,
+                      electrical, or plumbing materials that might line the
+                      walls. Be sure you have the right tools, such as a drill,
+                      level, and stud finder.
                     </ul>
                   </p>
                   <fieldset>
