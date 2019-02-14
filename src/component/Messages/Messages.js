@@ -23,33 +23,34 @@ class Messages extends Component {
     });
   };
 
-  render() {
-    console.log("show me my magical props", this.props);
-    console.log("Its ALIVE!!!!! ====", this.state.personalMessagesList);
-    const messages = this.props.confirmedTasks.map(e => {
-      console.log("LINKS+++++++", e.confirmation_id);
-      return (
-        <div>
-          <Link
-            onClick={() => this.getMessages()}
-            to={`/messages-personal/${e.confirmation_id && e.confirmation_id}`}
-          >
-            <span className="messages">
-              <div className="messager-container">
-                <img src={e.selfie} />
-                <div className="messager-info">
-                  <p>{e.tasker_name}</p>
-                  <p>{e.created_date}</p>
-                </div>
-              </div>
-              <div className="details-container">
-                {this.props.messages ? (
-                  <p>This is a message test dummy data</p>
-                ) : (
-                  <p>{e.task_details}</p>
-                )}
-              </div>
-              {/* <div className='price-container' >
+    
+
+    render() {
+        console.log('show me my magical props',this.props)
+        console.log('Its ALIVE!!!!! ====', this.state.personalMessagesList)
+        const messages = this.props.confirmedTasks.map(e => {
+            console.log("LINKS+++++++", e.confirmation_id)
+            return (
+                <div className={this.props.confirmedTasks ? '' : 'hide'}>
+                    <Link onClick={()=>this.getMessages(e.confirmation_id)} to={`/messages-personal/${e.confirmation_id && e.confirmation_id}`} >
+                        <span className='messages' >
+                            <div className='messager-container'>
+                                <img src={e.selfie} />
+                                <div className='messager-info' >
+                                    <p>{e.tasker_name}</p>
+                                    <p>{e.created_date}</p>
+                                </div>
+                            </div>
+                            <div className='details-container' >
+                            {
+                                this.props.messages
+                                ?
+                                <p>This is a message test dummy data</p>
+                                :
+                                <p>{e.task_details}</p>
+                            }
+                            </div>
+                            {/* <div className='price-container' >
                                 <p>Expected</p>
                                 <p>$306.00</p>
                             </div> */}
