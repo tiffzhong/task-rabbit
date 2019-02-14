@@ -149,6 +149,13 @@ class Confirmation extends Component {
       client
     } = this.state;
     return (
+<<<<<<< HEAD
+      <div className='Confirmation-component'>
+        {this.props.confirmedTask.length &&
+          this.props.confirmedTask[0].confirmation_id}
+          <p>Confirmation Component - check props!</p>
+          <Link to={`/messages`}><button>Messages</button></Link>
+=======
       <div className="confirmation-window">
         <h2>Booking Confirmation</h2>
         <div className="confirmation-form">
@@ -234,6 +241,7 @@ class Confirmation extends Component {
           </Link>
           <Link to={`/messages/${this.state.client_id}`}>Messages</Link>
         </div>
+>>>>>>> development
       </div>
     );
   }
