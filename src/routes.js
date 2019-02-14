@@ -10,7 +10,7 @@ import Confirmation from "./component/Confirmation/Confirmation";
 import ClientPickTasker from "./component/ClientPickTasker/ClientPickTasker";
 import ClientEdit from "./component/ClientEdit/ClientEdit";
 import ClientForm from "./component/Client_Form/ClientForm";
-import Cleaning_Form from "./component/Client_Form/Cleaning_Form";
+
 import Reviews from "./component/Reviews/Reviews";
 import MessagesForm from "./component/Messages/MessagesForm";
 import PersonalMessages from "./component/Messages/PersonalMessages";
@@ -23,7 +23,7 @@ export default (
     <Route path="/clientForm" component={ClientForm} />
     <Route path="/client-dashboard" component={ClientDashboard} />
     <Route path="/pick-a-tasker" component={ClientPickTasker} />
-    <Route path="/cleaning_form" component={Cleaning_Form} />
+
     <Route path="/confirmation/:confirmation_id" component={Confirmation} />
     <Route path="/confirmation" component={Confirmation} />
 

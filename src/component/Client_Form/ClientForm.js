@@ -153,16 +153,16 @@ class ClientForm extends Component {
     console.log("what the HELLLLLLL", this.props);
     return (
       <div className="form">
-        {this.props.match.params.confirmation_id ? (
-          <h2>Edit {this.props.taskType}</h2>
-        ) : (
-          <h2>{this.props.taskType}</h2>
-        )}
         {/* {this.state.editToggle ? <p>Client Edit</p> : <p>Client Form</p>} */}
         {this.props.taskType === "Moving & Packing" ||
         this.props.taskType === "Yardwork/Landscaping" ? (
           <div className="outer-container">
-            <h1>{this.props.taskType}</h1>
+            {this.props.match.params.confirmation_id ? (
+              <h1>Edit {this.props.taskType}</h1>
+            ) : (
+              <h1>{this.props.taskType}</h1>
+            )}
+            {/* <h1>{this.props.taskType}</h1> */}
             <LocationDual
               locationToggle={this.state.locationToggle}
               durationToggle={this.state.durationToggle}
@@ -208,7 +208,12 @@ class ClientForm extends Component {
           </div>
         ) : this.props.taskType === "Mounting & Installation" ? (
           <div className="outer-container">
-            <h1>{this.props.taskType}</h1>
+            {this.props.match.params.confirmation_id ? (
+              <h1>Edit {this.props.taskType}</h1>
+            ) : (
+              <h1>{this.props.taskType}</h1>
+            )}
+            {/* <h1>{this.props.taskType}</h1> */}
             <LocationSingle
               locationToggle={this.state.locationToggle}
               durationToggle={this.state.durationToggle}
@@ -254,7 +259,12 @@ class ClientForm extends Component {
           </div>
         ) : this.props.taskType === "Delivery Service" ? (
           <div className="outer-container">
-            <h1>{this.props.taskType}</h1>
+            {this.props.match.params.confirmation_id ? (
+              <h1>Edit {this.props.taskType}</h1>
+            ) : (
+              <h1>{this.props.taskType}</h1>
+            )}
+            {/* <h1>{this.props.taskType}</h1> */}
             <LocationDual
               locationToggle={this.state.locationToggle}
               durationToggle={this.state.durationToggle}
@@ -296,7 +306,11 @@ class ClientForm extends Component {
           this.props.taskType === "Pet Service" ||
           this.props.taskType === "Cooking Service" ? (
           <div className="outer-container">
-            <h1>{this.props.taskType}</h1>
+            {this.props.match.params.confirmation_id ? (
+              <h1>Edit {this.props.taskType}</h1>
+            ) : (
+              <h1>{this.props.taskType}</h1>
+            )}
             <LocationSingle
               locationToggle={this.state.locationToggle}
               durationToggle={this.state.durationToggle}
@@ -333,10 +347,14 @@ class ClientForm extends Component {
             />
           </div>
         ) : (
-          <div>
+          <div className="you-must-select">
             <h1>You Must Select a Task</h1>
             <div className="outer-container">
-              <h1>{this.props.taskType}</h1>
+              {this.props.match.params.confirmation_id ? (
+                <h1>Edit {this.props.taskType}</h1>
+              ) : (
+                <h1>{this.props.taskType}</h1>
+              )}
               <LocationSingle
                 locationToggle={this.state.locationToggle}
                 durationToggle={this.state.durationToggle}

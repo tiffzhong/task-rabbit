@@ -101,14 +101,14 @@
 
 .confirmation-location-container p2 {
   display: flex;
-  justify-content: flex-start;
+  align-items: flex-start;
   font-weight: 500;
   font-size: 20px;
 }
 
 .confirmation-location-container p1 {
   display: flex;
-  justify-content: flex-start;
+  align-items: flex-start;
   margin: 0px;
   padding-bottom: 20px;
   margin-bottom: 20px;
@@ -117,14 +117,14 @@
 }
 .confirmation-options-container p1 {
   display: flex;
-  justify-content: flex-start;
+  align-items: flex-start;
   font-weight: 500;
   font-size: 20px;
   margin-bottom: 5px;
 }
 .confirmation-options-container p2 {
   display: flex;
-  justify-content: flex-start;
+  align-items: flex-start;
   margin: 0px;
   font-weight: 500;
   font-size: 20px;

@@ -69,7 +69,7 @@ class Confirmation extends Component {
 
   getTasker = () => {
     axios
-      .get(`/api/tasker/${this.props.confirmedTask.tasker_id}`)
+      .get(`/api/tasker/${this.props.confirmedTask[0].tasker_id}`)
       .then(response => {
         console.log(response.data, "resi-poo-tasker");
         this.setState({
@@ -111,7 +111,7 @@ class Confirmation extends Component {
   render() {
     // console.log("sean!!", this.state.shortDuration);
 
-    console.log(this.props, "kadsklfjs9ur");
+    console.log(this.props, "this.props in Confirmation.js");
     console.log(this.state, "leh stateh");
 
     const hourly = {
