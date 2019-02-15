@@ -76,12 +76,6 @@ nav li {
   display: flex;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
-  width: 150px;
-
-}
-
-=======
   /* width: 200px; */
 }
 
@@ -103,7 +97,6 @@ nav li {
   color: #51af33;
 }
 
->>>>>>> 0ce547646d9c5500fd7568d6ab8b18cec59b6b44
 .nav-popover-link {
   width: 200px;
   position: relative;
