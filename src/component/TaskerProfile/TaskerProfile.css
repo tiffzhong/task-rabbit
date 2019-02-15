@@ -153,19 +153,40 @@
   font-size: 16px;
   width: 60px;
   border-radius: 5px;
-  height: 35px;
+  height: 30px;
   width: 60px;
+  margin-left: 5px;
 }
-/* .tasker-rate-section input:hover {
-  border: 1px solid #51af33;
-} */
 
-.tasker-rate-section h3 {
+.tasker-rate-section .rate-container h3 {
+  font-size: 16px;
+  margin: 0px 10px 0px 25px;
+}
+.tasker-rate-section .rate-container p {
+  margin: 0;
   font-size: 16px;
 }
-.tasker-rate-section p {
-  font-size: 16px;
-  margin: 0;
+
+.tasker-rate-hide {
+  width: 100%;
+  opacity: 0.4;
+}
+.tasker-rate-section .rate-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.checkbox-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+.checkbox-container .skills-qualifications {
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 5px;
 }
 
 .tasker-display-text {
@@ -174,7 +195,6 @@
   align-items: center;
   text-align: left;
   padding: 20px;
-  /* border-bottom: 1px solid #dce0e6; */
 }
 .tasker-display-text i {
   padding: 0 10px;
@@ -219,7 +239,7 @@
   color: #545e69;
   text-align: start;
   border-radius: 10px;
-  padding: 25px;
+  padding: 10px 20px 15px 20px;
   background-color: #f9fafb;
 }
 .pop-a-roo section p {
@@ -236,26 +256,6 @@
   border-bottom: 1px solid #dce0e6;
 }
 
-/* .checkbox-container {
-  display: flex;
-  align-items: center;
-} */
-.pop-a-roo fieldset {
-  color: #242a30;
-  font-weight: bold;
-  font-size: 16px;
-  padding-bottom: 30px;
-}
-.pop-a-roo input[type="checkbox"] {
-  /* -webkit-appearance: none; */
-  width: 20px;
-  height: 20px;
-  border-radius: 3px;
-  border: 1px solid black;
-}
-.pop-a-roo input[type="checkbox"]:checked {
-  color: green;
-}
 .hide-a-roo {
   display: none;
 }
