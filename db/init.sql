@@ -133,3 +133,58 @@ create table nodemailerEmail(
 -- join users u
 -- on  u.auth0_id = b.user_id
 -- where b.user_id = 'github|42826280'
+
+
+
+select * from bookedTasks;
+select * from tasker_profile;
+select * from confirmed_task;
+
+select * from tasker_profile
+join bookedTasks on tasker_profile_id = decks.id
+where decks.id = $1;
+
+delete from confirmed_task where confirmation_id < 100;
+
+delete from bookedTasks;
+drop table bookedTasks;
+
+select * from users;
+
+create table bookedTasks (
+    id serial primary key,
+    taskType text,
+    locationStart text,
+    locationEnd text,
+    lat numeric (15,6),
+    long numeric (15,6),
+    duration text,
+    vehicle text,
+    startDate text,
+    endDate text,
+    taskDetails text,
+    user_id text
+);
+
+create table messages(
+    id serial primary key,
+    confirmation_id integer,
+    date text,
+    poster_id text,
+    poster_name text,
+    poster_image text,
+    message text
+);
+drop table messages;
+select * from messages;
+
+create table personal_messages(
+
+);
+
+
+select * from confirmed_task;
+
+select * from confirmed_task
+join tasker_profile on tasker_profile.tasker_id = confirmed_task.tasker_id
+where client_id = 'github|42826280';
