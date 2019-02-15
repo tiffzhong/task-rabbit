@@ -193,13 +193,10 @@ class Confirmation extends Component {
             </p2>
             <br />
             <p1>{location_end ? "End: " + location_end : ""}</p1>
-<<<<<<< HEAD
             {/* <h6>
               <p>Start: {location_start ? location_start : "location_start"} </p>
               <p>End: {location_end ? location_end : "location_end"}</p>
             </h6> */}
-=======
->>>>>>> dfadc4576475b13411adc39e0300212c2f56882d
           </div>
 
           <div className="confirmation-options-container">
