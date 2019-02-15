@@ -100,7 +100,6 @@ class Confirmation extends Component {
     });
   };
 
-<<<<<<< HEAD
   // totalCost = () => {
   //   const { duration, tasker_hourly } = this.state
   //   var total = hourly[duration] * tasker_hourly
@@ -120,8 +119,6 @@ class Confirmation extends Component {
       });
   };
 
-=======
->>>>>>> 0ce547646d9c5500fd7568d6ab8b18cec59b6b44
   render() {
     // console.log("sean!!", this.state.shortDuration);
 
@@ -209,13 +206,6 @@ class Confirmation extends Component {
             </p2>
             <br />
             <p1>{location_end ? "End: " + location_end : ""}</p1>
-<<<<<<< HEAD
-            {/* <h6>
-              <p>Start: {location_start ? location_start : "location_start"} </p>
-              <p>End: {location_end ? location_end : "location_end"}</p>
-            </h6> */}
-=======
->>>>>>> 0ce547646d9c5500fd7568d6ab8b18cec59b6b44
           </div>
 
           <div className="confirmation-options-container">
