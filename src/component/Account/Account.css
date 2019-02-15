@@ -1,0 +1,58 @@
+.account-component {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.account-component div:first-of-type {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+.account-component label {
+    margin-right: 15px;
+    line-height: 32px;
+}
+
+
+.account-component input {
+    -webkit-appearance: none;
+    appearance: none;
+
+    border-radius: 50%;
+    width: 16px;
+    height:16px;
+    
+    border: 2px solid #999;
+    transition: .2s all linear;
+    outline: none;
+    margin-right: 5px;
+
+    position: relative;
+    top: 4px;
+}
+
+.account-component button {
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+    border-radius: 0;
+    border: 0;
+    font-size: 14px;
+}
+
+.account-component input:checked {
+    border: 6px solid green;
+}
+
+.account-component button:hover, button:focus {
+    color: white;
+    background: green;
+}
+
+.account-component button:active {
+    background: white;
+    color: black;
+    outline: 1px solid black;
+}
