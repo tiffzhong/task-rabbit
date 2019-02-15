@@ -8,6 +8,7 @@ dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
+app.use(express.static(`__dirname/../build`));
 
 massive(process.env.CONNECTION_STRING)
   .then(database => {
@@ -16,6 +17,11 @@ massive(process.env.CONNECTION_STRING)
   .catch(error => {
     console.log("error with massive", error);
   });
+
+const path = require("path");
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 
 app.use(
   session({
