@@ -171,39 +171,15 @@ class ClientForm extends Component {
               handleToggle={this.handleToggle}
               confirmedTask={this.props.confirmedTask}
             />
-            <Duration
-              locationToggle={this.state.locationToggle}
-              durationToggle={this.state.durationToggle}
-              vehicleToggle={this.state.vehicleToggle}
-              scheduleToggle={this.state.scheduleToggle}
-              handleToggle={this.handleToggle}
-              confirmedTask={this.props.confirmedTask}
-            />
-            <Vehicle
-              locationToggle={this.state.locationToggle}
-              durationToggle={this.state.durationToggle}
-              vehicleToggle={this.state.vehicleToggle}
-              scheduleToggle={this.state.scheduleToggle}
-              handleToggle={this.handleToggle}
-              confirmedTask={this.props.confirmedTask}
-            />
-            <Schedule
-              locationToggle={this.state.locationToggle}
-              durationToggle={this.state.durationToggle}
-              vehicleToggle={this.state.vehicleToggle}
-              scheduleToggle={this.state.scheduleToggle}
-              handleToggle={this.handleToggle}
-              confirmedTask={this.props.confirmedTask}
-            />
-            <Details
-              locationToggle={this.state.locationToggle}
-              durationToggle={this.state.durationToggle}
-              vehicleToggle={this.state.vehicleToggle}
-              scheduleToggle={this.state.scheduleToggle}
-              detailToggle={this.state.detailToggle}
-              handleToggle={this.handleToggle}
-              bookTask={this.bookTask}
-              confirmedTask={this.props.confirmedTask}
+              <Vehicle
+                locationToggle={this.state.locationToggle}
+                durationToggle={this.state.durationToggle}
+                vehicleToggle={this.state.vehicleToggle}
+                scheduleToggle={this.state.scheduleToggle}
+                handleToggle={this.handleToggle}
+                confirmedTask={this.props.confirmedTask}
+              />
+            
             />
           </div>
         ) : this.props.taskType === "Mounting & Installation" ? (
@@ -390,6 +366,7 @@ class ClientForm extends Component {
                 confirmedTask={this.props.confirmedTask}
               />
             </div>
+            
           </div>
         )}
         <div className="form-button">
