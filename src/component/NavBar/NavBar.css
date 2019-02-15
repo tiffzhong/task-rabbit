@@ -159,14 +159,10 @@ nav li {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  width: 150px;
+
 }
-/* .dropdown-title {
-  margin-top: 15px;
-  position: relative;
-  z-index: 1;
-  color: white;
-} */
+
 .nav-popover-link {
   width: 200px;
   position: relative;

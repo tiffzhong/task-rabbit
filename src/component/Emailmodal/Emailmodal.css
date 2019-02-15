@@ -11,35 +11,94 @@
   display: none;
 } 
 
-.emailmodal-profile {
+
+
+
+.emailmodal-profile-confirm {
   position: fixed;
-  background: rgb(30, 199, 30);
-  border: 2px solid black;
-  width: 60%;
-  height: auto;
+  background: white;
+  border: 2px solid rgb(243, 239, 239);
+  padding: 1.25rem;
+  margin: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+  display: block;
+  width: 470px;
+  height: 50%;
+  overflow-y: scroll;
   top: 50%;
   left: 50%;
-  padding: 15px;
+  border-radius: 8px;
   transform: translate(-50%, -50%);
   
   }
+  .confirm-box{
+    margin: 1rem;
+    width: 90%;
+    height: 90%;
+  
 
-  .content-inside-modal .inside-button{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  }
+  .confirm-box h3{
+    margin-top: 25px;
     text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: .5rem;
+    font-weight: 600;
+    font-family: "Proxima", Arial, Helvetica, sans-serif;
   }
-  .content-inside-modal input {
-    font-size: 18px;
-    color: green;
-    height: 40px;
-    width: 40%;
-    border: 1px solid rgb(99, 99, 99);
-    padding: 5px;
-    margin: 5px;
+  .confirm-box p{
+    margin: 0 0 1.5rem 0;
+    color: #4d4e4e;
+    font-family: "Proxima", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
   }
+
+  .confirm-box span{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 2px;
+  }
+  .confirm-box input{
+   display: flex;
+   width: 390px;
+   height: 45px;
+   border-radius: 5px;
+   float: left;
+   margin-bottom: 1rem;
+   position: relative;
+  }
+
+  .input-field{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+  }
+  .iconBox{
+    width: 20px;
+  
+  }
+
+  .submitButton button{
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    background: green;
+    color: white;
+    width: 390px;
+    height: 45px;
+    border-radius: 5px;
+  }
+
 
 
   .x-button-modal{
@@ -48,14 +107,15 @@
     position: absolute;
   }
   .x-button-modal button {
-    background-color: yellow;
+    position: relative;
     border: none;
-    width: 
-    45px;
+    width:25px;
     height: 35px;
-    margin-top: 250px;
+    margin-top: 10px;
+    margin-right: 15px;
     padding: 2px;
     color: black;
-    font-size: 15px;
-    border-radius: 50%;
+    font-size: 20px;
+    border-radius: 5px;
+  
   }

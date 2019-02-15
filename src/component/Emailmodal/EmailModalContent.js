@@ -28,25 +28,32 @@ class EmailModalContent extends Component {
             : "modal display-none"
         return (
             <div className={displayName}>
-                <div className="emailmodal-profile">
-                    <h4> Help Your Friends, Get $10</h4>
-                    <h4>Refer a friend to TaskRabbit. They get $10 off their first task. You get $10 off when they complete it.</h4>
-                    <h4>Email</h4>
-                    <div className="content-inside-modal">
-                        <input placeholder="Email" name="email" value={this.state.email} onChange={event => this.handleChange(event)} />
+                <div className="emailmodal-profile-confirm">
+                    <div className="confirm-box">
+                        <h3> Help Your Friends, Get $10</h3>
+                        <p>Refer a friend to TaskRabbit. They get $10 off their first task. You get $10 off when they complete it.</p>
+
+                        <div className="iconBox">
+
+                            <input placeholder="Email" className=" input-field" name="email" value={this.state.email} onChange={event => this.handleChange(event)} />
+                        </div>
+                        <div className="submitButton">
+                            <button className="inside-button" onClick={() => { this.getTenDollars(this.state.email); this.props.onHide() }}>Send</button>
+                        </div>
+
                     </div>
-                    <button className="inside-button" onClick={() => { this.getTenDollars(this.state.email); this.props.onHide() }}>Submit Email</button>
-                </div>
-                <div className="x-button-modal">
-                    <button
-                        onClick={() => {
-                            this.props.onHide();
-                        }}
-                    >
-                        close
+                    <div className="x-button-modal">
+                        <button
+                            onClick={() => {
+                                this.props.onHide();
+                            }}
+                        >
+                            X
             </button>
+                    </div>
                 </div>
-            </div>);
+
+            </div >);
     }
 }
 

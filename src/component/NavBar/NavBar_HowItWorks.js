@@ -64,8 +64,8 @@ const NavBar_HowItWorks = () => {
           </div>
         </div>
 
-        <Link to="/review">review</Link>
-        <Link to="/confirmation">confirmation</Link>
+        {/* <Link to="/review">review</Link>
+        <Link to="/confirmation">confirmation</Link> */}
       </div>
     </div>
   );

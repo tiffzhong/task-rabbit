@@ -15,7 +15,12 @@ class Confirmation extends Component {
     this.state = {
       tasker: "",
       client: "",
-      total: []
+      total: [],
+      hourly: {
+        "Est. 1 hr": 1,
+        "Est. 2-3 hrs": 2,
+        "Est. 4+ hrs": 4
+      }
       // confirmation= null
       // confirmation_id: "",
       // client_id: "",
@@ -38,7 +43,7 @@ class Confirmation extends Component {
 
   componentDidMount() {
     this.propsToState();
-    this.totalCost();
+    // this.totalCost();
     this.getUpdate();
   }
 
@@ -47,7 +52,7 @@ class Confirmation extends Component {
       this.getClient();
       this.getTasker();
       this.propsToState();
-      this.totalCost();
+      // this.totalCost();
       // this.setState({ duration: this.props.confirmedTask[0].duration });
     }
   }
@@ -95,17 +100,23 @@ class Confirmation extends Component {
     });
   };
 
-  totalCost = () => {
-    //  short: "Est. 1 hr",
-    //  medium: "Est. 2-3 hrs",
-    // long: "Est. 4+ hrs"
-  };
+  // totalCost = () => {
+  //   const { duration, tasker_hourly } = this.state
+  //   var total = hourly[duration] * tasker_hourly
+  //   this.setState({
+  //     total: total
+  //   })
+  // };
 
   ontoken = token => {
-    // const { total } = this.state
+    const { duration, tasker_hourly, hourly } = this.state
+    var total = hourly[duration] * tasker_hourly
     axios
-      .post("/api/stripe", { token })
-      .then(response => alert("Successful payment"));
+      .post("/api/stripe", { token, total })
+      .then(response => {
+        // console.log("stripe", response)
+        alert("Successful payment")
+      });
   };
 
   render() {
@@ -114,11 +125,12 @@ class Confirmation extends Component {
     console.log(this.props, "this.props in Confirmation.js");
     console.log(this.state, "leh stateh");
 
-    const hourly = {
-      "Est. 1 hr": 1,
-      "Est. 2-3 hrs": 2,
-      "Est. 4+ hrs": 4
-    };
+
+    // const hourly = {
+    //   "Est. 1 hr": 1,
+    //   "Est. 2-3 hrs": 2,
+    //   "Est. 4+ hrs": 4
+    // };
 
     const taskNames = {
       pet: "Pet Services",
@@ -145,7 +157,8 @@ class Confirmation extends Component {
       tasker_hourly,
       vehicle,
       tasker,
-      client
+      client,
+      hourly
     } = this.state;
     return (
       <div className="confirmation-window">
@@ -225,8 +238,8 @@ class Confirmation extends Component {
               <Stripecheckout
                 ComponentClass="stripe"
                 name="TaskRabbit"
-                email="test@gmail.com"
-                //  amount={total * 100}
+                email="TaskRabbit@gmail.com"
+                amount={hourly[duration] * tasker_hourly * 100}
                 token={this.ontoken}
                 allowRememberMe={false}
                 stripeKey={process.env.REACT_APP_STRIPE_KEY}
