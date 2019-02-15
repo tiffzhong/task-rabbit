@@ -188,9 +188,9 @@ class TaskerProfile extends Component {
               value={phone}
               onChange={event => this.handleInput(event)}
             />
-            <div>
+            <div className="google-input-profile">
               <Autocomplete
-                style={{ width: "517%", marginLeft: "-138px" }}
+                // style={{  }}
                 onPlaceSelected={place => {
                   this.setState({
                     place: place.formatted_address
@@ -308,7 +308,6 @@ class TaskerProfile extends Component {
                   Deliveries for food, clothing, documents, and other items.
                 </p>
               </div>
-
               <div
                 className={
                   this.state.deliverytoggle ? "pop-a-roo" : "hide-a-roo"
@@ -406,37 +405,49 @@ class TaskerProfile extends Component {
                       own to each task.
                     </ul>
                   </p>
-                  <fieldset>
+                  <div className="checkbox-container">
                     <input
                       type="checkbox"
                       name="yard"
                       checked={this.state.yard}
                       onChange={this.handleChange}
                     />
-                    I have the skills and qualifications to task in this
-                    category.
-                  </fieldset>
+                    <div className="skills-qualifications">
+                      I have the skills and qualifications to task in this
+                      category.
+                    </div>
+                  </div>
                   <div className="tasker-rate-section">
-                    <h4> Your Tasker Rate </h4>
-                    <section>
-                      $
-                      {this.state.yard ? (
-                        <input
-                          name="yardHourly"
-                          value={this.state.yardHourly}
-                          onChange={this.handleChange}
-                        />
-                      ) : (
-                        <input
-                          name="yardHourly"
-                          value=""
-                          onChange={this.handleChange}
-                          disabled
-                        />
-                      )}
-                      <h3>Most Taskers with your experience hired at: </h3>
-                      <p>$18/hr</p>
-                    </section>
+                    {this.state.yard ? (
+                      <div className="tasker-rate-show">
+                        <h4> Your Tasker Rate </h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="yardHourly"
+                            value={this.state.yardHourly}
+                            onChange={this.handleChange}
+                          />
+                          <h3>Most Taskers with your experience hired at: </h3>
+                          <p>$18/hr</p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="tasker-rate-hide">
+                        <h4>Your Tasker Rate</h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="yardHourly"
+                            value=""
+                            onChange={this.handleChange}
+                            disabled
+                          />
+                          <h3>Most Taskers with your experience hired at: </h3>
+                          <p>$18/hr</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </section>
               </div>
@@ -445,9 +456,7 @@ class TaskerProfile extends Component {
             <div className="task-profile-container">
               <div className="tasker-display-text">
                 <h3>Home Improvement</h3>
-
                 <i onClick={this.hometoggle} class="fas fa-chevron-down" />
-
                 <p>Repair and maintenance work around the home or office.</p>
               </div>
               <div
@@ -463,43 +472,54 @@ class TaskerProfile extends Component {
                     <li>Changing light bulbs.</li>
                     <li>Repairing broken door handles.</li>
                     <ul>
-                      {" "}
                       Before arriving, be sure you have the right tools, such as
                       a drill, screw driver, level,stud finder, and check
                       whether the Client needs special supplies.
                     </ul>
                   </p>
-                  <fieldset>
+                  <div className="checkbox-container">
                     <input
                       type="checkbox"
                       name="home"
                       checked={this.state.home}
                       onChange={this.handleChange}
                     />
-                    I have the skills and qualifications to task in this
-                    category.
-                  </fieldset>
+                    <div className="skills-qualifications">
+                      I have the skills and qualifications to task in this
+                      category.
+                    </div>
+                  </div>
                   <div className="tasker-rate-section">
-                    <h4>Your Tasker Rate</h4>
-                    <section>
-                      $
-                      {this.state.home ? (
-                        <input
-                          name="homeHourly"
-                          value={this.state.homeHourly}
-                          onChange={this.handleChange}
-                        />
-                      ) : (
-                        <input
-                          name="homeHourly"
-                          value=""
-                          onChange={this.handleChange}
-                          disabled
-                        />
-                      )}
-                      <h3>Most Taskers with your experience hired at:</h3>
-                      <p>$23/hr</p>
-                    </section>
+                    {this.state.home ? (
+                      <div className="tasker-rate-show">
+                        <h4>Your Tasker Rate</h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="homeHourly"
+                            value={this.state.homeHourly}
+                            onChange={this.handleChange}
+                          />
+                          <h3>Most Taskers with your experience hired at: </h3>
+                          <p>$23/hr</p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="tasker-rate-hide">
+                        <h4>Your Tasker Rate</h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="homeHourly"
+                            value=""
+                            onChange={this.handleChange}
+                            disabled
+                          />
+                          <h3>Most Taskers with your experience hired at: </h3>
+                          <p>$23/hr</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </section>
               </div>
@@ -510,7 +530,6 @@ class TaskerProfile extends Component {
               <div className="tasker-display-text">
                 <h3> Moving & Packing</h3>
                 <i onClick={this.movingtoggle} class="fas fa-chevron-down" />
-
                 <p>
                   Packing or un-packing boxes, or moving boxes and furniture.
                 </p>
@@ -525,7 +544,6 @@ class TaskerProfile extends Component {
                     <li>Carrying boxes and furniture up and down stairs.</li>
                     <li>Helping with packing or unpacking items.</li>
                     <ul>
-                      {" "}
                       It can help to ask the Client in advance if there will be
                       stairs, an elevator, or a loading dock, and to inquire
                       about stairwell and doorway width. Make sure to check with
@@ -533,37 +551,50 @@ class TaskerProfile extends Component {
                       moving blankets, or a rented hauling vehicle.
                     </ul>
                   </p>
-                  <fieldset>
+                  <div className="checkbox-container">
                     <input
                       type="checkbox"
                       name="moving"
                       checked={this.state.moving}
                       onChange={this.handleChange}
                     />
-                    I have the skills and qualifications to task in this
-                    category.
-                  </fieldset>
+                    <div className="skills-qualifications">
+                      I have the skills and qualifications to task in this
+                      category.
+                    </div>
+                  </div>
+
                   <div className="tasker-rate-section">
-                    <h4>Your Tasker Rate</h4>
-                    <section>
-                      $
-                      {this.state.moving ? (
-                        <input
-                          name="movingHourly"
-                          value={this.state.movingHourly}
-                          onChange={this.handleChange}
-                        />
-                      ) : (
-                        <input
-                          name="movingHourly"
-                          value=""
-                          onChange={this.handleChange}
-                          disabled
-                        />
-                      )}
-                      <h3>Most Taskers with your experience hired at: </h3>
-                      <p>$25/hr</p>
-                    </section>
+                    {this.state.moving ? (
+                      <div className="tasker-rate-show">
+                        <h4> Your Tasker Rate </h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="movingHourly"
+                            value={this.state.movingHourly}
+                            onChange={this.handleChange}
+                          />
+                          <h3>Most Taskers with your experience hired at: </h3>
+                          <p>$25/hr</p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="tasker-rate-hide">
+                        <h4>Your Tasker Rate</h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="movingHourly"
+                            value=""
+                            onChange={this.handleChange}
+                            disabled
+                          />
+                          <h3>Most Taskers with your experience hired at: </h3>
+                          <p>$25/hr</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </section>
               </div>
@@ -572,9 +603,7 @@ class TaskerProfile extends Component {
             <div className="task-profile-container">
               <div className="tasker-display-text">
                 <h3>Pet Service</h3>
-
                 <i onClick={this.pettoggle} class="fas fa-chevron-down" />
-
                 <p>Watching house pets while owners are out of town.</p>
               </div>
               <div
@@ -595,42 +624,54 @@ class TaskerProfile extends Component {
                       animal(s) while their owners are away!
                     </li>
                     <ul>
-                      {" "}
                       Experienced in caring, triage, and handling a variety of
                       animals.
                     </ul>
                   </p>
-                  <fieldset>
+                  <div className="checkbox-container">
                     <input
                       type="checkbox"
                       name="pet"
                       checked={this.state.pet}
                       onChange={this.handleChange}
                     />
-                    I have the skills and qualifications to task in this
-                    category.
-                  </fieldset>
+                    <div className="skills-qualifications">
+                      I have the skills and qualifications to task in this
+                      category.
+                    </div>
+                  </div>
+
                   <div className="tasker-rate-section">
-                    <h4>Your Tasker Rate</h4>
-                    <section>
-                      $
-                      {this.state.pet ? (
-                        <input
-                          name="petHourly"
-                          value={this.state.petHourly}
-                          onChange={this.handleChange}
-                        />
-                      ) : (
-                        <input
-                          name="petHourly"
-                          value=""
-                          onChange={this.handleChange}
-                          disabled
-                        />
-                      )}
-                      <h3>Most Taskers with your experience hired at: </h3>
-                      <p>$15/hr</p>
-                    </section>
+                    {this.state.pet ? (
+                      <div className="tasker-rate-show">
+                        <h4> Your Tasker Rate </h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="petHourly"
+                            value={this.state.petHourly}
+                            onChange={this.handleChange}
+                          />
+                          <h3>Most Taskers with your experience hired at: </h3>
+                          <p>$15/hr</p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="tasker-rate-hide">
+                        <h4>Your Tasker Rate</h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="petHourly"
+                            value=""
+                            onChange={this.handleChange}
+                            disabled
+                          />
+                          <h3>Most Taskers with your experience hired at: </h3>
+                          <p>$15/hr</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </section>
               </div>
@@ -659,51 +700,63 @@ class TaskerProfile extends Component {
                     <li> Assembling furniture.</li>
                     <li> Carrying furniture up or down stairs.</li>
                     <li>
-                      {" "}
                       Arranging furniture in the Client's home, and securing it
-                      to the wall if so indicated in assembly instructions.{" "}
+                      to the wall if so indicated in assembly instructions.
                     </li>
                     <li>
-                      Removing recycling and garbage, such as empty boxes.{" "}
+                      Removing recycling and garbage, such as empty boxes.
                     </li>
                     <ul>
                       It can help to get the brand and item number from your
                       Client upfront so you can scope what tools are needed.
                       Before arriving, be sure you have the right tools, and
-                      check whether the Client needs special supplies.{" "}
+                      check whether the Client needs special supplies.
                     </ul>
                   </p>
-                  <fieldset>
+                  <div className="checkbox-container">
                     <input
                       type="checkbox"
                       name="furniture"
                       checked={this.state.furniture}
                       onChange={this.handleChange}
                     />
-                    I have the skills and qualifications to task in this
-                    category.
-                  </fieldset>
+                    <div className="skills-qualifications">
+                      I have the skills and qualifications to task in this
+                      category.
+                    </div>
+                  </div>
+
                   <div className="tasker-rate-section">
-                    <h4> Your Tasker Rate</h4>
-                    <section>
-                      $
-                      {this.state.furniture ? (
-                        <input
-                          name="furnitureHourly"
-                          value={this.state.furnitureHourly}
-                          onChange={this.handleChange}
-                        />
-                      ) : (
-                        <input
-                          name="furnitureHourly"
-                          value=""
-                          onChange={this.handleChange}
-                          disabled
-                        />
-                      )}
-                      <h3>Most Taskers with your experience hired at: </h3>
-                      <p>$19/hr</p>
-                    </section>
+                    {this.state.furniture ? (
+                      <div className="tasker-rate-show">
+                        <h4> Your Tasker Rate </h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="furnitureHourly"
+                            value={this.state.furnitureHourly}
+                            onChange={this.handleChange}
+                          />
+                          <h3>Most Taskers with your experience hired at: </h3>
+                          <p>$19/hr</p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="tasker-rate-hide">
+                        <h4>Your Tasker Rate</h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="furnitureHourly"
+                            value=""
+                            onChange={this.handleChange}
+                            disabled
+                          />
+                          <h3>Most Taskers with your experience hired at: </h3>
+                          <p>$19/hr</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </section>
               </div>
@@ -716,7 +769,6 @@ class TaskerProfile extends Component {
                 <i onClick={this.cleaningtoggle} class="fas fa-chevron-down" />
                 <p>Cleaning an apartment, house, vacation home, or office.</p>
               </div>
-
               <div
                 className={
                   this.state.cleaningtoggle ? "pop-a-roo" : "hide-a-roo"
@@ -726,26 +778,19 @@ class TaskerProfile extends Component {
                   <h4> Scope of Task</h4>
                   <p>
                     <li>
-                      {" "}
                       Bathrooms: Scrubbing sink, toilet, and shower/bathtub;
-                      wiping mirrors.{" "}
+                      wiping mirrors.
                     </li>
                     <li>
-                      {" "}
                       Kitchen: Washing dishes; cleaning/wiping backsplash,
-                      stove, counters, and appliances.{" "}
+                      stove, counters, and appliances.
                     </li>
+                    <li>Floors: Vacuuming, sweeping and/or mopping floors.</li>
                     <li>
-                      {" "}
-                      Floors: Vacuuming, sweeping and/or mopping floors.{" "}
-                    </li>
-                    <li>
-                      {" "}
                       Dusting: Furniture, hard surfaces, and window sills.
                     </li>
                     <li> Tidying: Straighten and organize.</li>
                     <li>
-                      {" "}
                       Taking out garbage/recycling and replacing trash bags.
                     </li>
                     <ul>
@@ -754,37 +799,50 @@ class TaskerProfile extends Component {
                       vacuum, mop, and cleaning sprays) to each task.
                     </ul>
                   </p>
-                  <fieldset>
+                  <div className="checkbox-container">
                     <input
                       type="checkbox"
                       name="cleaning"
                       checked={this.state.cleaning}
                       onChange={this.handleChange}
                     />
-                    I have the skills and qualifications to task in this
-                    category.
-                  </fieldset>
+                    <div className="skills-qualifications">
+                      I have the skills and qualifications to task in this
+                      category.
+                    </div>
+                  </div>
+
                   <div className="tasker-rate-section">
-                    <h4> Your Tasker Rate</h4>
-                    <section>
-                      $
-                      {this.state.cleaning ? (
-                        <input
-                          name="cleaningHourly"
-                          value={this.state.cleaningHourly}
-                          onChange={this.handleChange}
-                        />
-                      ) : (
-                        <input
-                          name="cleaningHourly"
-                          value=""
-                          onChange={this.handleChange}
-                          disabled
-                        />
-                      )}
-                      <h3>Most Taskers with your experience hired at: </h3>
-                      <p>$17/hr</p>
-                    </section>
+                    {this.state.cleaning ? (
+                      <div className="tasker-rate-show">
+                        <h4> Your Tasker Rate </h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="cleaningHourly"
+                            value={this.state.cleaningHourly}
+                            onChange={this.handleChange}
+                          />
+                          <h3>Most Taskers with your experience hired at: </h3>
+                          <p>$17/hr</p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="tasker-rate-hide">
+                        <h4>Your Tasker Rate</h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="cleaningHourly"
+                            value=""
+                            onChange={this.handleChange}
+                            disabled
+                          />
+                          <h3>Most Taskers with your experience hired at: </h3>
+                          <p>$17/hr</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </section>
               </div>
@@ -813,37 +871,50 @@ class TaskerProfile extends Component {
                       choice in their kitchen.
                     </ul>
                   </p>
-                  <fieldset>
+                  <div className="checkbox-container">
                     <input
                       type="checkbox"
                       name="cooking"
                       checked={this.state.cooking}
                       onChange={this.handleChange}
                     />
-                    I have the skills and qualifications to task in this
-                    category.
-                  </fieldset>
+                    <div className="skills-qualifications">
+                      I have the skills and qualifications to task in this
+                      category.
+                    </div>
+                  </div>
+
                   <div className="tasker-rate-section">
-                    <h4>Your Tasker Rate</h4>
-                    <section>
-                      $
-                      {this.state.cooking ? (
-                        <input
-                          name="cookingHourly"
-                          value={this.state.cookingHourly}
-                          onChange={this.handleChange}
-                        />
-                      ) : (
-                        <input
-                          name="cookingHourly"
-                          value=""
-                          onChange={this.handleChange}
-                          disabled
-                        />
-                      )}
-                      <h3>Most Taskers with your experience hired at: </h3>
-                      <p>$25/hr</p>
-                    </section>
+                    {this.state.cooking ? (
+                      <div className="tasker-rate-show">
+                        <h4> Your Tasker Rate </h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="cookingHourly"
+                            value={this.state.cookingHourly}
+                            onChange={this.handleChange}
+                          />
+                          <h3>Most Taskers with your experience hired at: </h3>
+                          <p>$25/hr</p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="tasker-rate-hide">
+                        <h4>Your Tasker Rate</h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="cookingHourly"
+                            value=""
+                            onChange={this.handleChange}
+                            disabled
+                          />
+                          <h3>Most Taskers with your experience hired at: </h3>
+                          <p>$25/hr</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </section>
               </div>

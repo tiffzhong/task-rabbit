@@ -61,6 +61,18 @@
   border-radius: 5px;
   border: 1px solid rgb(181, 181, 181);
 }
+#root
+  > div
+  > div
+  > div.tasker-profile
+  > div.profile-form-container
+  > form
+  > div
+  > input {
+  width: 517%;
+  margin-left: -138px;
+}
+
 .profile-form-container form textarea {
   padding: 0.625em 1em;
   width: 100%;
@@ -106,8 +118,8 @@
   width: 100%;
 }
 .tasker-skill-form h2 {
-  margin-top: 20px;
-  width: 85%;
+  margin-top: 40px;
+  width: 70%;
   font-size: 35px;
   font-weight: bold;
   text-align: start;
@@ -115,7 +127,7 @@
 
 .tasker-skill-form form {
   padding: 1rem 1rem 0.5rem;
-  width: 85%;
+  width: 70%;
   font-size: 1.25em;
   position: relative;
   border: 1px solid #dce0e6;
@@ -123,7 +135,7 @@
   display: flex;
   border-radius: 10px;
   flex-direction: column;
-  margin: 20px;
+  margin: 30px 20px 20px 20px;
 }
 .tasker-skill-form span {
   border-bottom: 1px solid #dce0e6;
@@ -195,6 +207,7 @@
   align-items: center;
   text-align: left;
   padding: 20px;
+  border-bottom: 1px solid #dce0e6;
 }
 .tasker-display-text i {
   padding: 0 10px;
@@ -239,7 +252,7 @@
   color: #545e69;
   text-align: start;
   border-radius: 10px;
-  padding: 10px 20px 15px 20px;
+  padding: 10px 20px 30px 20px;
   background-color: #f9fafb;
 }
 .pop-a-roo section p {
@@ -261,6 +274,13 @@
 }
 /* ============== MEDIAS ============ */
 @media (max-width: 890px) {
+  .tasker-skill-form h2 {
+    width: 90%;
+  }
+
+  .tasker-skill-form form {
+    width: 90%;
+  }
   .profile-form-container {
     padding: 40px 0;
     flex-direction: column;
@@ -280,5 +300,86 @@
   }
   .profile-form-container h4 {
     font-size: 28px;
+  }
+}
+
+@media (max-width: 500px) {
+  .tasker-skill-form h2 {
+    width: 95%;
+  }
+
+  .tasker-skill-form form {
+    width: 95%;
+  }
+  .profile-form-container span {
+    width: 85%;
+  }
+}
+
+@media (max-width: 360px) {
+  #root
+    > div
+    > div
+    > div.tasker-profile
+    > div.profile-form-container
+    > form
+    > div
+    > input {
+    width: 219%;
+    margin-left: -77px;
+  }
+}
+@media (max-width: 411px) {
+  #root
+    > div
+    > div
+    > div.tasker-profile
+    > div.profile-form-container
+    > form
+    > div
+    > input {
+    width: 422%;
+    margin-left: -126px;
+  }
+}
+@media (max-width: 375px) {
+  #root
+    > div
+    > div
+    > div.tasker-profile
+    > div.profile-form-container
+    > form
+    > div
+    > input {
+    width: 262%;
+    margin-left: -92px;
+  }
+}
+
+@media (max-width: 320px) {
+  #root
+    > div
+    > div
+    > div.tasker-profile
+    > div.profile-form-container
+    > form
+    > div
+    > input {
+    width: 142%;
+    margin-left: -36px;
+  }
+}
+
+@media (max-width: 375px) {
+  #root
+    > div
+    > div
+    > div.tasker-profile
+    > div.profile-form-container
+    > form
+    > div
+    > input {
+    width: 217%;
+    margin-left: -76px;
   }
 }
