@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { getConfirmation } from '../../ducks/taskerReducer';
 
+
 class PersonalMessages extends Component {
     constructor() {
         super();
@@ -88,6 +89,10 @@ class PersonalMessages extends Component {
                 personalMessagesList: response.data
             })
         })
+        this.setState({
+            message: ''
+        })
+        
     }
     
     render() {
@@ -97,7 +102,7 @@ class PersonalMessages extends Component {
         // console.log('this.state.personalMessagesList',this.state.personalMessagesList);
         // console.log('+++++>>>>>> tasker', this.state.taskerInfo)
         const { user } = this.props;
-        const { personalMessagesList, taskerInfo } = this.state;
+        const { personalMessagesList, taskerInfo, message } = this.state;
         const { confirmation_id } = this.props.match.params
         const myMessages = personalMessagesList.map(e => {
             return (
@@ -123,7 +128,7 @@ class PersonalMessages extends Component {
                         {myMessages}
                     </div>
                     <div className='createMessage-container'>
-                        <textarea onChange={e=>this.setMessage(e.target.value)} />
+                        <textarea value={message} onChange={e=>this.setMessage(e.target.value)} placeholder='Message' />
                         <button onClick={()=>this.createMessage(confirmation_id)} >Send</button>
                     </div>
                 </div>

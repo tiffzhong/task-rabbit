@@ -3,6 +3,7 @@ import "./NavBar.css";
 // import Googlemap from "../Googlemap/Googlemap";
 // import Autocompletesearch from "../Googlemap/Autocompletesearch";
 import { Link } from "react-router-dom";
+import './HowItWorks.css';
 
 const NavBar_HowItWorks = () => {
   return (

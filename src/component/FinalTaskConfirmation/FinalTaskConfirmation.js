@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ConfirmationMap from "./ConfirmationMap";
-import "./Confirmation.css";
-import Autocompletesearch from "../Googlemap/Autocompletesearch";
+import "./FinalTaskConfirmation.css";
 import axios from "axios";
 import { connect } from "react-redux";
 import { getConfirmation } from "../../ducks/taskerReducer";
@@ -9,18 +8,13 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import Stripecheckout from "react-stripe-checkout";
 
-class Confirmation extends Component {
+class FinalTaskConfirmation extends Component {
   constructor(props) {
     super(props);
     this.state = {
       tasker: "",
       client: "",
-      total: [],
-      hourly: {
-        "Est. 1 hr": 1,
-        "Est. 2-3 hrs": 2,
-        "Est. 4+ hrs": 4
-      }
+      total: []
       // confirmation= null
       // confirmation_id: "",
       // client_id: "",
@@ -43,7 +37,7 @@ class Confirmation extends Component {
 
   componentDidMount() {
     this.propsToState();
-    // this.totalCost();
+    this.totalCost();
     this.getUpdate();
   }
 
@@ -52,7 +46,7 @@ class Confirmation extends Component {
       this.getClient();
       this.getTasker();
       this.propsToState();
-      // this.totalCost();
+      this.totalCost();
       // this.setState({ duration: this.props.confirmedTask[0].duration });
     }
   }
@@ -100,40 +94,15 @@ class Confirmation extends Component {
     });
   };
 
-<<<<<<< HEAD
-  // totalCost = () => {
-  //   const { duration, tasker_hourly } = this.state
-  //   var total = hourly[duration] * tasker_hourly
-  //   this.setState({
-  //     total: total
-  //   })
-  // };
-
-  ontoken = token => {
-    const { duration, tasker_hourly, hourly } = this.state
-    var total = hourly[duration] * tasker_hourly
-    axios
-      .post("/api/stripe", { token, total })
-      .then(response => {
-        // console.log("stripe", response)
-        alert("Successful payment")
-      });
-  };
-
-=======
->>>>>>> 0ce547646d9c5500fd7568d6ab8b18cec59b6b44
   render() {
-    // console.log("sean!!", this.state.shortDuration);
+    console.log(this.props, "this.props in FinalTaskConfirmation.js");
+    console.log(this.state, "state in FinalTaskConfirmation");
 
-    console.log(this.props, "this.props in Confirmation.js");
-    console.log(this.state, "leh stateh");
-
-
-    // const hourly = {
-    //   "Est. 1 hr": 1,
-    //   "Est. 2-3 hrs": 2,
-    //   "Est. 4+ hrs": 4
-    // };
+    const hourly = {
+      "Est. 1 hr": 1,
+      "Est. 2-3 hrs": 2,
+      "Est. 4+ hrs": 4
+    };
 
     const taskNames = {
       pet: "Pet Services",
@@ -160,8 +129,7 @@ class Confirmation extends Component {
       tasker_hourly,
       vehicle,
       tasker,
-      client,
-      hourly
+      client
     } = this.state;
     return (
       <div className="confirmation-window">
@@ -209,13 +177,10 @@ class Confirmation extends Component {
             </p2>
             <br />
             <p1>{location_end ? "End: " + location_end : ""}</p1>
-<<<<<<< HEAD
             {/* <h6>
               <p>Start: {location_start ? location_start : "location_start"} </p>
               <p>End: {location_end ? location_end : "location_end"}</p>
             </h6> */}
-=======
->>>>>>> 0ce547646d9c5500fd7568d6ab8b18cec59b6b44
           </div>
 
           <div className="confirmation-options-container">
@@ -244,8 +209,8 @@ class Confirmation extends Component {
               <Stripecheckout
                 ComponentClass="stripe"
                 name="TaskRabbit"
-                email="TaskRabbit@gmail.com"
-                amount={hourly[duration] * tasker_hourly * 100}
+                email="test@gmail.com"
+                //  amount={total * 100}
                 token={this.ontoken}
                 allowRememberMe={false}
                 stripeKey={process.env.REACT_APP_STRIPE_KEY}
@@ -273,4 +238,4 @@ function mapStateToProps(state) {
 export default connect(
   mapStateToProps,
   { getConfirmation }
-)(Confirmation);
+)(FinalTaskConfirmation);

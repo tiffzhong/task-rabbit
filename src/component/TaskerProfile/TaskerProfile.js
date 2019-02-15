@@ -190,7 +190,7 @@ class TaskerProfile extends Component {
             />
             <div>
               <Autocomplete
-                style={{ width: "390%", marginLeft: "-127px" }}
+                style={{ width: "517%", marginLeft: "-138px" }}
                 onPlaceSelected={place => {
                   this.setState({
                     place: place.formatted_address
@@ -251,37 +251,50 @@ class TaskerProfile extends Component {
                       level, and stud finder.
                     </ul>
                   </p>
-                  <fieldset>
+                  <div className="checkbox-container">
                     <input
                       type="checkbox"
                       name="mounting"
                       checked={this.state.mounting}
                       onChange={this.handleChange}
                     />
-                    I have the skills and qualifications to task in this
-                    category.
-                  </fieldset>
+                    <div className="skills-qualifications">
+                      I have the skills and qualifications to task in this
+                      category.
+                    </div>
+                  </div>
+
                   <div className="tasker-rate-section">
-                    <h4>Your Tasker Rate</h4>
-                    <section>
-                      $
-                      {this.state.mounting ? (
-                        <input
-                          name="mountingHourly"
-                          value={this.state.mountingHourly}
-                          onChange={this.handleChange}
-                        />
-                      ) : (
-                        <input
-                          name="mountingHourly"
-                          value=""
-                          onChange={this.handleChange}
-                          disabled
-                        />
-                      )}
-                      <h3>Most Taskers with your experience hired at: </h3>
-                      <p>$25/hr</p>
-                    </section>
+                    {this.state.mounting ? (
+                      <div className="tasker-rate-show">
+                        <h4>Your Tasker Rate</h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="mountingHourly"
+                            value={this.state.mountingHourly}
+                            onChange={this.handleChange}
+                          />
+                          <h3>Most Taskers with your experience hired at: </h3>
+                          <p>$25/hr</p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="tasker-rate-hide">
+                        <h4>Your Tasker Rate</h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="mountingHourly"
+                            value=""
+                            onChange={this.handleChange}
+                            disabled
+                          />{" "}
+                          <h3>Most Taskers with your experience hired at: </h3>
+                          <p>$25/hr</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </section>
               </div>
@@ -314,37 +327,50 @@ class TaskerProfile extends Component {
                       costs should be included in your hourly rate.
                     </ul>
                   </p>
-                  <fieldset>
+                  <div className="checkbox-container">
                     <input
                       type="checkbox"
                       name="delivery"
                       checked={this.state.delivery}
                       onChange={this.handleChange}
                     />
-                    I have the skills and qualifications to task in this
-                    category.
-                  </fieldset>
+                    <div className="skills-qualifications">
+                      I have the skills and qualifications to task in this
+                      category.
+                    </div>
+                  </div>
+
                   <div className="tasker-rate-section">
-                    <h4> Your Tasker Rate </h4>
-                    <section>
-                      $
-                      {this.state.delivery ? (
-                        <input
-                          name="deliveryHourly"
-                          value={this.state.deliveryHourly}
-                          onChange={this.handleChange}
-                        />
-                      ) : (
-                        <input
-                          name="deliveryHourly"
-                          value=""
-                          onChange={this.handleChange}
-                          disabled
-                        />
-                      )}
-                      <h3>Most Taskers with your experience hired at:</h3>
-                      <p>$17/hr</p>
-                    </section>
+                    {this.state.delivery ? (
+                      <div className="tasker-rate-show">
+                        <h4> Your Tasker Rate </h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="deliveryHourly"
+                            value={this.state.deliveryHourly}
+                            onChange={this.handleChange}
+                          />
+                          <h3>Most Taskers with your experience hired at: </h3>
+                          <p>$17/hr</p>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="tasker-rate-hide">
+                        <h4>Your Tasker Rate</h4>
+                        <div className="rate-container">
+                          $
+                          <input
+                            name="deliveryHourly"
+                            value=""
+                            onChange={this.handleChange}
+                            disabled
+                          />
+                          <h3>Most Taskers with your experience hired at:</h3>
+                          <p>$17/hr</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </section>
               </div>
