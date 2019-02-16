@@ -1,60 +1,71 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import "./Emailmodal.css";
-import axios from 'axios';
+import axios from "axios";
 
 class EmailModalContent extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: ""
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: ""
+    };
+  }
 
-    getTenDollars = () => {
-        const { email } = this.state;
-        axios.post("/api/email", { email }).then(response => {
-        }).catch(error => console.log("Error in EmailModal", error))
-    }
+  getTenDollars = () => {
+    const { email } = this.state;
+    axios
+      .post("/api/email", { email })
+      .then(response => {})
+      .catch(error => console.log("Error in EmailModal", error));
+  };
 
-    handleChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
-    render() {
-        console.log("Emailstate!!!", this.state.email)
-        let displayName = this.props.display
-            ? "modal display-block"
-            : "modal display-none"
-        return (
-            <div className={displayName}>
-                <div className="emailmodal-profile-confirm">
-                    <div className="confirm-box">
-                        <h3> Help Your Friends, Get $10</h3>
-                        <p>Refer a friend to TaskRabbit. They get $10 off their first task. You get $10 off when they complete it.</p>
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+  render() {
+    let displayName = this.props.display
+      ? "modal display-block"
+      : "modal display-none";
+    return (
+      <div className={displayName}>
+        <div className="emailmodal-confirm">
+          <div className="confirm-box">
+            <h3> Help Your Friends, Get $10</h3>
+            <p>
+              Refer a friend to TaskRabbit. They get $10 off their first task.
+              You get $10 off when they complete it.
+            </p>
 
-                        <div className="iconBox">
+            <input
+              placeholder="Email"
+              name="email"
+              value={this.state.email}
+              onChange={event => this.handleChange(event)}
+            />
 
-                            <input placeholder="Email" className=" input-field" name="email" value={this.state.email} onChange={event => this.handleChange(event)} />
-                        </div>
-                        <div className="submitButton">
-                            <button className="inside-button" onClick={() => { this.getTenDollars(this.state.email); this.props.onHide() }}>Send</button>
-                        </div>
-
-                    </div>
-                    <div className="x-button-modal">
-                        <button
-                            onClick={() => {
-                                this.props.onHide();
-                            }}
-                        >
-                            X
+            <button
+              onClick={() => {
+                this.getTenDollars(this.state.email);
+                this.props.onHide();
+              }}
+            >
+              Send
             </button>
-                    </div>
-                </div>
-
-            </div >);
-    }
+          </div>
+          <div className="x-button-modal">
+            <button
+              onClick={() => {
+                this.props.onHide();
+              }}
+            >
+              X
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default EmailModalContent;
