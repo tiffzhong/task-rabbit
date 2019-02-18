@@ -37,12 +37,16 @@ class EmailModalContent extends Component {
               You get $10 off when they complete it.
             </p>
 
-            <input
-              placeholder="Email"
-              name="email"
-              value={this.state.email}
-              onChange={event => this.handleChange(event)}
-            />
+            <div className="input-container">
+              <i class="far fa-envelope" />
+              <input
+                className="discount"
+                placeholder="Email"
+                name="email"
+                value={this.state.email}
+                onChange={event => this.handleChange(event)}
+              />
+            </div>
 
             <button
               onClick={() => {
@@ -59,7 +63,7 @@ class EmailModalContent extends Component {
                 this.props.onHide();
               }}
             >
-              X
+              <i class="fas fa-times" />
             </button>
           </div>
         </div>
