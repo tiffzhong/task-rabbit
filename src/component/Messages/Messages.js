@@ -27,41 +27,37 @@ class Messages extends Component {
 
     render() {
         console.log('show me my magical props',this.props)
-        console.log('Its ALIVE!!!!! ====', this.state.personalMessagesList)
+        // console.log('Its ALIVE!!!!! ====', this.state.personalMessagesList)
+        const { confirmedTasks } = this.props;
         const messages = this.props.confirmedTasks.map(e => {
-            console.log("LINKS+++++++", e.confirmation_id)
-            return (
-                <div className={this.props.confirmedTasks ? '' : 'hide'}>
-                    <Link onClick={()=>this.getMessages(e.confirmation_id)} to={`/messages-personal/${e.confirmation_id && e.confirmation_id}`} >
-                        <span className='messages' >
-                            <div className='messager-container'>
-                                <img src={e.selfie} />
-                                <div className='messager-info' >
-                                    <p>{e.tasker_name}</p>
-                                    <p>{e.created_date}</p>
-                                </div>
-                            </div>
-                            <div className='details-container' >
-                            {
-                                this.props.messages
-                                ?
-                                <p>This is a message test dummy data</p>
-                                :
-                                <p>{e.task_details}</p>
-                            }
-                            </div>
-                            {/* <div className='price-container' >
-                                <p>Expected</p>
-                                <p>$306.00</p>
-                            </div> */}
-            </span>
-          </Link>
-        </div>
+        console.log("LINKS+++++++", e.confirmation_id)
+        console.log('----- confirmedTasks', this.props.confirmedTasks);
+      return (
+          <div >
+            <Link onClick={()=>this.getMessages(e.confirmation_id)} to={`/messages-personal/${e.confirmation_id && e.confirmation_id}`} >
+              <span className='messages' >
+                <div className='messager-container'>
+                  <img src={e.selfie} />
+                  <div className='messager-info' >
+                      <p>{e.tasker_name}</p>
+                      <p>{e.created_date}</p>
+                  </div>
+                </div>
+                <div className='details-container' >
+                  <p>{e.task_details}</p>
+                </div> 
+              </span>
+            </Link>
+          </div>
       );
     });
     // console.log('what are my match params bitch',this.props.match.params)
     console.log("props in messages", this.props);
-    return <div className="messages-component">{messages}</div>;
+    return (
+      <div className="messages-component">
+          {messages}
+      </div>
+    );
   }
 }
 

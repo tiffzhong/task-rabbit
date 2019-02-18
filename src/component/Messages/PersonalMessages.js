@@ -124,9 +124,16 @@ class PersonalMessages extends Component {
                         <img src={taskerInfo.selfie} />
                         <h4>{taskerInfo.tasker_name}</h4>
                     </div>
-                    <div className='messages-container'>
-                        {myMessages}
-                    </div>
+                    {
+                        myMessages.length ?
+                        <div className='messages-container'>
+                            {myMessages}
+                        </div>
+                            :
+                            <div className='messages-container default-message-container'>
+                            <p>Send a message to begin communication</p>
+                            </div>
+                    }
                     <div className='createMessage-container'>
                         <textarea value={message} onChange={e=>this.setMessage(e.target.value)} placeholder='Message' />
                         <button onClick={()=>this.createMessage(confirmation_id)} >Send</button>
