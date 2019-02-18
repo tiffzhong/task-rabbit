@@ -8,6 +8,7 @@ nav {
   left: 0;
   background: white;
   z-index: 5;
+  
 }
 nav span {
   vertical-align: baseline;
@@ -22,6 +23,7 @@ nav span {
   margin: 0 auto;
   position: relative;
   z-index: 12;
+  border-bottom: 1px solid #dce0e6;
 }
 nav div ul {
   display: flex;
