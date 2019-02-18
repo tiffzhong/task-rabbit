@@ -288,7 +288,7 @@ class NavBar extends Component {
             <Link className={this.props.user ? 'nav-link' : 'hide'} to='/confirmedTasks' ><span>My Tasks</span></Link>
 
             <div className='login-container'>
-              <Link to='/account' ><img src={user ? user.picture : ''} /></Link>
+              <Link to='/account/profile' ><img src={user ? user.picture : ''} /></Link>
               <button className={user ? 'hide' : 'login'} onClick={this.login}>Log in</button>
               <button className={user ? 'login' : 'hide'} onClick={this.logout}>Log out</button>
             </div>

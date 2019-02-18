@@ -46,6 +46,6 @@ export default (
     <Route path='/confirmedTasks' component={MessagesForm} />
     <Route path="/messages-personal/:confirmation_id" component={PersonalMessages} />
     <Route path='/tasker-message' component={TaskerMessages} />
-    <Route path='/account' component={Account} />
+    <Route path='/account/' component={Account} />
   </Switch>
 );
