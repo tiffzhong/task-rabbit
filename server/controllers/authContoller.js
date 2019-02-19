@@ -46,6 +46,7 @@ module.exports = {
             .then(newUsers => {
               req.session.user = newUsers[0];
               res.redirect("/");
+              console.log("jello", res);
             });
         }
       });

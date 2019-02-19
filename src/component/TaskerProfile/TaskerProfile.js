@@ -61,6 +61,17 @@ class TaskerProfile extends Component {
         });
       });
   }
+  login() {
+    const redirectUri = encodeURIComponent(
+      window.location.origin + "/auth/callback"
+    );
+    window.location = `https://${
+      process.env.REACT_APP_AUTH0_DOMAIN
+    }/authorize/?client_id=${
+      process.env.REACT_APP_AUTH0_CLIENT_ID
+    }&scope=openid%20profile%20email&redirect_uri=${redirectUri}&response_type=code`;
+  }
+
   handleInput = event => {
     this.setState({
       [event.target.name]: event.target.value
@@ -127,6 +138,9 @@ class TaskerProfile extends Component {
   };
 
   render() {
+    // if( this.props.user ? {
+
+    // })
     console.log(this.props, "tasker props");
     console.log(this.state, "stater");
     const {
