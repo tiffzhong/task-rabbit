@@ -48,7 +48,28 @@ app.get("/api/tasker/:tasker_id", taskerController.getProfile);
 app.put("/api/tasker/:tasker_id", taskerController.editProfile);
 
 //Client
-app.post('/api/client', clientController.bookTask);
+app.post("/api/client", clientController.bookTask);
+app.put("/api/client/:confirmation_id", clientController.editTask);
+app.get("/api/pickatasker", clientController.allTaskers);
+app.get("/api/client/:client_id", clientController.getClient);
+
+//Confirmation
+app.post("/api/confirmed", confirmationController.createConfirmed);
+app.get(
+  "/api/confirmed/:confirmation_id",
+  confirmationController.getConfirmation
+);
+//nodemailer
+app.post("/api/email", clientController.nodemailerEmail);
+
+//stripe
+app.post("/api/stripe", stripeController.stripeCheckout);
+
+//Messages
+app.get("/messages/:id", messagesController.getClientTasks);
+app.get("/api/personal/messages/:id", messagesController.getMessages);
+app.post("/api/messages", messagesController.createMessage);
+// app.get('/api/messages', messagesController.getMessages);
 
 const PORT = 4000;
 app.listen(PORT, () => {
