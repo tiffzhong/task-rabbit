@@ -52,6 +52,7 @@
 }
 
 .profile-form-container form input {
+  font-family: "Montserrat", sans-serif;
   padding: 0.625em 1em;
   width: 100%;
   color: black;
@@ -74,6 +75,7 @@
 }
 
 .profile-form-container form textarea {
+  font-family: "Montserrat", sans-serif;
   padding: 0.625em 1em;
   width: 100%;
   font-size: 15px;
@@ -85,6 +87,7 @@
 }
 
 .profile-form-container button {
+  font-family: "Montserrat", sans-serif;
   background-color: #51af33;
   color: white;
   display: flex;
@@ -94,6 +97,11 @@
   height: 40px;
   font-size: 20px;
   border-radius: 5px;
+}
+
+.profile-form-container button:hover {
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .profile-form-container h2 {
@@ -159,6 +167,7 @@
 }
 
 .tasker-rate-section input {
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   border: 1px solid #545e69;
   color: black;
@@ -231,15 +240,20 @@
   padding-top: 15px;
 }
 .submit-button {
+  font-family: "Montserrat", sans-serif;
   background-color: #51af33;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  width: 90%;
   height: 40px;
   font-size: 20px;
   border-radius: 5px;
+}
+.submit-button:hover {
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .pop-a-roo {

@@ -219,7 +219,11 @@ class TaskerProfile extends Component {
               value={about}
               onChange={event => this.handleInput(event)}
             />
-            <button>Continue</button>
+            <button
+              onClick={() => window.scrollTo({ top: 700, behavior: "smooth" })}
+            >
+              Continue
+            </button>
           </form>
         </div>
 

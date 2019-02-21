@@ -100,16 +100,17 @@ class NavBar extends Component {
             {/* modal */}
             {this.state.display ? (
               <EmailModalContent
+                className="email-modal-nav"
                 display={this.state.display}
                 onHide={this.hideModal}
               />
             ) : null}
-            <button
+            <a
               className={this.props.user ? "modalButton" : "hide"}
               onClick={this.showModal}
             >
               Get $10!
-            </button>
+            </a>
             <div className="nav-popover-container">
               <a className="services-link" onClick={this.linkToggler}>
                 <span>Services</span>
@@ -324,9 +325,13 @@ class NavBar extends Component {
             <Link className="nav-link" to="/how-it-works">
               How It Works
             </Link>
-            <Link className="nav-link" to="/tasker-profile">
-              Become a Tasker
-            </Link>
+            {this.props.user ? (
+              <Link className="nav-link" to="/tasker-profile">
+                Become a Tasker
+              </Link>
+            ) : (
+              ""
+            )}
             <Link
               className={this.props.user ? "nav-link" : "hide"}
               to="/confirmedTasks"
@@ -361,7 +366,7 @@ class NavBar extends Component {
               <Link to="/">Home</Link>
               <Link to="/how-it-works">How it Works</Link>
               <a onClick={() => this.login()}>Register/Login</a>
-              <Link to="/tasker-profile">Become a Tasker</Link>
+              {/* <Link to="/tasker-profile">Become a Tasker</Link> */}
             </ul>
           </div>
         </div>

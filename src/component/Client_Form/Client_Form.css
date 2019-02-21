@@ -112,7 +112,6 @@ h2 {
   flex-direction: column;
   justify-content: center;
   margin-top: 50px;
-  
 }
 
 .inner-container input {
@@ -120,15 +119,14 @@ h2 {
   margin-bottom: 10px;
 }
 
-
 #details-inner {
   top: 0px;
 }
 #details-inner textarea {
+  font-family: "Montserrat", sans-serif;
   height: 150px;
   width: 50vw;
   resize: none;
-
 }
 #details-inner button {
   position: relative;
@@ -204,7 +202,6 @@ h2 {
   color: gray;
   flex-direction: column;
   margin-top: 5px;
-  
 }
 .closed-schedule-box {
   display: flex;

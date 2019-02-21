@@ -13,12 +13,14 @@ class clientPickTasker extends Component {
     };
   }
   componentDidMount() {
+    console.log("n e thin");
     this.displayAllTaskers();
   }
 
   displayAllTaskers = () => {
     this.props.allTaskersForClient().then(response => {
       // console.log(response, "hello wurld");
+      console.log(response, "what is the response from display");
       this.setState({
         displaytaskers: this.props.allTaskers
       });
@@ -28,15 +30,7 @@ class clientPickTasker extends Component {
   render() {
     const { allTaskers, clientData, task } = this.props;
     console.log("this.props=>>>>", this.props);
-    console.log(allTaskers[0], "did it work");
-    console.log("please show", this.props.allTaskers[1]);
-    console.log("this.props.clientData[0]", this.props.allTaskers);
-    // let taskNameShowUp = clientData[0].tasktype;
-    let taskNames =
-      allTaskers.length &&
-      allTaskers[1].map(taskName => {
-        return taskName.tasktype;
-      });
+
     let results =
       allTaskers.length &&
       allTaskers[0].filter(value => {
@@ -98,7 +92,7 @@ class clientPickTasker extends Component {
           After booking, you can chat with your Tasker, agree on an exact time,
           or go over any requirements or questions, if necessary.
         </p>
-        Task: {taskNames[0]}
+
         {mappedResults}
       </div>
     );

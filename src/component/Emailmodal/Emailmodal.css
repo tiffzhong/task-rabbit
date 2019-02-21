@@ -20,7 +20,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 50%;
+  height: 40%;
   top: 50%;
   left: 50%;
   border-radius: 8px;
@@ -32,7 +32,7 @@
   height: 90%;
 }
 .confirm-box h3 {
-  margin-top: 35px;
+  margin-top: 20px;
   text-align: center;
   font-size: 28px;
   margin-bottom: 20px;
@@ -75,9 +75,12 @@
   width: 90%;
   height: 45px;
   margin: 0;
+  font-size: 20px;
   border-radius: 5px;
 }
-
+.confirm-box button:hover {
+  font-weight: bold;
+}
 .x-button-modal {
   top: -10px;
   right: -10px;
@@ -100,4 +103,10 @@
 .x-button-modal button:hover {
   background: none;
   color: #51af33;
+}
+
+@media (min-width: 1050px) {
+  .emailmodal-confirm {
+    height: 36%;
+  }
 }
