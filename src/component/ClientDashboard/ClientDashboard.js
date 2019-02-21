@@ -35,8 +35,10 @@ class ClientDashboard extends Component {
     console.log('taska-lacka', tasks);
     let myTasks = tasks.map(task => {
       return (
-        <div>
-          <p>{task.task}</p>
+        <div className='tasks-box'>
+          <p>{task.task} with {task.tasker_name}</p>
+          <label>completed</label>
+          <input type='checkbox' />
         </div>
       )
     })
@@ -58,7 +60,7 @@ class ClientDashboard extends Component {
             </div>
             <div className='dashboard-box'>
               <p>Your Booked Tasks</p>
-              <div>
+              <div className='tasks-container'>
                 {myTasks}
               </div>
             </div>
