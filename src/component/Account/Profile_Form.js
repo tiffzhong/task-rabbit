@@ -19,7 +19,7 @@ function Profile_Form(props) {
                             <p>{user.name}</p>
                             <p>{user.email}</p>
                             <div className='dashboard-links'>
-                                <Link to='/confirmedTasks' className='dashboard_link'><span>Client Dashboard</span></Link>
+                                <Link to='/client-dashboard' className='dashboard_link'><span>Client Dashboard</span></Link>
                                 <Link to={`/tasker-dashboard/${user.auth0_id}`} className='dashboard_link'><span>Tasker Dashboard</span></Link>
                             </div>
                         </div>

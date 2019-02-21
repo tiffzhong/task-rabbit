@@ -69,7 +69,7 @@ app.post("/api/email", clientController.nodemailerEmail);
 app.post("/api/stripe", stripeController.stripeCheckout);
 
 //Messages
-app.get("/messages/:id", messagesController.getClientMessages);
+app.get("/messages/:id", messagesController.getClientTasks);
 app.get("/api/personal/messages/:id", messagesController.getMessages);
 app.post("/api/messages", messagesController.createMessage);
 // app.get('/api/messages', messagesController.getMessages);
