@@ -15,7 +15,7 @@ create table bookedTasks (
     locationEnd text,
     lat numeric (15,6),
     long numeric (15,6),
-    duration text,``
+    duration text,
     vehicle text,
     startDate text,
     endDate text,
