@@ -1,0 +1,81 @@
+.clientDashboard-component {
+    height: calc(100vh - 70px);
+    /* height: 100vh; */
+    /* background: yellow; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+.dashboard-container {
+    position: relative;
+    top: 100px;
+    /* background: green; */
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.dashboard-title {
+    width: 80%;
+    border-bottom: 1px solid #dce0e6;
+}
+.dashboard-title h1 {
+    font-size: 50px;
+    margin: 20px;
+}
+.dashboard-box-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* background: purple; */
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.dashboard-box {
+    /* background: red; */
+    width: 30%;
+    height: 90%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dashboard-box img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.dashboard-box h2 {
+    font-size: 30px;
+}
+.dashboard-box-info {
+    margin: 5px;
+}
+.dashboard-box-link {
+    position: absolute;
+    bottom: 20px;
+    /* text-decoration: none; */
+}
+.dashboard-box-container a {
+    text-decoration: none;
+    color: #51af33;
+}
+.tasks-container {
+    
+}
+.tasks-box {
+    background: whitesmoke;
+    height: 30px;
+    border: 1px solid #dce0e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.tasks-box p {
+    margin: 10px;
+}

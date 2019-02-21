@@ -171,6 +171,14 @@ class ClientForm extends Component {
               handleToggle={this.handleToggle}
               confirmedTask={this.props.confirmedTask}
             />
+              <Duration
+              locationToggle={this.state.locationToggle}
+              durationToggle={this.state.durationToggle}
+              vehicleToggle={this.state.vehicleToggle}
+              scheduleToggle={this.state.scheduleToggle}
+              handleToggle={this.handleToggle}
+              confirmedTask={this.props.confirmedTask}
+            />
               <Vehicle
                 locationToggle={this.state.locationToggle}
                 durationToggle={this.state.durationToggle}
@@ -179,6 +187,24 @@ class ClientForm extends Component {
                 handleToggle={this.handleToggle}
                 confirmedTask={this.props.confirmedTask}
               />
+              <Schedule
+              locationToggle={this.state.locationToggle}
+              durationToggle={this.state.durationToggle}
+              vehicleToggle={this.state.vehicleToggle}
+              scheduleToggle={this.state.scheduleToggle}
+              handleToggle={this.handleToggle}
+              confirmedTask={this.props.confirmedTask}
+            />
+            <Details
+              locationToggle={this.state.locationToggle}
+              durationToggle={this.state.durationToggle}
+              vehicleToggle={this.state.vehicleToggle}
+              scheduleToggle={this.state.scheduleToggle}
+              handleToggle={this.handleToggle}
+              bookTask={this.bookTask}
+              detailToggle={this.state.detailToggle}
+              confirmedTask={this.props.confirmedTask}
+            />
             
             />
           </div>

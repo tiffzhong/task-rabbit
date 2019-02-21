@@ -106,7 +106,7 @@ class Vehicle extends Component {
               <div className="form-button">
                 <button
                   onClick={() =>
-                    this.handleToggle("vehicleToggle", true, this.props.vehicle)
+                    this.props.handleToggle("vehicleToggle", true, this.props.vehicle)
                   }
                 >
                   Continue

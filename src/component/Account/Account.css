@@ -77,6 +77,37 @@
   justify-content: center;
 }
 .form-component {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: solid 1px #dce0e6;
+    flex-direction: column;
+    background: white;
+}
+.form-component-inner {
+    /* background: green; */
+    position: relative;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px 0;
+}
+.form-component-title {
+    /* background: blue; */
+    border-bottom: 1px solid #dce0e6;
+    width: 80%;
+    height: 50px;
+    display: flex;
+}
+.form-component h2 {
+    font-size: 30px;
+}
+.active-link    {
+    color: green;
+    background: whitesmoke;
+    /* width: 200px; */
+    border-left: solid 4px #51af33;
   height: 100%;
   width: 100%;
   display: flex;
@@ -95,6 +126,43 @@
 .active-link span {
   color: #51af33;
 }
+.profile-info {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+.profile-info img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+.profile-info-inner {
+    /* background: red; */
+    margin: 20px;
+}
+.profile-info-inner p {
+    margin: 20px;
+    display: flex;
+}
+.dashboard-links {
+     
+}
+.dashboard-links a {
+    text-decoration: none;
+    color: #51af33;
+}
+.dashboard_link {
+    margin: 10px;
+    /* background: green; */
+}
+
+
+
+
+
+
+
+
 
 /* 
 .account-component div:first-of-type {

@@ -32,13 +32,29 @@ class MessagesForm extends Component {
     render() {
         console.log('client id ------', this.state.client_id);
         const { confirmedTasks } = this.state;
+        console.log('confirmed task-a-roos', confirmedTasks);
         return (
             <div className='messagesForm-component'>
-                <div className={ confirmedTasks ? 'messages-form-container' : 'hide'}>
-                    <Messages 
-                        confirmedTasks={confirmedTasks}
-                    />
-                </div>
+                    
+                        {/* confirmedTasks && confirmedTasks ? */}
+                        {/* <div className={ confirmedTasks ? 'messages-form-container' : 'hide'}> */}
+                        <div className='messages-form-container' >
+                            {   
+                                this.state.confirmedTasks.length ?
+                                <Messages 
+                                    confirmedTasks={confirmedTasks}
+                                />
+                                :
+                                <div className="messages">
+                                    <p>YOU MUST BOOK A TASK FIRST!</p>
+                                </div>
+                                // :
+                                // <div className="messages">
+                                //     <p>Retrieving your Booked Tasks...</p>
+                                // </div>
+                            }
+                        </div>
+                      
             </div>
         );
     }

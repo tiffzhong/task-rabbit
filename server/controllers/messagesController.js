@@ -1,5 +1,5 @@
 module.exports = {
-    getClientMessages: (req, res) => {
+    getClientTasks: (req, res) => {
         const { id } = req.params;
         console.log('---->>> req.params', req.params);
         const db = req.app.get('db');
