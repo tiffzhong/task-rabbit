@@ -17,6 +17,11 @@ massive(process.env.CONNECTION_STRING)
     console.log("error with massive", error);
   });
 
+// const path = require("path");
+// app.get("*", (req, res) => {
+// res.sendFile(path.join(__dirname, "../build/index.html"));
+// });
+
 app.use(
   session({
     store: new (connect(session))({

@@ -9,113 +9,95 @@
 
 .display-none {
   display: none;
-} 
+}
 
-
-
-
-.emailmodal-profile-confirm {
+.emailmodal-confirm {
+  font-family: "Montserrat", sans-serif;
   position: fixed;
   background: white;
   border: 2px solid rgb(243, 239, 239);
-  padding: 1.25rem;
-  margin: 0;
-  font-size: 100%;
-  box-sizing: border-box;
-  display: block;
-  width: 470px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 50%;
-  overflow-y: scroll;
   top: 50%;
   left: 50%;
   border-radius: 8px;
   transform: translate(-50%, -50%);
-  
-  }
-  .confirm-box{
-    margin: 1rem;
-    width: 90%;
-    height: 90%;
-  
+  padding: 15px;
+}
+.confirm-box {
+  width: 90%;
+  height: 90%;
+}
+.confirm-box h3 {
+  margin-top: 35px;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.confirm-box p {
+  text-align: start;
+  margin: 0 35px;
+  margin-bottom: 20px;
+  color: #4d4e4e;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.confirm-box .input-container {
+  width: 100%;
+}
 
-  }
-  .confirm-box h3{
-    margin-top: 25px;
-    text-align: center;
-    font-size: 1.25rem;
-    line-height: 1.6;
-    margin-bottom: .5rem;
-    font-weight: 600;
-    font-family: "Proxima", Arial, Helvetica, sans-serif;
-  }
-  .confirm-box p{
-    margin: 0 0 1.5rem 0;
-    color: #4d4e4e;
-    font-family: "Proxima", Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    line-height: 1.5;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-  }
+.confirm-box .input-container i {
+  position: relative;
+  top: 2px;
+  left: 26px;
+  color: #67727e;
+  z-index: 10;
+}
 
-  .confirm-box span{
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 2px;
-  }
-  .confirm-box input{
-   display: flex;
-   width: 390px;
-   height: 45px;
-   border-radius: 5px;
-   float: left;
-   margin-bottom: 1rem;
-   position: relative;
-  }
+.confirm-box .input-container .discount {
+  padding-left: 38px;
+  width: 90%;
+  height: 45px;
+  border-radius: 5px;
+  border: 1px solid #67727e;
+  margin-bottom: 1rem;
+  position: relative;
+  margin-right: 15px;
+}
 
-  .input-field{
-    width: 100%;
-    padding: 10px;
-    outline: none;
-  }
-  .iconBox{
-    width: 20px;
-  
-  }
+.confirm-box button {
+  background: #51af33;
+  color: white;
+  width: 90%;
+  height: 45px;
+  margin: 0;
+  border-radius: 5px;
+}
 
-  .submitButton button{
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    background: green;
-    color: white;
-    width: 390px;
-    height: 45px;
-    border-radius: 5px;
-  }
+.x-button-modal {
+  top: -10px;
+  right: -10px;
+  position: absolute;
+}
+.x-button-modal button {
+  background: none;
+  position: relative;
+  border: none;
+  width: 40px;
+  height: 35px;
+  margin-top: 10px;
+  margin-right: 15px;
+  padding: 2px;
+  color: #4d4e4e;
+  font-size: 20px;
+  border-radius: 5px;
+}
 
-
-
-  .x-button-modal{
-    top: -10px;
-    right: -10px;
-    position: absolute;
-  }
-  .x-button-modal button {
-    position: relative;
-    border: none;
-    width:25px;
-    height: 35px;
-    margin-top: 10px;
-    margin-right: 15px;
-    padding: 2px;
-    color: black;
-    font-size: 20px;
-    border-radius: 5px;
-  
-  }
+.x-button-modal button:hover {
+  background: none;
+  color: #51af33;
+}
