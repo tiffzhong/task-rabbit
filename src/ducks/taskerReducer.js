@@ -120,7 +120,7 @@ export function createProfile(
           tasker_id
         })
         .then(res => {
-          window.location.pathname = `/account/`;
+          window.location.pathname = `/account/profile`;
           return {};
         })
         .catch(error => console.log("error in creating profile", error))
