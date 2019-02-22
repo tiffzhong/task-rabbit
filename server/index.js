@@ -17,11 +17,6 @@ massive(process.env.CONNECTION_STRING)
     console.log("error with massive", error);
   });
 
-// const path = require("path");
-// app.get("*", (req, res) => {
-// res.sendFile(path.join(__dirname, "../build/index.html"));
-// });
-
 app.use(
   session({
     store: new (connect(session))({
@@ -41,9 +36,8 @@ const authController = require("./controllers/authContoller");
 const taskerController = require("./controllers/taskerController");
 const clientController = require("./controllers/clientController");
 const confirmationController = require("./controllers/confirmationController");
-const stripeController = require('./controllers/stripeController');
-const messagesController = require('./controllers/messagesController');
-
+const messagesController = require("./controllers/messagesController");
+const stripeController = require("./controllers/stripeController");
 //Endpoints
 //Auth
 app.get("/auth/callback", authController.login);
@@ -52,6 +46,7 @@ app.post("/auth/logout", authController.logout);
 
 //Tasker
 app.post("/api/tasker", taskerController.createProfile);
+app.get("/api/tasker", taskerController.getAllTaskers);
 app.get("/api/tasker/:tasker_id", taskerController.getProfile);
 app.put("/api/tasker/:tasker_id", taskerController.editProfile);
 
