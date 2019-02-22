@@ -44,7 +44,6 @@
   background: white;
 }
 .account_link {
-  /* margin: 5px 20px 10px 0px; */
   display: flex;
   align-items: center;
   width: 200px;
@@ -59,19 +58,15 @@
   color: rgb(77, 76, 76);
   position: relative;
   left: 0px;
-  /* margin-top: 10px; */
 }
 
 .account-form {
-  /* background: green; */
   height: 100%;
   width: 100%;
-  /* border: 2px solid green; */
 }
 .account-form-container {
   height: 100%;
   width: 100%;
-  /* background: yellow; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,7 +81,6 @@
     background: white;
 }
 .form-component-inner {
-    /* background: green; */
     position: relative;
     top: 20px;
     display: flex;
@@ -94,21 +88,19 @@
     margin: 0 20px 0;
 }
 .form-component-title {
-    /* background: blue; */
-    border-bottom: 1px solid #dce0e6;
-    width: 80%;
-    height: 50px;
-    display: flex;
+  /* background: blue; */
+  border-bottom: 1px solid #dce0e6;
+  width: 80%;
+  height: 50px;
+  display: flex;
 }
 .form-component h2 {
-    font-size: 30px;
+  font-size: 30px;
 }
 .active-link    {
-    color: green;
-    background: whitesmoke;
-    /* width: 200px; */
-    border-left: solid 4px #51af33;
-  height: 100%;
+  color: green;
+  background: whitesmoke;
+  border-left: solid 4px #51af33;
   width: 100%;
   display: flex;
   align-items: center;
