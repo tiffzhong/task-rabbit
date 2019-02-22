@@ -3,7 +3,7 @@ import axios from "axios";
 const INITIAL_STATE = {
   user: null,
   taskerProfile: [],
-  confirmedTask: [],
+  confirmedTask: []
 };
 
 const SET_USER = "SET_USER";
@@ -120,9 +120,7 @@ export function createProfile(
           tasker_id
         })
         .then(res => {
-          window.location.pathname = `/tasker-dashboard/${
-            res.data[0].tasker_id
-          }`;
+          window.location.pathname = `/account/`;
           return {};
         })
         .catch(error => console.log("error in creating profile", error))
