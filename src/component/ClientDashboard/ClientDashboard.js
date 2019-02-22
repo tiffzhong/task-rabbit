@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './ClientDashboard.css';
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { getConfirmation } from '../../ducks/taskerReducer';
 import axios from 'axios';
 
@@ -36,7 +36,8 @@ class ClientDashboard extends Component {
     let myTasks = tasks.map(task => {
       return (
         <div>
-          <p>{task.task}</p>
+          <p>{task.task} with {task.tasker_name}</p>
+          <NavLink to={`/messages-personal/${task.confirmation_id && task.confirmation_id}`}><button>Send Message</button></NavLink>
         </div>
       )
     })
@@ -56,13 +57,11 @@ class ClientDashboard extends Component {
                 Edit Profile
               </Link>
             </div>
-            <div className='dashboard-box'>
+            <div className='dashboard-box dashboard-box-width' >
               <p>Your Booked Tasks</p>
               <div>
                 {myTasks}
               </div>
-            </div>
-            <div className='dashboard-box'>
             </div>
           </div>
         </div>

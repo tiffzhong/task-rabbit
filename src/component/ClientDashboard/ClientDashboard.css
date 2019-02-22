@@ -1,7 +1,7 @@
 .clientDashboard-component {
     height: calc(100vh - 70px);
     /* height: 100vh; */
-    background: yellow;
+    /* background: yellow; */
     display: flex;
     /* align-items: center; */
     justify-content: center;
@@ -9,7 +9,7 @@
 .dashboard-container {
     position: relative;
     top: 100px;
-    background: green;
+    /* background: green; */
     height: 80%;
     width: 80%;
     display: flex;
@@ -29,19 +29,21 @@
     width: 100%;
     height: 100%;
     display: flex;
-    background: purple;
+    /* background: purple; */
     align-items: center;
     justify-content: center;
     position: relative;
 }
 .dashboard-box {
-    background: red;
-    width: 30%;
+    /* background: red; */
     height: 90%;
     margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.dashboard-box-width {
+    width: 50%;
 }
 .dashboard-box img {
     height: 150px;
@@ -51,10 +53,15 @@
 .dashboard-box h2 {
     font-size: 30px;
 }
+.dashboard-box a {
+    text-decoration: none;
+    color: #51af33;
+}
 .dashboard-box-info {
     margin: 5px;
 }
 .dashboard-box-link {
     position: absolute;
     bottom: 20px;
+    
 }
