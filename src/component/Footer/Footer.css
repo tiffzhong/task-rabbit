@@ -2,7 +2,8 @@ footer {
   height: 70px;
   width: 100%;
   font-size: 18px;
-  position: absolute;
+  position: relative;
+  bottom: 0;
   background-color: #e8ebef;
 }
 .fruit-by-the-foot {
@@ -55,15 +56,15 @@ footer a:hover {
 }
 
 @media (max-width: 700px) {
-  footer {
-    height: 100px;
-  }
   .fruit-by-the-foot {
     position: relative;
-    padding-top: 0px;
+    padding-top: 5px;
     flex-direction: column;
   }
   .fruit-by-the-foot > div {
-    padding: 3px;
+    padding: 2px;
+  }
+  .footer-right-links {
+    display: none;
   }
 }

@@ -30,8 +30,7 @@ const Footer = () => {
         </div>
         <div className="footer-right-links">
           <p>
-            <Link to="/how-it-works">How It Works</Link> |{" "}
-            <Link to="/tasker-profile">Become a Tasker</Link>
+            <Link to="/how-it-works">How It Works</Link>
           </p>
         </div>
       </div>
