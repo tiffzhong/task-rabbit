@@ -28,7 +28,7 @@ module.exports = {
       cooking,
       cookingHourly
     } = req.body;
-    console.log(req.body, "body from controller");
+    // console.log(req.body, "body from controller");
     database
       .tasker_profile_create([
         user,
@@ -142,11 +142,13 @@ module.exports = {
   },
 
   getAllTaskers: (req, res) => {
-    const db = req.app.get('db');
-    db.allTaskers().then(response => {
-      res.status(200).json(response);
-    }).catch(error => {
-      console.log('Error in getAllTaskers @taskerController', error);
-    })
+    const db = req.app.get("db");
+    db.allTaskers()
+      .then(response => {
+        res.status(200).json(response);
+      })
+      .catch(error => {
+        console.log("Error in getAllTaskers @taskerController", error);
+      });
   }
 };

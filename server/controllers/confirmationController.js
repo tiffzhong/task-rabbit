@@ -17,7 +17,7 @@ module.exports = {
       long,
       vehicle
     } = req.body;
-    console.log(req.body, "body from confirmationcontroller");
+    // console.log(req.body, "body from confirmationcontroller");
     database
       .confirm_task_create({
         created_date,
