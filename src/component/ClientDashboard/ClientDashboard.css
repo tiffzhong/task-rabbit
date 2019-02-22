@@ -36,12 +36,14 @@
 }
 .dashboard-box {
     /* background: red; */
-    width: 30%;
     height: 90%;
     margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.dashboard-box-width {
+    width: 50%;
 }
 .dashboard-box img {
     height: 150px;
@@ -51,6 +53,10 @@
 }
 .dashboard-box h2 {
     font-size: 30px;
+}
+.dashboard-box a {
+    text-decoration: none;
+    color: #51af33;
 }
 .dashboard-box-info {
     margin: 5px;
@@ -64,9 +70,7 @@
     text-decoration: none;
     color: #51af33;
 }
-.tasks-container {
-    
-}
+
 .tasks-box {
     background: whitesmoke;
     height: 30px;
