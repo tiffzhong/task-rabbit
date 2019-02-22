@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60%;
+  width: 80%;
   height: 60%;
   justify-content: center;
 }
@@ -96,18 +96,6 @@
 }
 .form-component h2 {
   font-size: 30px;
-}
-.active-link    {
-  color: green;
-  background: whitesmoke;
-  border-left: solid 4px #51af33;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: solid 1px #dce0e6;
-  flex-direction: column;
-  background: white;
 }
 .active-link {
   color: green;
