@@ -40,6 +40,9 @@ app.use(
 const authController = require("./controllers/authContoller");
 const taskerController = require("./controllers/taskerController");
 const clientController = require("./controllers/clientController");
+const confirmationController = require("./controllers/confirmationController");
+const stripeController = require('./controllers/stripeController');
+const messagesController = require('./controllers/messagesController');
 
 //Endpoints
 //Auth
