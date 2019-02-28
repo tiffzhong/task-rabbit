@@ -23,7 +23,7 @@ const Footer = () => {
         <div className="logo-image-footer">
           <Link to="/">
             <img
-              width={150}
+              width={145}
               src="https://assets.taskrabbit.com/v3/assets/web/logos/logo-h-b1502abe9deb95e9b28f6125aeee018f.svg"
             />
           </Link>
