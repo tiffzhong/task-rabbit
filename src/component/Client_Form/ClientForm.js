@@ -150,7 +150,7 @@ class ClientForm extends Component {
   };
 
   render() {
-    console.log("what the HELLLLLLL", this.props);
+    console.log("props", this.props);
     return (
       <div className="form">
         {/* {this.state.editToggle ? <p>Client Edit</p> : <p>Client Form</p>} */}
@@ -171,7 +171,7 @@ class ClientForm extends Component {
               handleToggle={this.handleToggle}
               confirmedTask={this.props.confirmedTask}
             />
-              <Duration
+            <Duration
               locationToggle={this.state.locationToggle}
               durationToggle={this.state.durationToggle}
               vehicleToggle={this.state.vehicleToggle}
@@ -179,15 +179,15 @@ class ClientForm extends Component {
               handleToggle={this.handleToggle}
               confirmedTask={this.props.confirmedTask}
             />
-              <Vehicle
-                locationToggle={this.state.locationToggle}
-                durationToggle={this.state.durationToggle}
-                vehicleToggle={this.state.vehicleToggle}
-                scheduleToggle={this.state.scheduleToggle}
-                handleToggle={this.handleToggle}
-                confirmedTask={this.props.confirmedTask}
-              />
-              <Schedule
+            <Vehicle
+              locationToggle={this.state.locationToggle}
+              durationToggle={this.state.durationToggle}
+              vehicleToggle={this.state.vehicleToggle}
+              scheduleToggle={this.state.scheduleToggle}
+              handleToggle={this.handleToggle}
+              confirmedTask={this.props.confirmedTask}
+            />
+            <Schedule
               locationToggle={this.state.locationToggle}
               durationToggle={this.state.durationToggle}
               vehicleToggle={this.state.vehicleToggle}
@@ -205,7 +205,6 @@ class ClientForm extends Component {
               detailToggle={this.state.detailToggle}
               confirmedTask={this.props.confirmedTask}
             />
-            
             />
           </div>
         ) : this.props.taskType === "Mounting & Installation" ? (
@@ -392,7 +391,6 @@ class ClientForm extends Component {
                 confirmedTask={this.props.confirmedTask}
               />
             </div>
-            
           </div>
         )}
         <div className="form-button">

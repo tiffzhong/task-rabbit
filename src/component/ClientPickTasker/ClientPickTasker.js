@@ -13,14 +13,13 @@ class clientPickTasker extends Component {
     };
   }
   componentDidMount() {
-    console.log("n e thin");
     this.displayAllTaskers();
   }
 
   displayAllTaskers = () => {
     this.props.allTaskersForClient().then(response => {
       // console.log(response, "hello wurld");
-      console.log(response, "what is the response from display");
+      // console.log(response, "what is the response from display");
       this.setState({
         displaytaskers: this.props.allTaskers
       });

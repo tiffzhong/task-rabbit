@@ -37,7 +37,7 @@ class AutocompleteSearch extends Component {
             });
             if (this.state.place) {
               this.props.updateLocationStart(place.formatted_address);
-              console.log("what the hell? ====> ", lat);
+              // console.log("what is lat? ====> ", lat);
               this.props.updateLat(lat);
               this.props.updateLong(lng);
             }
