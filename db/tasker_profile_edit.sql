@@ -1,0 +1,27 @@
+update tasker_profile
+set
+tasker_name = $2,
+email = $3,
+selfie = $4,
+phone = $5,
+location = $6,
+about = $7,
+mounting = $8,
+mountingHourly = $9,
+delivery = $10,
+deliveryHourly = $11,
+yard = $12,
+yardHourly = $13,
+home = $14,
+homeHourly = $15,
+moving = $16,
+movingHourly= $17,
+pet = $18,
+petHourly = $19,
+furniture = $20,
+furnitureHourly = $21,
+cleaning = $22,
+cleaningHourly = $23,
+cooking = $24,
+cookingHourly = $25
+where tasker_id = $1

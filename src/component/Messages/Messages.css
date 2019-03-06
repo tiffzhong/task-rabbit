@@ -1,0 +1,188 @@
+.messagesForm-component {
+    background: whitesmoke;
+    height: 1000px;
+    width: 100vw;
+    position: relative;
+    top: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.messages-form-container {
+    background: white;
+    margin-top: 10px;
+    width: 800px;
+    border: solid 1px rgb(184, 182, 182);
+    box-shadow: 0px 4px 12px 2px lightgray;
+    position:relative;
+    top: 50px;
+    /* height: 200px; */
+}
+.messages {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+    height: 100px;
+    box-shadow: 0px 4px 12px 2px lightgray;
+    position: relative;
+    background: whitesmoke;
+    
+}
+.messages img {
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.messager-container {
+    display: flex;
+    align-items: center;
+    /* background: gray; */
+    position: absolute;
+    left:0;
+    margin-left: 10px;
+}
+.messager-info {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.details-container {
+    width: 50%;
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+}
+.messages-form-container a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* PersonalMessages Component */
+.PersonalMessages-component {
+    background: whitesmoke;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 80px;
+}
+.PersonalMessages-inner-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.messages-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* top: 60px; */
+
+}
+.messages-header img {
+    height: 50px;
+    border-radius: 50%;
+}
+.messages-container {
+    background: white;
+    margin-top: 10px;
+    width: 75vw;
+    border: solid 1px rgb(184, 182, 182);
+    box-shadow: 0px 4px 12px 2px lightgray;
+    position:relative;
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* height: 50%; */
+}
+.mapped-messages {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: red; */
+}
+.messages-inner-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100px;
+}
+.message-container {
+    display: flex;
+    box-shadow: 0px 4px 12px 2px lightgray;
+    margin-top: 5px;
+    margin: 10px;
+    /* height: 200px; */
+}
+
+.clientMessage {
+    padding: 20px;
+    background: #51af33;
+    color: white;
+    border-radius: 10px;
+    position: relative;
+    right: -80px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    /* margin-top: 5px; */
+}
+.taskerMessage {
+    padding: 20px;
+    background: lightgray;
+    border-radius: 10px;
+    position: relative;
+    right: 10px;
+    width: 70%;
+    position: absolute;
+    left: 0;
+}
+.textBox {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.createMessage-container {
+    position: relative;
+    margin: 50px;
+    display: flex;
+    /* background: yellow; */
+    justify-content: center
+    
+}
+.createMessage-container textarea {
+    resize: none;
+    width: 400px;
+    border: solid .5px #51af33;
+}
+.createMessage-container button {
+    margin-left: 10px;
+    width: 60px;
+    background: white;
+    color: #51af33;
+    border: #51af33;
+}
+.createMessage-container button:hover {
+    background: #51af33;
+    color: white;
+}
+.default-message-container {
+    width: 300px;
+}

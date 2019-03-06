@@ -1,0 +1,70 @@
+footer {
+  height: 70px;
+  width: 100%;
+  font-size: 18px;
+  position: relative;
+  bottom: 0;
+  background-color: #e8ebef;
+}
+.fruit-by-the-foot {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-left-links {
+  flex-grow: 1;
+}
+.logo-image-footer {
+  flex-grow: 7;
+}
+
+.footer-right-links {
+  flex-grow: 1;
+}
+.logo-image-footer img {
+  width: 150px;
+}
+footer p {
+  font-size: 16px;
+  color: black;
+  font-weight: 100;
+}
+footer a {
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+  font-weight: 100;
+}
+footer a i {
+  font-size: 20px;
+  letter-spacing: 5px;
+}
+footer a:hover {
+  color: #51af33;
+  font-weight: bold;
+}
+
+@media (max-width: 800px) {
+  footer p {
+    font-size: 16px;
+  }
+  footer a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .fruit-by-the-foot {
+    position: relative;
+    padding-top: 5px;
+    flex-direction: column;
+  }
+  .fruit-by-the-foot > div {
+    padding: 2px;
+  }
+  .footer-right-links {
+    display: none;
+  }
+}

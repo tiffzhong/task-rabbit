@@ -1,18 +1,38 @@
+<!-- CSS Styling/Colors: -->
+<!-- Green: #51af33 -->
+<!-- lightgrey: #e8ebef -->
+
+#TaskRabbit Semi-Clone
+
 ## Front-end
 
 ###Routing
 
-- /
-- /add-quote
+- {LandingPage} - "/"
+- {HowItWorks} - "/how-it-works"
+- {Messages} - "/messages/:user_id"
+- {MessagesIndividual} - "/messages/:task_id"
+
+  <!-- Client Side Routing -->
+
+- {DescribeTask} - "/describe-task"
+- {PickTasker} - "/pick-tasker"
+- {ConfirmBooking} - "/confirm-booking"
+- {TaskConfirmation} - "/task-confirmation"
+- {ClientDashboard} - "/client-dashboard"
+- {ComposeReview} - "/compose-review/:task_id"
+
+<!-- Tasker Side Routing -->
+
+- {CreateTaskerProfile} - "/create-tasker-profile"
+- {Expertise} - "/expertise"
+- {TaskerDashboard} - "/tasker-dashboard"
+- {TaskerProfileAndReviews} - "/tasker-profile/:tasker_id"
+- {UpcomingTaskDetails} - "/upcoming-task/:task_id"
 
 ### Components
 
-- Homepage
-- Add quote
-- Header
-- List?
-- Quote?
-- Login
+-
 
 ###Redux
 
@@ -20,7 +40,7 @@
 - Reducer
   - initial state
   - reducer function
-  - action creators (functions taht create actions/objects)
+  - action creators
   - action types (constant strings)
 - Provider
 
@@ -28,24 +48,18 @@
 
 ### endpoints
 
-- /api/quotes (GET, POST)
+- /api/ (GET, POST)
 - /auth/callback
 - /logout
 
 ###todo
 
 - connect to database using massive
-- set up .env file
-- set up proxy file
+- set up server/index.js
 
 ###controllers
 
-- quotesController
-  -getQuotes
-  -createQuote
-- authController
-  -login
-  -logout
+-
 
 ## Database
 
@@ -72,3 +86,6 @@
 - dotenv
 - express-session
 - http-proxy-middleware
+
+
+

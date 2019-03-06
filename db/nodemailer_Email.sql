@@ -1,0 +1,1 @@
+insert into nodemailerEmail (email) values ($1);

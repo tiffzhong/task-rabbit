@@ -1,0 +1,94 @@
+.picked-tasker-container {
+  padding-top: 50px;
+  background-color: #f9fafb;
+  width: 100%;
+  background-color: #f9fafb;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 60px;
+}
+.picked-tasker-container h2 {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  font-weight: 400;
+}
+
+.picked-tasker-container p {
+  padding-top: 10px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  width: 85%;
+}
+.picked-tasker-profile-container {
+  padding: 25px;
+  border: 1px solid #dce0e6;
+  background-color: white;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.picked-tasker-profile-left img {
+  border-radius: 50%;
+  width: 175px;
+}
+
+.picked-tasker-profile-left a {
+  padding: 15px 0;
+  color: #51af33;
+}
+
+.picked-tasker-profile-left button {
+  background-color: #51af33;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 200;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.picked-tasker-profile-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.picked-tasker-profile-left p {
+  font-size: 14px;
+  width: 75%;
+}
+.picked-tasker-profile-right {
+  display: flex;
+  width: 100%;
+  text-align: start;
+  flex-direction: column;
+}
+
+.picked-tasker-profile-right h5 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
+  font-weight: bold;
+  width: 100%;
+  padding-bottom: 15px;
+}
+.picked-tasker-profile-right h3 {
+  border-top: 1px solid #dce0e6;
+  padding-top: 15px;
+}
+.picked-tasker-profile-right p {
+  font-size: 1em;
+}

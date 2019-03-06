@@ -1,0 +1,210 @@
+/*Navbar*/
+nav {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: 5;
+}
+nav span {
+  vertical-align: baseline;
+}
+.navBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* height: 100%; */
+  padding: 5px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 12;
+  border-bottom: 1px solid #dce0e6;
+}
+nav div ul {
+  display: flex;
+  background: white;
+}
+nav li {
+  margin: 0 10px;
+  color: white;
+}
+.nav-navigation-container {
+  display: flex;
+  /* justify-content: space-between; */
+  height: 100%;
+  align-items: center;
+  position: relative;
+  z-index: 4;
+}
+.nav-navigation-container a {
+  color: #51af33;
+}
+.navBar .nav-navigation-container a {
+  margin-right: 15px;
+}
+.navBar .nav-navigation-container a:hover {
+  cursor: pointer;
+}
+
+.nav-navigation-container button {
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  background: white;
+  color: #51af33;
+  margin: 5px;
+  width: 80px;
+  height: 35px;
+  border: solid 1px #51af33;
+  font-size: 14px;
+  margin-right: 30px;
+}
+.nav-navigation-container .email-modal-nav button {
+  border: none;
+}
+.nav-navigation-container button:hover {
+  background: #51af33;
+  color: white;
+}
+.nav-link {
+  margin: 0 20px 0 20px;
+}
+
+.nav-popover-container {
+  /* text-align: start;
+  top: 2.5px;
+  left: -25px;
+  position: absolute;
+  flex-direction: column; */
+  display: inline-block;
+  position: relative;
+}
+.services-link {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 200px; */
+}
+
+/* dropdown from services link */
+.nav-popover {
+  background: white;
+  border-bottom: 1px solid #dce0e6;
+  position: absolute;
+  right: -20px;
+  top: 35px;
+  box-shadow: 2px 4px 3px 0 rgb(36, 42, 48, 0.15);
+  width: 315px;
+  padding: 0.5rem 3.5rem;
+}
+.nav-popover a {
+  color: #51af33;
+}
+.nav-popover li {
+  color: #51af33;
+}
+
+.nav-popover-link {
+  width: 200px;
+  position: relative;
+  z-index: 4;
+  height: 100%;
+}
+.dropdown-links {
+  margin-top: 25px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 370px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.login {
+  color: white;
+}
+.login-container {
+  /* background: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-container img {
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.logo img {
+  height: 50px;
+  width: 160px;
+  margin: 0 auto;
+  margin-left: 100px;
+}
+.hide {
+  display: none;
+}
+.menuButton-container {
+  display: none;
+}
+button:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 800px) {
+  nav ul {
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    flex-direction: column;
+    width: 100vw;
+    padding: 20px;
+    z-index: -1;
+  }
+  .logo img {
+    margin-left: 30vw;
+  }
+  #menuBox {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .menuButton {
+    border: none;
+    background: transparent;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+  }
+  .menuButton:hover {
+    cursor: pointer;
+  }
+  .nav-popover {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-navigation-container {
+    display: none;
+  }
+
+  .menuButton-container {
+    display: flex;
+  }
+  .menuButton-container a {
+    margin: 15px;
+  }
+  .menuButton-container a:hover {
+    cursor: pointer;
+  }
+}

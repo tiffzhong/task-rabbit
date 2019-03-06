@@ -1,0 +1,250 @@
+.form {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: whitesmoke;
+}
+
+.form p {
+  color: rgb(82, 81, 81);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.form input {
+  text-align: center;
+  font-size: 10px;
+}
+
+.form h1 {
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+.form h2 {
+  color: black;
+  margin: 0% auto;
+  font-weight: lighter;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  height: 100px;
+}
+
+.form-button button {
+  height: 60px;
+  width: 130px;
+  background: rgb(0, 170, 0);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.form-button button:hover {
+  background: rgb(0, 151, 0);
+}
+
+.form-button button:focus {
+  outline: none;
+}
+
+h2 {
+  font-weight: lighter;
+}
+
+.shadow-box {
+  width: 150%;
+  height: 4px;
+  box-shadow: 0px 4px 12px 2px lightgray;
+  border: none;
+  position: fixed;
+  top: 60px;
+  background: white;
+  z-index: 4;
+}
+
+.outer-container {
+  margin-top: 50px;
+  width: 70vw;
+  margin-bottom: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  position: relative;
+}
+.outer-container h1 {
+  position: absolute;
+}
+
+.question-box {
+  border: solid 2px lightgray;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background: white;
+  box-shadow: 0px 4px 12px 2px lightgray;
+}
+.first-question-box {
+  margin-top: 50px;
+}
+
+#question-box div {
+  width: 400px;
+}
+#question-box input {
+  height: 40px;
+}
+.inner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.inner-container input {
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+#details-inner {
+  top: 0px;
+}
+#details-inner textarea {
+  font-family: "Montserrat", sans-serif;
+  height: 150px;
+  width: 50vw;
+  resize: none;
+}
+#details-inner button {
+  position: relative;
+  top: 20px;
+}
+.duration-container {
+  border: solid 0.5px rgb(221, 221, 221);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 120px;
+  width: 400px;
+  margin-bottom: 15px;
+}
+.duration-container div {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.duration-container > div {
+  margin-top: 10px;
+  width: 350px;
+}
+.duration-container input {
+  height: 15px;
+}
+.time-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.react-datetime-picker__wrapper {
+  background: white;
+}
+
+.small-question-box {
+  margin-right: 20px;
+}
+
+.calendar-box {
+  height: 100px;
+}
+
+.calendar {
+  font-weight: bold;
+  font-size: 10px;
+  background-color: white;
+}
+
+.toggle-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100px;
+  border: solid 2px lightgray;
+  margin-top: 10px;
+  color: black;
+  position: relative;
+  background: whitesmoke;
+  background: white;
+}
+
+.closed-box {
+  background: white;
+  border: solid 0.5px rgb(221, 221, 221);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  flex-direction: column;
+  margin-top: 5px;
+}
+.closed-schedule-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.closed-schedule-box span {
+  margin-top: 5px;
+}
+.closed-box img {
+  height: 12px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.closed-box-inner {
+  margin: 20px;
+}
+
+.closedBox-img-container {
+  background: white;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  border: solid 1px #51af33;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-container {
+  margin-top: 50px;
+  position: relative;
+}
+.task-container h1 {
+  position: absolute;
+  margin-left: 50px;
+}
+
+.you-must-select {
+  padding-top: 50px;
+}

@@ -1,0 +1,1 @@
+select * from confirmed_task where confirmation_id = $1;

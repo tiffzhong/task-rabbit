@@ -1,0 +1,399 @@
+.tasker-profile {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+  margin-top: 60px;
+}
+
+.profile-form-container {
+  background-image: url("./taskerbecome.jpg");
+  background-size: cover;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: none;
+}
+.profile-form-container h3 {
+  font-size: 3rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+.profile-form-container h4 {
+  font-size: 2rem;
+  font-weight: lighter;
+  margin-bottom: 1rem;
+}
+.profile-form-container p {
+  font-size: 1rem;
+}
+.profile-form-container span {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: left;
+  width: 50%;
+}
+
+.profile-form-container form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  border: 1px solid #242a30;
+  background-color: #e8ebef;
+  padding: 20px;
+  border-radius: 5px;
+  height: 70%;
+}
+
+.profile-form-container form input {
+  font-family: "Montserrat", sans-serif;
+  padding: 0.625em 1em;
+  width: 100%;
+  color: black;
+  font-size: 15px;
+  margin: 10px 5px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid rgb(181, 181, 181);
+}
+#root
+  > div
+  > div
+  > div.tasker-profile
+  > div.profile-form-container
+  > form
+  > div
+  > input {
+  width: 517%;
+  margin-left: -138px;
+}
+
+.profile-form-container form textarea {
+  font-family: "Montserrat", sans-serif;
+  padding: 0.625em 1em;
+  width: 100%;
+  font-size: 15px;
+  margin: 10px 5px;
+  height: 90px;
+  border-radius: 5px;
+  border: 1px solid rgb(181, 181, 181);
+  resize: none;
+}
+
+.profile-form-container button {
+  font-family: "Montserrat", sans-serif;
+  background-color: #51af33;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.profile-form-container button:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.profile-form-container h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  width: 100%;
+  font-weight: 400;
+}
+
+.profile-form-container p {
+  font-weight: 100;
+  font-size: 18px;
+}
+
+/* ==========TASKER SKILL SECTION ==========*/
+.tasker-skill-form {
+  background-color: #f9fafb;
+  color: #242a30;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.tasker-skill-form h2 {
+  margin-top: 40px;
+  width: 70%;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: start;
+}
+
+.tasker-skill-form form {
+  padding: 1rem 1rem 0.5rem;
+  width: 70%;
+  font-size: 1.25em;
+  position: relative;
+  border: 1px solid #dce0e6;
+  background-color: white;
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+  margin: 30px 20px 20px 20px;
+}
+.tasker-skill-form span {
+  border-bottom: 1px solid #dce0e6;
+  width: 100%;
+  padding: 15px;
+  text-align: start;
+}
+.tasker-skill-form h6 {
+  font-size: 22px;
+  font-weight: 100;
+}
+.tasker-skill-form p {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.tasker-rate-section section {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+}
+
+.tasker-rate-section input {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  border: 1px solid #545e69;
+  color: black;
+  font-size: 16px;
+  width: 60px;
+  border-radius: 5px;
+  height: 30px;
+  width: 60px;
+  margin-left: 5px;
+}
+
+.tasker-rate-section .rate-container h3 {
+  font-size: 16px;
+  margin: 0px 10px 0px 25px;
+}
+.tasker-rate-section .rate-container p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.tasker-rate-hide {
+  width: 100%;
+  opacity: 0.4;
+}
+.tasker-rate-section .rate-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.checkbox-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+.checkbox-container .skills-qualifications {
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.tasker-display-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: left;
+  padding: 20px;
+  border-bottom: 1px solid #dce0e6;
+}
+.tasker-display-text i {
+  padding: 0 10px;
+  cursor: pointer;
+  border: none;
+  color: #51af33;
+  font-size: 16px;
+}
+.tasker-display-text h3 {
+  font-size: 18px;
+}
+
+.tasker-display-text p {
+  flex-basis: 100%;
+}
+
+.tasker-profile-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+}
+.submit-button {
+  font-family: "Montserrat", sans-serif;
+  background-color: #51af33;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.submit-button:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pop-a-roo {
+  transition: all 1s;
+  transform: translate(0, 0);
+  border-bottom: 1px solid #dce0e6;
+}
+
+.pop-a-roo section {
+  color: #545e69;
+  text-align: start;
+  border-radius: 10px;
+  padding: 10px 20px 30px 20px;
+  background-color: #f9fafb;
+}
+.pop-a-roo section p {
+  line-height: 1.5;
+}
+.pop-a-roo section ul {
+  padding: 15px 0;
+}
+.pop-a-roo section h4 {
+  text-align: start;
+  color: #242a30;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #dce0e6;
+}
+
+.hide-a-roo {
+  display: none;
+}
+/* ============== MEDIAS ============ */
+@media (max-width: 890px) {
+  .tasker-skill-form h2 {
+    width: 90%;
+  }
+
+  .tasker-skill-form form {
+    width: 90%;
+  }
+  .profile-form-container {
+    padding: 40px 0;
+    flex-direction: column;
+    height: 100%;
+  }
+  .profile-form-container form {
+    height: 100%;
+  }
+  .profile-form-container span {
+    width: 375px;
+  }
+}
+
+@media (max-width: 790px) {
+  .profile-form-container h3 {
+    font-size: 40px;
+  }
+  .profile-form-container h4 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 500px) {
+  .tasker-skill-form h2 {
+    width: 95%;
+  }
+
+  .tasker-skill-form form {
+    width: 95%;
+  }
+  .profile-form-container span {
+    width: 85%;
+  }
+}
+
+@media (max-width: 360px) {
+  #root
+    > div
+    > div
+    > div.tasker-profile
+    > div.profile-form-container
+    > form
+    > div
+    > input {
+    width: 219%;
+    margin-left: -77px;
+  }
+}
+@media (max-width: 411px) {
+  #root
+    > div
+    > div
+    > div.tasker-profile
+    > div.profile-form-container
+    > form
+    > div
+    > input {
+    width: 422%;
+    margin-left: -126px;
+  }
+}
+@media (max-width: 375px) {
+  #root
+    > div
+    > div
+    > div.tasker-profile
+    > div.profile-form-container
+    > form
+    > div
+    > input {
+    width: 262%;
+    margin-left: -92px;
+  }
+}
+
+@media (max-width: 320px) {
+  #root
+    > div
+    > div
+    > div.tasker-profile
+    > div.profile-form-container
+    > form
+    > div
+    > input {
+    width: 142%;
+    margin-left: -36px;
+  }
+}
+
+@media (max-width: 375px) {
+  #root
+    > div
+    > div
+    > div.tasker-profile
+    > div.profile-form-container
+    > form
+    > div
+    > input {
+    width: 217%;
+    margin-left: -76px;
+  }
+}
