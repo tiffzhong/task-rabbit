@@ -9,6 +9,8 @@ dotenv.config();
 const app = express();
 app.use(bodyParser.json());
 
+app.use( express.static( `${__dirname}/../build` ) );
+
 massive(process.env.CONNECTION_STRING)
   .then(database => {
     app.set("db", database);
@@ -73,6 +75,13 @@ app.get("/messages/:id", messagesController.getClientTasks);
 app.get("/api/personal/messages/:id", messagesController.getMessages);
 app.post("/api/messages", messagesController.createMessage);
 // app.get('/api/messages', messagesController.getMessages);
+
+
+const path = require('path')
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+})
+
 
 const PORT = 4000;
 app.listen(PORT, () => {
