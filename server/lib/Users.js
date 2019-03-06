@@ -54,7 +54,7 @@ module.exports = {
 
   updateTaskerProfile: (db, taskerProfile) => {
     return db.query(
-      "update tasker_profile set tasker_name = ${tasker_name}, email = ${email}, selfie = ${selfie}, phone = ${phone}, location = ${location}, about = ${about}, mounting = ${mounting}, mountingHourly = ${mountingHourly}, delivery = ${delivery}, deliveryHourly = ${deliveryHourly}, yard = ${yard}, yardHourly = ${yardHourly}, home = ${home}, homeHourly = ${homeHourly}, moving = ${moving}, movingHourly= ${movingHourly}, pet = ${pet}, petHourly = ${petHourly}, furniture = ${furniture}, furnitureHourly = ${furnitureHourly}, cleaning = ${cleaning}, cleaningHourly = ${cleaningHourly}, cooking = ${cooking}, cookingHourly = ${cookingHourly} where tasker_id = 'github|39362114' returning *;",
+      "update tasker_profile set tasker_name = ${tasker_name}, email = ${email}, selfie = ${selfie}, phone = ${phone}, location = ${location}, about = ${about}, mounting = ${mounting}, mountingHourly = ${mountingHourly}, delivery = ${delivery}, deliveryHourly = ${deliveryHourly}, yard = ${yard}, yardHourly = ${yardHourly}, home = ${home}, homeHourly = ${homeHourly}, moving = ${moving}, movingHourly= ${movingHourly}, pet = ${pet}, petHourly = ${petHourly}, furniture = ${furniture}, furnitureHourly = ${furnitureHourly}, cleaning = ${cleaning}, cleaningHourly = ${cleaningHourly}, cooking = ${cooking}, cookingHourly = ${cookingHourly} where tasker_id = 'github|28162481' returning *;",
       {
         tasker_name: taskerProfile.tasker_name,
         email: taskerProfile.email,
