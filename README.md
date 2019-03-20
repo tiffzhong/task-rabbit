@@ -1,7 +1,6 @@
 ## Task Rabbit Clone - Group Project
 
-##Hosted here:
-<a href="https://rabbit-clone.fun/" alt="https://rabbit-clone.fun"></a>
+Hosted here: <a href="https://rabbit-clone.fun/" alt="https://rabbit-clone.fun"></a>
 
 A group project clone of a marketplace that matches freelance
 labor with local demand. Users are able to sign up to become a
